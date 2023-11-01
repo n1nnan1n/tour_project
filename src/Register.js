@@ -110,7 +110,7 @@ function Register() {
                 </Row>
               </div>          
     <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>
-      <Button variant="primary" size="lg">
+      <Button className='button'  size="lg">
         REGISTER
       </Button>
       <Button variant="secondary" size="lg">

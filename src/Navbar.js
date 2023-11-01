@@ -47,9 +47,9 @@ function navbar() {
                   <path d="M21 21l-5.2-5.2"></path>
                 </svg>
               </a>
-              <a class="btn btn-sm btn-outline-secondary"><Link to="/Register">Sign up</Link>
-                {/* <LinkContainer to="/Register.js"></LinkContainer>
-                 */}
+              <a class="btn  btn-secondary" style={{marginRight:'5px',color:'white'}}><Link to="/Register">Register</Link>
+              </a>
+              <a class="btn  btn-outline-secondary" style={{color:'white'}}><Link to="/login">Login</Link>
               </a>
             </div>
           </div>

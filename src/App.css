@@ -9,6 +9,12 @@
 .bg {
   background-color: rgb(138, 175, 220);
 }
+.button {
+  background-color: #0579d8;
+}
+.button :hover{
+  background-color: #8db8dc;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
