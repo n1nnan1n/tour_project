@@ -14,11 +14,55 @@ import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import main_pic from "./Pic/main_pic.jpg";
 import Customized from "./Pic/Customized.jpg";
 import one_day from "./Pic/one_day.jpg";
-
+import Carousel from "react-bootstrap/Carousel";
+import Image from "react-bootstrap/Image";
 function Home() {
   return (
     <>
-      <Navbar />
+     <div class="bg" style={{paddingTop:'30px'}}>
+     <Carousel>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="First slide" /> */}
+          
+            <Image
+              style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
+              src={main_pic}
+              fluid
+            />
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="Second slide" /> */}
+
+          <Image
+            style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
+            src={Customized}
+            fluid
+          />
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          {/* <ExampleCarouselImage text="Third slide" /> */}
+          <Image
+            style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
+            src={one_day}
+            fluid
+          />
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      </div>
       <Container style={{ marginBottom: "25px" }}>
         <div class="border-bottom lh-1 py-3">
           <Row>

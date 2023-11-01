@@ -7,77 +7,124 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Image } from "react-bootstrap";
+import trip_outside from "./Pic/trip_outside.jpg";
+import button from "react-bootstrap";
+
 
 function Register() {
   return (
     <>
-      <Container style={{ marginBottom: "20px" }}>
-        <div class="border-bottom lh-1 py-3">
-          <header class="border-bottom lh-1 py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-              <div class="col-12 text-center">
-                <a
-                  class="blog-header-logo text-body-emphasis text-decoration-none"
-                  href="#"
-                >
-                  BEYOND THE TRAILS
-                </a>
-              </div>
-            </div>
-          </header>
-          <header class="border-bottom lh-1 py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-              <div class="col-12 text-center">
-                <h class="blog-header-logo text-body-emphasis text-decoration-none">
-                  Register
-                </h>
-              </div>
-            </div>
-          </header>
+      <div class="bg">
+        {/* <Container style={{ marginBottom: "20px" }}> */}
+
+        <Container>
           <Row>
-            <Form>
-            <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formPlaintextEmail"
-              >
-                <Form.Label column sm="2">
-                  Firstname
-                </Form.Label>
-                <Col sm="10">
-                  <Form.Control type="text" placeholder="Firstname" />
-                </Col>
-              </Form.Group>
+            <Col>
+              <Image
+                style={{
+                  width: "500px",
+                  height: "700px",
+                  marginBottom: "10%",
+                  marginTop: "10%",
+                }}
+                src={trip_outside}
+                fluid
+              />
+            </Col>
+            <Col>
+              {" "}
+              <div class="border-bottom lh-1 py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                  <div
+                    class="col-12 text-center"
+                    style={{
+                      marginTop: "30%",
+                      marginBottom: "20px",
+                      fontSize: "30px",
+                      fontWeight: "bold",
+                      color: "white",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h>Register</h>
+                  </div>
+                </div>
 
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formPlaintextEmail"
-              >
-                <Form.Label column sm="2">
-                  Email
-                </Form.Label>
-                <Col sm="10">
-                  <Form.Control type="email" placeholder="Email" />
-                </Col>
-              </Form.Group>
+                <Row style={{paddingLeft:'10%'}}>
+                  <Form>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextEmail"
+                    >
+                      <Col sm="10">
+                        <Form.Label  style={{float:'left',fontWeight:'bold'}}>
+                          Firstname
+                        </Form.Label>
+                        <Form.Control type="text" placeholder="Firstname" />
+                      </Col>
+                    </Form.Group>
 
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formPlaintextPassword"
-              >
-                <Form.Label column sm="2">
-                  Password
-                </Form.Label>
-                <Col sm="10">
-                  <Form.Control type="password" placeholder="Password" />
-                </Col>
-              </Form.Group>
-            </Form>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextEmail"
+                    >
+                      <Col sm="10">
+                        <Form.Label style={{float:'left',fontWeight:'bold'}}>
+                          Email
+                        </Form.Label>
+                        <Form.Control type="email" placeholder="Email" />
+                      </Col>
+                    </Form.Group>
+
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextPassword"
+                    >
+                      <Col sm="10">
+                        <Form.Label  style={{float:'left',fontWeight:'bold'}}>
+                          Password
+                        </Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                      </Col>
+                    </Form.Group>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextPassword"
+                    >
+                      <Col sm="10">
+                        <Form.Label style={{float:'left',fontWeight:'bold'}}>
+                          Confirm Password
+                        </Form.Label>
+                        <Form.Control
+                          type=" ConfirmPassword"
+                          placeholder=" ConfirmPassword"
+                        />
+                      </Col>
+                    </Form.Group>
+                  </Form>
+                </Row>
+              </div>          
+    <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>
+      <Button variant="primary" size="lg">
+        REGISTER
+      </Button>
+      <Button variant="secondary" size="lg">
+        LOGIN
+      </Button>
+    </div>
+            </Col>
+  
+
           </Row>
-        </div>
-      </Container>
+        </Container>
+
+        {/* </Container> */}
+      </div>
     </>
   );
 }

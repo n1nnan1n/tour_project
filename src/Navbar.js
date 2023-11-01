@@ -1,17 +1,16 @@
 import React from "react";
 import "./App.css";
-import Carousel from "react-bootstrap/Carousel";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Image from "react-bootstrap/Image";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import main_pic from "./Pic/main_pic.jpg";
 import Customized from "./Pic/Customized.jpg";
 import one_day from "./Pic/one_day.jpg";
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
+import App from "./App";
+import { Link } from "react-router-dom";
 function navbar() {
   return (
     <>
@@ -48,18 +47,19 @@ function navbar() {
                   <path d="M21 21l-5.2-5.2"></path>
                 </svg>
               </a>
-              <a class="btn btn-sm btn-outline-secondary" href="#">
-                Sign up
+              <a class="btn btn-sm btn-outline-secondary"><Link to="/Register">Sign up</Link>
+                {/* <LinkContainer to="/Register.js"></LinkContainer>
+                 */}
               </a>
             </div>
           </div>
         </header>
 
         <>
-          <div class="border-bottom lh-1 py-1" style={{ marginBottom: "20px" }}>
-            <Nav className="justify-content-center" activeKey="/home">
+          <div class="border-bottom lh-1 py-1">
+            <Nav className="justify-content-center" activeKey="/Home">
               <Nav.Item>
-                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link href="#">About Us</Nav.Link>
@@ -103,62 +103,9 @@ function navbar() {
         </>
       </div>
 
-      <Carousel>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="First slide" /> */}
-          
-            <Image
-              style={{ width: "1000px", height: "330px", marginBottom: "10%",marginLeft:'17%' }}
-              src={main_pic}
-              fluid
-            />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Second slide" /> */}
-
-          <Image
-            style={{ width: "1000px", height: "330px", marginBottom: "10%",marginLeft:'17%' }}
-            src={Customized}
-            fluid
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Third slide" /> */}
-          <Image
-            style={{ width: "1000px", height: "330px", marginBottom: "10%",marginLeft:'17%' }}
-            src={one_day}
-            fluid
-          />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+     
       </div>
       
-{/* 
-    <Container>
-      <Row>
-        <Col>1 of 2</Col>
-        <Col>2 of 2</Col>
-      </Row>
-      <Row>
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-    </Container> */}
 
       </>
   );
