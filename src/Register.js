@@ -18,7 +18,7 @@ function Register() {
       <div class="bg">
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
-        <Container>1. git add . 
+        <Container>
           <Row>
             <Col>
               <Image
