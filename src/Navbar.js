@@ -25,7 +25,7 @@ function navbar() {
                 class="blog-header-logo text-body-emphasis text-decoration-none"
                 href="#"
               >
-                LOGO
+                BEYOND THE TRAILS
               </a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">

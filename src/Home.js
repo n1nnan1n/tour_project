@@ -6,6 +6,11 @@ import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 function Home() {
   return (
     <>
@@ -18,57 +23,31 @@ function Home() {
           </Col>
         </Row>
         <Stack direction="horizontal" gap={5}>
-          <Card style={{ width: "18rem"}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+          <Card style={{ width: "18rem",height:"120px"}}>
+            <FontAwesomeIcon icon={faStar} style={{color: "#fecb3e",fontSize:"30px",marginTop:"10px"}} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title style={{textAlign:"center"}}>Best Private tour</Card.Title>
             </Card.Body>
           </Card>
 
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+          <Card style={{ width: "18rem",height:"120px"}}>
+          <FontAwesomeIcon icon={faHeart} style={{color: "#ff6251",fontSize:"30px",marginTop:"10px"}} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title style={{textAlign:"center"}}>Passionate service</Card.Title>
             </Card.Body>
           </Card>
-
-          <Card style={{ width: "18rem"}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+          <Card style={{ width: "18rem",height:"120px"}}>
+          <FontAwesomeIcon icon={faUser} style={{color: "#77bb41",fontSize:"30px",marginTop:"10px"}} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title style={{textAlign:"center"}}>Respect the locals culture & support localsr</Card.Title>
             </Card.Body>
           </Card>
-
-          <Card style={{ width: "18rem"}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+          <Card style={{ width: "18rem",height:"120px"}}>
+          <FontAwesomeIcon icon={faEarthAmericas} style={{color: "#3a88fe",fontSize:"30px",marginTop:"10px"}} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title style={{textAlign:"center"}}>Multi languages tours</Card.Title>
             </Card.Body>
           </Card>
-          {/* <div className="p-2">First item</div>
-      <div className="p-2">Second item</div>
-      <div className="p-2">Third item</div> */}
-      
         </Stack>
     </div>
       </Container>
