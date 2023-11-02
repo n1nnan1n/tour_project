@@ -12,10 +12,15 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import main_pic from "./Pic/main_pic.jpg";
+import grand1 from "./Pic/grand1.jpg";
+import grand2 from "./Pic/grand2.jpg";
+import grand5 from "./Pic/grand5jpg.jpg";
+
 import Customized from "./Pic/Customized.jpg";
 import one_day from "./Pic/one_day.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
+import "./Pic/one_day.jpg";
 function Home() {
   return (
     <>
@@ -63,6 +68,7 @@ function Home() {
         </Carousel.Item>
       </Carousel>
       </div>
+       {/* ---------------------------------------------------------------------------------------------- */}
       <Container style={{ marginBottom: "25px" }}>
         <div class="border-bottom lh-1 py-3">
           <Row>
@@ -72,6 +78,7 @@ function Home() {
                   fontSize: "25px",
                   fontWeight: "bold",
                   marginTop: "10px",
+                
                 }}
               >
                 Why customers choose us
@@ -149,7 +156,45 @@ function Home() {
                 </p>
               </Col>
             </Row>
-            <Stack direction="horizontal" gap={5}>
+        {/* ---------------------------------------------------------------------------------------------- */}
+    <Stack direction="horizontal" gap={5}>
+    <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+ 
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={grand1}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
+         
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={grand2}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
+         
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={grand5}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
+          
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+{/*   
               <Card style={{ width: "18rem", height: "120px" }}>
                 <Card.Img variant="top" src={main_pic} />
                 <Card.Body>
@@ -158,53 +203,78 @@ function Home() {
                     up the bulk of the card's content.
                   </Card.Text>
                 </Card.Body>
-              </Card>
-
-              <Card style={{ width: "18rem", height: "120px" }}>
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  style={{
-                    color: "#ff6251",
-                    fontSize: "30px",
-                    marginTop: "10px",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title style={{ textAlign: "center" }}>
-                    Passionate service
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-              <Card style={{ width: "18rem", height: "120px" }}>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  style={{
-                    color: "#77bb41",
-                    fontSize: "30px",
-                    marginTop: "10px",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title style={{ textAlign: "center" }}>
-                    Respect the locals culture & support localsr
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-              <Card style={{ width: "18rem", height: "120px" }}>
-                <FontAwesomeIcon
-                  icon={faEarthAmericas}
-                  style={{
-                    color: "#3a88fe",
-                    fontSize: "30px",
-                    marginTop: "10px",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title style={{ textAlign: "center" }}>
-                    Multi languages tours
-                  </Card.Title>
-                </Card.Body>
-              </Card>
+              </Card> */}
+<Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+        <img
+          className="d-block w-100"
+          src={main_pic}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    
             </Stack>
           </div>
         </Container>
