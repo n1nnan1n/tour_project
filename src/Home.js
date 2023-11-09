@@ -15,63 +15,36 @@ import main_pic from "./Pic/main_pic.jpg";
 import grand1 from "./Pic/grand1.jpg";
 import grand2 from "./Pic/grand2.jpg";
 import grand5 from "./Pic/grand5jpg.jpg";
-
+import customized from "./Pic/Customized.jpg";
+import './App.css';
 import Customized from "./Pic/Customized.jpg";
-import one_day from "./Pic/one_day.jpg";
+import outside1 from "./Pic/outside1.jpg";
+import outside2 from "./Pic/outside2.jpg";
+import outside3 from "./Pic/outside3.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 import "./Pic/one_day.jpg";
+import Footer from "./Footer";
+import video from "./Video/Home.mp4";
+
 function Home() {
   return (
     <>
-     <div class="bg" style={{paddingTop:'30px'}}>
-     <Carousel>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="First slide" /> */}
-          
-            <Image
-              style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
-              src={main_pic}
-              fluid
-            />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Second slide" /> */}
+     <div style={{ width: "100%", height: "500px" }}>
 
-          <Image
-            style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
-            src={Customized}
-            fluid
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <ExampleCarouselImage text="Third slide" /> */}
-          <Image
-            style={{ width: "1000px", height: "330px", marginBottom: "10%" }}
-            src={one_day}
-            fluid
-          />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-      </div>
+        <video
+             style={{ width: "100%", height: "500px" }}
+              src={video}
+              autoPlay loop muted
+            />
+           
+    </div>
+      
        {/* ---------------------------------------------------------------------------------------------- */}
-      <Container style={{ marginBottom: "25px" }}>
-        <div class="border-bottom lh-1 py-3">
-          <Row>
+     
+        <div class="border-bottom lh-1 py-3" style={{width: "100%", height: "200px",backgroundColor:'white'}}>
+        <Container style={{ marginBottom: "25px" }}>
+             <Row>
             <Col>
               <p
                 style={{
@@ -143,11 +116,13 @@ function Home() {
                 Multi languages tours
               </p>{" "}
             </Col>
-          </Row>
+          </Row>  
+           </Container>
         </div>
-      </Container>
+   
+      
       <div style={{ backgroundColor: "#B7C0C7" }}>
-        <Container style={{ marginBottom: "20px" }}>
+        <Container>
           <div class="border-bottom lh-1 py-3">
             <Row>
               <Col>
@@ -167,7 +142,7 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
+          <h5 style={{color:"white",marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
          
         </Carousel.Caption>
       </Carousel.Item>
@@ -177,10 +152,7 @@ function Home() {
           src={grand2}
           alt="First slide"
         />
-        <Carousel.Caption>
-        <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
-         
-        </Carousel.Caption>
+       
       </Carousel.Item>
       <Carousel.Item style={{ width: "25rem", height: "300px" }}>
         <img
@@ -188,10 +160,7 @@ function Home() {
           src={grand5}
           alt="First slide"
         />
-        <Carousel.Caption>
-        <h5 style={{marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
-          
-        </Carousel.Caption>
+       
       </Carousel.Item>
     </Carousel>
 {/*   
@@ -205,73 +174,49 @@ function Home() {
                 </Card.Body>
               </Card> */}
 <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+<Carousel.Item style={{ width: "25rem", height: "225px" }}>
         <img
           className="d-block w-100"
-          src={main_pic}
+          src={outside2}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
+        <h5 style={{color:"white",marginTop:'-18px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
        
         </Carousel.Caption>
+
       </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+      <Carousel.Item style={{ width: "25rem", height: "225px" }}>
         <img
           className="d-block w-100"
-          src={main_pic}
+          src={outside1}
           alt="First slide"
         />
-        <Carousel.Caption>
-        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
        
-        </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+      
+      <Carousel.Item style={{ width: "25rem", height: "225px" }}>
         <img
           className="d-block w-100"
-          src={main_pic}
+          src={outside3}
           alt="First slide"
         />
-        <Carousel.Caption>
-        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
-       
-        </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
     <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
       <Carousel.Item style={{ width: "25rem", height: "300px" }}>
         <img
           className="d-block w-100"
-          src={main_pic}
+          src={customized}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+          <h5 style={{color:"white",marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
        
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={main_pic}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+     
+      
        
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={main_pic}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-        <h5 style={{color:"white",marginTop:'-250px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
-       
-        </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
     
@@ -279,6 +224,7 @@ function Home() {
           </div>
         </Container>
       </div>
+      <Footer/>
     </>
   );
 }
