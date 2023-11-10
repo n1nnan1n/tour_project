@@ -133,7 +133,7 @@ function Home() {
             </Row>
         {/* ---------------------------------------------------------------------------------------------- */}
     <Stack direction="horizontal" gap={5}>
-    <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+    <Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
  
       <Carousel.Item style={{ width: "25rem", height: "300px" }}>
         <img
@@ -142,7 +142,7 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 style={{color:"white",marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
+          <h5 style={{marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
          
         </Carousel.Caption>
       </Carousel.Item>
@@ -173,7 +173,7 @@ function Home() {
                   </Card.Text>
                 </Card.Body>
               </Card> */}
-<Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+<Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
 <Carousel.Item style={{ width: "25rem", height: "225px" }}>
         <img
           className="d-block w-100"
@@ -181,7 +181,7 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-        <h5 style={{color:"white",marginTop:'-18px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
+        <h5 style={{marginTop:'-18px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
        
         </Carousel.Caption>
 
@@ -203,7 +203,7 @@ function Home() {
         />
       </Carousel.Item>
     </Carousel>
-    <Carousel data-bs-theme="dark" style={{ width: "25rem", height: "230px" }}>
+    <Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
       <Carousel.Item style={{ width: "25rem", height: "300px" }}>
         <img
           className="d-block w-100"
@@ -211,7 +211,7 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 style={{color:"white",marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
+          <h5 style={{marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
        
         </Carousel.Caption>
      
