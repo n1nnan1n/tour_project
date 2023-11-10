@@ -30,18 +30,14 @@ import video from "./Video/Home.mp4";
 function Home() {
   return (
     <>
-     <div style={{ width: "100%", height: "500px" }}>
-
+    <div style={{ width: "1903px", height: "500px" , overflow:"hidden" , display:"block"}}>
         <video
-             style={{ width: "100%", height: "500px" }}
+              style={{ width: "auto", height: "auto"}}
               src={video}
               autoPlay loop muted
             />
-           
     </div>
-      
-       {/* ---------------------------------------------------------------------------------------------- */}
-     
+
         <div class="border-bottom lh-1 py-3" style={{width: "100%", height: "200px",backgroundColor:'white'}}>
         <Container style={{ marginBottom: "25px" }}>
              <Row>
