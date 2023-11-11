@@ -13,7 +13,7 @@ h1,p{
   pointer-events: none;
 }
 .bg {
-  background-color: rgb(138, 175, 220);
+  background-color: #3a88fe;
 }
 .button {
   background-color: #0579d8;
@@ -21,6 +21,13 @@ h1,p{
 .button :hover{
   background-color: #8db8dc;
 }
+.link{
+color: white;
+}
+.link:hover{
+  color: rgb(178, 170, 111);
+  
+  }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -61,6 +68,10 @@ h5{
  
 }
 
+.contact :hover{
+  /* text-shadow: 2px 3px 2px rgb(213, 209, 213); */
+  box-shadow: 2px 3px 2px rgb(213, 209, 213) ;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

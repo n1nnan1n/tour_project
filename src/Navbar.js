@@ -9,6 +9,8 @@ import Customized from "./Pic/Customized.jpg";
 import one_day from "./Pic/one_day.jpg";
 import App from "./App";
 import { Link } from "react-router-dom";
+import Dropdown from 'react-bootstrap/Dropdown';
+
 function navbar() {
   return (
     <>
@@ -22,10 +24,10 @@ function navbar() {
                 class="blog-header-logo text-body-emphasis text-decoration-none"
                 href="#"
               >
-                BEYOND THE TRAILS
+              <h1 style={{fontSize:'28px',fontWeight:'bold'}}>BEYOND THE TRAILS</h1>  
               </a>
             </div>
-            <div class="col-4 d-flex justify-content-end align-items-center" style={{paddingBottom:'20px'}}>
+            <div class="col-4 d-flex justify-content-end align-items-center" >
              
               <a class="btn  btn-dark"style={{marginRight:'5px'}} ><Link to="/Register"style={{color:'white'}}>Register</Link>
               </a>
@@ -40,13 +42,14 @@ function navbar() {
             
             <Nav className="justify-content-center text" activeKey="/Home" >
               <Nav.Item>
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#">About Us</Nav.Link>
+                <Nav.Link className='link' href="#">About Us</Nav.Link>
               </Nav.Item>
-
-              <NavDropdown title="Day Trips" id="nav-dropdown">
+      
+   
+              <NavDropdown className='link' title="Day Trips" id="Dropdown" >
                 <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">
                   Another action
@@ -61,14 +64,14 @@ function navbar() {
               </NavDropdown>
 
               <Nav.Item>
-                <Nav.Link eventKey="#">Customized tour</Nav.Link>
+                <Nav.Link className='link' eventKey="#">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="#" disabled>
+                <Nav.Link className='link' eventKey="#">
                   Review
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown title="Language" id="nav-dropdown">
+              <NavDropdown className='link' title="Language" id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1">English</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Thai</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.3">

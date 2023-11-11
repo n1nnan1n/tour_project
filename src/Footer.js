@@ -11,11 +11,11 @@ import './App.css';
 import Image from "react-bootstrap/Image";
 function Footer() {
   return (
-    <Form style={{ backgroundColor: "black", paddingTop: "25px" }}>
+    <Form style={{ backgroundColor: "#3a88fe", paddingTop: "25px" }}>
       <Container>
         <Row style={{ color: "white", textAlign: "left", fontSize: "20px", }}>
             
-            <h1 style={{fontSize:'30px',fontWeight:'bold', textAlign: "center",marginBottom:'20px'}}>
+            <h1 style={{fontSize:'25px',fontWeight:'bold', textAlign: "center",marginBottom:'20px'}}>
               Beyond the trails is operated by Tourism Authority of Thailand
               licensed No. 14/03750
             </h1>
@@ -30,12 +30,12 @@ function Footer() {
           </Col>
           <Col>
             <p style={{textAlign:'center',fontWeight:'bold'}}>Follower US :</p>
-           <a> <FontAwesomeIcon icon={faInstagram} style={{color: "#d357fe",fontSize:'50px',marginLeft:'100px',float:'left',textAlign:'center'}} />
+           <a className="contact"> <FontAwesomeIcon icon={faInstagram} style={{color: "#d357fe",fontSize:'50px',marginLeft:'100px',float:'left',textAlign:'center'}} />
           </a>
-          <a>
+          <a className="contact">
             <FontAwesomeIcon icon={faTiktok} style={{color: "#e63b7a",float:'left',fontSize:'50px',marginLeft:'100px'}} />
            </a>
-           <a> <FontAwesomeIcon icon={faFacebook} style={{color: "#0061ff",float:'left',fontSize:'50px',marginLeft:'100px'}} />
+           <a className="contact"> <FontAwesomeIcon icon={faFacebook} style={{color: "#0061ff",float:'left',fontSize:'50px',marginLeft:'100px'}} />
              <Image
               style={{width:'55px',height:'55px',marginLeft:'100px',float:'left',textAlign:'center'}}
               src={tripadvisor}

@@ -30,7 +30,7 @@ import video from "./Video/Home.mp4";
 function Home() {
   return (
     <>
-    <div style={{ width: "1903px", height: "500px" , overflow:"hidden" , display:"block"}}>
+    <div style={{ width: "100%", height: "500px" , overflow:"hidden" , display:"block"}}>
         <video
               style={{ width: "auto", height: "auto"}}
               src={video}
@@ -44,7 +44,7 @@ function Home() {
             <Col>
               <p
                 style={{
-                  fontSize: "25px",
+                  fontSize: "28px",
                   fontWeight: "bold",
                   marginTop: "10px",
                 
@@ -117,14 +117,14 @@ function Home() {
         </div>
    
       
-      <div style={{ backgroundColor: "#B7C0C7" }}>
+      <div style={{ backgroundColor: "#8CC5F2" }}>
         <Container>
           <div class="border-bottom lh-1 py-3">
             <Row>
               <Col>
-                <p style={{ fontSize: "23px", fontWeight: "bold" }}>
+                <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>
                   Our Tours
-                </p>
+                </h1>
               </Col>
             </Row>
         {/* ---------------------------------------------------------------------------------------------- */}
