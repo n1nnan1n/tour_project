@@ -12,7 +12,7 @@ import { Container } from "react-bootstrap";
 function navbar() {
   return (
     <>
-    <div  style={{paddingBottom:'20px'}}>
+    <div  style={{paddingBottom:'20px' , float:"left" , textAlign:"center"}}>
       <div class="container">
         <header class="border-bottom lh-1 py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
@@ -22,7 +22,7 @@ function navbar() {
                 class="blog-header-logo text-body-emphasis text-decoration-none"
                 href="#"
               >
-              <h1 style={{fontSize:'28px',fontWeight:'bold'}}>BEYOND THE TRAILS</h1>  
+              <h1 style={{fontSize:'28px',fontWeight:'bold',float:"right"}}>BEYOND THE TRAILS</h1>  
               </a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center" >
@@ -36,7 +36,7 @@ function navbar() {
         </header>
 
       
-        <Navbar bg="primary" data-bs-theme="dark" style={{textAlign:'center', width:'100%'}}>
+        <Navbar bg="primary" data-bs-theme="dark" style={{textAlign:'center', width:'1900px' , float:"left"}}>
            
         {/* <Navbar bg="primary" data-bs-theme="dark">
         <Container>
