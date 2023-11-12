@@ -4,17 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import main_pic from "./Pic/main_pic.jpg";
-import Customized from "./Pic/Customized.jpg";
-import one_day from "./Pic/one_day.jpg";
 import App from "./App";
 import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Container } from "react-bootstrap";
 
 function navbar() {
   return (
     <>
-    <div class="bg" style={{paddingBottom:'30px'}}>
+    <div  style={{paddingBottom:'20px'}}>
       <div class="container">
         <header class="border-bottom lh-1 py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
@@ -37,10 +35,19 @@ function navbar() {
           </div>
         </header>
 
-        <>
-          <div class="border-bottom lh-1 py-1" >
-            
-            <Nav className="justify-content-center text" activeKey="/Home" >
+      
+        <Navbar bg="primary" data-bs-theme="dark" style={{textAlign:'center', width:'100%'}}>
+           
+        {/* <Navbar bg="primary" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar> */}
               <Nav.Item>
                 <Nav.Link className='link' href="/">Home</Nav.Link>
               </Nav.Item>
@@ -82,14 +89,13 @@ function navbar() {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
-            </Nav>
-          </div>
-        </>
-      </div>
-
-     
-      </div>
       
+            
+  
+          </Navbar>
+      
+          </div>
+          </div>
 
       </>
   );

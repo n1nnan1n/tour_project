@@ -11,19 +11,18 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
-import main_pic from "./Pic/main_pic.jpg";
-import grand1 from "./Pic/grand1.jpg";
-import grand2 from "./Pic/grand2.jpg";
-import grand5 from "./Pic/grand5jpg.jpg";
-import customized from "./Pic/Customized.jpg";
+
+import grand1 from "./Pic/firstpage/grand1.jpg";
+import grand2 from "./Pic/firstpage/grand2.jpg";
+import grand5 from "./Pic/firstpage/grand5jpg.jpg";
+import customized from "./Pic/firstpage/Customized.jpg";
 import './App.css';
-import Customized from "./Pic/Customized.jpg";
-import outside1 from "./Pic/outside1.jpg";
-import outside2 from "./Pic/outside2.jpg";
-import outside3 from "./Pic/outside3.jpg";
+import Customized from "./Pic/firstpage/Customized.jpg";
+import outside1 from "./Pic/firstpage/outside1.jpg";
+import outside2 from "./Pic/firstpage/outside2.jpg";
+import outside3 from "./Pic/firstpage/outside3.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
-import "./Pic/one_day.jpg";
 import Footer from "./Footer";
 import video from "./Video/Home.mp4";
 

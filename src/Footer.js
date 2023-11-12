@@ -6,7 +6,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import tripadvisor from "./Pic/tripadvisor.jpg";
+import tripadvisor from "./Pic/footer/tripadvisor.jpg";
 import './App.css';
 import Image from "react-bootstrap/Image";
 function Footer() {

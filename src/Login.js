@@ -15,7 +15,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Image } from "react-bootstrap";
-import trip_outside from "./Pic/trip_outside.jpg";
+import trip_outside from "./Pic/firstpage/trip_outside.jpg";
 import button from "react-bootstrap";
 import Register from "./Register.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
