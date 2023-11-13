@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
-
+@import "~react-image-gallery/styles/css/image-gallery.css";
 .App {
   text-align: center;
 }
@@ -13,7 +13,7 @@ h1,p{
   pointer-events: none;
 }
 .bg {
-  background-color: #b8b9ec;
+  background-color: #b5b5b9;
   
 }
 .button {
