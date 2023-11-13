@@ -16,7 +16,7 @@ import grand1 from "./Pic/firstpage/grand1.jpg";
 import grand2 from "./Pic/firstpage/grand2.jpg";
 import grand5 from "./Pic/firstpage/grand5jpg.jpg";
 import customized from "./Pic/firstpage/Customized.jpg";
-import './App.css';
+import "./App.css";
 import Customized from "./Pic/firstpage/Customized.jpg";
 import outside1 from "./Pic/firstpage/outside1.jpg";
 import outside2 from "./Pic/firstpage/outside2.jpg";
@@ -25,28 +25,44 @@ import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 import Footer from "./Footer";
 import video from "./Video/Home.mp4";
+import best from "./Pic/icon/best.svg";
+import icon2 from "./Pic/icon/2.svg";
+import icon3 from "./Pic/icon/3.svg";
+import icon4 from "./Pic/icon/4.svg";
 
 function Home() {
   return (
     <>
-    <div style={{ width: "100%", height: "500px" , overflow:"hidden" , display:"block"}}>
+      <div
+        style={{
+          width: "100%",
+          height: "500px",
+          overflow: "hidden",
+          display: "block",
+        }}
+      >
         <video
-              style={{ width: "auto", height: "auto"}}
-              src={video}
-              autoPlay loop muted
-            />
-    </div>
+          style={{ width: "auto", height: "auto" }}
+          src={video}
+          autoPlay
+          loop
+          muted
+        />
+      </div>
 
-        <div class="border-bottom lh-1 py-3" style={{width: "100%", height: "200px",backgroundColor:'white'}}>
+      <div
+        class=" lh-1 py-3"
+        style={{ width: "100%", height: "300px", backgroundColor: "white" }}
+      >
         <Container style={{ marginBottom: "25px" }}>
-             <Row>
+          <Row>
             <Col>
               <p
                 style={{
                   fontSize: "28px",
                   fontWeight: "bold",
                   marginTop: "10px",
-                
+                  marginBottom:"80px"
                 }}
               >
                 Why customers choose us
@@ -56,40 +72,30 @@ function Home() {
           <Row md={4}>
             <Col style={{ textAlign: "center" }}>
               {" "}
-              <FontAwesomeIcon
-                icon={faStar}
-                style={{
-                  color: "#fecb3e",
-                  fontSize: "30px",
-                  marginTop: "10px",
-                }}
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={best}
+                alt="First slide"
               />
               <p style={{ marginTop: "20px", fontSize: "20px" }}>
                 Best Private tour
               </p>
             </Col>
             <Col style={{ textAlign: "center" }}>
-              {" "}
-              <FontAwesomeIcon
-                icon={faHeart}
-                style={{
-                  color: "#ff6251",
-                  fontSize: "30px",
-                  marginTop: "10px",
-                }}
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={icon2}
+                alt="First slide"
               />
               <p style={{ marginTop: "20px", fontSize: "20px" }}>
                 Passionate service
               </p>{" "}
             </Col>
             <Col style={{ textAlign: "center" }}>
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{
-                  color: "#77bb41",
-                  fontSize: "30px",
-                  marginTop: "10px",
-                }}
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={icon3}
+                alt="First slide"
               />
               <p style={{ marginTop: "20px", fontSize: "20px" }}>
                 {" "}
@@ -98,67 +104,78 @@ function Home() {
             </Col>
 
             <Col style={{ textAlign: "center" }}>
-              <FontAwesomeIcon
-                icon={faEarthAmericas}
-                style={{
-                  color: "#3a88fe",
-                  fontSize: "30px",
-                  marginTop: "10px",
-                }}
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={icon4}
+                alt="First slide"
               />
               <p style={{ marginTop: "20px", fontSize: "20px" }}>
                 {" "}
                 Multi languages tours
               </p>{" "}
             </Col>
-          </Row>  
-           </Container>
-        </div>
-   
-      
-      <div style={{ backgroundColor: "#8CC5F2" }}>
+          </Row>
+        </Container>
+      </div>
+
+      <div style={{ backgroundColor: "#063d8c" ,height:"350px",marginTop:'30px'}}>
         <Container>
-          <div class="border-bottom lh-1 py-3">
+          <div class="lh-1 py-3">
             <Row>
               <Col>
-                <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>
+                <h1
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "bold",
+                    color: "white",
+                    marginBottom:"30px"
+                  }}
+                >
                   Our Tours
                 </h1>
               </Col>
             </Row>
-        {/* ---------------------------------------------------------------------------------------------- */}
-    <Stack direction="horizontal" gap={5}>
-    <Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
- 
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={grand1}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h5 style={{marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>1 DAT BKK CITY TOURS</h5>
-         
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={grand2}
-          alt="First slide"
-        />
-       
-      </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={grand5}
-          alt="First slide"
-        />
-       
-      </Carousel.Item>
-    </Carousel>
-{/*   
+            {/* ---------------------------------------------------------------------------------------------- */}
+            <Stack direction="horizontal" gap={5}>
+              <Carousel
+                data-bs-theme="dark"
+                className="menu1"
+                style={{ width: "25rem", height: "210px" }}
+              >
+                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={grand1}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h5
+                      style={{
+                        marginTop: "-150px",
+                        fontSize: "30px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      1 DAT BKK CITY TOURS
+                    </h5>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={grand2}
+                    alt="First slide"
+                  />
+                </Carousel.Item>
+                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={grand5}
+                    alt="First slide"
+                  />
+                </Carousel.Item>
+              </Carousel>
+              {/*   
               <Card style={{ width: "18rem", height: "120px" }}>
                 <Card.Img variant="top" src={main_pic} />
                 <Card.Body>
@@ -168,58 +185,74 @@ function Home() {
                   </Card.Text>
                 </Card.Body>
               </Card> */}
-<Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
-<Carousel.Item style={{ width: "25rem", height: "225px" }}>
-        <img
-          className="d-block w-100"
-          src={outside2}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-        <h5 style={{marginTop:'-18px',fontSize:'30px',fontWeight:'bold'}}>DAY TRIPS OUTSIDE BKK</h5>
-       
-        </Carousel.Caption>
+              <Carousel
+                data-bs-theme="dark"
+                className="menu1"
+                style={{ width: "25rem", height: "210px" }}
+              >
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={outside2}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h5
+                      style={{
+                        marginTop: "-18px",
+                        fontSize: "30px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      DAY TRIPS OUTSIDE BKK
+                    </h5>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={outside1}
+                    alt="First slide"
+                  />
+                </Carousel.Item>
 
-      </Carousel.Item>
-      <Carousel.Item style={{ width: "25rem", height: "225px" }}>
-        <img
-          className="d-block w-100"
-          src={outside1}
-          alt="First slide"
-        />
-       
-      </Carousel.Item>
-      
-      <Carousel.Item style={{ width: "25rem", height: "225px" }}>
-        <img
-          className="d-block w-100"
-          src={outside3}
-          alt="First slide"
-        />
-      </Carousel.Item>
-    </Carousel>
-    <Carousel data-bs-theme="dark" className='menu1' style={{ width: "25rem", height: "210px" }}>
-      <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-        <img
-          className="d-block w-100"
-          src={customized}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h5 style={{marginTop:'-150px',fontSize:'30px',fontWeight:'bold'}}>CUSTOMIZED TOUR</h5>
-       
-        </Carousel.Caption>
-     
-      
-       
-      </Carousel.Item>
-    </Carousel>
-    
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={outside3}
+                    alt="First slide"
+                  />
+                </Carousel.Item>
+              </Carousel>
+              <Carousel
+                data-bs-theme="dark"
+                className="menu1"
+                style={{ width: "25rem", height: "210px" }}
+              >
+                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                  <img
+                    className="d-block w-100"
+                    src={customized}
+                    alt="First slide"
+                  />
+                  <Carousel.Caption>
+                    <h5
+                      style={{
+                        marginTop: "-150px",
+                        fontSize: "30px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      CUSTOMIZED TOUR
+                    </h5>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </Stack>
           </div>
         </Container>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

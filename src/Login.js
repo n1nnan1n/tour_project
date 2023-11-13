@@ -20,6 +20,7 @@ import button from "react-bootstrap";
 import Register from "./Register.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
+import bg from './Pic/firstpage/grand5jpg.jpg'
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,9 +52,8 @@ export const Login = () => {
   return (
    
     <>
-    <div class="bg">
+    <div class="bg" style={{backgroundImage:`url(${bg})`}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
-
       <Container>
         <Row>
           <Col>
@@ -143,6 +143,7 @@ Sign In
 
       {/* </Container> */}
     </div>
+
   </>
   );
 };

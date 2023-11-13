@@ -5,6 +5,7 @@ import Register from './Register'
 import Home from './Home'
 import Login from './Login'
 import Footer from './Footer';
+import Grandtour from './Grandtour';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="Register" element={<Register/>} />
                 <Route path="Login" element={<Login/>} />
                 <Route path="Footer" element={<Footer/>} />
+                <Route path="grandtour" element={<Grandtour/>} />
              
             </Routes>
           </BrowserRouter>

@@ -11,7 +11,7 @@ import './App.css';
 import Image from "react-bootstrap/Image";
 function Footer() {
   return (
-    <Form style={{ backgroundColor: "#3a88fe", paddingTop: "25px" }}>
+    <Form style={{ backgroundColor: "black", paddingTop: "25px" }}>
       <Container>
         <Row style={{ color: "white", textAlign: "left", fontSize: "20px", }}>
             
