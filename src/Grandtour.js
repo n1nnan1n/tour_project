@@ -9,12 +9,13 @@ import pic3 from "./Pic/grandtour/1AqWo8m6.jpeg";
 import pic4 from "./Pic/grandtour/C78X-Lc-.jpeg";
 import pic5 from "./Pic/grandtour/Do0thfI0.jpeg";
 import pic6 from "./Pic/grandtour/Poe2v9Q5.jpeg";
-
 import pic9 from "./Pic/grandtour/apwv1J-2.jpeg";
 import pic10 from "./Pic/grandtour/wat1.jpeg";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { useState } from 'react';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 const images = [
   {
@@ -50,6 +51,7 @@ const images = [
     thumbnail: `${pic10}`,
   },
 ];
+
 export default function Grandtour() {
   return (
     <>
@@ -73,8 +75,85 @@ export default function Grandtour() {
           </div>
           
         </Container>
-        
-    <Card style={{
+        <Tabs
+      defaultActiveKey="profile"
+      id="uncontrolled-tab-example"
+      style={{
+        backgroundColor: "#063d8c",
+        width: "60%",
+        marginLeft: "20%",
+        borderRadius:"5px"
+      }}
+    >
+      <Tab eventKey="description" title="description">
+        <Card.Body style={{
+                backgroundColor: "white",
+                width: "60%",
+                marginLeft: "20%"
+                }}>
+          <Card.Title>description</Card.Title>
+          <Card.Text>
+            With supporting text below as a natural lead-in to additional content.
+          </Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Tab>
+      <Tab eventKey="avaliability" title="avaliability">
+        <Card.Body style={{
+                backgroundColor: "white",
+                width: "60%",
+                marginLeft: "20%"
+                }}>
+            <Card.Title>description</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+      </Tab>
+      <Tab eventKey="map" title="map">
+      <Card.Body style={{
+                backgroundColor: "white",
+                width: "60%",
+                marginLeft: "20%"
+                }}>
+            <Card.Title>description</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+      </Tab>
+      <Tab eventKey="location" title="location">
+      <Card.Body style={{
+                backgroundColor: "white",
+                width: "60%",
+                marginLeft: "20%"
+                }}>
+            <Card.Title>description</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+      </Tab>
+      <Tab eventKey="review" title="review">
+      <Card.Body style={{
+                backgroundColor: "white",
+                width: "60%",
+                marginLeft: "20%"
+                }}>
+            <Card.Title>description</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+      </Tab>
+    </Tabs>
+
+
+    {/* <Card style={{
               backgroundColor: "#063d8c",
               width: "60%",
               marginLeft: "20%",
@@ -113,7 +192,7 @@ export default function Grandtour() {
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    </Card>
+    </Card> */}
   
 
       </div>
