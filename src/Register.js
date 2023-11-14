@@ -24,9 +24,8 @@ function Register() {
           event.stopPropagation();
         }
     
-        setValidated(true);
+        // setValidated(true);
       };
-      const CountrySelect = () => {
         const [countries, setCountries] = useState([]);
         const [selectedCountry, setSelectedCountry] = useState({});
       
@@ -43,8 +42,8 @@ function Register() {
   return (
     
     
-    <div className="wrapper">
-      <div class="bg" >
+    <>
+      <div class="bg">
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
@@ -103,35 +102,20 @@ function Register() {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            {/* <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-              <Form.Label>Username</Form.Label>
-              <InputGroup hasValidation>
-                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                <Form.Control
-                  type="text"
-                  placeholder="Username"
-                  aria-describedby="inputGroupPrepend"
-                  required
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please choose a username.
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group> */}
-             <Select
-      options={countries}
-      value={selectedCountry}
-      onChange={(selectedOption) => setSelectedCountry(selectedOption)}
-    />
+            <div style={{
+            marginTop:"4%",
+            width:"30%",
+            fontSize: "16px",
+            float:"left"
+          }}>
+          <Select
+              options={countries}
+              value={selectedCountry}
+              onChange={(selectedOption) => setSelectedCountry(selectedOption)}
+            />
+          </div>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} md="4" controlId="validationCustom03">
-              <Form.Label>nationality</Form.Label>
-              <Form.Control type="text" placeholder="nationality" required />
-              <Form.Control.Feedback type="invalid">
-                Please select your nationality.
-              </Form.Control.Feedback>
-            </Form.Group>
             <Form.Group as={Col} md="3" controlId="validationCustom04">
               <Form.Label>food allergy</Form.Label>
               <Form.Control type="text" placeholder="food allergy" required />
@@ -141,7 +125,7 @@ function Register() {
             </Form.Group>
             <Form.Group as={Col} md="3" controlId="validationCustom05">
               <Form.Label>phone</Form.Label>
-              <Form.Control type="number" placeholder="Zip" required />
+              <Form.Control type="number" placeholder="Phone" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid phone.
               </Form.Control.Feedback>
@@ -223,14 +207,12 @@ function Register() {
       </Button>
     </div>
             </Col>
-  
-
           </Row>
         </Container>
-
         {/* </Container> */}
       </div>
-    </div>
+    </>
   );
-}}
+}
+
 export default Register;
