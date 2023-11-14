@@ -51,7 +51,7 @@ export const Login = () => {
 
   return (
    
-    <>
+    <div className="wrapper">
     <div class="bg" style={{backgroundImage:`url(${bg})`}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
@@ -144,7 +144,7 @@ Sign In
       {/* </Container> */}
     </div>
 
-  </>
+  </div>
   );
 };
 export default Login;

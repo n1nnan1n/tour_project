@@ -43,8 +43,8 @@ function Register() {
   return (
     
     
-    <>
-      <div class="bg">
+    <div className="wrapper">
+      <div class="bg" >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
@@ -230,7 +230,7 @@ function Register() {
 
         {/* </Container> */}
       </div>
-    </>
+    </div>
   );
 }}
 export default Register;
