@@ -36,7 +36,7 @@ function navbar() {
         </header>
 
       
-        <Navbar data-bs-theme="dark" style={{height:"70px",paddingLeft:"25%",paddingRight:"20%",backgroundColor:"#063d8c"}} >
+        <Navbar data-bs-theme="dark" className="wrapper" style={{height:"70px",paddingLeft:"25%",paddingRight:"20%",backgroundColor:"#063d8c"}} >
               <Nav.Item >
                 <Nav.Link style={{marginRight:"50px"}} className='link' href="/">Home</Nav.Link>
               </Nav.Item>
