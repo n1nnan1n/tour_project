@@ -32,7 +32,7 @@ import icon4 from "./Pic/icon/4.svg";
 
 function Home() {
   return (
-    <>
+    <div className="wrapper">
       <div
         style={{
           width: "100%",
@@ -154,6 +154,7 @@ function Home() {
                         marginTop: "-150px",
                         fontSize: "30px",
                         fontWeight: "bold",
+                        
                       }}
                     >
                       1 DAT BKK CITY TOURS
@@ -253,7 +254,7 @@ function Home() {
         </Container>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 export default Home;
