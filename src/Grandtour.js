@@ -82,7 +82,8 @@ export default function Grandtour() {
         backgroundColor: "#063d8c",
         width: "60%",
         marginLeft: "20%",
-        borderRadius:"5px"
+        borderRadius:"5px",
+       
       }}
     >
       <Tab eventKey="description" title="description">
@@ -98,7 +99,7 @@ export default function Grandtour() {
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Tab>
-      <Tab eventKey="avaliability" title="avaliability">
+      <Tab eventKey="availability" title="availability">
         <Card.Body style={{
                 backgroundColor: "white",
                 width: "60%",

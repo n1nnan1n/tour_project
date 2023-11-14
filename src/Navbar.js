@@ -12,7 +12,7 @@ import { Container } from "react-bootstrap";
 function navbar() {
   return (
    
-    <div  style={{ textAlign:"center"}}>
+    <div className="wrapper" style={{ textAlign:"center"}}>
       <div>
         <header class="border-bottom lh-1 py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
@@ -36,7 +36,7 @@ function navbar() {
         </header>
 
       
-        <Navbar data-bs-theme="dark" style={{height:"70px",paddingLeft:"400px",backgroundColor:"#063d8c"}}>
+        <Navbar data-bs-theme="dark" style={{height:"70px",paddingLeft:"25%",paddingRight:"20%",backgroundColor:"#063d8c"}} >
               <Nav.Item >
                 <Nav.Link style={{marginRight:"50px"}} className='link' href="/">Home</Nav.Link>
               </Nav.Item>

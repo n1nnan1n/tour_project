@@ -11,9 +11,38 @@ import { Image } from "react-bootstrap";
 import trip_outside from "./Pic/firstpage/trip_outside.jpg";
 import button from "react-bootstrap";
 
+import { useEffect, useState } from "react";
+import Select from "react-select";
 
 function Register() {
+  const [validated, setValidated] = useState(false);
+    
+      const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+    
+        setValidated(true);
+      };
+      const CountrySelect = () => {
+        const [countries, setCountries] = useState([]);
+        const [selectedCountry, setSelectedCountry] = useState({});
+      
+        useEffect(() => {
+          fetch(
+            "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              setCountries(data.countries);
+              setSelectedCountry(data.userSelectValue);
+            });
+        }, []);
   return (
+    
+    
     <>
       <div class="bg">
         {/* <Container style={{ marginBottom: "20px" }}> */}
@@ -52,7 +81,83 @@ function Register() {
                 </div>
 
                 <Row style={{paddingLeft:'10%'}}>
-                  <Form>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="4" controlId="validationCustom01">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="First name"
+                defaultValue="Mark"
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="validationCustom02">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Last name"
+                defaultValue="Otto"
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            {/* <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+              <Form.Label>Username</Form.Label>
+              <InputGroup hasValidation>
+                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  aria-describedby="inputGroupPrepend"
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group> */}
+             <Select
+      options={countries}
+      value={selectedCountry}
+      onChange={(selectedOption) => setSelectedCountry(selectedOption)}
+    />
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="4" controlId="validationCustom03">
+              <Form.Label>nationality</Form.Label>
+              <Form.Control type="text" placeholder="nationality" required />
+              <Form.Control.Feedback type="invalid">
+                Please select your nationality.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="3" controlId="validationCustom04">
+              <Form.Label>food allergy</Form.Label>
+              <Form.Control type="text" placeholder="food allergy" required />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid food allergy.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="3" controlId="validationCustom05">
+              <Form.Label>phone</Form.Label>
+              <Form.Control type="number" placeholder="Zip" required />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid phone.
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          {/* <Form.Group className="mb-3">
+            <Form.Check
+              required
+              label="Agree to terms and conditions"
+              feedback="You must agree before submitting."
+              feedbackType="invalid"
+            />
+          </Form.Group> */}
+          
+        </Form>
+                  {/* <Form>
                     <Form.Group
                       as={Row}
                       className="mb-3"
@@ -106,7 +211,7 @@ function Register() {
                         />
                       </Col>
                     </Form.Group>
-                  </Form>
+                  </Form> */}
                 </Row>
               </div>          
     <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>
@@ -127,5 +232,5 @@ function Register() {
       </div>
     </>
   );
-}
+}}
 export default Register;

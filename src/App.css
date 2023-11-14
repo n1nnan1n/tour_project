@@ -4,7 +4,12 @@
 .App {
   text-align: center;
 }
- 
+.wrapper{
+  max-width: 100%;
+  
+  
+}
+
 h1,p{
   font-family: 'Kanit', sans-serif;
 }
