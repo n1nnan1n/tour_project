@@ -34,9 +34,10 @@ function navbar() {
             </div>
           </div>
         </header>
-
-      
-        <Navbar data-bs-theme="dark" className="wrapper" style={{height:"70px",paddingLeft:"25%",paddingRight:"20%",backgroundColor:"#063d8c"}} >
+<div className="wrapper" style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'1%'}} >
+      <Container  style={{paddingLeft:'20%'}} >
+        <Navbar data-bs-theme="dark">
+          
               <Nav.Item >
                 <Nav.Link style={{marginRight:"50px"}} className='link' href="/">Home</Nav.Link>
               </Nav.Item>
@@ -96,9 +97,10 @@ Cooking class
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>
-
+              
           </Navbar>
-      
+          </Container>
+          </div>
           </div>
           </div>
 
