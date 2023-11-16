@@ -17,6 +17,7 @@ h3 {
   font-family: "Kanit", sans-serif;
   color: white;
   font-size: 32px;
+  font-weight: bold;
 }
 h2{
   font-family: 'Inria Sans', sans-serif;
@@ -36,6 +37,17 @@ height: 200px;
 margin-top: 30px;
 
 }
+.fonthead{
+  color:#063d8c;
+  font-weight:bold;
+  padding-top:10px;
+  font-size:35px;
+  margin-bottom:20px;
+  font-family: 'Inria Sans'}
+.bgoneday{
+  margin-top:30px;
+   background-color:#4691d3; 
+   padding:20px;}
 .detail1day{
 position: absolute;
 width: 400px;
