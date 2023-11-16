@@ -29,8 +29,12 @@ import best from "./Pic/icon/best.svg";
 import icon2 from "./Pic/icon/2.svg";
 import icon3 from "./Pic/icon/3.svg";
 import icon4 from "./Pic/icon/4.svg";
+import Oneday from "./Oneday";
 
 function Home() {
+  const handleClick = event => {
+    <Oneday/>
+  };
   return (
     <div className="wrapper">
       <div
@@ -137,32 +141,32 @@ function Home() {
             </Row>
             {/* ---------------------------------------------------------------------------------------------- */}
             <Stack direction="horizontal" gap={5}>
-              <Carousel
+              <a href="Oneday">
+            <Carousel
                 data-bs-theme="dark"
                 className="menu1"
                 style={{ width: "25rem", height: "210px" }}
-              >
-                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
-                  <img
+                 onClick={handleClick}
+              > 
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                  <img 
+                  
                     className="d-block w-100"
                     src={grand1}
                     alt="First slide"
                   />
                   <Carousel.Caption>
                     <h5
-                      style={{
-                        marginTop: "-150px",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                        
-                      }}
+                     
                     >
                       1 DAT BKK CITY TOURS
                     </h5>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+               
+                <Carousel.Item style={{ width: "25rem", height: "300px" }} >
                   <img
+                
                     className="d-block w-100"
                     src={grand2}
                     alt="First slide"
@@ -175,17 +179,8 @@ function Home() {
                     alt="First slide"
                   />
                 </Carousel.Item>
-              </Carousel>
-              {/*   
-              <Card style={{ width: "18rem", height: "120px" }}>
-                <Card.Img variant="top" src={main_pic} />
-                <Card.Body>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                </Card.Body>
-              </Card> */}
+              </Carousel></a>
+             
               <Carousel
                 data-bs-theme="dark"
                 className="menu1"
@@ -199,11 +194,7 @@ function Home() {
                   />
                   <Carousel.Caption>
                     <h5
-                      style={{
-                        marginTop: "-18px",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                      }}
+                  
                     >
                       DAY TRIPS OUTSIDE BKK
                     </h5>
@@ -230,7 +221,7 @@ function Home() {
                 className="menu1"
                 style={{ width: "25rem", height: "210px" }}
               >
-                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
                   <img
                     className="d-block w-100"
                     src={customized}
@@ -238,11 +229,7 @@ function Home() {
                   />
                   <Carousel.Caption>
                     <h5
-                      style={{
-                        marginTop: "-150px",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                      }}
+                     
                     >
                       CUSTOMIZED TOUR
                     </h5>

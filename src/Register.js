@@ -131,71 +131,10 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          {/* <Form.Group className="mb-3">
-            <Form.Check
-              required
-              label="Agree to terms and conditions"
-              feedback="You must agree before submitting."
-              feedbackType="invalid"
-            />
-          </Form.Group> */}
+        
           
         </Form>
-                  {/* <Form>
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextEmail"
-                    >
-                      <Col sm="10">
-                        <Form.Label  style={{float:'left',fontWeight:'bold'}}>
-                          Firstname
-                        </Form.Label>
-                        <Form.Control type="text" placeholder="Firstname" />
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextEmail"
-                    >
-                      <Col sm="10">
-                        <Form.Label style={{float:'left',fontWeight:'bold'}}>
-                          Email
-                        </Form.Label>
-                        <Form.Control type="email" placeholder="Email" />
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextPassword"
-                    >
-                      <Col sm="10">
-                        <Form.Label  style={{float:'left',fontWeight:'bold'}}>
-                          Password
-                        </Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group
-                      as={Row}
-                      className="mb-3"
-                      controlId="formPlaintextPassword"
-                    >
-                      <Col sm="10">
-                        <Form.Label style={{float:'left',fontWeight:'bold'}}>
-                          Confirm Password
-                        </Form.Label>
-                        <Form.Control
-                          type=" ConfirmPassword"
-                          placeholder=" ConfirmPassword"
-                        />
-                      </Col>
-                    </Form.Group>
-                  </Form> */}
+                
                 </Row>
               </div>          
     <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>

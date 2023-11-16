@@ -6,6 +6,7 @@ import Home from './Home'
 import Login from './Login'
 import Footer from './Footer';
 import Grandtour from './Grandtour';
+import Oneday from './Oneday';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="Login" element={<Login/>} />
                 <Route path="Footer" element={<Footer/>} />
                 <Route path="grandtour" element={<Grandtour/>} />
+                <Route path="Oneday" element={<Oneday/>} />
              
             </Routes>
           </BrowserRouter>

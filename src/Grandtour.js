@@ -78,21 +78,12 @@ export default function Grandtour() {
         <Tabs
       defaultActiveKey="profile"
       id="uncontrolled-tab-example"
-      style={{
-        backgroundColor: "#063d8c",
-        width: "60%",
-        marginLeft: "20%",
-        borderRadius:"5px",
-       
-      }}
+      className="tab"
+      data-bs-theme="dark"
     >
       <Tab eventKey="description" title="description">
-        <Card.Body style={{
-                backgroundColor: "white",
-                width: "60%",
-                marginLeft: "20%"
-                }}>
-          <Card.Title>description</Card.Title>
+        <Card.Body className="cardgrand">
+          <Card.Title >description</Card.Title>
           <Card.Text>
             With supporting text below as a natural lead-in to additional content.
           </Card.Text>
@@ -100,11 +91,7 @@ export default function Grandtour() {
         </Card.Body>
       </Tab>
       <Tab eventKey="availability" title="availability">
-        <Card.Body style={{
-                backgroundColor: "white",
-                width: "60%",
-                marginLeft: "20%"
-                }}>
+        <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional content.
@@ -113,11 +100,7 @@ export default function Grandtour() {
           </Card.Body>
       </Tab>
       <Tab eventKey="map" title="map">
-      <Card.Body style={{
-                backgroundColor: "white",
-                width: "60%",
-                marginLeft: "20%"
-                }}>
+      <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional content.
@@ -126,76 +109,27 @@ export default function Grandtour() {
           </Card.Body>
       </Tab>
       <Tab eventKey="location" title="location">
-      <Card.Body style={{
-                backgroundColor: "white",
-                width: "60%",
-                marginLeft: "20%"
-                }}>
+      <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            
           </Card.Body>
       </Tab>
       <Tab eventKey="review" title="review">
-      <Card.Body style={{
-                backgroundColor: "white",
-                width: "60%",
-                marginLeft: "20%"
-                }}>
+      <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
               With supporting text below as a natural lead-in to additional content.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            
           </Card.Body>
       </Tab>
     </Tabs>
 
 
-    {/* <Card style={{
-              backgroundColor: "#063d8c",
-              width: "60%",
-              marginLeft: "20%",
-            }}>
-      <Card.Header>
-      <Nav variant="tabs" defaultActiveKey="/home" >
-              <Nav.Item>
-                <Nav.Link href="">description</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="link-1">avaliability</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                map
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                location
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                review
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-      </Card.Header>
-      <Card.Body style={{
-              backgroundColor: "white",
-              }}>
-        <Card.Title>description</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card> */}
-  
-
+   
       </div>
     </>
   );
