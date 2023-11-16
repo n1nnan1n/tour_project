@@ -69,13 +69,13 @@ export const Login = () => {
             />
           </Col>
           <Col>
-            {" "}
-            <div class="border-bottom lh-1 py-3">
+            <div style={{ marginTop: "30%",width:'100%',height:'60%',backgroundColor:'white',borderRadius:'10px'}}>
+       
               <div class="row flex-nowrap justify-content-between align-items-center">
                 <div
                   class="col-12 text-center"
                   style={{
-                    marginTop: "30%",
+                   
                     marginBottom: "20px",
                     fontSize: "30px",
                     fontWeight: "bold",
@@ -83,7 +83,7 @@ export const Login = () => {
                     textAlign: "center",
                   }}
                 >
-                  <h>LOGIN</h>
+                  <h2 className="fonthead" style={{color:'black',marginTop:'20px'}}>LOGIN</h2>
                 </div>
               </div>
 
@@ -99,7 +99,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label  style={{float:'left',fontWeight:'bold'}}>
-                      Email
+                      <h2>Email</h2>
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
                     </Col>
@@ -112,7 +112,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label style={{float:'left',fontWeight:'bold'}}>
-                        Email
+                        <h2>password</h2>
                       </Form.Label>
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
                     </Col>
@@ -121,20 +121,20 @@ export const Login = () => {
       
                 </Form>
               </Row>
-            </div>          
-  <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>
+                      
+  <div className="d-grid gap-2" style={{width:'50%',marginLeft:'25%',marginTop:'30px'}}>
   
 <Button onClick={signIn} className='button'  size="lg">
 Sign In
     </Button>
-    <Button onClick={Register} variant="secondary" size="lg">
+    <Button onClick={Register} className='button2' variant="secondary" size="lg">
     Register 
     </Button>
-    <Button onClick={signInWithGoogle} variant="secondary" size="lg">
+    {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
     <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />
     SignIn With Google
-     </Button>
-  </div>
+     </Button> */}
+  </div></div>
           </Col>
 
 
