@@ -56,7 +56,7 @@ function Home() {
 
       <div
         class=" lh-1 py-3"
-        style={{ width: "100%", height: "300px", backgroundColor: "white" }}
+        style={{ width: "100%", height: "400px", backgroundColor: "white" }}
       >
         <Container style={{ marginBottom: "25px" }}>
           <Row>
@@ -65,8 +65,9 @@ function Home() {
                 style={{
                   fontSize: "28px",
                   fontWeight: "bold",
-                  marginTop: "10px",
-                  marginBottom:"80px"
+                  marginTop: "50px",
+                  marginBottom:"80px",
+                  fontFamily:'Roboto Slab'
                 }}
               >
                 Why customers choose us
@@ -76,44 +77,48 @@ function Home() {
           <Row md={4}>
             <Col style={{ textAlign: "center" }}>
               {" "}
-              <img
+              {/* <img
                 style={{ width: "100px", height: "100px" }}
                 src={best}
                 alt="First slide"
-              />
-              <p style={{ marginTop: "20px", fontSize: "20px" }}>
+              /> */}
+              <FontAwesomeIcon icon={faStar} style={{color: "#fecb3e",fontSize:'60px'}} />
+              <p style={{ marginTop: "40px", fontSize: "20px" ,fontFamily:'Roboto Slab'}}>
                 Best Private tour
               </p>
             </Col>
             <Col style={{ textAlign: "center" }}>
-              <img
+              {/* <img
                 style={{ width: "100px", height: "100px" }}
                 src={icon2}
                 alt="First slide"
-              />
-              <p style={{ marginTop: "20px", fontSize: "20px" }}>
+              /> */}
+              <FontAwesomeIcon icon={faHeart} style={{color: "#ED5252",fontSize:'60px'}} />
+              <p style={{ marginTop: "40px", fontSize: "20px",fontFamily:'Roboto Slab' }}>
                 Passionate service
               </p>{" "}
             </Col>
             <Col style={{ textAlign: "center" }}>
-              <img
+              {/* <img
                 style={{ width: "100px", height: "100px" }}
                 src={icon3}
                 alt="First slide"
-              />
-              <p style={{ marginTop: "20px", fontSize: "20px" }}>
+              /> */}
+              <FontAwesomeIcon icon={faUser} style={{color: "#88D261",fontSize:'60px'}} />
+              <p style={{ marginTop: "40px", fontSize: "20px" ,fontFamily:'Roboto Slab'}}>
                 {" "}
                 Respect the locals culture & support localsr
               </p>{" "}
             </Col>
 
             <Col style={{ textAlign: "center" }}>
-              <img
+              {/* <img
                 style={{ width: "100px", height: "100px" }}
                 src={icon4}
                 alt="First slide"
-              />
-              <p style={{ marginTop: "20px", fontSize: "20px" }}>
+              /> */}
+              <FontAwesomeIcon icon={faEarthAmericas} style={{color: "#3a88fe",fontSize:'60px'}} />
+              <p style={{ marginTop: "40px", fontSize: "20px",fontFamily:'Roboto Slab' }}>
                 {" "}
                 Multi languages tours
               </p>{" "}
@@ -122,7 +127,7 @@ function Home() {
         </Container>
       </div>
 
-      <div style={{ backgroundColor: "#063d8c" ,height:"350px",marginTop:'30px'}}>
+      <div style={{ backgroundColor: "#063d8c" ,height:"350px",marginTop:'30px',paddingTop:'20px'}}>
         <Container>
           <div class="lh-1 py-3">
             <Row>
@@ -132,7 +137,8 @@ function Home() {
                     fontSize: "28px",
                     fontWeight: "bold",
                     color: "white",
-                    marginBottom:"30px"
+                    marginBottom:"30px",
+                    fontFamily:'Roboto Slab'
                   }}
                 >
                   Our Tours

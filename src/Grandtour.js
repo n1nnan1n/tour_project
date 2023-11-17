@@ -75,12 +75,14 @@ export default function Grandtour() {
           </div>
           
         </Container>
-        <Tabs
+       <div style={{ marginBottom: "30px",width:'90%',marginLeft:"70px" }}>
+       <Tabs
       defaultActiveKey="profile"
       id="uncontrolled-tab-example"
       className="tab"
       data-bs-theme="dark"
     >
+      
       <Tab eventKey="description" title="description">
         <Card.Body className="cardgrand">
           <Card.Title >description</Card.Title>
@@ -90,7 +92,7 @@ export default function Grandtour() {
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Tab>
-      <Tab eventKey="availability" title="availability">
+      <Tab eventKey="Itinerary" title="Itinerary">
         <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
@@ -99,7 +101,7 @@ export default function Grandtour() {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
       </Tab>
-      <Tab eventKey="map" title="map">
+      <Tab eventKey="Price" title="Tour Price for Private tour">
       <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>
@@ -108,15 +110,7 @@ export default function Grandtour() {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
       </Tab>
-      <Tab eventKey="location" title="location">
-      <Card.Body className="cardgrand">
-            <Card.Title>description</Card.Title>
-            <Card.Text>
-              With supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-            
-          </Card.Body>
-      </Tab>
+      
       <Tab eventKey="review" title="review">
       <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
@@ -127,7 +121,7 @@ export default function Grandtour() {
           </Card.Body>
       </Tab>
     </Tabs>
-
+    </div> 
 
    
       </div>

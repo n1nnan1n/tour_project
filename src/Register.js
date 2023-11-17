@@ -43,7 +43,7 @@ function Register() {
     
     
     <>
-      <div class="bg">
+      <div style={{backgroundColor:'#ACAF92'}}>
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>

@@ -22,7 +22,7 @@ function navbar() {
                 class="blog-header-logo text-body-emphasis text-decoration-none"
                 href="#"
               >
-              <h1 style={{fontSize:'28px',fontWeight:'bold'}}>BEYOND THE TRAILS</h1>  
+              <h1 style={{fontSize:'28px',fontWeight:'bold',fontFamily: "Playfair Display"}}>BEYOND THE TRAILS</h1>  
               </a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center" >
@@ -34,19 +34,19 @@ function navbar() {
             </div>
           </div>
         </header>
-<div className="wrapper" style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'1%'}} >
-      <Container  style={{paddingLeft:'20%'}} >
+<div className="wrapper" style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'5px'}} >
+      <Container  style={{paddingLeft:'10%'}} >
         <Navbar data-bs-theme="dark">
           
               <Nav.Item >
-                <Nav.Link style={{marginRight:"50px"}} className='link' href="/">Home</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} className='link' href="#">About Us</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="#">About Us</Nav.Link>
               </Nav.Item>
       
    
-              <NavDropdown style={{marginRight:"50px"}} className='link' title="Day Trips" id="Dropdown" >
+              <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Day Trips" id="Dropdown fontnav" >
                 <NavDropdown.Item eventKey="4.1" href="Grandtour">Bangkok grand tour
 </NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">
@@ -79,14 +79,14 @@ Cooking class
               </NavDropdown>
 
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} className='link' eventKey="#">Customized tour</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} className='link' eventKey="#">
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#">
                   Review
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown style={{marginRight:"50px"}} className='link' title="Language" id="nav-dropdown">
+              <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Language" id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1">English</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Thai</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.3">
