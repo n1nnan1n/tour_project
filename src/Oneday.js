@@ -17,11 +17,11 @@ import ig2 from './Pic/tiktoktour/7KL1FVGE.jpeg'
 import ig3 from './Pic/tiktoktour/hoQ4SNgr.jpeg'
 import ig4 from './Pic/tiktoktour/ky638y2X.jpeg'
 import ig5 from './Pic/tiktoktour/dyiZsG7c.jpeg'
-import tattoo1 from './Pic/tattoo/JBbbK7py.jpeg'
-import tattoo2 from './Pic/tattoo/JhPWTdEQ.jpeg'
-import tattoo3 from './Pic/tattoo/lJzSFBk7.jpeg'
-import tattoo4 from './Pic/tattoo/r8W1u7ao.jpeg'
-import tattoo5 from './Pic/tattoo/vF0Am0AK.jpeg'
+import tattoo1 from './Pic/tattoo/501329.jpg'
+import tattoo2 from './Pic/tattoo/496118.jpg'
+import tattoo3 from './Pic/tattoo/501326.jpg'
+import tattoo4 from './Pic/tattoo/501328.jpg'
+import tattoo5 from './Pic/tattoo/488467.jpg'
 import Button from 'react-bootstrap/Button';
 import Grandtour from './Grandtour';
 import Footer from './Footer';

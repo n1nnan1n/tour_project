@@ -20,7 +20,7 @@ import button from "react-bootstrap";
 import Register from "./Register.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
-import bg from './Pic/firstpage/grand5jpg.jpg'
+import bg from './Pic/bg.jpg'
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
