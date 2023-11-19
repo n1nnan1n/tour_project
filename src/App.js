@@ -7,7 +7,8 @@ import Login from './Login'
 import Footer from './Footer';
 import Grandtour from './Grandtour';
 import Oneday from './Oneday';
-
+import About from './About';
+import Customized from './Customized';
 function App() {
   return (
         <div className="App">
@@ -20,7 +21,8 @@ function App() {
                 <Route path="Footer" element={<Footer/>} />
                 <Route path="grandtour" element={<Grandtour/>} />
                 <Route path="Oneday" element={<Oneday/>} />
-             
+                <Route path="About" element={<About/>} />
+                <Route path="Customized" element={<Customized/>} />
             </Routes>
           </BrowserRouter>
           

@@ -52,7 +52,7 @@ export const Login = () => {
   return (
    
     <div className="wrapper">
-    <div class="bg" style={{backgroundImage:`url(${bg})`}}>
+    <div class="bg" style={{backgroundImage:`url(${bg})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
         <Row>

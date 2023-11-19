@@ -42,7 +42,7 @@ function navbar() {
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="#">About Us</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="About">About Us</Nav.Link>
               </Nav.Item>
       
    
@@ -79,7 +79,7 @@ Cooking class
               </NavDropdown>
 
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#">Customized tour</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="Customized">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#">
