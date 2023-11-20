@@ -101,7 +101,7 @@ export default function Grandtour() {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
       </Tab>
-      <Tab eventKey="Price" title="Tour Price for Private tour">
+      <Tab eventKey="Price" title="Price">
       <Card.Body className="cardgrand">
             <Card.Title>description</Card.Title>
             <Card.Text>

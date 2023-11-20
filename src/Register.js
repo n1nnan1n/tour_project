@@ -10,7 +10,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Image } from "react-bootstrap";
 import trip_outside from "./Pic/firstpage/trip_outside.jpg";
 import button from "react-bootstrap";
-
+import bg from './Pic/bg.jpg'
 import { useEffect, useState } from "react";
 import Select from "react-select";
 
@@ -43,7 +43,7 @@ function Register() {
     
     
     <>
-      <div style={{backgroundColor:'#ACAF92'}}>
+      <div  class="bg" style={{backgroundImage:`url(${bg})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
@@ -66,16 +66,16 @@ function Register() {
                 <div class="row flex-nowrap justify-content-between align-items-center">
                   <div
                     class="col-12 text-center"
-                    style={{
+                    
+                  >
+                    <p style={{
                       marginTop: "30%",
                       marginBottom: "20px",
                       fontSize: "30px",
                       fontWeight: "bold",
                       color: "white",
                       textAlign: "center",
-                    }}
-                  >
-                    <h>Register</h>
+                    }}>Register</p>
                   </div>
                 </div>
 
@@ -83,7 +83,7 @@ function Register() {
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" controlId="validationCustom01">
-              <Form.Label>First name</Form.Label>
+              <Form.Label><p style={{color:'white'}}>First name</p></Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -93,7 +93,7 @@ function Register() {
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="validationCustom02">
-              <Form.Label>Last name</Form.Label>
+              <Form.Label><p style={{color:'white'}}>Last name</p></Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -117,14 +117,14 @@ function Register() {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="3" controlId="validationCustom04">
-              <Form.Label>food allergy</Form.Label>
+              <Form.Label><p style={{color:'white'}}>food allergy</p></Form.Label>
               <Form.Control type="text" placeholder="food allergy" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid food allergy.
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="3" controlId="validationCustom05">
-              <Form.Label>phone</Form.Label>
+              <Form.Label><p style={{color:'white'}}>phone</p></Form.Label>
               <Form.Control type="number" placeholder="Phone" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid phone.
@@ -138,11 +138,11 @@ function Register() {
                 </Row>
               </div>          
     <div className="d-grid gap-2" style={{marginTop:'30px',width:'50%',marginLeft:'25%'}}>
-      <Button className='button'  size="lg">
-        REGISTER
+      <Button className='button'  size="sm">
+        <p>REGISTER</p>
       </Button>
-      <Button variant="secondary" size="lg">
-        LOGIN
+      <Button variant="secondary" href='Login' size="sm">
+        <p>LOGIN</p>
       </Button>
     </div>
             </Col>

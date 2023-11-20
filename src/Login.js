@@ -83,7 +83,7 @@ export const Login = () => {
                     textAlign: "center",
                   }}
                 >
-                  <h2 className="fonthead" style={{color:'black',marginTop:'20px'}}>LOGIN</h2>
+                  <p style={{color:'black',marginTop:'20px'}}>LOGIN</p>
                 </div>
               </div>
 
@@ -99,7 +99,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label  style={{float:'left',fontWeight:'bold'}}>
-                      <h2>Email</h2>
+                      <p>Email</p>
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
                     </Col>
@@ -112,7 +112,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label style={{float:'left',fontWeight:'bold'}}>
-                        <h2>password</h2>
+                        <p>password</p>
                       </Form.Label>
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
                     </Col>
@@ -124,11 +124,11 @@ export const Login = () => {
                       
   <div className="d-grid gap-2" style={{width:'50%',marginLeft:'25%',marginTop:'30px'}}>
   
-<Button onClick={signIn} className='button'  size="lg">
-Sign In
+<Button onClick={signIn} className='button'  size="sm"><p>
+Sign In</p>
     </Button>
-    <Button onClick={Register} className='button2' variant="secondary" size="lg">
-    Register 
+    <Button onClick={Register} className='button2' variant="secondary" size="sm"><p>
+    Register </p>
     </Button>
     {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
     <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />
