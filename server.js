@@ -2,8 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+
 const app = express();
 
+const cors = require("cors");
+
+app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net/tourapp?retryWrites=true&w=majority', {
