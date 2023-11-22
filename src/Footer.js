@@ -41,10 +41,10 @@ function Footer() {
               src={tripadvisor}
               fluid
             /></a>
-            <p style={{float:'left',marginLeft:'80px',fontWeight:'bold'}}>Instagram</p>
-            <p style={{float:'left',marginLeft:'75px',fontWeight:'bold'}}>Tiktok</p>
-            <p style={{float:'left',marginLeft:'80px',fontWeight:'bold'}}>Facebook</p>
-            <p style={{float:'left',marginLeft:'60px',fontWeight:'bold'}}>Tripadvisor</p>
+            <p style={{float:'left',marginLeft:'80px',fontWeight:'bold',fontSize:'18px'}}>Instagram</p>
+            <p style={{float:'left',marginLeft:'70px',fontWeight:'bold',fontSize:'18px'}}>Tiktok</p>
+            <p style={{float:'left',marginLeft:'80px',fontWeight:'bold',fontSize:'18px'}}>Facebook</p>
+            <p style={{float:'left',marginLeft:'60px',fontWeight:'bold',fontSize:'18px'}}>Tripadvisor</p>
           </Col>
         </Row>
         <Row>
