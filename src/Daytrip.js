@@ -3,27 +3,32 @@
     import Container from 'react-bootstrap/Container';
     import Row from 'react-bootstrap/Row';
     import Col from 'react-bootstrap/Col';
-    import grand1 from './Pic/grandtour/grand1.jpg'
-    import grand2 from './Pic/grandtour/grand5jpg.jpg'
-    import grand3 from './Pic/grandtour/-86SWmN5.jpeg'
-    import grand4 from './Pic/grandtour/1AqWo8m6.jpeg'
-    import grand5 from './Pic/grandtour/C78X-Lc-.jpeg'
-    import unseen1 from './Pic/unseentour/8kF2b78O.jpeg'
-    import unseen2 from './Pic/unseentour/FY0eBCKH.jpeg'
-    import unseen3 from './Pic/unseentour/InD1O0dN.jpeg'
-    import unseen4 from './Pic/unseentour/RSYJH54h.jpeg'
-    import unseen5 from './Pic/unseentour/b4iW97E7.jpeg'
-    import ig1 from './Pic/tiktoktour/1Kc_vTa5.jpeg'
-    import ig2 from './Pic/tiktoktour/7KL1FVGE.jpeg'
-    import ig3 from './Pic/tiktoktour/hoQ4SNgr.jpeg'
-    import ig4 from './Pic/tiktoktour/ky638y2X.jpeg'
-    import ig5 from './Pic/tiktoktour/dyiZsG7c.jpeg'
-    import tattoo1 from './Pic/tattoo/501329.jpg'
-    import tattoo2 from './Pic/tattoo/496118.jpg'
-    import tattoo3 from './Pic/tattoo/501326.jpg'
-    import tattoo4 from './Pic/tattoo/501328.jpg'
-    import tattoo5 from './Pic/tattoo/488467.jpg'
+    import market1 from './Pic/market/2r4L1Vss.jpeg'
+    import market2 from './Pic/market/ErenTsct.jpeg'
+    import market3 from './Pic/market/Qy4Kr5pT.jpeg'
+    import market4 from './Pic/market/R1qJe3JH.jpeg'
+    import market5 from './Pic/market/VquG6kFR.jpeg'
+    import half1 from './Pic/half/ErenTsct.jpeg'
+    import half2 from './Pic/half/Hvg_zWjq.jpeg'
+    import half3 from './Pic/half/Qy4Kr5pT.jpeg'
+    import half4 from './Pic/half/VquG6kFR.jpeg'
+    import half5 from './Pic/half/weiVlRuV.jpeg'
+   import ayutthaya1 from './Pic/ayutthaya/8HISGCUa.jpeg'
+   import ayutthaya2 from './Pic/ayutthaya/EOD1klzs.jpeg'
+   import ayutthaya3 from './Pic/ayutthaya/LIaolqBL.jpeg'
+   import ayutthaya4 from './Pic/ayutthaya/UvLFbWIl.jpeg'
+   import ayutthaya5 from './Pic/ayutthaya/g7dIgG1L.jpeg'
+    import farm1 from './Pic/farm/7yMzxUoi.jpeg'
+    import farm2 from './Pic/farm/GtoxgKEP.jpeg'
+    import farm3 from './Pic/farm/Han8sAGC.jpeg'
+    import farm4 from './Pic/farm/JYZ_VBPT.jpeg'
+    import farm5 from './Pic/farm/Zz2zqxOF.jpeg'
     import Button from 'react-bootstrap/Button';
+    import cook1 from './Pic/cook/EmJfLCeC.jpeg'
+    import cook2 from './Pic/cook/HLlDHAqW.jpeg'
+    import cook3 from './Pic/cook/L2p2pdtg.jpeg'
+    import cook4 from './Pic/cook/RFn05awM.jpeg'
+    import cook5 from './Pic/cook/hHsfRoBU.jpeg'
     import Grandtour from './Grandtour';
     import Footer from './Footer';
     export default function Daytrip() {
@@ -35,7 +40,7 @@
           <Row >
             <Col sm={8} >  <img
                     style={{ width: "100%", height: "60vh" }}
-                    src={grand1}
+                    src={market1}
                     alt="First slide"
                   /></Col>
             <Col sm={3}>
@@ -64,22 +69,22 @@
           <Row md={4} >
             <Col >  <img
             className='imgall'
-                    src={grand5}
+                    src={market2}
                     alt="First slide"
                   /></Col>
             <Col ><img
             className='imgall'
-                    src={grand2}
+                    src={market3}
                     alt="First slide"
                   /></Col>
             <Col><img
             className='imgall'
-                    src={grand3}
+                    src={market4}
                     alt="First slide"
                   /></Col>
             <Col><img
             className='imgall'
-                    src={grand4}
+                    src={market5}
                     alt="First slide"
                   /></Col>
           </Row>
@@ -91,7 +96,7 @@
                <Row >
                  <Col sm={8} >  <img
                          style={{ width: "100%", height: "60vh" }}
-                         src={unseen2}
+                         src={half1}
                          alt="First slide"
                        /></Col>
                  <Col sm={3}>
@@ -121,22 +126,22 @@
                <Row md={4} >
                  <Col >  <img
                  className='imgall'
-                         src={unseen1}
+                         src={half2}
                          alt="First slide"
                        /></Col>
                  <Col ><img
                  className='imgall'
-                         src={unseen3}
+                         src={half3}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={unseen4}
+                         src={half4}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={unseen5}
+                         src={half5}
                          alt="First slide"
                        /></Col>
                </Row>
@@ -148,7 +153,7 @@
                <Row >
                  <Col sm={8} >  <img
                          style={{ width: "100%", height: "60vh" }}
-                         src={ig3}
+                         src={ayutthaya1}
                          alt="First slide"
                        /></Col>
                  <Col sm={3}>
@@ -178,22 +183,22 @@
                <Row md={4} >
                  <Col >  <img
                  className='imgall'
-                         src={ig2}
+                         src={ayutthaya2}
                          alt="First slide"
                        /></Col>
                  <Col ><img
                  className='imgall'
-                         src={ig1}
+                         src={ayutthaya3}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={ig4}
+                         src={ayutthaya4}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={ig5}
+                         src={ayutthaya5}
                          alt="First slide"
                        /></Col>
                </Row>
@@ -203,9 +208,9 @@
          <div className='bgoneday'>
          <Container>
                <Row >
-                 <Col sm={8} >  <img
-                         style={{ width: "100%", height: "60vh" }}
-                         src={tattoo1}
+                 <Col sm={8}style={{overflow:'Hidden',height:'515px'}}>  <img
+                         style={{ width: "100%", height: "80vh",marginTop:'-30px' }}
+                         src={farm1}
                          alt="First slide"
                        /></Col>
                  <Col sm={3}>
@@ -234,24 +239,26 @@
              </Container>
          
                <Row md={4} >
-                 <Col >  <img
+                 <Col  > <img
                  className='imgall'
-                         src={tattoo2}
+                         src={farm2}
                          alt="First slide"
                        /></Col>
-                 <Col ><img
+                 <Col style={{overflow:'Hidden',marginTop:'30px',height:'200px'}}><img
                  className='imgall'
-                         src={tattoo3}
+                         src={farm3}
+                         style={{height:'400px',marginTop:'-150px'}}
+                         alt="First slide"
+                       /></Col>
+                 <Col style={{overflow:'Hidden',marginTop:'30px',height:'200px'}}><img
+                 className='imgall'
+                         src={farm4}
+                         style={{height:'400px',marginTop:'-150px'}}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={tattoo4}
-                         alt="First slide"
-                       /></Col>
-                 <Col><img
-                 className='imgall'
-                         src={tattoo5}
+                         src={farm5}
                          alt="First slide"
                        /></Col>
                </Row>
@@ -263,7 +270,7 @@
                <Row >
                  <Col sm={8} >  <img
                          style={{ width: "100%", height: "60vh" }}
-                         src={tattoo1}
+                         src={cook1}
                          alt="First slide"
                        /></Col>
                  <Col sm={3}>
@@ -294,22 +301,22 @@
                <Row md={4} >
                  <Col >  <img
                  className='imgall'
-                         src={tattoo2}
+                         src={cook2}
                          alt="First slide"
                        /></Col>
                  <Col ><img
                  className='imgall'
-                         src={tattoo3}
+                         src={cook3}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={tattoo4}
+                         src={cook4}
                          alt="First slide"
                        /></Col>
                  <Col><img
                  className='imgall'
-                         src={tattoo5}
+                         src={cook5}
                          alt="First slide"
                        /></Col>
                </Row>
