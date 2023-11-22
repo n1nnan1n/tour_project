@@ -98,7 +98,7 @@ export const Login = () => {
                     controlId="formPlaintextEmail"
                   >
                     <Col sm="10">
-                      <Form.Label  style={{float:'left',fontWeight:'bold'}}>
+                      <Form.Label  style={{float:'left',color:'black'}}>
                       <p>Email</p>
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
@@ -111,7 +111,7 @@ export const Login = () => {
                     controlId="formPlaintextEmail"
                   >
                     <Col sm="10">
-                      <Form.Label style={{float:'left',fontWeight:'bold'}}>
+                      <Form.Label style={{float:'left',color:'black'}}>
                         <p>password</p>
                       </Form.Label>
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
@@ -122,13 +122,13 @@ export const Login = () => {
                 </Form>
               </Row>
                       
-  <div className="d-grid gap-2" style={{width:'50%',marginLeft:'25%',marginTop:'30px'}}>
+  <div className="d-grid gap-2" style={{width:'30%',marginLeft:'35%',marginTop:'30px'}}>
   
-<Button onClick={signIn} className='button'  size="sm"><p>
-Sign In</p>
+<Button onClick={signIn} className='button'  size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
+Sign In
     </Button>
-    <Button onClick={Register} className='button2' variant="secondary" size="sm"><p>
-    Register </p>
+    <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
+    Register
     </Button>
     {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
     <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />

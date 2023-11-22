@@ -1,7 +1,9 @@
 import React from 'react'
 import pic from './Pic/tiktoktour/hoQ4SNgr.jpeg'
+import Footer from "./Footer";
 export default function Customized() {
   return (
+   <>
     <div className="wrapper" style={{paddingLeft:'10%',paddingRight:'10%'}}>
     <h1 style={{padding:'20px'}}>Customized</h1>
     <div className="fillter" style={{backgroundColor:'#FFFAEC',width:"100%",height:'100%',padding:'20px'}}>
@@ -16,7 +18,11 @@ If you’d like us to customize the tour program for you, please send us your re
                 src={pic}
                 alt="First slide"
               /> 
+            
         </div>
+      
         </div>
+          <Footer/></>
+   
   )
 }

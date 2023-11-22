@@ -16,7 +16,16 @@ import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-
+import axios from "axios";
+import Footer from "./Footer";
+const url ='https://localhost:3000/tourinfo';
+axios.get(url)
+  .then((Response)=>{
+    console.log(Response);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
 const images = [
   {
     original: `${pic1}`,
@@ -125,6 +134,7 @@ export default function Grandtour() {
 
    
       </div>
+      <Footer />
     </>
   );
 }

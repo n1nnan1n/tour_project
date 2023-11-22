@@ -25,6 +25,7 @@ import tattoo5 from './Pic/tattoo/488467.jpg'
 import Button from 'react-bootstrap/Button';
 import Grandtour from './Grandtour';
 import Footer from './Footer';
+import { Hidden } from '@mui/material';
 export default function Oneday() {
   return (
 <>
@@ -233,15 +234,17 @@ export default function Oneday() {
          </Container>
      
            <Row md={4} >
-             <Col >  <img
+             <Col style={{overflow:'Hidden',marginTop:'30px',height:'200px'}}>  <img
              className='imgall'
                      src={tattoo2}
+                     style={{marginTop:'-70px',height:'300px'}}
                      alt="First slide"
                    /></Col>
-             <Col ><img
+             <Col style={{overflow:'Hidden',marginTop:'30px',height:'200px'}}><img
              className='imgall'
                      src={tattoo3}
                      alt="First slide"
+                     style={{marginTop:'-70px',height:'370px'}}
                    /></Col>
              <Col><img
              className='imgall'

@@ -186,7 +186,7 @@ function Home() {
                   />
                 </Carousel.Item>
               </Carousel></a>
-             
+              <a href="Daytrip">
               <Carousel
                 data-bs-theme="dark"
                 className="menu1"
@@ -206,6 +206,7 @@ function Home() {
                     </h5>
                   </Carousel.Caption>
                 </Carousel.Item>
+
                 <Carousel.Item style={{ width: "25rem", height: "225px" }}>
                   <img
                     className="d-block w-100"
@@ -222,6 +223,8 @@ function Home() {
                   />
                 </Carousel.Item>
               </Carousel>
+              </a>
+              <a href="Customized">
               <Carousel
                 data-bs-theme="dark"
                 className="menu1"
@@ -242,6 +245,7 @@ function Home() {
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
+              </a>
             </Stack>
           </div>
         </Container>

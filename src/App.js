@@ -9,6 +9,7 @@ import Grandtour from './Grandtour';
 import Oneday from './Oneday';
 import About from './About';
 import Customized from './Customized';
+import Daytrip from './Daytrip';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="Oneday" element={<Oneday/>} />
                 <Route path="About" element={<About/>} />
                 <Route path="Customized" element={<Customized/>} />
+                <Route path="Daytrip" element={<Daytrip/>} />
               
             </Routes>
           </BrowserRouter>
