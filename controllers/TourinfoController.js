@@ -14,7 +14,8 @@ const getTourByName = async (req, res) => {
 
   try {
     // Using findOne to find a tour by its name
-    const tour = await Tour.findOne({ tour_name: { $regex: new RegExp(tourName, 'i') } });
+    // const tour = await Tour.findOne({ tour_name: { $regex: new RegExp(tourName, 'i') } });
+    const tour = await Tour.findOne({ tour_name: tourName });
 
     if (!tour) {
       return res.status(404).json({ error: 'Tour not found' });

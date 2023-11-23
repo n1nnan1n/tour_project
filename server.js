@@ -23,6 +23,6 @@ app.post('/login',LoginController.login);
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 
-app.listen(9000, () => {
-  console.log('Application is running on port 9000');
+app.listen(3000, () => {
+  console.log('Application is running on port 3000');
 });
