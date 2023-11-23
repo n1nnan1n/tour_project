@@ -1,4 +1,4 @@
-const Tour = require('../models/Tour');
+const Tour = require('../models/tour');
 
 const getAllTourInfo = async (req, res) => {
   try {
