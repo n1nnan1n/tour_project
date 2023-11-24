@@ -87,15 +87,12 @@ Cooking class
                 </Nav.Link>
               </Nav.Item>
               <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Language" id="nav-dropdown">
-                <NavDropdown.Item eventKey="4.1">English</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2">Thai</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.3">
-                  Something else here
-                </NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.1">English 🇬🇧</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">Chinese 🇨🇳</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">Germainy 🇬🇧</NavDropdown.Item>
+                
                 <NavDropdown.Divider />
-                <NavDropdown.Item eventKey="4.4">
-                  Separated link
-                </NavDropdown.Item>
+            
               </NavDropdown>
               
           </Navbar>
