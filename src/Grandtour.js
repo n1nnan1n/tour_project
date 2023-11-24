@@ -18,7 +18,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import axios from "axios";
 import Footer from "./Footer";
-const url ='https://localhost:3000/tourinfo';
+const url ='https://http://localhost:9000/tourinfo';
 axios.get(url)
   .then((Response)=>{
     console.log(Response);

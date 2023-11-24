@@ -29,22 +29,22 @@ function Footer() {
             <p> Line ID : olyoil536982</p>
           </Col>
           <Col>
-            <p style={{textAlign:'center',fontWeight:'bold'}}>Follower US :</p>
-           <a className="contact"> <FontAwesomeIcon icon={faInstagram} style={{color: "#d357fe",fontSize:'50px',marginLeft:'100px',float:'left',textAlign:'center'}} />
+            <p style={{textAlign:'center',fontWeight:'bold',marginBottom:'50px'}}>Follower US :</p>
+           <a className="contact"> <FontAwesomeIcon icon={faInstagram} style={{color: "#d357fe",fontSize:'50px',marginLeft:'100px',marginBottom:'20px',float:'left',textAlign:'center'}} />
           </a>
           <a className="contact">
-            <FontAwesomeIcon icon={faTiktok} style={{color: "#e63b7a",float:'left',fontSize:'50px',marginLeft:'100px'}} />
+            <FontAwesomeIcon icon={faTiktok} style={{color: "#e63b7a",float:'left',fontSize:'50px',marginLeft:'100px',marginBottom:'20px'}} />
            </a>
-           <a className="contact"> <FontAwesomeIcon icon={faFacebook} style={{color: "#0061ff",float:'left',fontSize:'50px',marginLeft:'100px'}} />
+           <a className="contact"> <FontAwesomeIcon icon={faFacebook} style={{color: "#0061ff",float:'left',fontSize:'50px',marginBottom:'20px',marginLeft:'100px'}} />
              <Image
               style={{width:'55px',height:'55px',marginLeft:'100px',float:'left',textAlign:'center'}}
               src={tripadvisor}
               fluid
             /></a>
-            <p style={{float:'left',marginLeft:'80px',fontWeight:'bold',fontSize:'18px'}}>Instagram</p>
+            {/* <p style={{float:'left',marginLeft:'80px',fontWeight:'bold',fontSize:'18px'}}>Instagram</p>
             <p style={{float:'left',marginLeft:'70px',fontWeight:'bold',fontSize:'18px'}}>Tiktok</p>
             <p style={{float:'left',marginLeft:'80px',fontWeight:'bold',fontSize:'18px'}}>Facebook</p>
-            <p style={{float:'left',marginLeft:'60px',fontWeight:'bold',fontSize:'18px'}}>Tripadvisor</p>
+            <p style={{float:'left',marginLeft:'60px',fontWeight:'bold',fontSize:'18px'}}>Tripadvisor</p> */}
           </Col>
         </Row>
         <Row>

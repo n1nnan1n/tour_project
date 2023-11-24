@@ -3,13 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import about1 from './Pic/about/wat1.jpeg'
-import about2 from './Pic/about/HSzhFREj.jpeg'
+import about2 from './Pic/about/pic1.jpg'
+import Footer from './Footer';
 
 export default function About() {
   return (
+    <>
     <div className="wrapper" style={{paddingLeft:'10%',paddingRight:'10%'}}>
         <h1 style={{padding:'20px'}}>About us</h1>
-        <div className='fillter'style={{backgroundColor:'#FFFAEC',width:"100%",height:'100%',padding:'20px'}}>
+        <div className='fillter'style={{backgroundColor:'#FFFAEC',width:"100%",height:'100%',padding:'20px',marginBottom:'40px'}}>
         <Row>
         <Col xs={6}>
             <h1 style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'20px'}}>
@@ -28,8 +30,8 @@ export default function About() {
               /></Col>
       </Row>
       <Row style={{marginTop:'30px'}}>
-        <Col xs={6} ><img
-                style={{ width: "100%", height: "100%" }}
+        <Col  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px'}}><img
+                style={{ width: "100%",marginTop:'-350px' }}
                 src={about2}
                 alt="First slide"
               /></Col>
@@ -46,7 +48,9 @@ Beyond the Trails is a tour operator registered in Thailand and run by experienc
         </Col>
         
       </Row>
+        </div> 
         </div>
-        </div>
+        <Footer/>
+       </>
   )
 }

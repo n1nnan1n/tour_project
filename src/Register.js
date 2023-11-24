@@ -50,26 +50,28 @@ function Register() {
 
         <Container>
        
-          <Row>
-            <Col>
-              {" "}
-              <div className="bgblur"  style={{padding:'30px', marginTop: "10%",width:'60%',height:'85%'}}>
-       
-              <div class="border-bottom lh-1 py-3">
-                <div class="row flex-nowrap justify-content-between align-items-center">
-                  <div
-                    class="col-12 text-center"
+          <Row> 
+            <Col> 
+            <div
+                    class=" text-center"
                     
                   >
                     <p style={{
-                     
-                      marginBottom: "50px",
-                      fontSize: "30px",
+                     marginTop: "50px",
+                     marginRight:'400px',
+                      // marginBottom: "50px",
+                      fontSize: "40px",
                       fontWeight: "bold",
                       color: "white",
                       textAlign: "center",
                     }}>Register</p>
                   </div>
+              {" "}
+              <div className="bgblur"  style={{padding:'30px', marginTop: "5%",width:'60%',height:'85%'}}>
+       
+              <div class="border-bottom lh-1 py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                 
                 </div>
 
                 <Row >
@@ -96,15 +98,15 @@ function Register() {
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
            
-          <Form.Group as={Col} md="4" controlId="validationCustom02">
-             <Form.Label>nationality</Form.Label>
-          <Select
-      
+          <Form.Group style={{color:'black'}} as={Col} md="4" controlId="validationCustom02">
+             <Form.Label style={{color:'white'}}>Nationality</Form.Label>
+    
+           <Select
               options={countries}
               value={selectedCountry}
               onChange={(selectedOption) => setSelectedCountry(selectedOption)}
             />
-         
+
           </Form.Group>
           </Row>
           <Row className="mb-4" style={{marginBottom:'5px'}}>
