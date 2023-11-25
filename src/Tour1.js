@@ -18,7 +18,7 @@ import pic9 from "./Pic/grandtour/apwv1J-2.jpeg";
 import pic10 from "./Pic/grandtour/wat1.jpeg";
 import "./App.css";
 import { Navbar } from 'react-bootstrap';
-import navbar from './Navbar';
+import Footer from './Footer';
 function Tour1() {
   
 const images = [
@@ -161,9 +161,11 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
+
 </div> 
+<Footer/>
 </div>
-<Navbar/>
+
 </>
 )}
 
