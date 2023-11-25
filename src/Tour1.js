@@ -19,6 +19,7 @@ import pic10 from "./Pic/grandtour/wat1.jpeg";
 import "./App.css";
 import { Navbar } from 'react-bootstrap';
 import Footer from './Footer';
+import Calendar from './Calendar'
 function Tour1() {
   
 const images = [
@@ -82,7 +83,7 @@ return (
     <div  className='bg'>
      <Container >
           <div
-            style={{ width: "60%", marginBottom: "30px", marginLeft: "20%" }}
+            style={{ width: "60%", marginBottom: "30px", marginLeft: "20%" , paddingTop: "30px"}}
           >
             <ImageGallery
               items={images}
@@ -124,7 +125,7 @@ data-bs-theme="dark"
       
           <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p>
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+   
   </Card.Body>
 </Tab>
 <Tab eventKey="Itinerary" title="Itinerary">
@@ -133,8 +134,7 @@ data-bs-theme="dark"
       <Card.Text>
       <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_itinerary}</p>
       </Card.Text>
-      
-      <Button variant="primary">Go somewhere</Button>
+     
     </Card.Body>
 </Tab>
 <Tab eventKey="Price" title="Price">
@@ -147,7 +147,7 @@ data-bs-theme="dark"
 </h1></Card.Title>
       <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_cancelpolicy}</p>
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+     
     </Card.Body>
 </Tab>
 
@@ -161,7 +161,7 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
-
+ <Button variant="primary" style={{marginTop:'30px'}} href="Calendar">Book Now</Button>
 </div> 
 <Footer/>
 </div>

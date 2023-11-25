@@ -11,6 +11,7 @@ import About from './About';
 import Customized from './Customized';
 import Daytrip from './Daytrip';
 import Tour1 from './Tour1'
+import Calendar from './Calendar';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="Customized" element={<Customized/>} />
                 <Route path="Daytrip" element={<Daytrip/>} />
                 <Route path="Tour1" element={<Tour1/>} />
+                <Route path="Calendar" element={<Calendar/>} />
               
             </Routes>
           </BrowserRouter>

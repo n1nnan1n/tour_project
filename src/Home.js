@@ -30,6 +30,7 @@ import icon2 from "./Pic/icon/2.svg";
 import icon3 from "./Pic/icon/3.svg";
 import icon4 from "./Pic/icon/4.svg";
 import Oneday from "./Oneday";
+import logo from"./public/logo_1.png"
 
 function Home() {
   const handleClick = event => {
@@ -38,22 +39,66 @@ function Home() {
   return (
     <div className="wrapper">
       <div
-        style={{
-          width: "100%",
-          height: "500px",
-          overflow: "hidden",
-          display: "block",
-        }}
+       style={{  width: "100vw",
+       overflow: "hidden",
+       display: "flex",
+       flexDirection: "column",
+       position: 'relative',
+       alignItems: 'center',
+       justifyContent: 'center'
+       ,height:'600px'
+ }}
       >
         <video
-          style={{ width: "auto", height: "auto" }}
+          style={{width: "100%", objectFit: 'contain', objectPosition: 'bottom'}}
           src={video}
           autoPlay
           loop
           muted
         />
-      </div>
+         {/* ------------------------------- layer 2 --------------------------- */}
+         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'end', width: "100vw", maxHeight: '45vw', overflow: "hidden" }}
+        >
+          <div  
+          style={{
+            width: "100%", height: '500px', display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'end',
+            position: 'absolute', bottom: '0px', zIndex: '1000',
+            background: 'linear-gradient(to bottom, rgba(0, 123, 255, 0) 0%, rgba(0, 123, 255, 0.7) 100%)',
+          }}
+        >
+          <img style={{
+            width: '130px', height: '130px',
+            filter: "drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)"
+          }}
+            src={logo}>
+          </img>
+          <span style={{
+            fontFamily: 'Jost', fontSize: '90px', color: 'white', lineHeight: '90px',
+            textShadow: "2px 2px 10px rgba(0, 0, 100, 0.5)"
+          }}>
+            Explore The Amazing
+          </span>
+          <span style={{
+            fontFamily: 'Jost', fontSize: '40px', color: 'white', lineHeight: '40px'
+            , textShadow: "2px 2px 10px rgba(0, 0, 100, 0.5)"
+          }}>
+            experiences in Thailand<br />
+          </span>
 
+          
+          {/* <button className="greenButton" style={{
+            fontFamily: 'Jost', fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: '18px', padding: '15px 20px 15px 20px',
+            marginTop: '20px',
+            borderRadius: '40px'
+          }}>
+            Explore
+          </button> */}
+          <br />
+        </div>
+      
+      </div>
+      </div>
       <div
         class=" lh-1 py-3"
         style={{ width: "100%", height: "400px", backgroundColor: "white" }}
