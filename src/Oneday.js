@@ -23,7 +23,7 @@ import tattoo3 from './Pic/tattoo/501326.jpg'
 import tattoo4 from './Pic/tattoo/501328.jpg'
 import tattoo5 from './Pic/tattoo/488467.jpg'
 import Button from 'react-bootstrap/Button';
-import Grandtour from './Grandtour';
+import Tour1 from './Tour1'
 import Footer from './Footer';
 import { Hidden } from '@mui/material';
 export default function Oneday() {
@@ -51,7 +51,7 @@ export default function Oneday() {
 <h4 style={{textAlign:'left'}}>- Plans are subject to change, and sometimes unexpectedly, so you can cancel your event free of charge within 7 days before the tour starts.
 </h4>
 <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'30px'}}>-8,820 BHT</h2>
-<Button href="Grandtour" style={{marginTop:'10px'}} variant="primary" size="lg" active>
+<Button href="Tour1" style={{marginTop:'10px'}} variant="primary" size="lg" active>
         See More
       </Button>{' '}
     </div>

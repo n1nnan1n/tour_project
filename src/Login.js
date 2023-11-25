@@ -52,24 +52,13 @@ export const Login = () => {
   return (
    
     <div className="wrapper">
-    <div class="bg" style={{backgroundImage:`url(${bg})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
+    <div class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
         <Row>
+          
           <Col>
-            <Image
-              style={{
-                width: "500px",
-                height: "700px",
-                marginBottom: "10%",
-                marginTop: "10%",
-              }}
-              src={trip_outside}
-              fluid
-            />
-          </Col>
-          <Col>
-            <div style={{ marginTop: "30%",width:'100%',height:'60%',backgroundColor:'white',borderRadius:'10px'}}>
+            <div className="bgblur"  style={{padding:'100px',marginLeft:'20%', marginTop: "10%",width:'60%',height:'85%'}}>
        
               <div class="row flex-nowrap justify-content-between align-items-center">
                 <div

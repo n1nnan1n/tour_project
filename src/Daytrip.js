@@ -29,7 +29,7 @@
     import cook3 from './Pic/cook/L2p2pdtg.jpeg'
     import cook4 from './Pic/cook/RFn05awM.jpeg'
     import cook5 from './Pic/cook/hHsfRoBU.jpeg'
-    import Grandtour from './Grandtour';
+    import Tour1 from './Tour1';
     import Footer from './Footer';
     export default function Daytrip() {
       return (
@@ -57,7 +57,7 @@
     <h4 style={{textAlign:'left'}}>- Plans are subject to change, and sometimes unexpectedly, so you can cancel your event free of charge within 2 weeks before the tour starts.
 </h4>
     <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'30px'}}>- 9,374 BHT </h2>
-    <Button href="Grandtour" style={{marginTop:'10px'}} variant="primary" size="lg" active>
+    <Button href="Tour1" style={{marginTop:'10px'}} variant="primary" size="lg" active>
             See More
           </Button>{' '}
         </div>
@@ -114,7 +114,7 @@
 
          </h4>
          <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'30px'}}>- 6,832 BHT</h2>
-         <Button href="Grandtour" style={{marginTop:'10px'}} variant="primary" size="lg" active>
+         <Button href="Tour1" style={{marginTop:'10px'}} variant="primary" size="lg" active>
                  See More
                </Button>{' '}
              </div>
@@ -171,7 +171,7 @@
 
          </h4>
          <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'30px'}}>-  9,808 BHT</h2>
-         <Button href="Grandtour" style={{marginTop:'10px'}} variant="primary" size="lg" active>
+         <Button href="Tour1" style={{marginTop:'10px'}} variant="primary" size="lg" active>
                  See More
                </Button>{' '}
              </div>
@@ -229,7 +229,7 @@
 
          </h4>
          <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'-15px'}}>-4,000 BHT</h2>
-         <Button href="Grandtour" style={{marginTop:'5px'}} variant="primary" size="lg" active>
+         <Button href="Tour1" style={{marginTop:'5px'}} variant="primary" size="lg" active>
                  See More
                </Button>{' '}
              </div>
@@ -289,7 +289,7 @@
 
          </h4>
          <h2 style={{color:"#063d8c",fontSize:'30px',marginTop:'-15px'}}>- 4,500 BHT</h2>
-         <Button href="Grandtour" style={{marginTop:'5px'}} variant="primary" size="lg" active>
+         <Button href="Tour1" style={{marginTop:'5px'}} variant="primary" size="lg" active>
                  See More
                </Button>{' '}
              </div>

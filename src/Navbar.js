@@ -47,7 +47,7 @@ function navbar() {
       
    
               <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Day Trips" id="Dropdown fontnav" >
-                <NavDropdown.Item eventKey="4.1" href="Grandtour">Bangkok grand tour
+                <NavDropdown.Item eventKey="4.1" href="Tour1">Bangkok grand tour
 </NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">
                 bangkok unseen tour
