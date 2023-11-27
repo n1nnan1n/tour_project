@@ -82,7 +82,7 @@ Cooking class
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="Customized">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#">
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#" href="Reviewall">
                   Review
                 </Nav.Link>
               </Nav.Item>

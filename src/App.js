@@ -12,6 +12,7 @@ import Customized from './Customized';
 import Daytrip from './Daytrip';
 import Tour1 from './Tour1'
 import Calendar from './Calendar';
+import Reviewall from './Reviewall';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path="Daytrip" element={<Daytrip/>} />
                 <Route path="Tour1" element={<Tour1/>} />
                 <Route path="Calendar" element={<Calendar/>} />
+                <Route path="Reviewall" element={<Reviewall/>} />
               
             </Routes>
           </BrowserRouter>
