@@ -13,38 +13,81 @@ import button from "react-bootstrap";
 import bg from './Pic/bg.jpg'
 import { useEffect, useState } from "react";
 import Select from "react-select";
-// import axios from "axios";
+import axios from "axios";
 
 function Register() {
-  // axios.post('localhost:9000/registe')
   const [validated, setValidated] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setCountries(data.countries);
+        setSelectedCountry(data.userSelectValue);
+      });
+  }, []);
+
+  const titles = [
+    { value: 'mr', label: 'Mr' },
+    { value: 'mrs', label: 'Mrs' },
+    { value: 'miss', label: 'Miss' },
+  ];
     
-      const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+    } else {
+      const password = form.elements.password.value;
+      const confirmPassword = form.elements.confirmPassword.value;
+
+      if (password !== confirmPassword) {
+        // If passwords do not match, set validation to false
+        setValidated(false);
+        return;
+      }
+
+      try {
+        // Extract form data
+        const formData = {
+          title: selectedTitle ? selectedTitle.value : null,
+          fname: form.elements.fname.value,
+          lname: form.elements.lname.value,
+          email: form.elements.email.value,
+          phone: form.elements.phone.value,
+          password: password,
+          passport_no: form.elements.passport_no.value,
+          passport_exp: form.elements.passport_exp.value,
+          birthdate: form.elements.birthdate.value,
+          food_allergy: form.elements.foodAllergy.value,
+          special_req: form.elements.specialRequirement.value,
+          nationality: selectedCountry ? selectedCountry.value : null,
+        };
+        const response = await axios.post('https://tourapi-hazf.onrender.com/register', formData, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        // Handle the response as needed
+        console.log('Registration successful:', response.data);
+      } catch (error) {
+        // Handle registration error
+        console.error('Registration error:', error.response.data);
+      }
+    }
     
-        // setValidated(true);
-      };
-        const [countries, setCountries] = useState([]);
-        const [selectedCountry, setSelectedCountry] = useState({});
-      
-        useEffect(() => {
-          fetch(
-            "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
-          )
-            .then((response) => response.json())
-            .then((data) => {
-              setCountries(data.countries);
-              setSelectedCountry(data.userSelectValue);
-            });
-        }, []);
+    setValidated(true);
+};
+
   return (
-    
-    
-    <>
       <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%'}} >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
@@ -71,10 +114,18 @@ function Register() {
                  
                 </div>
 
-                <Row >
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row >
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-4">
-            <Form.Group as={Col} md="4" controlId="validationCustom01">
+          <Form.Group style={{color:'black'}} as={Col} md="4" controlId="title">
+             <Form.Label style={{color:'white'}}>Title</Form.Label>
+           <Select
+              options={titles}
+              value={selectedTitle}
+              onChange={(selectedOption) => setSelectedTitle(selectedOption)}
+            />
+          </Form.Group>
+            <Form.Group as={Col} md="4" controlId="fname">
               <Form.Label>First name</Form.Label>
               <Form.Control
                 required
@@ -84,7 +135,7 @@ function Register() {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustom02">
+            <Form.Group as={Col} md="4" controlId="lname">
               <Form.Label>Last name</Form.Label>
               <Form.Control
                 required
@@ -95,7 +146,7 @@ function Register() {
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
            
-          <Form.Group style={{color:'black'}} as={Col} md="4" controlId="validationCustom02">
+          <Form.Group style={{color:'black'}} as={Col} md="4" controlId="nationality">
              <Form.Label style={{color:'white'}}>Nationality</Form.Label>
     
            <Select
@@ -107,7 +158,7 @@ function Register() {
           </Form.Group>
           </Row>
           <Row className="mb-4" style={{marginBottom:'5px'}}>
-          <Form.Group as={Col} md="8" controlId="validationCustom02">
+          <Form.Group as={Col} md="8" controlId="email">
               <Form.Label>E-mail</Form.Label>
               <Form.Control
                 required
@@ -117,18 +168,34 @@ function Register() {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustom05">
+            <Form.Group as={Col} md="4" controlId="phone">
               <Form.Label>phone</Form.Label>
-              <Form.Control type="number" placeholder="Phone" required />
+              <Form.Control type="phone" placeholder="Phone" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid phone.
               </Form.Control.Feedback>
             </Form.Group>
             </Row>
+            <Row className="mb-4" style={{marginBottom:'5px'}}>
+            <Form.Group as={Col} md="4" controlId="passport_no">
+              <Form.Label>Passport Number</Form.Label>
+              <Form.Control type="text" placeholder="Passport Number" required />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid passport number.
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="passport_exp">
+              <Form.Label>Passport Expire</Form.Label>
+              <Form.Control type="text" placeholder="Passport Expire" required />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid Passport Expire.
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
           <Row className="mb-4">
            
            
-          <Form.Group as={Col} md="4" controlId="validationCustom02">
+          <Form.Group as={Col} md="4" controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control type="Password" placeholder="Password" required />
               <Form.Control.Feedback type="invalid">
@@ -136,14 +203,14 @@ function Register() {
               </Form.Control.Feedback>
           
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustom05">
+            <Form.Group as={Col} md="4" controlId="confirmPassword">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control type="Password" placeholder="Confirm Password" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid Confirm Password.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationCustom04">
+            <Form.Group as={Col} md="4" controlId="birthdate">
               <Form.Label>Birthdate</Form.Label>
               <Form.Control type="date" placeholder="Birthdate" required />
               <Form.Control.Feedback type="invalid">
@@ -152,14 +219,14 @@ function Register() {
             </Form.Group>
             </Row>
           <Row className="mb-4">
-            <Form.Group as={Col} md="6" controlId="validationCustom04">
+            <Form.Group as={Col} md="6" controlId="foodAllergy">
               <Form.Label>food allergy</Form.Label>
               <Form.Control type="text" placeholder="food allergy" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid food allergy.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="6" controlId="validationCustom05">
+            <Form.Group as={Col} md="6" controlId="specialRequirement">
               <Form.Label>special requirement</Form.Label>
               <Form.Control type="text" placeholder="special requirement" required />
               <Form.Control.Feedback type="invalid">
@@ -167,28 +234,25 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          
+          <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
+              <Button type="submit" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
+                REGISTER
+              </Button>
+            </div>
         </Form>
                 
                 </Row>
               </div>          
-    <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
-      <Button  style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
-       REGISTER
-      </Button>
-    
       <Button style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}} variant="secondary" href='Login' >
        LOGIN
       </Button>
-    </div></div>
+      </div>
             </Col>
           </Row>
          
         </Container>
         {/* </Container> */}
       </div>
-    </>
   );
 }
-
 export default Register;
