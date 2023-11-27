@@ -72,7 +72,7 @@ export const Login = () => {
                     textAlign: "center",
                   }}
                 >
-                  <p style={{color:'black',marginTop:'20px'}}>LOGIN</p>
+                  <p style={{color:'white',fontWeight:'bold',fontSize:'45px'}}>LOGIN</p>
                 </div>
               </div>
 
@@ -88,7 +88,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label  style={{float:'left',color:'black'}}>
-                      <p>Email</p>
+                      <p style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>Email</p>
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
                     </Col>
@@ -101,7 +101,7 @@ export const Login = () => {
                   >
                     <Col sm="10">
                       <Form.Label style={{float:'left',color:'black'}}>
-                        <p>password</p>
+                        <p  style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>password</p>
                       </Form.Label>
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
                     </Col>
@@ -113,7 +113,7 @@ export const Login = () => {
                       
   <div className="d-grid gap-2" style={{width:'30%',marginLeft:'35%',marginTop:'30px'}}>
   
-<Button onClick={signIn} className='button'  size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
+<Button onClick={signIn} className='button'  size="sm" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
 Sign In
     </Button>
     <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>

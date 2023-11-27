@@ -20,6 +20,7 @@ import "./App.css";
 import { Navbar } from 'react-bootstrap';
 import Footer from './Footer';
 import Calendar from './Calendar'
+
 function Tour1() {
   
 const images = [

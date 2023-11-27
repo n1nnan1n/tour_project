@@ -45,21 +45,20 @@ function Register() {
     
     
     <>
-      <div  class="bgsign" >
+      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%'}} >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
        
           <Row> 
             <Col> 
-            <div
+            
+              <div className="bgblur"  style={{padding:'30px', marginTop: "130px",width:'70%',height:'85%'}}>
+              <div
                     class=" text-center"
                     
                   >
                     <p style={{
-                     marginTop: "50px",
-                     marginRight:'400px',
-                      // marginBottom: "50px",
                       fontSize: "40px",
                       fontWeight: "bold",
                       color: "white",
@@ -67,8 +66,6 @@ function Register() {
                     }}>Register</p>
                   </div>
               {" "}
-              <div className="bgblur"  style={{padding:'30px', marginTop: "5%",width:'60%',height:'85%'}}>
-       
               <div class="border-bottom lh-1 py-3">
                 <div class="row flex-nowrap justify-content-between align-items-center">
                  
@@ -176,7 +173,7 @@ function Register() {
                 </Row>
               </div>          
     <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
-      <Button  style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
+      <Button  style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
        REGISTER
       </Button>
     
