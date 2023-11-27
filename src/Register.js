@@ -134,7 +134,9 @@ function Register() {
                 placeholder="First name"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid First name.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="lname">
               <Form.Label>Last name</Form.Label>
@@ -144,7 +146,9 @@ function Register() {
                 placeholder="Last name"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid Last name.
+              </Form.Control.Feedback>
             </Form.Group>
            
          
@@ -158,7 +162,9 @@ function Register() {
                 placeholder="E-mail"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="phone">
               <Form.Label>phone</Form.Label>
@@ -191,6 +197,7 @@ function Register() {
               value={selectedCountry}
               onChange={(selectedOption) => setSelectedCountry(selectedOption)}
             />
+             
 
           </Form.Group>
           </Row>
