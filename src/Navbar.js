@@ -8,10 +8,13 @@ import App from "./App";
 import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+
+import Form from 'react-bootstrap/Form';
 
 function navbar() {
   return (
-   
+    <div className="navweb">
     <div className="wrapper" style={{ textAlign:"center"}}>
       <div>
         <header class="border-bottom lh-1 py-3">
@@ -34,7 +37,7 @@ function navbar() {
             </div>
           </div>
         </header>
-<div className="wrapper" style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'5px'}} >
+<div style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'5px'}} >
       <Container  style={{paddingLeft:'10%'}} >
         <Navbar data-bs-theme="dark">
           
@@ -77,10 +80,54 @@ function navbar() {
               
           </Navbar>
           </Container>
-          </div>
-          </div>
-          </div>
+</div>
+</div>
+</div>
+         
 
+          <div className="navphone">
+          <Navbar expand="lg"  style={{backgroundColor:"#063d8c"}}>
+      <Container fluid>
+        <Navbar.Brand href="#" className="fontnav">Navbar scroll</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="#action2">Link</Nav.Link>
+            <NavDropdown title="Link" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#" disabled>
+              Link
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    
+      
+          </div>
+          </div>
      
   );
 

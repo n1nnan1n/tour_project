@@ -87,7 +87,7 @@ return (
     <div  className='bg'>
      <Container >
           <div
-            style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "260px" , paddingTop: "30px"}}
+            style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
           >
             <ImageGallery
               items={images}
@@ -121,8 +121,8 @@ className="tab"
 data-bs-theme="dark"
 >
 
-<Tab eventKey="description" title="description" style={{width:'100%'}} >
-  <Card.Body className="cardgrand" style={{overflow:'auto',width:'60%',wordWrap:'break-word'}}>
+<Tab eventKey="description" title="description"  style={{width:'100%'}} >
+  <Card.Body className="cardgrand" style={{overflow:'auto',width:'60%',wordWrap:'break-word',backgroundColor:'#FFFAEC',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
    
     <Card.Title ><h1 >{tourData.tour_name}</h1></Card.Title>
     <Card.Text>
@@ -132,7 +132,7 @@ data-bs-theme="dark"
   </Card.Body>
 </Tab>
 <Tab eventKey="Itinerary" title="Itinerary">
-  <Card.Body className="cardgrand">
+  <Card.Body className="cardgrand"  style={{backgroundColor:'#FFFAEC',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
       <Card.Title><h1>Itinerary</h1></Card.Title>
       <Card.Text>
       <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_itinerary}</p>
@@ -141,7 +141,7 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 <Tab eventKey="Price" title="Price">
-<Card.Body className="cardgrand">
+<Card.Body className="cardgrand " style={{backgroundColor:'#FFFAEC',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
       <Card.Title> <h1 style={{wordWrap:'break-word',whiteSpace:'break-spaces',fontSize:'23px',fontWeight:'bold'}}>Tour Price for Private tour (THAI BAHT)
 </h1></Card.Title>
       <Card.Text>
@@ -155,7 +155,7 @@ data-bs-theme="dark"
 </Tab>
 
 <Tab eventKey="review" title="review">
-<Card.Body className="cardgrand">
+<Card.Body className="cardgrand"  style={{backgroundColor:'#FFFAEC',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
       <Card.Title><h1>Review</h1></Card.Title>
       <Card.Text>
       {/* <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p> */}
@@ -164,7 +164,7 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
- <Button variant="primary" style={{marginTop:'30px'}} href="Calendar">Book Now</Button>
+ <Button variant="primary" style={{marginTop:'30px'}} href="Calendar" >Book Now</Button>
 
 </div>  </Container>
 <Footer/>
