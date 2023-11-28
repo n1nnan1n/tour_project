@@ -71,8 +71,9 @@ function Calendar() {
         <Col>
     
             <div style={{float:'left',marginLeft:'15px'}}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <LocalizationProvider dateAdapter={AdapterDayjs} >
           <DatePicker
+          
             label="Select Tour Date"
             value={value}
             shouldDisableDate={disableWeekends} 

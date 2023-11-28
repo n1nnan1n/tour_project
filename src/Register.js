@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import axios from "axios";
 
+
 function Register() {
   const [validated, setValidated] = useState(false);
   const [countries, setCountries] = useState([]);
@@ -88,7 +89,7 @@ function Register() {
 };
 
   return (
-      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%'}} >
+      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%',paddingBottom: "40px"}} >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
@@ -96,7 +97,7 @@ function Register() {
           <Row> 
             <Col> 
             
-              <div className="bgblur"  style={{padding:'30px', marginTop: "130px",width:'70%',height:'85%'}}>
+              <div className="bgblur"  style={{padding:'30px', marginTop: "80px" ,width:'70%',height:'90%'}}>
               <div
                     class=" text-center"
                     
@@ -110,9 +111,9 @@ function Register() {
                   </div>
               {" "}
               <div class="border-bottom lh-1 py-3">
-                <div class="row flex-nowrap justify-content-between align-items-center">
+                {/* <div class="row flex-nowrap justify-content-between align-items-center">
                  
-                </div>
+                </div> */}
 
           <Row >
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -133,7 +134,9 @@ function Register() {
                 placeholder="First name"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid First name.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="lname">
               <Form.Label>Last name</Form.Label>
@@ -143,19 +146,12 @@ function Register() {
                 placeholder="Last name"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid Last name.
+              </Form.Control.Feedback>
             </Form.Group>
            
-          <Form.Group style={{color:'black'}} as={Col} md="4" controlId="nationality">
-             <Form.Label style={{color:'white'}}>Nationality</Form.Label>
-    
-           <Select
-              options={countries}
-              value={selectedCountry}
-              onChange={(selectedOption) => setSelectedCountry(selectedOption)}
-            />
-
-          </Form.Group>
+         
           </Row>
           <Row className="mb-4" style={{marginBottom:'5px'}}>
           <Form.Group as={Col} md="8" controlId="email">
@@ -166,7 +162,9 @@ function Register() {
                 placeholder="E-mail"
                
               />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="phone">
               <Form.Label>phone</Form.Label>
@@ -186,11 +184,22 @@ function Register() {
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="passport_exp">
               <Form.Label>Passport Expire</Form.Label>
-              <Form.Control type="text" placeholder="Passport Expire" required />
+              <Form.Control type="date" placeholder="Passport Expire" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid Passport Expire.
               </Form.Control.Feedback>
             </Form.Group>
+            <Form.Group style={{color:'black'}} as={Col} md="4" controlId="nationality">
+             <Form.Label style={{color:'white'}}>Nationality</Form.Label>
+    
+           <Select
+              options={countries}
+              value={selectedCountry}
+              onChange={(selectedOption) => setSelectedCountry(selectedOption)}
+            />
+             
+
+          </Form.Group>
           </Row>
           <Row className="mb-4">
            
@@ -234,16 +243,18 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
+           <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
               <Button type="submit" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
                 REGISTER
               </Button>
             </div>
+                   
         </Form>
-                
-                </Row>
-              </div>          
-      <Button style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}} variant="secondary" href='Login' >
+               
+                </Row>   
+                 </div>  
+               
+      <Button style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold',marginTop:'10px',borderColor:"black"}} variant="secondary" href='Login' >
        LOGIN
       </Button>
       </div>
