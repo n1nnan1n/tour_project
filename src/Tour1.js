@@ -20,9 +20,11 @@ import "./App.css";
 import { Navbar } from 'react-bootstrap';
 import Footer from './Footer';
 import Calendar from './Calendar'
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function Tour1() {
-  
+let { tour_name } = useParams(); 
 const images = [
     {
       original: `${pic1}`,
@@ -62,7 +64,8 @@ const images = [
     useEffect(() => {
       const fetchTourData = async () => {
         try {
-          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/Bangkok%20Grand%20Tour'; // Assuming fetching a specific tour
+          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
+          console.log(URL);
           const response = await axios.get(URL);
           const data = response.data;
   
@@ -112,19 +115,18 @@ return (
     </div> */}
  <div style={{ marginBottom: "30px",width:'90%',marginLeft:"70px" }}>
  <Tabs
-defaultActiveKey="profile"
+defaultActiveKey="description"
 id="uncontrolled-tab-example"
 className="tab"
 data-bs-theme="dark"
 >
 
-<Tab eventKey="description" title="description">
-  <Card.Body className="cardgrand">
+<Tab eventKey="description" title="description" style={{width:'100%'}} >
+  <Card.Body className="cardgrand" style={{overflow:'auto',width:'60%',wordWrap:'break-word'}}>
    
     <Card.Title ><h1 >{tourData.tour_name}</h1></Card.Title>
     <Card.Text>
-      
-          <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p>
+          <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p>
     </Card.Text>
    
   </Card.Body>
@@ -133,20 +135,20 @@ data-bs-theme="dark"
   <Card.Body className="cardgrand">
       <Card.Title><h1>Itinerary</h1></Card.Title>
       <Card.Text>
-      <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_itinerary}</p>
+      <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_itinerary}</p>
       </Card.Text>
      
     </Card.Body>
 </Tab>
 <Tab eventKey="Price" title="Price">
 <Card.Body className="cardgrand">
-      <Card.Title> <h1 style={{fontSize:'23px',fontWeight:'bold'}}>Tour Price for Private tour (THAI BAHT)
+      <Card.Title> <h1 style={{wordWrap:'break-word',whiteSpace:'break-spaces',fontSize:'23px',fontWeight:'bold'}}>Tour Price for Private tour (THAI BAHT)
 </h1></Card.Title>
       <Card.Text>
-      <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.price_detail}</p>
+      <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.price_detail}</p>
       <Card.Title> <h1 style={{fontSize:'23px',fontWeight:'bold'}}>Cancelpolicy
 </h1></Card.Title>
-      <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_cancelpolicy}</p>
+      <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_cancelpolicy}</p>
       </Card.Text>
      
     </Card.Body>
@@ -156,7 +158,7 @@ data-bs-theme="dark"
 <Card.Body className="cardgrand">
       <Card.Title><h1>Review</h1></Card.Title>
       <Card.Text>
-      <p style={{textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p>
+      {/* <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p> */}
       </Card.Text>
       
     </Card.Body>

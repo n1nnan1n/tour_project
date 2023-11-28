@@ -47,35 +47,15 @@ function navbar() {
       
    
               <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Day Trips" id="Dropdown fontnav" >
-                <NavDropdown.Item eventKey="4.1" href="Tour1">Bangkok grand tour
-</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2">
-                bangkok unseen tour
-
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.3">
-                bkk Instargram/Tiktok
-
-                </NavDropdown.Item>
-                {/* <NavDropdown.Divider /> */}
-                <NavDropdown.Item eventKey="4.4">
-                The ultimate of the floating market
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.4">
-            Half day floating market
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.4">              
-The sacred tattoo tour 
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.4">   
-Ayutthaya highlight tour
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.4">
-The scenic farm tour
-                </NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.4">
-Cooking class
-                </NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.1" href="/Bangkok%20Grand%20Tour">Bangkok grand tour</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2" href="/Bangkok%20unseen%20Tour">bangkok unseen tour</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.3" href="/Bkk%20Instagram%20TikTok%20Tour%20(For%20whose%20who%20love%20photos)">bkk Instargram/Tiktok</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/The%20ultimate%20of%20the%20floating%20market%20tour">The ultimate of the floating market</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/Half%20day%20floating%20market%20tour">Half day floating market</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/The%20sacred%20tattoo%20tour%20(Sakyant)">The sacred tattoo tour</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/Ayutthaya%20highlight%20tour">Ayutthaya highlight tour</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/The%20Scenic%20farm%20tour">The scenic farm tour</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.4" href="/Cooking%20class">Cooking class</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Item>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route ,useParams} from 'react-router-dom';
 import Navbar from './Navbar'
 import Register from './Register'
 import Home from './Home'
@@ -28,7 +28,8 @@ function App() {
                 <Route path="About" element={<About/>} />
                 <Route path="Customized" element={<Customized/>} />
                 <Route path="Daytrip" element={<Daytrip/>} />
-                <Route path="Tour1" element={<Tour1/>} />
+                {/* <Route path="Tour1" element={<Tour1/>} /> */}
+                <Route path="/:tour_name" element={<Tour1/>}/>
                 <Route path="Calendar" element={<Calendar/>} />
               
             </Routes>
