@@ -87,7 +87,7 @@ return (
     <div  className='bg'>
      <Container >
           <div
-            style={{ maxWidth: "800px", marginBottom: "30px",marginLeft: "265px" , paddingTop: "30px"}}
+            style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "260px" , paddingTop: "30px"}}
           >
             <ImageGallery
               items={images}
@@ -102,7 +102,7 @@ return (
             />
           </div>
 
-        </Container>
+    
 {/* <div className='data-app'>
       {tourData && tourData.tour_name && tourData.tour_description ? (
         <div>
@@ -113,7 +113,7 @@ return (
         <p>No tour data available</p>
       )}
     </div> */}
- <div style={{ maxWidth: "1350px",marginBottom: "30px" ,marginLeft: "100px" }}>
+ <div style={{ marginBottom: "30px"  }}>
  <Tabs
 defaultActiveKey="description"
 id="uncontrolled-tab-example"
@@ -165,7 +165,8 @@ data-bs-theme="dark"
 </Tab>
 </Tabs>
  <Button variant="primary" style={{marginTop:'30px'}} href="Calendar">Book Now</Button>
-</div> 
+
+</div>  </Container>
 <Footer/>
 </div>
 
