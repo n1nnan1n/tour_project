@@ -87,7 +87,7 @@ return (
     <div  className='bg'>
      <Container >
           <div
-            style={{ width: "60%", marginBottom: "30px", marginLeft: "20%" , paddingTop: "30px"}}
+            style={{ maxWidth: "800px", marginBottom: "30px",marginLeft: "265px" , paddingTop: "30px"}}
           >
             <ImageGallery
               items={images}
@@ -113,7 +113,7 @@ return (
         <p>No tour data available</p>
       )}
     </div> */}
- <div style={{ marginBottom: "30px",width:'90%',marginLeft:"70px" }}>
+ <div style={{ maxWidth: "1350px",marginBottom: "30px" ,marginLeft: "100px" }}>
  <Tabs
 defaultActiveKey="description"
 id="uncontrolled-tab-example"

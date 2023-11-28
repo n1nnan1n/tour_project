@@ -9,10 +9,10 @@ import pic2 from './Pic/unseentour/RSYJH54h.jpeg';
 import pic3 from './Pic/tiktoktour/1Kc_vTa5.jpeg';
 import pic4 from './Pic/market/XyEwsKWw.jpeg';
 import pic5 from './Pic/half/ErenTsct.jpeg';
-import pic6 from './Pic/unseentour/8kF2b78O.jpeg';
-import pic7 from './Pic/unseentour/8kF2b78O.jpeg';
-import pic8 from './Pic/unseentour/8kF2b78O.jpeg';
-import pic9 from './Pic/unseentour/8kF2b78O.jpeg';
+import pic6 from './Pic/tattoo/501329.jpg';
+import pic7 from './Pic/ayutthaya/g7dIgG1L.jpeg';
+import pic8 from './Pic/farm/GtoxgKEP.jpeg';
+import pic9 from './Pic/cook/EmJfLCeC.jpeg';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 function Reviewall() {
@@ -21,8 +21,8 @@ function Reviewall() {
     <Container>
         <Row>
             <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic1} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic1} style={{height: '10rem'}} />
         <Card.Body>
             <Card.Title><p style={{fontWeight:'bold'}}>Bangkok Grand Tour</p></Card.Title>
             <Card.Text>
@@ -34,8 +34,8 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic2} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic2}  style={{height: '10rem'}}/>
         <Card.Body>
             <Card.Title><p style={{fontWeight:'bold'}}>Bangkok unseen Tour</p></Card.Title>
             <Card.Text>
@@ -47,8 +47,8 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic3} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic3}  style={{height: '10rem'}} />
         <Card.Body>
             <Card.Title><p style={{fontWeight:'bold'}}>Bkk Instagram/ Tik Tok Tour </p></Card.Title>
             <Card.Text>
@@ -60,8 +60,8 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic4} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic4} style={{height: '10rem'}} />
         <Card.Body>
             <Card.Title><p style={{fontWeight:'bold'}}>The ultimate of the floating market tour</p></Card.Title>
             <Card.Text>
@@ -75,8 +75,8 @@ function Reviewall() {
     </Row>
     <Row>
             <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic5} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic5} style={{height: '10rem'}} />
         <Card.Body>
             <Card.Title><p style={{fontWeight:'bold'}}>Half day floating market tour</p></Card.Title>
             <Card.Text>
@@ -88,10 +88,10 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic6} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic6} style={{height: '10rem'}} />
         <Card.Body>
-            <Card.Title><p style={{fontWeight:'bold'}}>Bangkok Grand Tour</p></Card.Title>
+            <Card.Title><p style={{fontWeight:'bold'}}>The sacred tattoo tour</p></Card.Title>
             <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -101,10 +101,10 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic7} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic7} style={{height: '10rem'}} />
         <Card.Body>
-            <Card.Title><p style={{fontWeight:'bold'}}>Bangkok Grand Tour</p></Card.Title>
+            <Card.Title><p style={{fontWeight:'bold'}}>Ayutthaya highlight tour</p></Card.Title>
             <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -114,10 +114,10 @@ function Reviewall() {
         </Card>
     </Col>
     <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic8} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic8} style={{height: '10rem'}} />
         <Card.Body>
-            <Card.Title><p style={{fontWeight:'bold'}}>Bangkok Grand Tour</p></Card.Title>
+            <Card.Title><p style={{fontWeight:'bold'}}>The Scenic farm tour</p></Card.Title>
             <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -129,10 +129,10 @@ function Reviewall() {
     </Row>
     <Row>
             <Col>
-        <Card style={{ width: '18rem',marginBottom:'35px' }}>
-        <Card.Img variant="top" src={pic9} />
+        <Card style={{width: '18rem',height: '25rem',marginBottom:'35px' }}>
+        <Card.Img variant="top" src={pic9} style={{height: '10rem'}} />
         <Card.Body>
-            <Card.Title><p style={{fontWeight:'bold'}}>Bangkok Grand Tour</p></Card.Title>
+            <Card.Title><p style={{fontWeight:'bold'}}> Cooking class</p></Card.Title>
             <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
