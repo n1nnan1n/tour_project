@@ -95,7 +95,7 @@ export const Login = () => {
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
                     </Col>
                   </Form.Group>
-                  <Button onClick={handleLogin} className='button'  size="sm" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
+                  <Button onClick={handleLogin} className='button'  size="sm" style={{width:'35%',marginRight:'10%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
               </Row>
                       
