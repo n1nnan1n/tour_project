@@ -126,8 +126,8 @@ function NavbarComponent() {
               </Nav.Item>
               <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Language" id="nav-dropdown">
                 <NavDropdown.Item eventKey="4.1">English 🇬🇧</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2">Chinese 🇨🇳</NavDropdown.Item>
-                <NavDropdown.Item eventKey="4.2">Germainy 🇬🇧</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">Zhōngguó 🇨🇳</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">Deutsch 🇩🇪</NavDropdown.Item>
                 
                 <NavDropdown.Divider />
             
