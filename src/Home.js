@@ -214,20 +214,34 @@ function Home() {
                   </Carousel.Caption>
                 </Carousel.Item>
                
-                <Carousel.Item style={{ width: "25rem", height: "300px" }} >
+                <Carousel.Item style={{ width: "25rem", height: "225px" }} >
                   <img
                 
                     className="d-block w-100"
                     src={grand2}
                     alt="First slide"
                   />
+                   <Carousel.Caption>
+                    <h5
+                     
+                    >
+                      1 DAT BKK CITY TOURS
+                    </h5>
+                  </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{ width: "25rem", height: "300px" }}>
+                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
                   <img
                     className="d-block w-100"
                     src={grand5}
                     alt="First slide"
                   />
+                    <Carousel.Caption>
+                    <h5
+                     
+                    >
+                      1 DAT BKK CITY TOURS
+                    </h5>
+                  </Carousel.Caption>
                 </Carousel.Item>
               </Carousel></a>
               <a href="Daytrip">
@@ -257,6 +271,13 @@ function Home() {
                     src={outside1}
                     alt="First slide"
                   />
+                   <Carousel.Caption>
+                    <h5
+                  
+                    >
+                      DAY TRIPS OUTSIDE BKK
+                    </h5>
+                  </Carousel.Caption>
                 </Carousel.Item>
 
                 <Carousel.Item style={{ width: "25rem", height: "225px" }}>
@@ -265,6 +286,13 @@ function Home() {
                     src={outside3}
                     alt="First slide"
                   />
+                   <Carousel.Caption>
+                    <h5
+                  
+                    >
+                      DAY TRIPS OUTSIDE BKK
+                    </h5>
+                  </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
               </a>
