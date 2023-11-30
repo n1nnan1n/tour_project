@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
     order_date:{ type: String, required: false },
     pay_by:{ type: String, required: false },
     order_status:{ type: String, required: false }
-});
+},{ timestamps: true, versionKey: false });
 
 const Order = mongoose.model('Order', orderSchema);
 

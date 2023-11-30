@@ -1,12 +1,18 @@
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const multer = require('multer');
 
 const app = express();
 
 const cors = require("cors");
 
+app.use(session({
+  secret: 'ttourappp',
+  resave: false,
+  saveUninitialized: true,
+}));
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -14,15 +20,34 @@ mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net
   useNewUrlParser: true
 });
 
+global.loggedIn = null
+
 const RegisterController = require('./controllers/RegisterController');
 const LoginController = require('./controllers/LoginController');
 const TourinfoController = require('./controllers/TourinfoController');
+const SesController = require('./controllers/SesController');
+const Uploadimg = require('./controllers/Uploadimg');
 
-app.post('/register',RegisterController.register);
-app.post('/login',LoginController.login);
+const redirectIfAuth = require('./middleware/redirectIfAuth')
+const authMiddleware = require('./middleware/authMiddleware')
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+app.use("*", (req, res, next) => {
+  loggedIn = req.session.userId
+  next()
+})
+
+app.post('/register',redirectIfAuth,RegisterController.register);
+app.post('/login',redirectIfAuth,LoginController.login);
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
+app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
+app.get('/home', authMiddleware, SesController)
+app.put('/upload/:tourId',upload.array('images', 5),Uploadimg.uploadimage);
 
-app.listen(3000, () => {
-  console.log('Application is running on port 3000');
+
+app.listen(3001, () => {
+  console.log('Application is running on port 3001');
 });

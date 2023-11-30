@@ -27,4 +27,22 @@ const getTourByName = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
-module.exports = { getAllTourInfo , getTourByName};
+const getTourById = async (req, res) => {
+  const { tourId } = req.params;
+
+  try {
+    // Using findOne to find a tour by its name
+    // const tour = await Tour.findOne({ tour_name: { $regex: new RegExp(tourName, 'i') } });
+    const tour = await Tour.findById({ _id: tourId });
+
+    if (!tour) {
+      return res.status(404).json({ error: 'Tour not found' });
+    }
+
+    res.json(tour);
+  } catch (error) {
+    console.error('Error fetching tour:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+module.exports = { getAllTourInfo , getTourByName , getTourById};

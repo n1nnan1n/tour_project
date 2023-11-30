@@ -3,10 +3,13 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
 
 const userSchema = new Schema({
+    title: { type: String, required: true },
     fname: { type: String, required: true },
     lname: { type: String, required: true },
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
+    passport_no: { type: String, required: true },
+    passport_exp: { type: String, required: true },
     birthdate: { type: Date, required: true },
     nationality: { type: String, required: true },
     phone: { type: String, required: true },

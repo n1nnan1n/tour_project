@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:18.18.0
+FROM node:18.14
 
 # Set the working directory in the container
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port your Express.js app listens on
-EXPOSE 9000
+EXPOSE 3000
 
 # Define the command to start your Express.js app
 CMD ["node", "server.js"]

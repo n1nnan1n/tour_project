@@ -5,7 +5,7 @@ const reviewSchema = new mongoose.Schema({
     tour_id:{ type: String, required: false },
     rating:{ type: String, required: false },
     comment:{ type: String, required: false }
-});
+},{ timestamps: true, versionKey: false });
 
 const Review = mongoose.model('Review', reviewSchema);
 
