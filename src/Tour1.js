@@ -25,52 +25,19 @@ import { useParams } from 'react-router-dom';
 
 function Tour1() {
 let { tour_name } = useParams(); 
-const images = [
-    {
-      original: `${pic1}`,
-      thumbnail: `${pic1}`,
-    },
-    {
-      original: `${pic2}`,
-      thumbnail: `${pic2}`,
-    },
-    {
-      original: `${pic3}`,
-      thumbnail: `${pic3}`,
-    },
-    {
-      original: `${pic4}`,
-      thumbnail: `${pic4}`,
-    },
-    {
-      original: `${pic5}`,
-      thumbnail: `${pic5}`,
-    },
-    {
-      original: `${pic6}`,
-      thumbnail: `${pic6}`,
-    },
-    {
-      original: `${pic9}`,
-      thumbnail: `${pic9}`,
-    },
-    {
-      original: `${pic10}`,
-      thumbnail: `${pic10}`,
-    },
-  ];
     const [tourData, setTourData] = useState({}); // Initialize as an empty object
 
     useEffect(() => {
       const fetchTourData = async () => {
         try {
-          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
+          // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
+          const URL = 'http://localhost:3001/tourinfo/'+tour_name;
           console.log(URL);
           const response = await axios.get(URL);
           const data = response.data;
   
           // Assuming the API returns a single object for the tour data
-          if (data && data.tour_name && data.tour_description&& data.tour_itinerary&& data.price_detail&& data.tour_cancelpolicy) {
+          if (data && data.tour_name && data.tour_description&& data.tour_itinerary&& data.price_detail && data.tour_cancelpolicy && data.tour_image) {
             setTourData(data);
           } else {
             console.error('Invalid data received:', data);
@@ -79,12 +46,25 @@ const images = [
           console.error('Error fetching data:', error);
         }
       };
-  
       fetchTourData();
     }, []);
+    const images = tourData.tour_image.map((base64String, index) => ({
+      original: base64String,
+      thumbnail: base64String, // You can use a different URL for the thumbnail if needed
+      description: `Image ${index + 1}`,
+    }));
 return (
     <>
     <div  className='bg'>
+    <div>
+      {/* {tourData.tour_image?.map((base64String, index) => (
+        <img
+          key={index}
+          src={`${base64String}`} // Assuming PNG format, adjust accordingly
+          alt={`Image ${index + 1}`}
+        />
+      ))} */}
+    </div>
      <Container >
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
