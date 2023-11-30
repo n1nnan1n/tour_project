@@ -36,7 +36,7 @@ function App() {
                 <Route path="Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
                 <Route path="Pay" element={<Pay/>} />
-                <Route path="/ImageUploader" element={<ImageUploader/>} />
+                {/* <Route path="/ImageUploader" element={<ImageUploader/>} /> */}
               
             </Routes>
           </BrowserRouter>
