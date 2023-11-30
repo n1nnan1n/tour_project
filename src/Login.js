@@ -22,7 +22,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
       const token = response.data.token;
 
       localStorage.setItem('token', token);
