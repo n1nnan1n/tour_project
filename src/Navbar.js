@@ -9,10 +9,44 @@ import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
+import { useEffect,useState } from "react";
 
 import Form from 'react-bootstrap/Form';
 
-function navbar() {
+function NavbarComponent() {
+  const [userEmail, setUserEmail] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      try {
+        // Split the token into its parts
+        const [, payloadBase64,] = token.split('.');
+        const decodedPayload = atob(payloadBase64);
+
+        // Parse the decoded payload as JSON
+        const { email } = JSON.parse(decodedPayload);
+        console.log(email)
+
+        setUserEmail(email);
+        setIsLoggedIn(true);
+      } catch (error) {
+        console.error('Error parsing token:', error);
+      }
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Implement logout logic, clear the token, and update the state
+    localStorage.removeItem('token');
+    setUserEmail('');
+    setIsLoggedIn(false);
+    // Redirect to the homepage or another route
+    window.location.href = '/';
+  };
+
   return (
     <div className="navweb">
     <div className="wrapper" style={{ textAlign:"center"}}>
@@ -29,11 +63,32 @@ function navbar() {
               </a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center" >
-             
+            {isLoggedIn ? (
+              <>
+                <span class="text-black me-2">Welcome, {userEmail}</span>
+                <Button
+                  variant="dark"
+                  style={{ marginRight: '15px' }}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/register" class="btn btn-dark" style={{ marginRight: '5px', backgroundColor: '#063d8c' }}>
+                  Register
+                </Link>
+                <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' }}>
+                  Login
+                </Link>
+              </>
+            )}
+{/*              
               <a class="btn  btn-dark"style={{marginRight:'5px',backgroundColor:'#063d8c'}} ><Link to="/Register"style={{color:'white'}}>Register</Link>
               </a>
               <a class="btn  btn-outline-dark" style={{marginRight:'15px'}}><Link to="/login" style={{color:'#063d8c'}}>Login</Link>
-              </a>
+              </a> */}
             </div>
           </div>
         </header>
@@ -65,7 +120,7 @@ function navbar() {
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="Customized">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#" href="Reviewall">
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#" href="ImageUploader">
                   Review
                 </Nav.Link>
               </Nav.Item>
@@ -132,4 +187,4 @@ function navbar() {
   );
 
 }
-export default navbar;
+export default NavbarComponent;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route ,useParams} from 'react-router-dom';
-import Navbar from './Navbar'
+import NavbarComponent from "./Navbar";
 import Register from './Register'
 import Home from './Home'
 import Login from './Login'
@@ -13,12 +13,12 @@ import Daytrip from './Daytrip';
 import Tour1 from './Tour1'
 import Calendar from './Calendar';
 import Reviewall from './Reviewall';
-
+import ImageUploader from './Upload';
 function App() {
   return (
         <div className="App">
           <BrowserRouter>
-          <Navbar fixed="top" />
+          <NavbarComponent fixed="top" />
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="Register" element={<Register/>} />
@@ -34,6 +34,7 @@ function App() {
                 <Route path="Calendar/:_id" element={<Calendar/>}/>
                 <Route path="Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
+                <Route path="/ImageUploader" element={<ImageUploader/>} />
               
             </Routes>
           </BrowserRouter>

@@ -1,9 +1,3 @@
-import { auth, googleProvider } from "./config/firebase.js";
-import {
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
 import { useState } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
@@ -21,33 +15,28 @@ import Register from "./Register.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import bg from './Pic/bg.jpg'
+import axios from "axios";
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const signIn = async () => {
+  const handleLogin = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      console.error(err);
+      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const token = response.data.token;
+
+      localStorage.setItem('token', token);
+
+      console.log(token)
+
+      // Redirect to the homepage or another route
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error during login:', error.response.data.error);
+      // Handle login error, e.g., display an error message to the user
     }
   };
 
-  const signInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   return (
    
@@ -80,11 +69,11 @@ export const Login = () => {
   
        
     
-                <Form>
+                <Form >
                   <Form.Group
                     as={Row}
                     className="mb-3"
-                    controlId="formPlaintextEmail"
+                    controlId="email"
                   >
                     <Col sm="10">
                       <Form.Label  style={{float:'left',color:'black'}}>
@@ -97,7 +86,7 @@ export const Login = () => {
                   <Form.Group
                     as={Row}
                     className="mb-3"
-                    controlId="formPlaintextEmail"
+                    controlId="password"
                   >
                     <Col sm="10">
                       <Form.Label style={{float:'left',color:'black'}}>
@@ -106,16 +95,13 @@ export const Login = () => {
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
                     </Col>
                   </Form.Group>
-
-      
+                  <Button onClick={handleLogin} className='button'  size="sm" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
               </Row>
                       
   <div className="d-grid gap-2" style={{width:'30%',marginLeft:'35%',marginTop:'30px'}}>
   
-<Button onClick={signIn} className='button'  size="sm" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
-Sign In
-    </Button>
+
     <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
     Register
     </Button>
