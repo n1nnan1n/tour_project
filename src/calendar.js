@@ -17,7 +17,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+
+
+
 function Calendar() {
+    const [show, setShow] = useState(true);
+
   const [tourData, setTourData] = useState({}); // Initialize as an empty object
   let { tour_name } = useParams();
   useEffect(() => {
@@ -67,11 +72,18 @@ const handleInputChange = (e) => {
   }, [numberValue, price]);
   const handleSubmit = (e) => {  // Process form submission here
     e.preventDefault();
-    console.log("Selected Date:", value);
+    
+    window.alert(`Selected Date: ${value}\nNumber of persons: ${numberValue}\nPrice: ${total}`); window.location.href = `/Pay`;
+    // const  value = ("Selected Date:", value);
+    // const  numberValue = ("Number of persons:", numberValue);
+    // const  total = ("price:", total);
+   
+   console.log("Selected Date:", value);
     console.log("Number of persons:", numberValue);
     console.log("price:", total);
     // Add your logic for form submission or API call here
   };
+
   return (
     <>
       <div className="bg" style={{ paddingTop: "20px" }}>
@@ -239,7 +251,9 @@ const handleInputChange = (e) => {
         <p style={{textAlign:'left',float:'left',fontWeight:'bold'}}>Price: <br></br>Total:</p>
         <p style={{textAlign:'right',float:'right'}}>{price}<br></br>{total}</p>
           
-           <Button type="submit"  value={numberValue}onClick={handleSubmit} style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
+        <Button type="submit"  value={numberValue} onClick={handleSubmit}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE
+          
+     </Button>
                  
                 
                 </div>

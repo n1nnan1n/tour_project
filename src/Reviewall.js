@@ -17,7 +17,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 function Reviewall() {
   return (
-    <><h1 style={{marginTop:'20px',marginBottom:'20px'}}>Reviewall</h1>
+    <><h1 style={{marginTop:'20px',marginBottom:'20px'}}>Review</h1>
     <Container>
         <Row>
             <Col>

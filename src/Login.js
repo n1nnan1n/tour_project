@@ -32,7 +32,7 @@ export const Login = () => {
       // Redirect to the homepage or another route
       window.location.href = '/';
     } catch (error) {
-      console.error('Error during login:', error.response.data.error);
+      console.error('Error during login:', error.response.error);
       // Handle login error, e.g., display an error message to the user
     }
   };

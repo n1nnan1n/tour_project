@@ -13,6 +13,7 @@ import Daytrip from './Daytrip';
 import Tour1 from './Tour1'
 import Calendar from './Calendar';
 import Reviewall from './Reviewall';
+import Pay from './Pay';
 import ImageUploader from './Upload';
 function App() {
   return (
@@ -31,9 +32,10 @@ function App() {
                 <Route path="Daytrip" element={<Daytrip/>} />
                 {/* <Route path="Tour1" element={<Tour1/>} /> */}
                 <Route path="/:tour_name" element={<Tour1/>}/>
-                <Route path="Calendar/:_id" element={<Calendar/>}/>
+                {/* <Route path="Calendar/:_id" element={<Calendar/>}/> */}
                 <Route path="Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
+                <Route path="Pay" element={<Pay/>} />
                 <Route path="/ImageUploader" element={<ImageUploader/>} />
               
             </Routes>
