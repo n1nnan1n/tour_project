@@ -48,11 +48,13 @@ let { tour_name } = useParams();
       };
       fetchTourData();
     }, []);
-    const images = tourData.tour_image.map((base64String, index) => ({
+
+    const images = (tourData.tour_image || []).map((base64String, index) => ({
       original: base64String,
-      thumbnail: base64String, // You can use a different URL for the thumbnail if needed
+      thumbnail: base64String,
       description: `Image ${index + 1}`,
     }));
+  
 return (
     <>
     <div  className='bg'>
