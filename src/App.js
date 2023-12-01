@@ -14,7 +14,6 @@ import Tour1 from './Tour1'
 import Calendar from './Calendar';
 import Reviewall from './Reviewall';
 import Pay from './Pay';
-import ImageUploader from './Upload';
 function App() {
   return (
         <div className="App">
@@ -36,7 +35,6 @@ function App() {
                 <Route path="Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
                 <Route path="Pay" element={<Pay/>} />
-                {/* <Route path="/ImageUploader" element={<ImageUploader/>} /> */}
               
             </Routes>
           </BrowserRouter>

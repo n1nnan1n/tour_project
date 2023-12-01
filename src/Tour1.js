@@ -31,7 +31,7 @@ let { tour_name } = useParams();
       const fetchTourData = async () => {
         try {
           // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
-          const URL = 'http://localhost:3001/tourinfo/'+tour_name;
+          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name;
           console.log(URL);
           const response = await axios.get(URL);
           const data = response.data;
@@ -146,7 +146,10 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
- <Button variant="primary" style={{marginTop:'30px'}} href="Calendar" >Book Now</Button>
+    <Link to={{ pathname: "Calendar", state: { tourData } }}>
+      <Button variant="primary" style={{ marginTop: '30px' }}>Book Now</Button>
+    </Link>
+ {/* <Button variant="primary" style={{marginTop:'30px'}} href="Calendar" >Book Now</Button> */}
 
 </div>  </Container>
 <Footer/>
