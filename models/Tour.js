@@ -4,7 +4,7 @@ const tourSchema = new mongoose.Schema({
   tour_name:{ type: String, required: false },
   tour_description:{ type: String, required: false },
   tour_itinerary:{ type: String, required: false },
-  tour_image:{type: Array, required: true},
+  tour_image: Array,
   tour_status:{ type: String, required: false },
   tour_cancelpolicy:{ type: String, required: false },
   tour_include:{ type: String, required: false },

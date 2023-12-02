@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const multer = require('multer');
 
 const app = express();
 
@@ -20,19 +19,17 @@ mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net
   useNewUrlParser: true
 });
 
+
 global.loggedIn = null
 
 const RegisterController = require('./controllers/RegisterController');
 const LoginController = require('./controllers/LoginController');
 const TourinfoController = require('./controllers/TourinfoController');
 const SesController = require('./controllers/SesController');
-const Uploadimg = require('./controllers/Uploadimg');
 
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 
 app.use("*", (req, res, next) => {
   loggedIn = req.session.userId
@@ -45,7 +42,6 @@ app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 app.get('/home', authMiddleware, SesController)
-app.put('/upload/:tourId',upload.array('images', 5),Uploadimg.uploadimage);
 
 
 app.listen(3001, () => {

@@ -24,10 +24,11 @@ const login = async (req, res) => {
 
     if (isPasswordValid) {
       // Create a JWT token
-      const token = jwt.sign({ email: user.email }, 'ttourappp', { expiresIn: '1h' });
+      const token = jwt.sign({ _id:user._id, fname:user.fname, email:user.email}, 'ttourappp', { expiresIn: '1h' });
 
       // Send the token to the ReactJS frontend
       res.json({ token });
+
     } else {
       res.status(401).json({ error: 'Invalid email or password' });
     }

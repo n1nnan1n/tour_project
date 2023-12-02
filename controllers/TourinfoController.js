@@ -9,6 +9,7 @@ const getAllTourInfo = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 const getTourByName = async (req, res) => {
   const { tourName } = req.params;
 
@@ -27,6 +28,7 @@ const getTourByName = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 const getTourById = async (req, res) => {
   const { tourId } = req.params;
 
