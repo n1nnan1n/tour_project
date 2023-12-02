@@ -10,11 +10,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { useEffect,useState } from "react";
+import styled from 'styled-components';
+import jwt_decode from 'jwt-decode';
 
 import Form from 'react-bootstrap/Form';
 
 function NavbarComponent() {
+  const ThaiName = styled.span`
+  font-family: 'Noto Sans Thai', sans-serif;
+`;
+  const [userID, setUserID] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const [userFname, setUserFname] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -27,9 +34,11 @@ function NavbarComponent() {
         const decodedPayload = atob(payloadBase64);
 
         // Parse the decoded payload as JSON
-        const { email } = JSON.parse(decodedPayload);
-        console.log(email)
+        const { _id,fname,email } = JSON.parse(decodedPayload);
+        console.log(_id,fname,email)
 
+        setUserID(_id);
+        setUserFname(fname.charAt(0).toUpperCase() + fname.slice(1));
         setUserEmail(email);
         setIsLoggedIn(true);
       } catch (error) {
@@ -65,7 +74,7 @@ function NavbarComponent() {
             <div class="col-4 d-flex justify-content-end align-items-center" >
             {isLoggedIn ? (
               <>
-                <span class="text-black me-2">Welcome, {userEmail}</span>
+                <span class="text-black me-2">Welcome, {userFname}</span>
                 <Button
                   variant="dark"
                   style={{ marginRight: '15px' }}
