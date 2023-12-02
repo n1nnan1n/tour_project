@@ -15,9 +15,7 @@ import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
 
 function NavbarComponent() {
-  const ThaiName = styled.span`
-  font-family: 'Noto Sans Thai', sans-serif;
-`;
+
   const [userID, setUserID] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userFname, setUserFname] = useState('');
