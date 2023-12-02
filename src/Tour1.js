@@ -22,23 +22,58 @@ import Footer from './Footer';
 import Calendar from './Calendar'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function Tour1() {
-let { tour_name } = useParams(); 
+  const navigate = useNavigate();
+
+    let { tour_name } = useParams(); 
     const [tourData, setTourData] = useState({}); // Initialize as an empty object
+    const [userID, setUserID] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [userFname, setUserFname] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const [tourID, setTourID] = useState('');
+    const [tourName, setTourName] = useState('');
 
     useEffect(() => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          // Split the token into its parts
+          const [, payloadBase64,] = token.split('.');
+          const decodedPayload = atob(payloadBase64);
+  
+          // Parse the decoded payload as JSON
+          const { _id,fname,email } = JSON.parse(decodedPayload);
+          console.log(_id,fname,email)
+  
+          setUserID(_id);
+          setUserFname(fname.charAt(0).toUpperCase() + fname.slice(1));
+          setUserEmail(email);
+          setIsLoggedIn(true);
+        } catch (error) {
+          console.error('Error parsing token:', error);
+        }
+      }
+
       const fetchTourData = async () => {
         try {
           // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
           const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name;
-          console.log(URL);
+          // console.log(URL);
           const response = await axios.get(URL);
           const data = response.data;
   
           // Assuming the API returns a single object for the tour data
           if (data && data.tour_name && data.tour_description&& data.tour_itinerary&& data.price_detail && data.tour_cancelpolicy && data.tour_image) {
             setTourData(data);
+            setTourID(data._id);
+            setUserEmail(data.tour_name);
+            setIsLoggedIn(true);
+            console.log(data._id,data.tour_name,)
           } else {
             console.error('Invalid data received:', data);
           }
@@ -54,7 +89,17 @@ let { tour_name } = useParams();
       thumbnail: base64String,
       description: `Image ${index + 1}`,
     }));
-  
+
+      const handleBookNow = () => {
+        if (isLoggedIn) {
+          navigate({
+            pathname: "/Calendar",
+            state: { user: { userID, userFname, userEmail }, tourData: { tourID, tourName } }
+          });
+        } else {
+          navigate("/Login");
+        }
+      };
 return (
     <>
     <div  className='bg'>
@@ -146,9 +191,9 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
-    <Link to={{ pathname: "Calendar", state: { tourData } }}>
-      <Button variant="primary" style={{ marginTop: '30px' }}>Book Now</Button>
-    </Link>
+  <Button variant="primary" style={{ marginTop: '30px' }} onClick={handleBookNow}>
+      Book Now
+  </Button>
  {/* <Button variant="primary" style={{marginTop:'30px'}} href="Calendar" >Book Now</Button> */}
 
 </div>  </Container>
