@@ -16,6 +16,7 @@ import Select from "react-select";
 import axios from "axios";
 
 
+
 function Register() {
   const [validated, setValidated] = useState(false);
   const [countries, setCountries] = useState([]);
@@ -243,7 +244,7 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-           <div className="d-grid gap-3" style={{width:'30%',marginLeft:'35%'}}>
+           <div className="d-grid gap-3 buttonlog" style={{width:'30%',marginLeft:'35%'}}>
               <Button type="submit" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
                 REGISTER
               </Button>
@@ -254,7 +255,9 @@ function Register() {
                 </Row>   
                  </div>  
                
-      <Button style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold',marginTop:'10px',borderColor:"black"}} variant="secondary" href='Login' >
+      <Button 
+       style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold',marginTop:'10px',borderColor:"black"}} 
+      variant="secondary" href='Login' >
        LOGIN
       </Button>
       </div>

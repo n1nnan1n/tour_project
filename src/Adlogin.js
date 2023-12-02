@@ -1,5 +1,4 @@
-import { useState } from "react";
-import React from "react";
+import React from 'react'
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Stack from "react-bootstrap/Stack";
@@ -11,36 +10,31 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Image } from "react-bootstrap";
 import trip_outside from "./Pic/firstpage/trip_outside.jpg";
 import button from "react-bootstrap";
-import Register from "./Register.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import bg from './Pic/bg.jpg'
 import axios from "axios";
-import Adlogin from "./Adlogin";
-
-export const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
-      const token = response.data.token;
-
-      localStorage.setItem('token', token);
-
-      console.log(token)
-
-      // Redirect to the homepage or another route
-      window.location.href = '/';
-    } catch (error) {
-      console.error('Error during login:', error.response.error);
-      // Handle login error, e.g., display an error message to the user
-    }
-  };
-
-
+import { useState } from "react";
+function Adlogin() {
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    // const handleLogin = async () => {
+    //   try {
+    //     const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
+    //     const token = response.data.token;
+  
+    //     localStorage.setItem('token', token);
+  
+    //     console.log(token)
+  
+    //     // Redirect to the homepage or another route
+    //     window.location.href = '/';
+    //   } catch (error) {
+    //     console.error('Error during login:', error.response.error);
+    //     // Handle login error, e.g., display an error message to the user
+    //   }
+    // };
   return (
-   
     <div className="wrapper">
     <div class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
@@ -80,7 +74,9 @@ export const Login = () => {
                       <Form.Label  style={{float:'left',color:'black'}}>
                       <p style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>Email</p>
                       </Form.Label>
-                      <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
+                      <Form.Control type="email" placeholder="Email..." 
+                      // onChange={(e) => setEmail(e.target.value)}
+                      />
                     </Col>
                   </Form.Group>
 
@@ -93,22 +89,19 @@ export const Login = () => {
                       <Form.Label style={{float:'left',color:'black'}}>
                         <p  style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>password</p>
                       </Form.Label>
-                      <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
+                      <Form.Control type="password" placeholder="Password..." 
+                      // onChange={(e) => setPassword(e.target.value)}
+                      />
                     </Col>
                   </Form.Group>
-                  <Button onClick={handleLogin} className='button'  size="sm" style={{width:'35%',marginRight:'20%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
+                  <Button 
+                  // onClick={handleLogin}
+                   className='button'  size="sm" style={{width:'35%',marginRight:'10%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
               </Row>
                       
-  <div className="d-grid gap-2 buttonlog" >
+  <div className="d-grid gap-2" style={{width:'30%',marginLeft:'35%',marginTop:'30px'}}>
   
-
-    <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
-    Register
-    </Button>
-    <Button href="Adlogin" className='button3' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
-   Admin Login
-    </Button>
     {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
     <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />
     SignIn With Google
@@ -125,5 +118,7 @@ export const Login = () => {
 
   </div>
   );
-};
-export default Login;
+
+}
+
+export default Adlogin
