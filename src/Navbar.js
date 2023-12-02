@@ -11,7 +11,6 @@ import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { useEffect,useState } from "react";
 import styled from 'styled-components';
-import jwt_decode from 'jwt-decode';
 
 import Form from 'react-bootstrap/Form';
 
@@ -74,10 +73,10 @@ function NavbarComponent() {
             <div class="col-4 d-flex justify-content-end align-items-center" >
             {isLoggedIn ? (
               <>
-                <span class="text-black me-2">Welcome, {userFname}</span>
+                <span class="text-black me-2" style={{fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>Welcome, {userFname}</span>
                 <Button
                   variant="dark"
-                  style={{ marginRight: '15px' }}
+                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
                   onClick={handleLogout}
                 >
                   Logout
@@ -85,10 +84,10 @@ function NavbarComponent() {
               </>
             ) : (
               <>
-                <Link to="/register" class="btn btn-dark" style={{ marginRight: '5px', backgroundColor: '#063d8c' }}>
+                <Link to="/register" class="btn btn-dark" style={{ marginRight: '5px', backgroundColor: '#063d8c' , fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>
                   Register
                 </Link>
-                <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' }}>
+                <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' , fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>
                   Login
                 </Link>
               </>
