@@ -56,7 +56,7 @@ function Adlogin() {
                     textAlign: "center",
                   }}
                 >
-                  <p style={{color:'white',fontWeight:'bold',fontSize:'45px'}}>LOGIN</p>
+                  <p style={{color:'white',fontWeight:'bold',fontSize:'45px'}}>LOGIN Admin</p>
                 </div>
               </div>
 
