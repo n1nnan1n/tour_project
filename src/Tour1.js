@@ -33,10 +33,21 @@ function Tour1() {
     const [userID, setUserID] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userFname, setUserFname] = useState('');
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [tourID, setTourID] = useState('');
     const [tourName, setTourName] = useState('');
+    const [tourImage1, setTourImage1] = useState('');
+    const [tourImage2, setTourImage2] = useState('');
+    const [tourImage3, setTourImage3] = useState('');
+    const [tourImage4, setTourImage4] = useState('');
+    const [tourImage5, setTourImage5] = useState('');
+    const [tourPriceDetail, setTourPriceDetail] = useState('');
+    const [tourCancellation, setTourCancellation] = useState('');
+    const [tourPrice, setTourPrice] = useState('');
+
+    console.log(tourImage1);
 
     useEffect(() => {
       const token = localStorage.getItem('token');
@@ -51,7 +62,7 @@ function Tour1() {
           console.log(_id,fname,email)
   
           setUserID(_id);
-          setUserFname(fname.charAt(0).toUpperCase() + fname.slice(1));
+          setUserFname(fname);
           setUserEmail(email);
           setIsLoggedIn(true);
         } catch (error) {
@@ -71,9 +82,17 @@ function Tour1() {
           if (data && data.tour_name && data.tour_description&& data.tour_itinerary&& data.price_detail && data.tour_cancelpolicy && data.tour_image) {
             setTourData(data);
             setTourID(data._id);
-            setUserEmail(data.tour_name);
+            setTourName(data.tour_name);
+            setTourImage1(data.tour_image[0]);
+            setTourImage2(data.tour_image[1]);
+            setTourImage3(data.tour_image[2]);
+            setTourImage4(data.tour_image[3]);
+            setTourImage5(data.tour_image[4]);
+            setTourPriceDetail(data.price_detail)
+            setTourPrice(data.price)
+            setTourCancellation(data.tour_cancelpolicy)
             setIsLoggedIn(true);
-            console.log(data._id,data.tour_name,)
+            console.log(data._id,data.tour_name)
           } else {
             console.error('Invalid data received:', data);
           }
@@ -90,16 +109,14 @@ function Tour1() {
       description: `Image ${index + 1}`,
     }));
 
-      const handleBookNow = () => {
-        if (isLoggedIn) {
-          navigate({
-            pathname: "/Calendar",
-            state: { user: { userID, userFname, userEmail }, tourData: { tourID, tourName } }
-          });
-        } else {
-          navigate("/Login");
-        }
-      };
+      // const handleBookNow = () => {
+      //   if (isLoggedIn) {
+      //     console.log('Navigating with user and tour data:', { userID, userFname, userEmail, tourID, tourName });
+      //     navigate({ pathname: "/Calendar", replace:true , state: { userID, userFname, userEmail, tourID, tourName}});
+      //   } else {
+      //     navigate("/Login");
+      //   }
+      // };
 return (
     <>
     <div  className='bg'>
@@ -191,9 +208,25 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 </Tabs>
-  <Button variant="primary" style={{ marginTop: '30px' }} onClick={handleBookNow}>
+{isLoggedIn ? (
+              <>
+                <Button
+                  variant="dark"
+                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  onClick={()=>{navigate('/Calendar',{replace:true , state:{ userID, userFname, userEmail, tourID, tourName , tourImage1 , tourImage2 , tourImage3 , tourImage4 , tourImage5 , tourPriceDetail , tourCancellation , tourPrice}})}}>
+                  Book now
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' , fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>
+                  Login
+                </Link>
+              </>
+            )}
+  {/* <Button variant="primary" style={{ marginTop: '30px' }} onClick={handleBookNow}>
       Book Now
-  </Button>
+  </Button> */}
  {/* <Button variant="primary" style={{marginTop:'30px'}} href="Calendar" >Book Now</Button> */}
 
 </div>  </Container>

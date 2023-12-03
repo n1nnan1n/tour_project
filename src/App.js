@@ -32,7 +32,7 @@ function App() {
                 {/* <Route path="Tour1" element={<Tour1/>} /> */}
                 <Route path="/:tour_name" element={<Tour1/>}/>
                 {/* <Route path="Calendar/:_id" element={<Calendar/>}/> */}
-                <Route path="Calendar" element={<Calendar/>} />
+                <Route path="/Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
                 <Route path="Pay" element={<Pay/>} />
               

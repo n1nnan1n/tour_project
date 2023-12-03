@@ -16,33 +16,11 @@ import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useLocation} from 'react-router-dom';
 
 function Calendar() {
-    const [show, setShow] = useState(true);
+  const location = useLocation();
 
-  const [tourData, setTourData] = useState({}); // Initialize as an empty object
-  let { tour_name } = useParams();
-  useEffect(() => {
-    const fetchTourData = async () => {
-      try {
-        const URL = "https://tourapi-hazf.onrender.com/tourinfo/" + tour_name; // Assuming fetching a specific tour
-        console.log(URL);
-        const response = await axios.get(URL);
-        const data = response.data;
-
-        // Assuming the API returns a single object for the tour data
-        if (data && data.price && data.price_detail && data.tour_cancelpolicy) {
-          setTourData(data);
-        } else {
-          console.error("Invalid data received:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchTourData();
-  }, []);
   function disableWeekends(date) {
     // วันที่ 6 คือวันเสาร์ และ วันที่ 0 คือวันอาทิตย์
     return date.day() === 0 || date.day() === 6;
@@ -57,7 +35,7 @@ function Calendar() {
 
 
 const [total, setTotal] = useState(0); // กำหนด total ใน useState
-const price = 10; // ตัวแปร price (สมมติว่าเป็น 10)
+const price = location.state.tourPrice; // ตัวแปร price (สมมติว่าเป็น 10)
 
 const handleInputChange = (e) => {
     setNumberValue(e.target.value);
@@ -78,9 +56,7 @@ const handleInputChange = (e) => {
    console.log("Selected Date:", value);
     console.log("Number of persons:", numberValue);
     console.log("price:", total);
-    // Add your logic for form submission or API call here
   };
-
   return (
     <>
       <div className="bg" style={{ paddingTop: "20px" }}>
@@ -88,7 +64,7 @@ const handleInputChange = (e) => {
           <p
             style={{ fontSize: "25px", fontWeight: "bold", textAlign: "left" }}
           >
-            Name Tour
+            {location.state.tourName}
           </p>
           <Row>
             <Col >
@@ -96,25 +72,25 @@ const handleInputChange = (e) => {
                className="picright"
               >
                 <img
-                  src={unseen3}
-                  style={{ width: "100%", height: "100%" }}
-                  alt="First slide"
-                />
+          src={location.state.tourImage1}
+          style={{ width: "100%", height: "100%" }}
+          alt="First slide"
+        />
               </div>
             </Col>
             <Col>
             <Row>
              
               <div  className="picdown">
-            <img
-          src={unseen3}
+              <img
+          src={location.state.tourImage2}
           style={{ width: "100%", height: "100%" }}
           alt="First slide"
         /></div>
 
 <div  className="picdown">
-            <img
-          src={unseen3}
+<img
+          src={location.state.tourImage3}
           style={{ width: "100%", height: "100%" }}
           alt="First slide"
         /></div>
@@ -123,15 +99,15 @@ const handleInputChange = (e) => {
             <Row>
              
               <div  className="pictop">
-            <img
-          src={unseen3}
+              <img
+          src={location.state.tourImage4}
           style={{ width: "100%", height: "100%" }}
           alt="First slide"
         /></div>
 
 <div  className="pictop">
-            <img
-          src={unseen3}
+          <img
+          src={location.state.tourImage5}
           style={{ width: "100%", height: "100%" }}
           alt="First slide"
         /></div>
@@ -176,8 +152,7 @@ const handleInputChange = (e) => {
                         wordWrap: "break-word",
                       }}
                     >
-                     - 9,384 BHT for 2 people (if you have more people in your group or you are on your own, please contact us to check for the price)
-
+                  {location.state.tourPriceDetail}
                     </p>
                  
                 </div>
@@ -208,9 +183,7 @@ const handleInputChange = (e) => {
                         wordWrap: "break-word",
                       }}
                     >
-                      -Plans are subject to change, and sometimes unexpectedly,
-                      so you can cancel your event free of charge within 2 weeks
-                      before the tour starts.
+                  {location.state.tourCancellation}
                     </p>
                   </div>
                 
@@ -244,6 +217,8 @@ const handleInputChange = (e) => {
         value={numberValue}
         onChange={handleInputChange}
         className="input"
+        min={'1'}
+        max={'10'}
        /></p>
         <p style={{textAlign:'left',float:'left',fontWeight:'bold'}}>Price: <br></br>Total:</p>
         <p style={{textAlign:'right',float:'right'}}>{price}<br></br>{total}</p>
@@ -255,7 +230,7 @@ const handleInputChange = (e) => {
                 
                 </div>
               </Col>
-            </Row>{" "}
+            </Row>
           </div>
         </Container>
 
