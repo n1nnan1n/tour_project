@@ -26,7 +26,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Tour1() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
 
     let { tour_name } = useParams(); 
     const [tourData, setTourData] = useState({}); // Initialize as an empty object
@@ -46,30 +47,10 @@ function Tour1() {
     const [tourPriceDetail, setTourPriceDetail] = useState('');
     const [tourCancellation, setTourCancellation] = useState('');
     const [tourPrice, setTourPrice] = useState('');
-
-    console.log(tourImage1);
+    console.log(token);
+    console.log(isLoggedIn);
 
     useEffect(() => {
-      const token = localStorage.getItem('token');
-      if (token) {
-        try {
-          // Split the token into its parts
-          const [, payloadBase64,] = token.split('.');
-          const decodedPayload = atob(payloadBase64);
-  
-          // Parse the decoded payload as JSON
-          const { _id,fname,email } = JSON.parse(decodedPayload);
-          console.log(_id,fname,email)
-  
-          setUserID(_id);
-          setUserFname(fname);
-          setUserEmail(email);
-          setIsLoggedIn(true);
-        } catch (error) {
-          console.error('Error parsing token:', error);
-        }
-      }
-
       const fetchTourData = async () => {
         try {
           // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
@@ -91,8 +72,6 @@ function Tour1() {
             setTourPriceDetail(data.price_detail)
             setTourPrice(data.price)
             setTourCancellation(data.tour_cancelpolicy)
-            setIsLoggedIn(true);
-            console.log(data._id,data.tour_name)
           } else {
             console.error('Invalid data received:', data);
           }
@@ -100,6 +79,26 @@ function Tour1() {
           console.error('Error fetching data:', error);
         }
       };
+
+      if (token != null) {
+        try {
+          // Split the token into its parts
+          const [, payloadBase64,] = token.split('.');
+          const decodedPayload = atob(payloadBase64);
+  
+          // Parse the decoded payload as JSON
+          const { _id,fname,email } = JSON.parse(decodedPayload);
+  
+          setUserID(_id);
+          setUserFname(fname);
+          setUserEmail(email);
+          setIsLoggedIn(true);
+        } catch (error) {
+          console.error('Error parsing token:', error);
+        }
+      }else{
+        setIsLoggedIn(false);
+      }
       fetchTourData();
     }, []);
 
@@ -109,26 +108,9 @@ function Tour1() {
       description: `Image ${index + 1}`,
     }));
 
-      // const handleBookNow = () => {
-      //   if (isLoggedIn) {
-      //     console.log('Navigating with user and tour data:', { userID, userFname, userEmail, tourID, tourName });
-      //     navigate({ pathname: "/Calendar", replace:true , state: { userID, userFname, userEmail, tourID, tourName}});
-      //   } else {
-      //     navigate("/Login");
-      //   }
-      // };
 return (
     <>
     <div  className='bg'>
-    <div>
-      {/* {tourData.tour_image?.map((base64String, index) => (
-        <img
-          key={index}
-          src={`${base64String}`} // Assuming PNG format, adjust accordingly
-          alt={`Image ${index + 1}`}
-        />
-      ))} */}
-    </div>
      <Container >
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
@@ -146,17 +128,6 @@ return (
             />
           </div>
 
-    
-{/* <div className='data-app'>
-      {tourData && tourData.tour_name && tourData.tour_description ? (
-        <div>
-          <h1>{tourData.tour_name}</h1>
-          <p>{tourData.tour_description}</p>
-        </div>
-      ) : (
-        <p>No tour data available</p>
-      )}
-    </div> */}
  <div style={{ marginBottom: "30px"  }}>
  <Tabs
 defaultActiveKey="description"
@@ -219,9 +190,15 @@ data-bs-theme="dark"
               </>
             ) : (
               <>
-                <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' , fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>
-                  Login
-                </Link>
+                <Button
+                  variant="dark"
+                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  onClick={()=>{navigate('/Login')}}>
+                  Book now
+                </Button>
+                {/* <Link to="/login" class="btn btn-outline-dark" style={{ marginRight: '15px' , fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto"}}>
+                  Book now
+                </Link> */}
               </>
             )}
   {/* <Button variant="primary" style={{ marginTop: '30px' }} onClick={handleBookNow}>
