@@ -54,10 +54,10 @@ function NavbarComponent() {
   };
 
   return (
-    <div className="navweb">
     <div className="wrapper" style={{ textAlign:"center"}}>
-      <div>
-        <header class="border-bottom lh-1 py-3">
+    
+
+ <header class="border-bottom lh-1 py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1"></div>
             <div class="col-4 text-center" >
@@ -90,19 +90,17 @@ function NavbarComponent() {
                 </Link>
               </>
             )}
-{/*              
-              <a class="btn  btn-dark"style={{marginRight:'5px',backgroundColor:'#063d8c'}} ><Link to="/Register"style={{color:'white'}}>Register</Link>
-              </a>
-              <a class="btn  btn-outline-dark" style={{marginRight:'15px'}}><Link to="/login" style={{color:'#063d8c'}}>Login</Link>
-              </a> */}
             </div>
           </div>
         </header>
-<div style={{height:"70px",backgroundColor:"#063d8c",paddingTop:'5px'}} >
-      <Container  style={{paddingLeft:'10%'}} >
-        <Navbar data-bs-theme="dark">
-          
-              <Nav.Item >
+          <Navbar expand="lg"  collapseOnSelect style={{backgroundColor:"#063d8c"}}>
+      <Container fluid>
+        {/* <Navbar.Brand href="#" className="fontnav">Navbar scroll</Navbar.Brand> */}
+        
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+             <Nav.Item>
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -123,14 +121,14 @@ function NavbarComponent() {
               </NavDropdown>
 
               <Nav.Item>
-                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="Customized">Customized tour</Nav.Link>
+                <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link'  href="Customized">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' eventKey="#" href="Reviewall">
                   Review
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Language" id="nav-dropdown">
+              <NavDropdown style={{marginRight:"50px"}} id="navbarScrollingDropdown " className='fontnav' title="Language">
                 <NavDropdown.Item eventKey="4.1">English 🇬🇧</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Zhōngguó 🇨🇳</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Deutsch 🇩🇪</NavDropdown.Item>
@@ -139,58 +137,20 @@ function NavbarComponent() {
             
               </NavDropdown>
               
-          </Navbar>
-          </Container>
-</div>
-</div>
-</div>
-         
-
-          <div className="navphone">
-          <Navbar expand="lg"  style={{backgroundColor:"#063d8c"}}>
-      <Container fluid>
-        <Navbar.Brand href="#" className="fontnav">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+          
+          
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>
     
       
           </div>
-          </div>
+       
      
   );
 
 }
 export default NavbarComponent;
+

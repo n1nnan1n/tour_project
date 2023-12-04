@@ -237,12 +237,7 @@ text-shadow: 2px 4px 4px #000000;
 .input{
   width: 230px;
 }
-.navweb{
-  display:block ;
-}
-.navphone{
-  display: none;
-}
+
 .alertt{
   width:80%;
   margin:0 auto;
@@ -256,12 +251,7 @@ text-shadow: 2px 4px 4px #000000;
 }
 /* @media (prefers-reduced-motion: no-preference) { */
   @media (max-width: 576px) {
-    .navphone{
-      display: contents;
-    }
-    .navweb{
-      display:none ;
-    }
+   
  .input{
   max-width: 230px;
 }
@@ -329,3 +319,4 @@ h5 {
     transform: rotate(360deg);
   }
 }
+
