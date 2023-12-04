@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route ,useParams} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavbarComponent from "./Navbar";
 import Register from './Register'
 import Home from './Home'
@@ -13,7 +13,11 @@ import Daytrip from './Daytrip';
 import Tour1 from './Tour1'
 import Calendar from './Calendar';
 import Reviewall from './Reviewall';
-import Pay from './Pay';
+// import Pay from './Pay';
+import Return from './Return';
+import CheckoutForm from './Checkout';
+
+
 function App() {
   return (
         <div className="App">
@@ -34,7 +38,9 @@ function App() {
                 {/* <Route path="Calendar/:_id" element={<Calendar/>}/> */}
                 <Route path="/Calendar" element={<Calendar/>} />
                 <Route path="Reviewall" element={<Reviewall/>} />
-                <Route path="Pay" element={<Pay/>} />
+                {/* <Route path="Pay" element={<Pay/>} /> */}
+                <Route path="/checkout" element={<CheckoutForm />} />
+                <Route path="/return" element={<Return />} />
               
             </Routes>
           </BrowserRouter>

@@ -15,7 +15,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useLocation} from 'react-router-dom';
 
 function Calendar() {
@@ -26,7 +25,7 @@ function Calendar() {
     return date.day() === 0 || date.day() === 6;
   }
 
-  const [value, setValue] = React.useState(dayjs("2022-04-17"));
+  const [date, setDate] = React.useState(dayjs());
 
   const handleClick = (event) => {
     <Oneday />;
@@ -48,12 +47,12 @@ const handleInputChange = (e) => {
   const handleSubmit = (e) => {  // Process form submission here
     e.preventDefault();
     
-    window.alert(`Selected Date: ${value}\nNumber of persons: ${numberValue}\nPrice: ${total}`); window.location.href = `/Pay`;
+    window.alert(`Selected Date: ${date}\nNumber of persons: ${numberValue}\nPrice: ${total}`); window.location.href = `/checkout`;
     // const  value = ("Selected Date:", value);
     // const  numberValue = ("Number of persons:", numberValue);
     // const  total = ("price:", total);
    
-   console.log("Selected Date:", value);
+   console.log("Selected Date:", date);
     console.log("Number of persons:", numberValue);
     console.log("price:", total);
   };
@@ -205,9 +204,9 @@ const handleInputChange = (e) => {
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                       label="Select Tour Date"
-                      value={value}
+                      value={date}
                       shouldDisableDate={disableWeekends}
-                      onChange={(newValue) => setValue(newValue)}
+                      onChange={(newValue) => setDate(newValue)}
                       renderInput={(params) => <TextField {...params} />}
                     />
                   </LocalizationProvider>

@@ -47,8 +47,6 @@ function Tour1() {
     const [tourPriceDetail, setTourPriceDetail] = useState('');
     const [tourCancellation, setTourCancellation] = useState('');
     const [tourPrice, setTourPrice] = useState('');
-    console.log(token);
-    console.log(isLoggedIn);
 
     useEffect(() => {
       const fetchTourData = async () => {
