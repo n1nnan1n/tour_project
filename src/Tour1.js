@@ -190,7 +190,7 @@ data-bs-theme="dark"
               <>
                 <Button
                   variant="dark"
-                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto",marginTop:'20px' }}
                   onClick={()=>{navigate('/Login')}}>
                   Book now
                 </Button>
