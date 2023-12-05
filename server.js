@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net
 
 global.loggedIn = null
 
-const YOUR_DOMAIN = 'https://tour-project-one.vercel.app';
+const YOUR_DOMAIN = 'http://localhost:3000';
 
 const RegisterController = require('./controllers/RegisterController');
 const LoginController = require('./controllers/LoginController');
