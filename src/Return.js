@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
     Navigate
   } from "react-router-dom";
+import axios from "axios";
 
 const Return = () => {
     const [status, setStatus] = useState(null);
@@ -12,12 +13,16 @@ const Return = () => {
       const urlParams = new URLSearchParams(queryString);
       const sessionId = urlParams.get('session_id');
   
-      fetch(`/session-status?session_id=${sessionId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setStatus(data.status);
-          setCustomerEmail(data.customer_email);
-        });
+      axios
+      .get(`http://localhost:3001/session-status?session_id=${sessionId}`)
+      .then((response) => {
+        const data = response.data;
+        setStatus(data.status);
+        setCustomerEmail(data.customer_email);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
     }, []);
   
     if (status === 'open') {

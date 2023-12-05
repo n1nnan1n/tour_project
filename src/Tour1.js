@@ -181,7 +181,7 @@ data-bs-theme="dark"
               <>
                 <Button
                   variant="dark"
-                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto", marginTop:'20px' }}
                   onClick={()=>{navigate('/Calendar',{replace:true , state:{ userID, userFname, userEmail, tourID, tourName , tourImage1 , tourImage2 , tourImage3 , tourImage4 , tourImage5 , tourPriceDetail , tourCancellation , tourPrice}})}}>
                   Book now
                 </Button>
