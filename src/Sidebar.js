@@ -36,6 +36,7 @@ export default function Sidebar() {
                 boxSizing: 'border-box',
               },
             }}
+            style={{paddingTop:'80px',zIndex:'0',paddingRight:'200px'}}
             variant="permanent"
             anchor="left"
           >
@@ -47,7 +48,7 @@ export default function Sidebar() {
       <Box sx={{ width: drawerWidth }}>
         <List>
           {[
-            { text: 'Home', icon: <HomeIcon />, path: '/' },
+            { text: 'Home', icon: <HomeIcon />, path: '/AdHome' },
             { text: 'Booking', icon: <EditCalendarIcon />, path: '/booking' },
             // เพิ่มรายการเมนูอื่น ๆ ตามต้องการ
           ].map((item, index) => (
