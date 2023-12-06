@@ -29,6 +29,8 @@ const RegisterController = require('./controllers/RegisterController');
 const LoginController = require('./controllers/LoginController');
 const TourinfoController = require('./controllers/TourinfoController');
 const SesController = require('./controllers/SesController');
+const AdminCreate = require('./controllers/AdminCreate');
+const AdminLogin = require('./controllers/AdminLoginController');
 
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -41,6 +43,8 @@ app.use("*", (req, res, next) => {
 
 app.post('/register',redirectIfAuth,RegisterController.register);
 app.post('/login',redirectIfAuth,LoginController.login);
+app.post('/admincreate',AdminCreate.admincreate);
+app.post('/adminlogin',AdminLogin.adminlogin);
 
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
