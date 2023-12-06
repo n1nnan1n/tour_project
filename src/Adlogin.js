@@ -12,30 +12,28 @@ import { Image } from "react-bootstrap";
 import button from "react-bootstrap";
 import './App.css';
 import bg from './pic/bg.jpg'
-// import axios from "axios";
+import axios from "axios";
 
-// export const Adlogin = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const handleLogin = async () => {
-//     try {
-//       const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
-//       // const response = await axios.post('http://localhost:3001/login', { email, password });
-//       const token = response.data.token;
+export const Adlogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLogin = async () => {
+    try {
+      // const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
+      const response = await axios.post('http://localhost:3001/adminlogin', { email, password });
+      const token = response.data.token;
 
-//       localStorage.setItem('token', token);
+      localStorage.setItem('token', token);
 
-//       console.log(token)
+      console.log(token)
 
-//       // Redirect to the homepage or another route
-//       window.location.href = '/';
-//     } catch (error) {
-//       console.error('Error during login:', error.response.error);
-//       // Handle login error, e.g., display an error message to the user
-//     }
-//   };
-
-function Adlogin() {
+      // Redirect to the homepage or another route
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error during login:', error.response.error);
+      // Handle login error, e.g., display an error message to the user
+    }
+  };
   return (
    
     <div className="wrapper">
@@ -77,8 +75,7 @@ function Adlogin() {
                       <Form.Label  style={{float:'left',color:'black'}}>
                       <p style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>Email</p>
                       </Form.Label>
-                      <Form.Control type="email" placeholder="Email..." 
-                    //   onChange={(e) => setEmail(e.target.value)}
+                      <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}
                       />
                     </Col>
                   </Form.Group>
@@ -92,13 +89,12 @@ function Adlogin() {
                       <Form.Label style={{float:'left',color:'black'}}>
                         <p  style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>password</p>
                       </Form.Label>
-                      <Form.Control type="password" placeholder="Password..." 
-                    //   onChange={(e) => setPassword(e.target.value)}
+                      <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}
                       />
                     </Col>
                   </Form.Group>
                   <Button
-                //    onClick={handleLogin}
+                   onClick={handleLogin}
                    className='button'  size="sm" style={{width:'35%',marginRight:'20%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
               </Row>
