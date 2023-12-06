@@ -16,6 +16,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import Booking from './Booking';
 import AdHome from './AdHome';
 import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Button from 'react-bootstrap/Button';
+
 const drawerWidth = 240;
 export default function Sidebar() {
 
@@ -43,7 +47,7 @@ export default function Sidebar() {
       <Box sx={{ width: drawerWidth }}>
         <List>
           {[
-            { text: 'Home', icon: <MailIcon />, path: '/' },
+            { text: 'Home', icon: <HomeIcon />, path: '/' },
             { text: 'Booking', icon: <EditCalendarIcon />, path: '/booking' },
             // เพิ่มรายการเมนูอื่น ๆ ตามต้องการ
           ].map((item, index) => (
@@ -55,6 +59,8 @@ export default function Sidebar() {
             </ListItem>
           ))}
         </List>
+        <Button variant="primary" > { <LogoutIcon />}  Logout </Button>
+        
       </Box>
     </Drawer>
           </Box>
