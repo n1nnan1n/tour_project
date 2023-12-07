@@ -93,13 +93,15 @@ function NavbarComponent() {
             </div>
           </div>
         </header>
-          <Navbar expand="lg"  collapseOnSelect style={{backgroundColor:"#063d8c"}}>
-      <Container fluid>
+          <Navbar expand="lg" class="row flex-nowrap justify-content-between align-items-center" collapseOnSelect style={{backgroundColor:"#063d8c"}}>
+    
+          <div class="col-2 "></div>
+          <Container fluid>
         {/* <Navbar.Brand href="#" className="fontnav">Navbar scroll</Navbar.Brand> */}
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" style={{marginLeft:"45vh"}}>
+          <Nav className="me-auto" >
              <Nav.Item >
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
