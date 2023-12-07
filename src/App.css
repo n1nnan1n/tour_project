@@ -75,12 +75,14 @@ input {
   font-family: "Agbalumo";
   font-size: 25px;
   font-weight: "bold";
+  color: white;
 }
 .fontnav {
   font-family: "Agbalumo";
   font-size: 25px;
   font-weight: "bold";
   color: aliceblue;
+  text-decoration: none;
 }
 h1,
 p {

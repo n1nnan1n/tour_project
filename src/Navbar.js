@@ -11,6 +11,7 @@ import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { useEffect,useState } from "react";
 import styled from 'styled-components';
+
 import Form from 'react-bootstrap/Form';
 
 function NavbarComponent() {
@@ -128,7 +129,7 @@ function NavbarComponent() {
                 </Nav.Link>
               </Nav.Item>
               <NavDropdown style={{marginRight:"50px"}} id="fontnav" className='fontnav' title="Language">
-                <NavDropdown.Item eventKey="4.1">English Google (Noto Color Emoji - Unicode 15.1)</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.1">English 🇬🇧</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Zhōngguó 🇨🇳</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Deutsch 🇩🇪</NavDropdown.Item>
                 
