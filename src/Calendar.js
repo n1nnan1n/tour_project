@@ -16,25 +16,29 @@ import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Calendar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
+  const userID = location.state.userID;
+  const tourID = location.state.tourID;
+  const tourPrice = location.state.tourPrice;
+  const tourImage1 = location.state.tourImage1;
+
+  //must axios closed date
   function disableWeekends(date) {
     // วันที่ 6 คือวันเสาร์ และ วันที่ 0 คือวันอาทิตย์
     return date.day() === 0 || date.day() === 6;
   }
 
   const [date, setDate] = React.useState(dayjs());
-
-  const handleClick = (event) => {
-    <Oneday />;
-  };
   const [numberValue, setNumberValue] = useState(1);
 
 
-const [total, setTotal] = useState(0); // กำหนด total ใน useState
-const price = location.state.tourPrice; // ตัวแปร price (สมมติว่าเป็น 10)
+const [total, setTotal] = useState(0);
+const price = location.state.tourPrice;
 
 const handleInputChange = (e) => {
     setNumberValue(e.target.value);
@@ -44,18 +48,19 @@ const handleInputChange = (e) => {
     const calculatedTotal = numberValue * price;
     setTotal(calculatedTotal);
   }, [numberValue, price]);
-  const handleSubmit = (e) => {  // Process form submission here
-    e.preventDefault();
+
+  console.log(numberValue);
+  console.log(date);
+  // const handleSubmit = (e) => {  // Process form submission here
+  //   e.preventDefault();
     
-    window.alert(`Selected Date: ${date}\nNumber of persons: ${numberValue}\nPrice: ${total}`); window.location.href = `/checkout`;
-    // const  value = ("Selected Date:", value);
-    // const  numberValue = ("Number of persons:", numberValue);
-    // const  total = ("price:", total);
+  //   window.alert(`Selected Date: ${date}\nNumber of persons: ${numberValue}\nPrice: ${total}`); 
+  //   window.location.href = `/checkout`;
    
-   console.log("Selected Date:", date);
-    console.log("Number of persons:", numberValue);
-    console.log("price:", total);
-  };
+  //  console.log("Selected Date:", date);
+  //   console.log("Number of persons:", numberValue);
+  //   console.log("price:", total);
+  // };
   return (
     <>
       <div className="bg" style={{ paddingTop: "20px" }}>
@@ -222,9 +227,7 @@ const handleInputChange = (e) => {
         <p style={{textAlign:'left',float:'left',fontWeight:'bold'}}>Price: <br></br>Total:</p>
         <p style={{textAlign:'right',float:'right'}}>{price}<br></br>{total}</p>
           
-        <Button type="submit"  value={numberValue} onClick={handleSubmit}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE
-          
-     </Button>
+        <Button type="submit"  value={numberValue} onClick={()=>{navigate('/Checkout',{replace:true , state:{ userID , tourID, tourImage1 , tourPrice , numberValue , date : date.toISOString()}})}}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
                  
                 
                 </div>
