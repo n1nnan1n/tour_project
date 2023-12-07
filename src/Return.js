@@ -14,11 +14,13 @@ const Return = () => {
       const sessionId = urlParams.get('session_id');
   
       axios
-      .get(`http://localhost:3001/session-status?session_id=${sessionId}`)
+      // .get(`http://localhost:3001/session-status?session_id=${sessionId}`)
+      .get(`https://tourapi-hazf.onrender.com/session-status?session_id=${sessionId}`)
       .then((response) => {
         const data = response.data;
         setStatus(data.status);
         setCustomerEmail(data.customer_email);
+        console.log(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
