@@ -103,7 +103,7 @@ export const Login = () => {
   <div className="d-grid gap-2 buttonlog" >
   
 
-    <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
+    <Button href="/Register" className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
     Register
     </Button>
     {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
