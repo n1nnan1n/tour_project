@@ -99,8 +99,8 @@ function NavbarComponent() {
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-             <Nav.Item>
+          <Nav className="me-auto" style={{marginLeft:"45vh"}}>
+             <Nav.Item >
                 <Nav.Link style={{marginRight:"50px"}} id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -108,7 +108,7 @@ function NavbarComponent() {
               </Nav.Item>
       
    
-              <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Day Trips" id="Dropdown fontnav" >
+              <NavDropdown style={{marginRight:"50px"}}  className='fontnav' title="Day Trips" id="fontnav" >
                 <NavDropdown.Item eventKey="4.1" href="/Bangkok%20Grand%20Tour">Bangkok grand tour</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2" href="/Bangkok%20unseen%20Tour">bangkok unseen tour</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.3" href="/Bkk%20Instagram%20TikTok%20Tour%20(For%20whose%20who%20love%20photos)">bkk Instargram/Tiktok</NavDropdown.Item>
@@ -128,8 +128,8 @@ function NavbarComponent() {
                   Review
                 </Nav.Link>
               </Nav.Item>
-              <NavDropdown style={{marginRight:"50px"}} id="navbarScrollingDropdown " className='fontnav' title="Language">
-                <NavDropdown.Item eventKey="4.1">English 🇬🇧</NavDropdown.Item>
+              <NavDropdown style={{marginRight:"50px"}} id="fontnav" className='fontnav' title="Language">
+                <NavDropdown.Item eventKey="4.1">English Google (Noto Color Emoji - Unicode 15.1)</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Zhōngguó 🇨🇳</NavDropdown.Item>
                 <NavDropdown.Item eventKey="4.2">Deutsch 🇩🇪</NavDropdown.Item>
                 
