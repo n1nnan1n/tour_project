@@ -16,7 +16,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import bg from './Pic/bg.jpg'
 import axios from "axios";
-import Adlogin from "./Adlogin";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -106,9 +105,6 @@ export const Login = () => {
 
     <Button onClick={Register} className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
     Register
-    </Button>
-    <Button href="Adlogin" className='button3' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
-   Admin Login
     </Button>
     {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
     <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />
