@@ -24,7 +24,13 @@ const CheckoutForm = () => {
   useEffect(() => {
     // Create a Checkout Session as soon as the page loads
     axios
-    .post("http://localhost:3001/create-checkout-session", orderData)
+    // .post("http://localhost:3001/create-checkout-session", orderData)
+    .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
+    .then((response) => setClientSecret(response.data.clientSecret))
+    .catch((error) => console.error("Error fetching data:", error));
+
+    axios
+    .post("http://localhost:3001/ordercalculate", orderData)
     .then((response) => setClientSecret(response.data.clientSecret))
     .catch((error) => console.error("Error fetching data:", error));
 }, []);
