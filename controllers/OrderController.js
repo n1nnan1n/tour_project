@@ -3,10 +3,25 @@ const Order = require('../models/order');
 var User = require('../models/user');
 
 const placeOrder = async (req, res) =>{
-    const { _id, quantity } = req.body;
+    const { user_id,
+      tour_id,
+      quantity,
+      tour_date,
+      total_price,
+      order_date,
+      pay_by,
+      order_status } = req.body;
 
   // Validate the input
-  if (!_id || !quantity || isNaN(quantity) || quantity <= 0) {
+  if (!user_id ||
+    !tour_id ||
+    isNaN(quantity) ||
+    quantity <= 0 ||
+    isNaN(total_price) ||
+    !tour_date ||
+    !order_date ||
+    !pay_by ||
+    !order_status) {
     return res.status(400).json({ error: 'Invalid input data' });
   }
 
