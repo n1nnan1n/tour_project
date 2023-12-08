@@ -22,10 +22,17 @@ function Calendar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [order_userID, setorder_userID] = useState('');
+  const [order_tourID, setorder_tourID] = useState('');
+  const [order_tourprice, setorder_tourprice] = useState('');
+  const [order_quantity, setorder_quantity] = useState('');
+  const [order_tourDate, setorder_tourDate] = useState('');
+  const [order_totalprice, setorder_totalprice] = useState('');
+
   const userID = location.state.userID;
   const tourID = location.state.tourID;
-  const tourPrice = location.state.tourPrice;
   const tourImage1 = location.state.tourImage1;
+  const price = location.state.tourPrice;
 
   //must axios closed date
   function disableWeekends(date) {
@@ -36,31 +43,37 @@ function Calendar() {
   const [date, setDate] = React.useState(dayjs());
   const [numberValue, setNumberValue] = useState(1);
 
+  const [total, setTotal] = useState(0);
 
-const [total, setTotal] = useState(0);
-const price = location.state.tourPrice;
 
 const handleInputChange = (e) => {
     setNumberValue(e.target.value);
   };
  
-  useEffect(() => {
+  useEffect(() => { 
     const calculatedTotal = numberValue * price;
     setTotal(calculatedTotal);
-  }, [numberValue, price]);
+    const orderData ={
+      user_id:userID,
+      tour_id:tourID,
+      quantity:Number(numberValue),
+      tour_date:date
+    }
+    axios
+    .post("http://localhost:3001/ordercalculate", orderData)
+    // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
+    .then((response) => {
+      setorder_userID(response.data.user_id);
+      setorder_tourID(response.data.tour_id); // assuming there is a property named tour_id
+      setorder_quantity(response.data.quantity); // assuming there is a property named quantity
+      setorder_tourDate(response.data.tour_date); // assuming there is a property named tour_date
+      setorder_totalprice(response.data.total_price);
+      setorder_tourprice(response.data.tour_price);
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+  }, [userID,tourID,date,numberValue, price]);
+  console.log(order_totalprice);
 
-  console.log(numberValue);
-  console.log(date);
-  // const handleSubmit = (e) => {  // Process form submission here
-  //   e.preventDefault();
-    
-  //   window.alert(`Selected Date: ${date}\nNumber of persons: ${numberValue}\nPrice: ${total}`); 
-  //   window.location.href = `/checkout`;
-   
-  //  console.log("Selected Date:", date);
-  //   console.log("Number of persons:", numberValue);
-  //   console.log("price:", total);
-  // };
   return (
     <>
       <div className="bg" style={{ paddingTop: "20px" }}>
@@ -216,8 +229,7 @@ const handleInputChange = (e) => {
                     />
                   </LocalizationProvider>
                   <p  style={{ marginTop: '20px',fontWeight:'bold',textAlign:"left"}}>GUESTS<br></br>
-<input  type="number"
-        // style={{ width: '230px' }}
+        <input  type="number"
         value={numberValue}
         onChange={handleInputChange}
         className="input"
@@ -227,7 +239,7 @@ const handleInputChange = (e) => {
         <p style={{textAlign:'left',float:'left',fontWeight:'bold'}}>Price: <br></br>Total:</p>
         <p style={{textAlign:'right',float:'right'}}>{price}<br></br>{total}</p>
           
-        <Button type="submit"  value={numberValue} onClick={()=>{navigate('/Checkout',{replace:true , state:{ userID , tourID, tourImage1 , tourPrice , numberValue , date : date.toISOString()}})}}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
+        <Button type="submit"  value={numberValue} onClick={()=>{navigate('/Checkout',{replace:true , state:{ order_userID , order_tourID , order_quantity , order_tourDate , order_totalprice , order_tourprice , tourImage1 }})}}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
                  
                 
                 </div>

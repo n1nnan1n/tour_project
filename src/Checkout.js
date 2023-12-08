@@ -14,25 +14,39 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState('');
 
   const orderData = {
-    userID: location.state.userID,
-    tourID: location.state.tourID,
-    tourPrice: location.state.tourPrice,
-    numberValue: location.state.numberValue,
-    date: new Date(location.state.date).toISOString(),
+    user_id: location.state.order_userID,
+    tour_id: location.state.order_tourID,
+    quantity: location.state.order_quantity,
+    tour_date: location.state.order_tourDate,
+    tour_price: location.state.order_tourprice,
+    total_price: location.state.order_totalprice
   };
+  const tour_date = new Date(orderData.tour_date);
+  const options = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  };
+  const tour_date_format = tour_date.toLocaleDateString('en-US', options);
+  const [month, day, year] = tour_date_format.split('/');
+  const tourDate = `${day}/${month}/${year}`;
 
   useEffect(() => {
     // Create a Checkout Session as soon as the page loads
     axios
     // .post("http://localhost:3001/create-checkout-session", orderData)
     .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
-    .then((response) => setClientSecret(response.data.clientSecret))
+    .then((response) => 
+    setClientSecret(response.data.clientSecret)
+    // ,
+    // axios
+    // .post("http://localhost:3001/ordercalculate", orderData)
+    // .then((response) => setClientSecret(response.data.clientSecret))
+    // .catch((error) => console.error("Error fetching data:", error))
+    )
     .catch((error) => console.error("Error fetching data:", error));
 
-    axios
-    .post("http://localhost:3001/ordercalculate", orderData)
-    .then((response) => setClientSecret(response.data.clientSecret))
-    .catch((error) => console.error("Error fetching data:", error));
+    
 }, []);
 
 
@@ -45,17 +59,12 @@ const CheckoutForm = () => {
           options={{clientSecret}}
         >
           <div>
-            <p>User ID: {orderData.userID}</p>
-            <p>Tour ID: {orderData.tourID}</p>
-            <p>Tour Price: {orderData.tourPrice}</p>
-            <p>Number Value: {orderData.numberValue}</p>
-            <p>Date:{" "}
-  {new Date(orderData.date).toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })}
-</p>
+            <p>User ID: {orderData.user_id}</p>
+            <p>Tour ID: {orderData.tour_id}</p>
+            <p>Tour Price: {orderData.tour_price}</p>
+            <p>Quantity: {orderData.quantity}</p>
+            <p>Total Price: {orderData.total_price}</p>
+            <p>Date(dd/mm/yyyy):{tourDate}</p>
           </div>
           <EmbeddedCheckout />
         </EmbeddedCheckoutProvider>
