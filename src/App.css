@@ -62,7 +62,9 @@ input {
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 50px;
 }
-
+.fontreturn{
+  font-size:35px;
+}
 .App {
   text-align: center;
 }
