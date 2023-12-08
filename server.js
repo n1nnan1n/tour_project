@@ -33,6 +33,7 @@ const TourinfoController = require('./controllers/TourinfoController');
 const SesController = require('./controllers/SesController');
 const AdminCreate = require('./controllers/AdminCreate');
 const AdminLogin = require('./controllers/AdminLoginController');
+const OrderController = require('./controllers/OrderController');
 
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -47,6 +48,7 @@ app.post('/register',redirectIfAuth,RegisterController.register);
 app.post('/login',redirectIfAuth,LoginController.login);
 app.post('/admincreate',AdminCreate.admincreate);
 app.post('/adminlogin',AdminLogin.adminlogin);
+app.post('/place-order',OrderController.placeOrder);
 
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
