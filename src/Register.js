@@ -90,7 +90,7 @@ function Register() {
 };
 
   return (
-      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%',paddingBottom: "40px"}} >
+      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%',paddingBottom: "40px",backgroundPosition:'bottom'}} >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
