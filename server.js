@@ -48,7 +48,7 @@ app.post('/register',redirectIfAuth,RegisterController.register);
 app.post('/login',redirectIfAuth,LoginController.login);
 app.post('/admincreate',AdminCreate.admincreate);
 app.post('/adminlogin',AdminLogin.adminlogin);
-app.post('/place-order',OrderController.placeOrder);
+app.post('/ordercalculate',OrderController.placeOrder);
 
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
@@ -56,13 +56,18 @@ app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 app.get('/home', authMiddleware, SesController)
 
 app.post('/create-checkout-session', async (req, res) => {
+  // const { user_id, tour_id, quantity, tour_date, tour_price, total_price } = req.body;
   const session = await stripe.checkout.sessions.create({
     ui_mode: 'embedded',
     line_items: [
       {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: 'price_1OJUqLDiyx2jx89TjLCVacym',
-        quantity: 1,
+        // price: 'price_1OJUqLDiyx2jx89TjLCVacym',
+        userID : user_id,
+        userID : tour_id,
+        tourdate: tour_date,
+        price: total_price,
+        quantity: quantity,
       },
     ],
     mode: 'payment',
