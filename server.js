@@ -34,6 +34,8 @@ const SesController = require('./controllers/SesController');
 const AdminCreate = require('./controllers/AdminCreate');
 const AdminLogin = require('./controllers/AdminLoginController');
 const OrderController = require('./controllers/OrderController');
+const CreateCheckout = require('./controllers/CreateCheckout');
+const SessionStatus = require('./controllers/SessionStatus');
 
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -53,39 +55,10 @@ app.post('/ordercalculate',OrderController.placeOrder);
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
-app.get('/home', authMiddleware, SesController)
+app.get('/home', authMiddleware, SesController);
 
-app.post('/create-checkout-session', async (req, res) => {
-  // const { user_id, tour_id, quantity, tour_date, tour_price, total_price } = req.body;
-  const session = await stripe.checkout.sessions.create({
-    ui_mode: 'embedded',
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        // price: 'price_1OJUqLDiyx2jx89TjLCVacym',
-        userID : user_id,
-        userID : tour_id,
-        tourdate: tour_date,
-        price: total_price,
-        quantity: quantity,
-      },
-    ],
-    mode: 'payment',
-    return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
-  });
-
-  res.send({clientSecret: session.client_secret});
-});
-
-app.get('/session-status', async (req, res) => {
-  const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-
-  res.send({
-    status: session.status,
-    customer_email: session.customer_details.email
-  });
-});
-
+app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
+app.get('/session-status',SessionStatus.SessionStatus)
 
 app.listen(3001, () => {
   console.log('Application is running on port 3001');
