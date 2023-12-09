@@ -16,6 +16,7 @@ import Reviewall from './Reviewall';
 // import Pay from './Pay';
 import Return from './Return';
 import CheckoutForm from './Checkout';
+import Review1 from './Review1';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                 {/* <Route path="Pay" element={<Pay/>} /> */}
                 <Route path="/checkout" element={<CheckoutForm />} />
                 <Route path="/return" element={<Return />} />
+                <Route path="Review1" element={<Review1 />} />
               
             </Routes>
           </BrowserRouter>
