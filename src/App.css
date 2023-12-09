@@ -124,6 +124,7 @@ color: #FFFFFF;
 text-shadow: 2px 4px 4px #000000;
 
 }
+
 /* Rectangle 16 */
 .imgall {
   width: 350px;
@@ -132,6 +133,14 @@ text-shadow: 2px 4px 4px #000000;
 }
 .fonthead {
   color: #063d8c;
+  font-weight: bold;
+  padding-top: 10px;
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab";
+}
+.fontheader {
+  color: #030303;
   font-weight: bold;
   padding-top: 10px;
   font-size: 35px;
