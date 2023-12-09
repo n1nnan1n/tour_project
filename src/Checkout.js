@@ -13,7 +13,7 @@ const CheckoutForm = () => {
 
   const [clientSecret, setClientSecret] = useState('');
 
-  const orderData = {
+  const prepareData = {
     user_id: location.state.order_userID,
     tour_id: location.state.order_tourID,
     quantity: location.state.order_quantity,
@@ -21,7 +21,7 @@ const CheckoutForm = () => {
     tour_price: location.state.order_tourprice,
     total_price: location.state.order_totalprice
   };
-  const tour_date = new Date(orderData.tour_date);
+  const tour_date = new Date(prepareData.tour_date);
   const options = {
     day: '2-digit',
     month: '2-digit',
@@ -34,8 +34,8 @@ const CheckoutForm = () => {
   useEffect(() => {
     // Create a Checkout Session as soon as the page loads
     axios
-    // .post("http://localhost:3001/create-checkout-session", orderData)
-    .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
+    .post("http://localhost:3001/create-checkout-session", prepareData)
+    // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
     .then((response) => 
     setClientSecret(response.data.clientSecret)
     // ,
@@ -59,11 +59,11 @@ const CheckoutForm = () => {
           options={{clientSecret}}
         >
           <div>
-            <p>User ID: {orderData.user_id}</p>
-            <p>Tour ID: {orderData.tour_id}</p>
-            <p>Tour Price: {orderData.tour_price}</p>
-            <p>Quantity: {orderData.quantity}</p>
-            <p>Total Price: {orderData.total_price}</p>
+            <p>User ID: {prepareData.user_id}</p>
+            <p>Tour ID: {prepareData.tour_id}</p>
+            <p>Tour Price: {prepareData.tour_price}</p>
+            <p>Quantity: {prepareData.quantity}</p>
+            <p>Total Price: {prepareData.total_price}</p>
             <p>Date(dd/mm/yyyy):{tourDate}</p>
           </div>
           <EmbeddedCheckout />
