@@ -31,9 +31,12 @@ export default function About() {
       </Row>
       <Row style={{marginTop:'30px'}}>
         <Col 
+  
         //  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px'}}
+
         ><img
-        style={{ width: "100%" , height: "650px" }}
+        // style={{ width: "100%" , height: "650px" }}
+        className='about2'
                 src={about2}
                 alt="First slide"
               /></Col>
