@@ -35,9 +35,9 @@ function Register() {
   }, []);
 
   const titles = [
-    { value: 'mr', label: 'Mr' },
-    { value: 'mrs', label: 'Mrs' },
-    { value: 'miss', label: 'Miss' },
+    { value: 'Mr', label: 'Mr' },
+    { value: 'Ms', label: 'Ms' },
+    { value: 'Mrs', label: 'Mrs' },
   ];
     
   const handleSubmit = async (event) => {

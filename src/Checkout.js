@@ -13,23 +13,22 @@ const CheckoutForm = () => {
 
   const [clientSecret, setClientSecret] = useState('');
 
+  const [title, setTitle] = useState('');
+  const [user_fname, setuser_fname] = useState('');
+  const [user_lname, setuser_lname] = useState('');
+
   const prepareData = {
     user_id: location.state.order_userID,
     tour_id: location.state.order_tourID,
     quantity: location.state.order_quantity,
     tour_date: location.state.order_tourDate,
     tour_price: location.state.order_tourprice,
-    total_price: location.state.order_totalprice
+    total_price: location.state.order_totalprice,
   };
-  const tour_date = new Date(prepareData.tour_date);
-  const options = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  };
-  const tour_date_format = tour_date.toLocaleDateString('en-US', options);
-  const [month, day, year] = tour_date_format.split('/');
-  const tourDate = `${day}/${month}/${year}`;
+  console.log(location.state.order_tourDate)
+  const originalDate = new Date(prepareData.tour_date);
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = originalDate.toLocaleDateString("en-GB", options);
 
   useEffect(() => {
     // Create a Checkout Session as soon as the page loads
@@ -37,16 +36,18 @@ const CheckoutForm = () => {
     .post("http://localhost:3001/create-checkout-session", prepareData)
     // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
     .then((response) => 
-    setClientSecret(response.data.clientSecret)
-    // ,
-    // axios
-    // .post("http://localhost:3001/ordercalculate", orderData)
-    // .then((response) => setClientSecret(response.data.clientSecret))
-    // .catch((error) => console.error("Error fetching data:", error))
-    )
+    setClientSecret(response.data.clientSecret))
     .catch((error) => console.error("Error fetching data:", error));
-
     
+    axios
+    .post("http://localhost:3001/placeorder", prepareData)
+    .then(response => {
+      setTitle(response.data.title);
+      setuser_fname(response.data.user_firstname);
+      setuser_lname(response.data.user_lastname);
+    })
+    .catch((error) => console.error("Error fetching data:", error))
+
 }, []);
 
 
@@ -58,13 +59,8 @@ const CheckoutForm = () => {
           stripe={stripePromise}
           options={{clientSecret}}
         >
-          <div>
-            <p>User ID: {prepareData.user_id}</p>
-            <p>Tour ID: {prepareData.tour_id}</p>
-            <p>Tour Price: {prepareData.tour_price}</p>
-            <p>Quantity: {prepareData.quantity}</p>
-            <p>Total Price: {prepareData.total_price}</p>
-            <p>Date(dd/mm/yyyy):{tourDate}</p>
+          <div style={{width:'100%',padding:'2%'}}>
+            <h2>Firstname : {title} {user_fname}<br></br>Tour day / Appointment day : {formattedDate}</h2>
           </div>
           <EmbeddedCheckout />
         </EmbeddedCheckoutProvider>

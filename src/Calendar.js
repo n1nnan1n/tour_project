@@ -25,7 +25,7 @@ function Calendar() {
   const [order_userID, setorder_userID] = useState('');
   const [order_tourID, setorder_tourID] = useState('');
   const [order_tourprice, setorder_tourprice] = useState('');
-  const [order_quantity, setorder_quantity] = useState('');
+  const [order_quantity, setorder_quantity] = useState();
   const [order_tourDate, setorder_tourDate] = useState('');
   const [order_totalprice, setorder_totalprice] = useState('');
 
@@ -71,8 +71,9 @@ const handleInputChange = (e) => {
       setorder_tourprice(response.data.tour_price);
     })
     .catch((error) => console.error("Error fetching data:", error));
+    console.log(orderData);
   }, [userID,tourID,date,numberValue, price]);
-  console.log(order_totalprice);
+  
 
   return (
     <>
