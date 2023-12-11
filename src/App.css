@@ -9,6 +9,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&family=Roboto+Slab&display=swap");
 
+@media (max-width: 1980px) {
+  /* ----------about-------------- */
+  .detailabout{
+   text-align:left;
+   display: flex;
+   align-items: center;
+   text-align:justify;
+   font-size:25px
+  }
 .buttonlog{
   width:30%;
   margin-left:31%;
@@ -262,9 +271,17 @@ text-shadow: 2px 4px 4px #000000;
   background-color: #05439b;
   float: left;
 }
+}
 /* @media (prefers-reduced-motion: no-preference) { */
-  @media (max-width: 576px) {
-   
+  @media (max-width: 1600px) {
+     /* ----------about-------------- */
+  .detailabout{
+    text-align:left;
+    display: flex;
+    align-items: center;
+    text-align:justify;
+    font-size:20px
+   }
  .input{
   max-width: 230px;
 }
