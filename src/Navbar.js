@@ -123,7 +123,7 @@ function NavbarComponent() {
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" >
+          <Nav className="me-auto margin" >
              <Nav.Item>
                 <Nav.Link id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
