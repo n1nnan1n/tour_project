@@ -4,23 +4,32 @@ const createCheckoutSession = async (req, res) => {
     const YOUR_DOMAIN = 'http://localhost:3000';
     // const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app';
     try {
-    const { user_id, tour_id, quantity, tour_date} = req.body;
+    const {
+      order_title, 
+      order_user_id, 
+      order_user_firstname, 
+      order_user_lastname,
+      order_user_email,
+      order_tour_id,
+      order_tour_name,
+      order_quantity,
+      order_tour_date,
+      order_tour_price,
+      order_total_price
+    } = req.body;
+                   
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded',
       line_items: [
         {
           // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-          price: getProductPriceId(tour_id),
-          quantity: quantity,
+          price: getProductPriceId(order_tour_id),
+          quantity: order_quantity
         },
       ],
       mode: 'payment',
-      metadata: {
-        userID : user_id,
-        tourID : tour_id,
-        tourdate: tour_date
-      },
-      return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
+      // return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}&order_title=${order_title}&order_user_id=${order_user_id}&order_user_firstname=${order_user_firstname}&order_user_lastname=${order_user_lastname}&order_user_email=${order_user_email}&order_tour_id=${order_tour_id}&order_tour_name=${order_tour_name}&order_quantity=${order_quantity}&order_tour_date=${order_tour_date}&order_tour_price=${order_tour_price}&order_total_price=${order_total_price}`
     });
   
     res.send({clientSecret: session.client_secret});

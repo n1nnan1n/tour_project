@@ -50,15 +50,20 @@ app.post('/register',redirectIfAuth,RegisterController.register);
 app.post('/login',redirectIfAuth,LoginController.login);
 app.post('/admincreate',AdminCreate.admincreate);
 app.post('/adminlogin',AdminLogin.adminlogin);
-app.post('/ordercalculate',OrderController.placeOrder);
+app.post('/ordercalculate',OrderController.orderCalculate);
+app.post('/placeorder',OrderController.placeOrder);
+app.put('/successorder',OrderController.SuccessOrder);
 
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 app.get('/home', authMiddleware, SesController);
+app.get('/getwaitingorder/:orderID', OrderController.GetUserOrder);
 
 app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)
+
+app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
 
 app.listen(3001, () => {
   console.log('Application is running on port 3001');

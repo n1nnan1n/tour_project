@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
+    const JWT_SECRET = process.env.JWT_SECRET || 'ttourappp';
 
     // Check if the email and password are provided
     if (!email || !password) {
@@ -24,7 +25,7 @@ const login = async (req, res) => {
 
     if (isPasswordValid) {
       // Create a JWT token
-      const token = jwt.sign({ _id:user._id, fname:user.fname, email:user.email}, 'ttourappp', { expiresIn: '1h' });
+      const token = jwt.sign({ _id:user._id, fname:user.fname, email:user.email}, JWT_SECRET , { expiresIn: '1h' });
 
       // Send the token to the ReactJS frontend
       res.json({ token });
