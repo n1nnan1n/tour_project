@@ -89,19 +89,6 @@ input {
   margin: 0 auto;
 }
 
-#fontnav {
-  font-family: "Agbalumo";
-  font-size: 25px;
-  font-weight: "bold";
-  color: white;
-}
-.fontnav {
-  font-family: "Agbalumo";
-  font-size: 25px;
-  font-weight: "bold";
-  color: aliceblue;
-  text-decoration: none;
-}
 h1,
 p {
   font-family: "Roboto Slab";
@@ -278,8 +265,194 @@ text-shadow: 2px 4px 4px #000000;
   background-color: #05439b;
   float: left;
 }
+/* --------footer--------- */
+.footerrow{
+color: white;
+ text-align: left; 
+ font-size: 20px;
 }
-/* @media (prefers-reduced-motion: no-preference) { */
+.footerh1{
+font-size:25px;
+font-weight:bold;
+ text-align: center;
+ margin-bottom:20px;
+}
+.contact{
+text-align:center;
+font-weight:bold;
+}
+.follow{
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:50px;
+}
+.ig{
+  font-size:50px;
+  margin-left:100px;
+  margin-bottom:20px;
+  float:left;
+  text-align:center;
+}
+.tt{
+  float:left;
+  font-size:50px;
+  margin-left:100px;
+  margin-bottom:20px;
+}
+.trip{
+  width:55px;
+  height:55px;
+  margin-left:100px;
+  float:left;
+  text-Align:center;
+}
+.face{
+  float:left;
+  font-size:50px;
+  margin-bottom:20px;
+  margin-left:100px;
+}
+/* --------nav--------- */
+.name{
+  font-size:20px;
+  font-weight:bold;
+  font-family: rpboto;
+  float: left;
+  margin-top: 10px;
+}
+.signin{
+    float: right;
+align-items: right;
+margin-right: -200px;
+    
+}
+.login{
+  float: left;
+ margin-right: 15px;
+     font-Size:'20px';
+     font-weight:bold;
+     font-family: "rpboto";
+}
+
+#fontnav {
+  font-family: "Agbalumo";
+  font-size: 25px;
+  font-weight: "bold";
+  color: white;
+}
+.fontnav {
+  font-family: "Agbalumo";
+  font-size: 25px;
+  font-weight: "bold";
+  color: aliceblue;
+  text-decoration: none;
+}
+.regis{
+  margin-right:  5px;
+  background-color: #063d8c;
+  font-size: 18px;
+  font-weight:bold;font-family:' rpboto';
+height: 40px;
+float: left;
+}
+.beyorn{
+  font-size:28px;
+  font-weight:bold;
+  font-family: "Playfair Display";
+text-align: center;}
+  /* ------home-------- */
+.fillterhome{  
+  width: 100vw;
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-Content: center;
+  height:600px;
+}
+.layer2{
+  display: flex;
+     justify-content: center;
+    align-items:  end;
+     width: 100vw;
+      max-height:  45vw;
+     overflow:hidden;
+     width: 100%;
+      height: 500px;
+      display: flex;
+       flex-direction: column;
+     align-items: center;
+      justify-content: end;
+     position: absolute;
+    bottom: 0px;
+    z-index :1000;
+     background: linear-gradient(to bottom, rgba(0, 123, 255, 0) 0%, rgba(0, 123, 255, 0.7) 100%);
+}
+.logo{
+  width: 130px;
+   height: 130px;
+filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
+}
+.expolre{
+  
+    font-family:Jost;
+     font-size: 90px;
+      color: white;
+       line-height: 90px;
+    text-shadow: "2px 2px 10px rgba(0, 0, 100, 0.5)";
+
+}
+.why{
+
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom:80px;
+    font-family:'Roboto Slab';
+
+}
+.experiences{
+ 
+    font-Family: Jost;
+     font-size: 40px;
+      color: white;
+      line-height: 40px;
+    text-Shadow: "2px 2px 10px rgba(0, 0, 100, 0.5)";
+ 
+}
+.detailwhy{
+  margin-top: 40px; 
+  font-size: 20px;
+  font-family:'Roboto Slab';
+}
+.sizeicon{
+  font-size:60px;
+}
+.bgwhy{
+  width: 100%;
+  /* height: 400px; */
+  background-color: white;
+}
+.carousel{
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.ourtour{
+  background-color: #063d8c;
+  height:380px;
+  margin-top:30px;
+  padding-top:20px;
+}
+.carouselsize{
+ width: 25rem; 
+ height:210px;
+}
+.carouselitem{ 
+  width: 25rem;
+  height:225px; }
+}
   @media (max-width: 1600px) {
      /* ----------about-------------- */
      .about2{
@@ -362,3 +535,157 @@ h5 {
   }
 }
 
+@media (max-width: 1000px) {
+
+  /* ------nav------- */
+  .signin{
+    float: left;
+    margin-top: 10px;
+margin-right: 0px;
+margin-left: 105px;
+
+    
+}
+/* .name{
+  
+  float: left;
+  margin-top: -15px;
+} */
+.login{
+  float: left;
+ margin-right: 15px;
+     font-Size:'18px';
+     font-weight:bold;
+     font-family: "rpboto";
+}
+
+.regis{
+  margin-right:  5px;
+  background-color: #063d8c;
+  font-size: 18px;
+  font-weight:bold;font-family:' rpboto';
+height: 40px;
+float: left;
+}
+  .beyorn{
+    margin-left: 10px;
+    font-size:25px;
+    }
+  .fillterhome{  
+      width: 100vw;
+      overflow:hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      align-items: center;
+      justify-Content: center;
+      height:215px;
+    }
+    .logo{
+      width: 80px;
+      height: 80px;
+    filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
+    }
+    .expolre{
+  
+      font-family:Jost;
+       font-size: 30px;
+        color: white;
+         line-height:60px;
+      text-shadow: "2px 2px 10px rgba(0, 0, 100, 0.5)";
+  
+  }
+  .experiences{
+    font-Family: Jost;
+    font-size: 25px;
+    color: white;
+    line-height: 10px;
+    text-Shadow: "2px 2px 10px rgba(0, 0, 100, 0.5)";
+ 
+}
+.why{
+
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom:30px;
+  font-family:'Roboto Slab';
+
+}
+.detailwhy{
+
+  font-size: 20px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+.sizeicon{
+  font-size:45px;
+  margin-left: 20px;
+  margin-bottom: -20px;
+  margin-top: 10px;
+  
+}
+.bgwhy{
+margin-right: 20px;
+}
+
+.carouselsize{
+  width: 18rem; 
+  height:170px;
+
+ }
+.ourtour{
+
+  height:700px;
+  margin-top:30px;
+  padding-top:20px;
+}
+h5 {
+  font-size: 20px;
+  margin-right: 120px;
+  line-height:30px;
+ margin-top: -100px;
+
+}
+.carouselitem{ 
+  width: 25rem;
+  height:205px; 
+
+}
+/* --------footer--------- */
+
+  .footerh1{
+  font-size:20px;
+  font-weight:bold;
+   text-align: center;
+   margin-bottom:20px;
+  }
+ p{
+  font-size: 18px;
+ }
+.follow{
+  margin-bottom:20px;
+  margin-top: 5px;
+}
+  .ig{
+ 
+   margin-left: 25px;
+  }
+  .tt{
+    margin-left:40px;
+
+  }
+  .trip{
+    
+    margin-left:40px;
+    float:left;
+    text-Align:center;
+  }
+  .box{
+    margin-left: 15px;
+  }
+  .face{
+    margin-bottom:20px;
+    margin-left:40px;
+  }
+}

@@ -36,17 +36,9 @@ function Home() {
     <Oneday/>
   };
   return (
-    <div className="wrapper">
+    <div >
       <div
-       style={{  width: "100vw",
-       overflow: "hidden",
-       display: "flex",
-       flexDirection: "column",
-       position: 'relative',
-       alignItems: 'center',
-       justifyContent: 'center'
-       ,height:'600px'
- }}
+      className="fillterhome"
       >
         <video
           style={{width: "100%", objectFit: 'contain', objectPosition: 'bottom'}}
@@ -56,63 +48,37 @@ function Home() {
           muted
         />
          {/* ------------------------------- layer 2 --------------------------- */}
-         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'end', width: "100vw", maxHeight: '45vw', overflow: "hidden" }}
+         <div  className="layer2"
         >
-          <div  
-          style={{
-            width: "100%", height: '500px', display: 'flex', flexDirection: 'column',
-            alignItems: 'center', justifyContent: 'end',
-            position: 'absolute', bottom: '0px', zIndex: '1000',
-            background: 'linear-gradient(to bottom, rgba(0, 123, 255, 0) 0%, rgba(0, 123, 255, 0.7) 100%)',
-          }}
-        >
-          <img style={{
-            width: '130px', height: '130px',
-            filter: "drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)"
+          
+          <img className='logo' style={{
+            
           }}
             src={logo}>
           </img>
-          <span style={{
-            fontFamily: 'Jost', fontSize: '90px', color: 'white', lineHeight: '90px',
-            textShadow: "2px 2px 10px rgba(0, 0, 100, 0.5)"
-          }}>
+          <span className="expolre">
             Explore The Amazing
           </span>
-          <span style={{
-            fontFamily: 'Jost', fontSize: '40px', color: 'white', lineHeight: '40px'
-            , textShadow: "2px 2px 10px rgba(0, 0, 100, 0.5)"
-          }}>
+          <span className='experiences'>
             experiences in Thailand<br />
           </span>
 
           
-          {/* <button className="greenButton" style={{
-            fontFamily: 'Jost', fontSize: '18px', fontWeight: 400, color: 'white', lineHeight: '18px', padding: '15px 20px 15px 20px',
-            marginTop: '20px',
-            borderRadius: '40px'
-          }}>
-            Explore
-          </button> */}
+         
           <br />
-        </div>
+   
       
       </div>
       </div>
       <div
-        class=" lh-1 py-3"
-        style={{ width: "100%", height: "400px", backgroundColor: "white" }}
+        class=" lh-1 py-3 bgwhy"
+        
       >
         <Container style={{ marginBottom: "25px" }}>
           <Row>
             <Col>
               <p
-                style={{
-                  fontSize: "28px",
-                  fontWeight: "bold",
-                  marginTop: "50px",
-                  marginBottom:"80px",
-                  fontFamily:'Roboto Slab'
-                }}
+                className="why"
               >
                 Why customers choose us
               </p>
@@ -120,49 +86,32 @@ function Home() {
           </Row>
           <Row md={4}>
             <Col style={{ textAlign: "center" }}>
-              {" "}
-              {/* <img
-                style={{ width: "100px", height: "100px" }}
-                src={best}
-                alt="First slide"
-              /> */}
-              <FontAwesomeIcon icon={faStar} style={{color: "#fecb3e",fontSize:'60px'}} />
-              <p style={{ marginTop: "40px", fontSize: "20px" ,fontFamily:'Roboto Slab'}}>
+              
+              <FontAwesomeIcon icon={faStar} className='sizeicon' style={{color: "#fecb3e"}} />
+              <p className="detailwhy">
                 Best Private tour
               </p>
             </Col>
             <Col style={{ textAlign: "center" }}>
-              {/* <img
-                style={{ width: "100px", height: "100px" }}
-                src={icon2}
-                alt="First slide"
-              /> */}
-              <FontAwesomeIcon icon={faHeart} style={{color: "#ED5252",fontSize:'60px'}} />
-              <p style={{ marginTop: "40px", fontSize: "20px",fontFamily:'Roboto Slab' }}>
+              
+              <FontAwesomeIcon icon={faHeart} className='sizeicon' style={{color: "#ED5252"}} />
+              <p className="detailwhy">
                 Passionate service
               </p>{" "}
             </Col>
             <Col style={{ textAlign: "center" }}>
-              {/* <img
-                style={{ width: "100px", height: "100px" }}
-                src={icon3}
-                alt="First slide"
-              /> */}
-              <FontAwesomeIcon icon={faUser} style={{color: "#88D261",fontSize:'60px'}} />
-              <p style={{ marginTop: "40px", fontSize: "20px" ,fontFamily:'Roboto Slab'}}>
+              
+              <FontAwesomeIcon icon={faUser} className='sizeicon'style={{color: "#88D261"}} />
+              <p className="detailwhy">
                 {" "}
                 Respect the locals culture & support localsr
               </p>{" "}
             </Col>
 
             <Col style={{ textAlign: "center" }}>
-              {/* <img
-                style={{ width: "100px", height: "100px" }}
-                src={icon4}
-                alt="First slide"
-              /> */}
-              <FontAwesomeIcon icon={faEarthAmericas} style={{color: "#3a88fe",fontSize:'60px'}} />
-              <p style={{ marginTop: "40px", fontSize: "20px",fontFamily:'Roboto Slab' }}>
+              
+              <FontAwesomeIcon icon={faEarthAmericas} className='sizeicon' style={{color: "#3a88fe"}} />
+              <p className="detailwhy">
                 {" "}
                 Multi languages tours
               </p>{" "}
@@ -171,7 +120,7 @@ function Home() {
         </Container>
       </div>
 
-      <div style={{ backgroundColor: "#063d8c" ,height:"350px",marginTop:'30px',paddingTop:'20px'}}>
+      <div className="ourtour">
         <Container>
           <div class="lh-1 py-3">
             <Row>
@@ -190,15 +139,17 @@ function Home() {
               </Col>
             </Row>
             {/* ---------------------------------------------------------------------------------------------- */}
-            <Stack direction="horizontal" gap={5}>
+            <div >
+            <Stack direction="horizontal" gap={5} className="carousel">
               <a href="Oneday">
             <Carousel
                 data-bs-theme="dark"
-                className="menu1"
-                style={{ width: "25rem", height: "210px" }}
+                className="menu1 carouselsize"
+                
                  onClick={handleClick}
+                 
               > 
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img 
                   
                     className="d-block w-100"
@@ -214,7 +165,7 @@ function Home() {
                   </Carousel.Caption>
                 </Carousel.Item>
                
-                <Carousel.Item style={{ width: "25rem", height: "225px" }} >
+                <Carousel.Item className="carouselitem">
                   <img
                 
                     className="d-block w-100"
@@ -229,7 +180,7 @@ function Home() {
                     </h5>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img
                     className="d-block w-100"
                     src={grand5}
@@ -247,10 +198,10 @@ function Home() {
               <a href="Daytrip">
               <Carousel
                 data-bs-theme="dark"
-                className="menu1"
-                style={{ width: "25rem", height: "210px" }}
+                className="menu1 carouselsize"
+              
               >
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img
                     className="d-block w-100"
                     src={outside2}
@@ -265,7 +216,7 @@ function Home() {
                   </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img
                     className="d-block w-100"
                     src={outside1}
@@ -280,7 +231,7 @@ function Home() {
                   </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img
                     className="d-block w-100"
                     src={outside3}
@@ -299,10 +250,10 @@ function Home() {
               <a href="Customized">
               <Carousel
                 data-bs-theme="dark"
-                className="menu1"
-                style={{ width: "25rem", height: "210px" }}
+                className="menu1 carouselsize"
+               
               >
-                <Carousel.Item style={{ width: "25rem", height: "225px" }}>
+                <Carousel.Item className="carouselitem">
                   <img
                     className="d-block w-100"
                     src={customized}
@@ -319,6 +270,7 @@ function Home() {
               </Carousel>
               </a>
             </Stack>
+          </div>
           </div>
         </Container>
       </div>
