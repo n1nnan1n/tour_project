@@ -39,7 +39,7 @@ function NavbarComponent() {
         document.cookie = `token=${token}; path=/; max-age=${expiresIn}; HttpOnly`;
         if (exp * 1000 < Date.now()) {
           // Token expired, redirect to login
-          window.location.href = '/login';
+          // window.location.href = '/login';
           return;
         }
 
@@ -124,7 +124,7 @@ function NavbarComponent() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" >
-             <Nav.Item >
+             <Nav.Item>
                 <Nav.Link id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
