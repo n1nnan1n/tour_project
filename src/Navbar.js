@@ -67,7 +67,7 @@ function NavbarComponent() {
     
 
  <header class="border-bottom lh-1 py-3">
-          <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="row justify-content-between align-items-center">
             {/* <div class="col-4 pt-1"></div>
             <div class="col-3 text-center" >
               <a
@@ -77,16 +77,17 @@ function NavbarComponent() {
               <h1 className="beyorn">BEYOND THE TRAILS</h1>  
               </a>
             </div> */}
-            <Row>
-        {/* <Col  xs lg="2"></Col> */}
-        <Col md={{ span: 7, offset: 3 }}> <a
+     
+       <div className="namebeyornd">
+       <a
                 class="blog-header-logo text-body-emphasis text-decoration-none"
                 href="#"
               >
               <h1 className="beyorn">BEYOND THE TRAILS</h1>  
               </a>
-          </Col>
-        <Col xs lg="2" className="signin">   {isLoggedIn ? (
+              </div>
+   <div className="signin"> 
+       {isLoggedIn ? (
               <>
                 <span class="text-black me-2 name" >Welcome, {userFname}</span>
                 <Button
@@ -107,8 +108,8 @@ function NavbarComponent() {
                   Login
                 </Link>
               </>
-            )}</Col>
-      </Row>
+            )}</div>
+   
             
          
             </div>
