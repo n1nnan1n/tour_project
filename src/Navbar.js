@@ -11,6 +11,7 @@ import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { useEffect,useState } from "react";
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 
 import Form from 'react-bootstrap/Form';
 
@@ -31,8 +32,13 @@ function NavbarComponent() {
         const decodedPayload = atob(payloadBase64);
 
         // Parse the decoded payload as JSON
-        const { _id,fname,email } = JSON.parse(decodedPayload);
+        const { _id,fname,email,exp } = JSON.parse(decodedPayload);
         console.log(_id,fname,email)
+        if (exp * 1000 < Date.now()) {
+          // Token expired, redirect to login
+          window.location.href = '/login';
+          return;
+        }
 
         setUserID(_id);
         setUserFname(fname.charAt(0).toUpperCase() + fname.slice(1));
@@ -50,7 +56,7 @@ function NavbarComponent() {
     setUserEmail('');
     setIsLoggedIn(false);
     // Redirect to the homepage or another route
-    window.location.href = '/';
+    return <Redirect to="/" />;
   };
 
   return (
