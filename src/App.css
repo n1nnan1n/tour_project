@@ -461,6 +461,17 @@ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
   height:225px; }
 }
   @media (max-width: 1600px) {
+    .margin{
+      margin-left: -30px;
+    }
+    #fontnav {
+      
+      margin-left: 3px;
+    }
+    .fontnav {
+     
+      margin-left: 3px;
+    }
      /* ----------about-------------- */
      .about2{
       width: 100%;
