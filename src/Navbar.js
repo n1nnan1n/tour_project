@@ -32,8 +32,9 @@ function NavbarComponent() {
         const decodedPayload = atob(payloadBase64);
 
         // Parse the decoded payload as JSON
-        const { _id,fname,email,exp } = JSON.parse(decodedPayload);
-        console.log(_id,fname,email)
+        const { _id,fname,email,exp,expiresIn } = JSON.parse(decodedPayload);
+        console.log(_id,fname,email,exp,expiresIn )
+        document.cookie = `token=${token}; path=/; max-age=${expiresIn}; HttpOnly`;
         if (exp * 1000 < Date.now()) {
           // Token expired, redirect to login
           window.location.href = '/login';
@@ -56,7 +57,7 @@ function NavbarComponent() {
     setUserEmail('');
     setIsLoggedIn(false);
     // Redirect to the homepage or another route
-    return <Redirect to="/" />;
+    window.location.href = '/';
   };
 
   return (
