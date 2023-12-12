@@ -22,16 +22,20 @@ function Calendar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [order_title, setorder_title] = useState('');
   const [order_userID, setorder_userID] = useState('');
+  const [order_user_firstname, setorder_user_firstname] = useState('');
+  const [order_user_lastname, setorder_user_lastname] = useState('');
+  const [order_user_email, setorder_user_email] = useState('');
   const [order_tourID, setorder_tourID] = useState('');
+  const [order_tour_name, setorder_tour_name] = useState('');
   const [order_tourprice, setorder_tourprice] = useState('');
-  const [order_quantity, setorder_quantity] = useState();
   const [order_tourDate, setorder_tourDate] = useState('');
+  const [order_quantity, setorder_quantity] = useState();
   const [order_totalprice, setorder_totalprice] = useState('');
 
   const userID = location.state.userID;
   const tourID = location.state.tourID;
-  const tourImage1 = location.state.tourImage1;
   const price = location.state.tourPrice;
 
   //must axios closed date
@@ -63,46 +67,38 @@ const handleInputChange = (e) => {
     .post("http://localhost:3001/ordercalculate", orderData)
     // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
     .then((response) => {
+      setorder_title(response.data.title);
       setorder_userID(response.data.user_id);
-      setorder_tourID(response.data.tour_id); // assuming there is a property named tour_id
-      setorder_quantity(response.data.quantity); // assuming there is a property named quantity
-      setorder_tourDate(response.data.tour_date); // assuming there is a property named tour_date
+      setorder_user_firstname(response.data.user_firstname);
+      setorder_user_lastname(response.data.user_lastname);
+      setorder_user_email(response.data.user_email);
+      setorder_tourID(response.data.tour_id); 
+      setorder_tour_name(response.data.tour_name);
+      setorder_quantity(response.data.quantity); 
+      setorder_tourDate(response.data.tour_date); 
       setorder_totalprice(response.data.total_price);
       setorder_tourprice(response.data.tour_price);
     })
     .catch((error) => console.error("Error fetching data:", error));
     console.log(orderData);
   }, [userID,tourID,date,numberValue, price]);
-  const place_orderData = {
-    user_id:order_userID,
-    tour_id:order_tourID,
-    quantity:Number(order_quantity),
-    tour_date:order_tourDate
-  }
   
   const handleSubmit = async () => {
-    try {
-      const response = await axios.post("http://localhost:3001/placeorder", place_orderData);
-  
-      // Now you can navigate to the Checkout page
       navigate('/Checkout', {
         state: {
-          order_id: response.data.order_id,
+          order_title,
           order_userID,
+          order_user_firstname,
+          order_user_lastname,
+          order_user_email,
           order_tourID,
+          order_tour_name,
           order_quantity,
           order_tourDate,
           order_totalprice,
-          order_tourprice,
-          tourImage1
+          order_tourprice
         }
       });
-    } catch (error) {
-      // Handle errors
-      console.error('Error submitting order:', error);
-  
-      // You can also update the state or show an error message to the user
-    }
   };
   
 
