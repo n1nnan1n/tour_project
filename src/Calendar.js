@@ -73,6 +73,37 @@ const handleInputChange = (e) => {
     .catch((error) => console.error("Error fetching data:", error));
     console.log(orderData);
   }, [userID,tourID,date,numberValue, price]);
+  const place_orderData = {
+    user_id:order_userID,
+    tour_id:order_tourID,
+    quantity:Number(order_quantity),
+    tour_date:order_tourDate
+  }
+  
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post("http://localhost:3001/placeorder", place_orderData);
+  
+      // Now you can navigate to the Checkout page
+      navigate('/Checkout', {
+        state: {
+          order_id: response.data.order_id,
+          order_userID,
+          order_tourID,
+          order_quantity,
+          order_tourDate,
+          order_totalprice,
+          order_tourprice,
+          tourImage1
+        }
+      });
+    } catch (error) {
+      // Handle errors
+      console.error('Error submitting order:', error);
+  
+      // You can also update the state or show an error message to the user
+    }
+  };
   
 
   return (
@@ -240,7 +271,7 @@ const handleInputChange = (e) => {
         <p style={{textAlign:'left',float:'left',fontWeight:'bold'}}>Price: <br></br>Total:</p>
         <p style={{textAlign:'right',float:'right'}}>{price}<br></br>{total}</p>
           
-        <Button type="submit"  value={numberValue} onClick={()=>{navigate('/Checkout',{replace:true , state:{ order_userID , order_tourID , order_quantity , order_tourDate , order_totalprice , order_tourprice , tourImage1 }})}}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
+        <Button type="submit"  value={numberValue} onClick={handleSubmit}  style={{width:'230px',fontWeight:'bold', marginTop: '20px',fontFamily:'Roboto Slab' }}>RESERVE</Button>
                  
                 
                 </div>

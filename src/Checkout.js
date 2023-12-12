@@ -16,6 +16,7 @@ const CheckoutForm = () => {
   const [title, setTitle] = useState('');
   const [user_fname, setuser_fname] = useState('');
   const [user_lname, setuser_lname] = useState('');
+  const [orderID, setOrderID] = useState('');
 
   const prepareData = {
     user_id: location.state.order_userID,
@@ -25,32 +26,42 @@ const CheckoutForm = () => {
     tour_price: location.state.order_tourprice,
     total_price: location.state.order_totalprice,
   };
-  console.log(location.state.order_tourDate)
+  
   const originalDate = new Date(prepareData.tour_date);
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = originalDate.toLocaleDateString("en-GB", options);
 
   useEffect(() => {
-    // Create a Checkout Session as soon as the page loads
+    setOrderID(location.state.order_id);
+    console.log(location.state.order_id);
+    let isMounted = true;
     axios
     .post("http://localhost:3001/create-checkout-session", prepareData)
-    // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
-    .then((response) => 
-    setClientSecret(response.data.clientSecret))
-    .catch((error) => console.error("Error fetching data:", error));
-    
-    axios
-    .post("http://localhost:3001/placeorder", prepareData)
-    .then(response => {
-      setTitle(response.data.title);
-      setuser_fname(response.data.user_firstname);
-      setuser_lname(response.data.user_lastname);
+    .then((response) => {
+      if (isMounted) {
+        setClientSecret(response.data.clientSecret);
+        const getorderurl = `http://localhost:3001/getwaitingorder/${location.state.order_id}`;
+        axios.get(getorderurl)
+        .then((responseorder) => {
+          if (isMounted) {
+            console.log(responseorder.data);
+            setTitle(responseorder.data.title);
+            setuser_fname(responseorder.data.user_firstname);
+            setuser_lname(responseorder.data.user_lastname);
+          }
+          return null;
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+      }
+      return null;
     })
-    .catch((error) => console.error("Error fetching data:", error))
+    .catch((error) => console.error("Error fetching data:", error));
 
+  // Cleanup function to handle unmounting
+  return () => {
+    isMounted = false;
+  };
 }, []);
-
-
 
   return (
     <div id="checkout">
@@ -60,7 +71,7 @@ const CheckoutForm = () => {
           options={{clientSecret}}
         >
           <div style={{width:'100%',padding:'2%'}}>
-            <h2>Firstname : {title} {user_fname}<br></br>Tour day / Appointment day : {formattedDate}</h2>
+            <h2>[ Order id ] : {location.state.order_id}<br></br>[ Name ] : {title} {user_fname} {user_lname}<br></br>[ Tour date ] : {formattedDate}<br></br>[ Person(s) ] : {prepareData.quantity}</h2>
           </div>
           <EmbeddedCheckout />
         </EmbeddedCheckoutProvider>
