@@ -435,8 +435,8 @@ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
   background-color: white;
 }
 .carousel{
-  display: block;
-  margin-left: 20px;
+  /* display: block;
+  margin-left: 20px; */
   margin-bottom: 20px;
 }
 .ourtour{
@@ -627,6 +627,11 @@ float: left;
 }
 .bgwhy{
 margin-right: 20px;
+}
+.carousel{
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .carouselsize{
