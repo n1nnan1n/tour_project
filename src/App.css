@@ -324,7 +324,7 @@ font-weight:bold;
 width: 80%;
 /* background-color: #05439b; */
 float: left;
-padding-left: 15%;
+padding-left: 21%;
 }
 .signin{
   width: 20%;
@@ -344,6 +344,7 @@ padding-left: 15%;
   font-size: 25px;
   font-weight: "bold";
   color: white;
+  margin-left: 15px;
 }
 .fontnav {
   font-family: "Agbalumo";
@@ -351,6 +352,7 @@ padding-left: 15%;
   font-weight: "bold";
   color: aliceblue;
   text-decoration: none;
+  margin-left: 15px;
 }
 .regis{
   margin-right:  5px;
