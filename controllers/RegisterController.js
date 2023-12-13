@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const register = async(req, res) => {
+  if (loggedIn) {
+    res.redirect('/');
+  }
+
     try {
       const { title, fname, lname, email, password, passport_no, passport_exp, birthdate, nationality, phone, food_allergy, special_req} = req.body;
   

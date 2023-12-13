@@ -1,9 +1,15 @@
 const stripe = require('stripe')('sk_test_51OGNrcDiyx2jx89Ts9UoCQ87JXPWOvDSjTpkyV4uYitzwHhIPXI4HBBYt8ltEVwlF3sItOtR9y1jcmembbJRqbOD00putV2ZDT');
 
 const createCheckoutSession = async (req, res) => {
+  try {
+    if (loggedIn) {
+      res.send('You loggedIn');
+      return;
+    }
+
     const YOUR_DOMAIN = 'http://localhost:3000';
     // const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app';
-    try {
+
     const {
       order_title, 
       order_user_id, 

@@ -1,7 +1,12 @@
 const stripe = require('stripe')('sk_test_51OGNrcDiyx2jx89Ts9UoCQ87JXPWOvDSjTpkyV4uYitzwHhIPXI4HBBYt8ltEVwlF3sItOtR9y1jcmembbJRqbOD00putV2ZDT');
 
 const SessionStatus = async (req, res) => {
-    try {
+  try {
+    if (loggedIn) {
+      res.send('You loggedIn');
+      return;
+    }
+
         const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 
         res.send({

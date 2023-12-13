@@ -36,6 +36,7 @@ const AdminLogin = require('./controllers/AdminLoginController');
 const OrderController = require('./controllers/OrderController');
 const CreateCheckout = require('./controllers/CreateCheckout');
 const SessionStatus = require('./controllers/SessionStatus');
+const logoutController = require('./controllers/LogoutController');
 
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -46,19 +47,20 @@ app.use("*", (req, res, next) => {
   next()
 })
 
-app.post('/register',redirectIfAuth,RegisterController.register);
-app.post('/login',redirectIfAuth,LoginController.login);
+app.post('/register',RegisterController.register);
+app.post('/login',LoginController.login);
 app.post('/admincreate',AdminCreate.admincreate);
 app.post('/adminlogin',AdminLogin.adminlogin);
 app.post('/ordercalculate',OrderController.orderCalculate);
 app.post('/placeorder',OrderController.placeOrder);
 app.put('/successorder',OrderController.SuccessOrder);
 
+app.get('/logout', logoutController.logout);
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
-app.get('/home', authMiddleware, SesController);
-app.get('/getwaitingorder/:orderID', OrderController.GetUserOrder);
+app.get('/home', SesController);
+app.get('/getwaitingorder/:orderID',OrderController.GetUserOrder);
 
 app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)

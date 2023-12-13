@@ -2,7 +2,13 @@ const Tour = require('../models/tour');
 const Order = require('../models/order');
 var User = require('../models/user');
 
-const orderCalculate = async (req, res) =>{
+const orderCalculate = async (req, res) =>{  
+try {
+  if (loggedIn) {
+    res.send('You loggedIn');
+    return;
+  }
+
     const { user_id,
       tour_id,
       quantity,
@@ -18,7 +24,7 @@ const orderCalculate = async (req, res) =>{
     return res.status(400).json({ error: 'Invalid input data' });
   }
 
-  try {
+
     // Find the selected tour
     const selectedTour = await Tour.findById(tour_id);
     const selectedUser = await User.findById(user_id);
@@ -53,7 +59,13 @@ const orderCalculate = async (req, res) =>{
 };
 
 let isProcessing = false;
+
 const placeOrder = async (req, res) => {
+  try{
+    if (loggedIn) {
+      res.send('You loggedIn');
+      return;
+    }
   const { user_id, tour_id, quantity, tour_date } = req.body;
 
   // Validate the input
@@ -66,7 +78,7 @@ const placeOrder = async (req, res) => {
     return res.status(409).json({ error: 'Another request is already in progress' });
   }
 
-  try {
+
     // Set the flag to indicate that a request is in progress
     isProcessing = true;
 
@@ -117,6 +129,11 @@ const placeOrder = async (req, res) => {
 };
 
 const GetUserOrder = async (req, res) =>{
+  if (loggedIn) {
+    res.send('You loggedIn');
+  } else {
+    res.redirect('/login');
+  }
   const { orderID } = req.params;
 
   // Validate the input
