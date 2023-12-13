@@ -8,6 +8,12 @@ import {
 import { useNavigate,useLocation} from 'react-router-dom';
   
 const CheckoutForm = () => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    // Redirect to the homepage or another route
+    window.location.href = '/login';
+  }
+  
   const location = useLocation();
   // const navigate = useNavigate();
   const stripePromise = loadStripe("pk_test_51OGNrcDiyx2jx89T4UZmtjLOXthkrMBdIr0HA4xQqvfr1UcWTvwwlzEnbWJtBmXpEjyZtoKRZyGY436VpQSj3r6P00KsovpnoJ");

@@ -19,6 +19,13 @@ import { useLocation} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function Calendar() {
+
+  const token = localStorage.getItem('token');
+  if (!token) {
+    // Redirect to the homepage or another route
+    window.location.href = '/login';
+  }
+
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -16,14 +16,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlus } from "@fortawesome/free-brands-svg-icons";
 import bg from './Pic/bg.jpg'
 import axios from "axios";
+import { useEffect } from "react";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Redirect to the homepage or another route
+      window.location.href = '/';
+    }
+  }, []);
+
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
-      // const response = await axios.post('http://localhost:3001/login', { email, password });
+      // const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
+      const response = await axios.post('http://localhost:3001/login', { email, password });
       const token = response.data.token;
 
       localStorage.setItem('token', token);

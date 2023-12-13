@@ -24,6 +24,12 @@ function Register() {
   const [selectedTitle, setSelectedTitle] = useState(null);
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Redirect to the homepage or another route
+      window.location.href = '/';
+    }
+
     fetch(
       "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
     )

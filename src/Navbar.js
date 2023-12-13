@@ -12,7 +12,7 @@ import Button from 'react-bootstrap/Button';
 import { useEffect,useState } from "react";
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
-
+import axios from "axios";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -37,10 +37,17 @@ function NavbarComponent() {
         const { _id,fname,email,exp,expiresIn } = JSON.parse(decodedPayload);
         console.log(_id,fname,email,exp,expiresIn )
         document.cookie = `token=${token}; path=/; max-age=${expiresIn}; HttpOnly`;
-        if (exp * 1000 < Date.now()) {
-          // Token expired, redirect to login
-          // window.location.href = '/login';
-          return;
+        if (token) {
+          try {
+            const { exp } = JSON.parse(atob(token.split('.')[1]));
+        
+            if (exp * 1000 < Date.now()) {
+              // Token expired, remove from localStorage
+              localStorage.removeItem('token');
+            }
+          } catch (error) {
+            console.error('Error parsing token:', error);
+          }
         }
 
         setUserID(_id);
@@ -53,13 +60,25 @@ function NavbarComponent() {
     }
   }, []);
 
-  const handleLogout = () => {
-    // Implement logout logic, clear the token, and update the state
-    localStorage.removeItem('token');
-    setUserEmail('');
-    setIsLoggedIn(false);
-    // Redirect to the homepage or another route
-    window.location.href = '/';
+  const handleLogout = async () => {
+    try {
+      // Clear the token and update the state
+      localStorage.removeItem('token');
+      setUserEmail('');
+      setIsLoggedIn(false);
+  
+      // Call the server-side logout endpoint
+      const response = await axios.get('http://localhost:3001/logout');
+      
+      // Handle response if needed (e.g., redirect to login page)
+      console.log(response.data);  // Log the response data
+  
+      // Redirect to the homepage or another route
+      // window.location.href = '/';
+    } catch (error) {
+      console.error('Error during logout:', error);
+      // Handle errors as needed
+    }
   };
 
   return (

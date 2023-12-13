@@ -6,6 +6,11 @@ import axios from "axios";
 
 import Alert from '@mui/material/Alert';
 const Return = () => {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    // Redirect to the homepage or another route
+    window.location.href = '/login';
+  }
     const [status, setStatus] = useState(null);
     const [customerEmail, setCustomerEmail] = useState('');
   
