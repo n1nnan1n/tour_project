@@ -10,6 +10,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&family=Roboto+Slab&display=swap");
 
 @media (max-width: 1980px) {
+   /* ----------return-------------- */
+   .cardre{
+    width: 80%;
+    padding-left: 15%;
+    padding-top: 20px;
+    height: 600px;
+   }
+   .headre{
+    font-size: 30px;
+    margin-left: 100px;
+    font-weight: bold;
+   }
+   .detailre{
+    font-size: 18px;
+margin-left: 60px;
+margin-top: 20px;
+font-weight: bold;
+   }
+   .detailre1{
+    font-size: 18px;
+margin-left: 50px;
+
+
+   }
   /* ----------about-------------- */
   
   .detailabout{
