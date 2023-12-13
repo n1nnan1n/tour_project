@@ -22,7 +22,8 @@ export default function MediaControlCard() {
     <Card sx={{ display: 'flex',backgroundColor:'#FFFAEC'}}>
     <CardMedia
         component="img"
-        sx={{ width: '500px',height:'400px' }}
+        sx={{ width: '50%',height:'400px' }}
+        // className='sizeimage'
         image={img}
         alt="Live from space album cover"
       />
