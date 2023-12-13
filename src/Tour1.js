@@ -23,8 +23,9 @@ import Calendar from './Calendar'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
-
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { Carousel } from 'react-carousel-minimal';
 function Tour1() {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
@@ -105,7 +106,14 @@ function Tour1() {
       thumbnail: base64String,
       description: `Image ${index + 1}`,
     }));
-
+    const captionStyle = {
+      fontSize: '2em',
+      fontWeight: 'bold',
+    }
+    const slideNumberStyle = {
+      fontSize: '20px',
+      fontWeight: 'bold',
+    }
 return (
     <>
     <div  className='bg'>
@@ -113,7 +121,8 @@ return (
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
           >
-            <ImageGallery
+            {/* <ImageGallery
+             sx={{ width: '500px',height:'100px' }}
               items={images}
               showPlayButton={true}
               showFullscreenButton={true}
@@ -123,7 +132,39 @@ return (
               onPlay={() => {
                 alert("slideshow is now playing!");
               }}
-            />
+            /> */}
+         
+
+        <div style={{
+          padding: "0 20px"
+        }}>
+          <Carousel
+            items={images}
+            time={2000}
+            width="850px"
+            height="500px"
+            captionStyle={captionStyle}
+            radius="10px"
+            slideNumber={true}
+            slideNumberStyle={slideNumberStyle}
+            captionPosition="bottom"
+            automatic={true}
+            dots={true}
+            pauseIconColor="white"
+            pauseIconSize="40px"
+            slideBackgroundColor="darkgrey"
+            slideImageFit="cover"
+            thumbnails={true}
+            thumbnailWidth="100px"
+            style={{
+              textAlign: "center",
+              maxWidth: "850px",
+              maxHeight: "500px",
+              margin: "40px auto",
+            }}
+          />
+        </div>
+
           </div>
 
  <div style={{ marginBottom: "30px"  }}>
