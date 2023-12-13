@@ -151,7 +151,7 @@ function Home() {
               > 
                 <Carousel.Item className="carouselitem">
                   <img 
-                  
+                  style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={grand1}
                     alt="First slide"
@@ -167,7 +167,7 @@ function Home() {
                
                 <Carousel.Item className="carouselitem">
                   <img
-                
+                 style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={grand2}
                     alt="First slide"
@@ -182,6 +182,7 @@ function Home() {
                 </Carousel.Item>
                 <Carousel.Item className="carouselitem">
                   <img
+                   style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={grand5}
                     alt="First slide"
@@ -194,7 +195,8 @@ function Home() {
                     </h5>
                   </Carousel.Caption>
                 </Carousel.Item>
-              </Carousel></a>
+              </Carousel>
+              </a>
               <a href="Daytrip">
               <Carousel
                 data-bs-theme="dark"
@@ -203,13 +205,14 @@ function Home() {
               >
                 <Carousel.Item className="carouselitem">
                   <img
+                   style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={outside2}
                     alt="First slide"
                   />
                   <Carousel.Caption>
                     <h5
-                  
+                  className="marginh1"
                     >
                       DAY TRIPS OUTSIDE BKK
                     </h5>
@@ -218,13 +221,14 @@ function Home() {
 
                 <Carousel.Item className="carouselitem">
                   <img
+                   style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={outside1}
                     alt="First slide"
                   />
                    <Carousel.Caption>
                     <h5
-                  
+                      className="marginh2"
                     >
                       DAY TRIPS OUTSIDE BKK
                     </h5>
@@ -233,12 +237,14 @@ function Home() {
 
                 <Carousel.Item className="carouselitem">
                   <img
+                   style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={outside3}
                     alt="First slide"
                   />
                    <Carousel.Caption>
                     <h5
+                      className="marginh3"
                   
                     >
                       DAY TRIPS OUTSIDE BKK
@@ -255,6 +261,7 @@ function Home() {
               >
                 <Carousel.Item className="carouselitem">
                   <img
+                   style={{backgroundposition: 'bottom'}}
                     className="d-block w-100"
                     src={customized}
                     alt="First slide"
