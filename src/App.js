@@ -5,7 +5,6 @@ import Register from './Register'
 import Home from './Home'
 import Login from './Login'
 import Footer from './Footer';
-
 import Oneday from './Oneday';
 import About from './About';
 import Customized from './Customized';
@@ -17,6 +16,7 @@ import Reviewall from './Reviewall';
 import Return from './Return';
 import CheckoutForm from './Checkout';
 import Review1 from './Review1';
+import Re from './re'
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
           <NavbarComponent fixed="top" />
             <Routes>
                 <Route path="/" element={<Home/>}/>
+                {/* <Route path="/" element={<Re/>}/> */}
                 <Route path="Register" element={<Register/>} />
                 <Route path="Login" element={<Login/>} />
                 <Route path="Footer" element={<Footer/>} />
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/checkout" element={<CheckoutForm />} />
                 <Route path="/return" element={<Return />} />
                 <Route path="Review1" element={<Review1 />} />
+                <Route path="Re" element={<Re />} />
               
             </Routes>
           </BrowserRouter>
