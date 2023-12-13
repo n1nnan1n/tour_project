@@ -7,11 +7,11 @@ const SessionStatus = async (req, res) => {
       return;
     }
 
-        const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-
+    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
         res.send({
           status: session.status,
-          customer_email: session.customer_details.email
+          payment_status: session.payment_status,
+          customer_email: session.customer_details.email,
         });
 } catch (error) {
     console.error('Error during checkout:', error);

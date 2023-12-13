@@ -11,13 +11,9 @@ const createCheckoutSession = async (req, res) => {
     // const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app';
 
     const {
-      order_title, 
       order_user_id, 
-      order_user_firstname, 
-      order_user_lastname,
       order_user_email,
       order_tour_id,
-      order_tour_name,
       order_quantity,
       order_tour_date,
       order_tour_price,
@@ -34,11 +30,24 @@ const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: 'payment',
+      redirect_on_completion: 'never'
+      // return_url: ``,
       // return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
-      return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}&order_title=${order_title}&order_user_id=${order_user_id}&order_user_firstname=${order_user_firstname}&order_user_lastname=${order_user_lastname}&order_user_email=${order_user_email}&order_tour_id=${order_tour_id}&order_tour_name=${order_tour_name}&order_quantity=${order_quantity}&order_tour_date=${order_tour_date}&order_tour_price=${order_tour_price}&order_total_price=${order_total_price}`
+      // return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}&order_user_id=${order_user_id}&order_user_email=${order_user_email}&order_tour_id=${order_tour_id}&order_quantity=${order_quantity}&order_tour_date=${order_tour_date}&order_tour_price=${order_tour_price}&order_total_price=${order_total_price}`
     });
   
-    res.send({clientSecret: session.client_secret});
+    res.send({
+      clientSecret: session.client_secret,
+      orderdata:{
+        order_user_id, 
+        order_user_email,
+        order_tour_id,
+        order_quantity,
+        order_tour_date,
+        order_tour_price,
+        order_total_price
+      }
+    });
 
     function getProductPriceId(tour_id) {
         if (tour_id === '655a2fae9b4c465647c4609a') {
