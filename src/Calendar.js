@@ -44,6 +44,7 @@ function Calendar() {
   const userID = location.state.userID;
   const tourID = location.state.tourID;
   const price = location.state.tourPrice;
+  const tour_img = location.state.tourImage1;
 
   //must axios closed date
   function disableWeekends(date) {
@@ -103,7 +104,8 @@ const handleInputChange = (e) => {
           order_quantity,
           order_tourDate,
           order_totalprice,
-          order_tourprice
+          order_tourprice,
+          tour_img
         }
       });
   };

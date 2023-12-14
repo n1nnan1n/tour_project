@@ -11,27 +11,40 @@
 
 @media (max-width: 1980px) {
       /* ----------return-------------- */
+      .detail{
+        margin-left: 15%;
+      }
       .cardre{
-        width: 80%;
-        padding-left: 15%;
-        padding-top: 20px;
+        width: 73%;
+        padding-left: 27%;
+        padding-top: 50px;
+        margin-bottom: -5%;
         height: 600px;
        }
        .headre{
+        text-align: center;
         font-size: 30px;
-        margin-left: 100px;
         font-weight: bold;
        }
        .detailre{
+        float: left;
+        text-align: left;
         font-size: 18px;
-        margin-left: 114px;
-        margin-top: 20px;
         font-weight: bold;
+        display: inline-block;
+        margin-bottom: 25px;
        }
        .detailre1{
+        float: left;
+        text-align: left;
         font-size: 18px;
-        margin-left: 100px;
+        margin-left: -40px;
+        display: inline-block;
+        margin-bottom: 25px;
        }
+       .space {
+        margin-right: 8px; /* Adjust the value as needed */
+      }
   /* ----------about-------------- */
   
   .detailabout{

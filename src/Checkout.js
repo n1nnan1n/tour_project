@@ -4,7 +4,21 @@ import {
     EmbeddedCheckoutProvider,
     EmbeddedCheckout
   } from '@stripe/react-stripe-js';
-  import axios from "axios";
+import axios from "axios";
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import img from './Pic/ayutthaya/LIaolqBL.jpeg'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useNavigate,useLocation} from 'react-router-dom';
   
 const CheckoutForm = () => {
@@ -13,6 +27,8 @@ const CheckoutForm = () => {
     // Redirect to the homepage or another route
     window.location.href = '/login';
   }
+
+  const theme = useTheme();
   
   const location = useLocation();
   // const navigate = useNavigate();
@@ -126,9 +142,68 @@ return (
         stripe={stripePromise}
         options={{ clientSecret, onComplete: handleComplete }}
       >
-        <div style={{ width: '100%', padding: '2%' }}>
-          <h2>[ Name ] : {location.state.order_title} {location.state.order_user_firstname} {location.state.order_user_lastname}<br></br>[ Tour name ] : {location.state.order_tour_name}<br></br>[ Tour date ] : {formattedreceieveTourDate}<br></br>[ Person(s) ] : {prepareData.order_quantity}</h2>
-        </div>
+    <div className='cardre'>
+    <Card sx={{ display: 'flex',backgroundColor:'#FFFAEC'}}>
+    <CardMedia
+        component="img"
+        sx={{ width: '50%',height:'400px' }}
+        // className='sizeimage'
+        image={location.state.tour_img}
+        alt="Live from space album cover"
+      />
+      <Box 
+      sx={{ display: 'flex', flexDirection: 'column' }}
+      >
+        <CardContent 
+        sx={{ flex: '1 0 auto' }}
+        >
+<div className="detail">
+               <h1 className='headre'>{location.state.order_tour_name}</h1>
+              <Row> <Col>   <h1 className='detailre'>Firstname :</h1></Col>
+              <Col><h1 className='detailre1'>{location.state.order_title} {location.state.order_user_firstname}</h1></Col>
+</Row>
+<Row><Col>
+          <h1 className='detailre'>Lastname :</h1></Col>
+          <Col>
+
+          <h1 className='detailre1'>{location.state.order_user_lastname}</h1></Col>
+</Row><Row>
+        <Col> <h1 className='detailre'>Tour Date :</h1></Col> 
+
+        <Col>   <h1 className='detailre1'>{formattedreceieveTourDate}</h1></Col> 
+       </Row>
+       <Row>
+       <Col>  <h1 className='detailre'>Person(s) :</h1></Col> 
+
+          <Col>  <h1 className='detailre1'>{location.state.order_quantity}</h1></Col> 
+          </Row>
+          <Row>
+       <Col>  <h1 className='detailre'>Tour price :</h1></Col> 
+
+       <Col> <h1 className='detailre1'>{location.state.order_tourprice}</h1></Col> 
+         </Row><Row>
+        <Col> <h1 className='detailre'>Total price :</h1></Col> 
+
+        <Col>  <h1 className='detailre1'>{location.state.order_totalprice}</h1>
+          </Col> </Row></div>
+         
+        </CardContent>
+       
+       <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+          {/* <IconButton aria-label="previous">
+            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+          </IconButton>
+          <IconButton aria-label="play/pause">
+            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+          </IconButton>
+          <IconButton aria-label="next">
+            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+          </IconButton> */}
+        </Box>
+      </Box>
+     
+    </Card>
+    </div>
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider>
     )}
