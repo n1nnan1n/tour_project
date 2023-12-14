@@ -52,13 +52,13 @@ export const Login = () => {
   return (
    
     <div className="wrapper">
-    <div class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'bottom'}}>
+    <div class="bgregis" style={{backgroundImage:`url(${bg})`}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
         <Row>
           
           <Col>
-            <div className="bgblur"  style={{padding:'100px',marginLeft:'20%', marginTop: "10%",width:'60%',height:'85%'}}>
+            <div className="bgblur" >
        
               <div class="row flex-nowrap justify-content-between align-items-center">
                 <div
@@ -109,7 +109,8 @@ export const Login = () => {
                   <Button onClick={handleLogin} className='button'  size="sm" style={{width:'35%',marginRight:'20%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
               </Row>
-                      
+
+            
   <div className="d-grid gap-2 buttonlog" >
   
 

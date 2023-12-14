@@ -96,7 +96,7 @@ function Register() {
 };
 
   return (
-      <div  class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',paddingLeft:'25%',paddingBottom: "40px",backgroundPosition:'bottom'}} >
+      <div  className="bgregis" style={{backgroundImage:`url(${bg})`}} >
         {/* <Container style={{ marginBottom: "20px" }}> */}
 
         <Container>
@@ -104,17 +104,12 @@ function Register() {
           <Row> 
             <Col> 
             
-              <div className="bgblur"  style={{padding:'30px', marginTop: "80px" ,width:'70%',height:'90%'}}>
+              <div className="bgblur" >
               <div
                     class=" text-center"
                     
                   >
-                    <p style={{
-                      fontSize: "40px",
-                      fontWeight: "bold",
-                      color: "white",
-                      textAlign: "center",
-                    }}>Register</p>
+                    <p className="fontregis">Register</p>
                   </div>
               {" "}
               <div class="border-bottom lh-1 py-3">
@@ -250,8 +245,8 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-           <div className="d-grid gap-3 buttonlog" style={{width:'30%',marginLeft:'35%'}}>
-              <Button type="submit" style={{fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>
+           <div className="d-grid gap-3 buttonlog" >
+              <Button type="submit" className="submit">
                 REGISTER
               </Button>
             </div>
