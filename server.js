@@ -60,7 +60,7 @@ app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 // app.get('/home', SesController);
-// app.get('/getwaitingorder/:orderID',OrderController.GetUserOrder);
+app.get('/getuserorder/:orderID',OrderController.GetUserOrder);
 
 app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)

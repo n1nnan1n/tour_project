@@ -128,34 +128,33 @@ try {
 //   }
 // };
 
-// const GetUserOrder = async (req, res) =>{
-//   if (loggedIn) {
-//     res.send('You loggedIn');
-//   } else {
-//     res.redirect('/login');
-//   }
-//   const { orderID } = req.params;
+const GetUserOrder = async (req, res) =>{
+  try {
+    if (loggedIn) {
+      res.send('You loggedIn');
+      return;
+    }
+  const { orderID } = req.params;
 
-//   // Validate the input
-//   if (!orderID) {
-//     return res.status(400).json({ error: 'Invalid input data' });
-//   }
+  // Validate the input
+  if (!orderID) {
+    return res.status(400).json({ error: 'Invalid input data' });
+  }
 
-//   const selectedOrder = await Order.findById({_id:orderID});
+  const selectedOrder = await Order.findById({_id:orderID});
   
-//   if (selectedOrder) {
-//     res.json({
-//       order_id: selectedOrder._id,
-//       order_status: selectedOrder.order_status,
-//       title: selectedOrder.title,
-//       user_firstname: selectedOrder.user_firstname,
-//       user_lastname: selectedOrder.user_lastname
-//     })
-//   } else {
-//     // No order found with the specified criteria
-//     console.log('Order not found');
-//   }
-// };
+  if (selectedOrder) {
+    res.json(selectedOrder)
+  } else {
+    // No order found with the specified criteria
+    console.log('Order not found');
+  }
+}
+ catch (error) {
+  console.error('Error fetching order data:', error);
+  res.status(500).json({ error: 'Internal Server Error' });
+};
+}
 
 // const DeleteOrder = async (req, res) =>{
 //   const { orderID } = req.params;
@@ -236,6 +235,6 @@ const SuccessOrder = async (req, res) => {
 
 module.exports = { orderCalculate,
   // placeOrder,
-  // GetUserOrder,
+  GetUserOrder,
   // DeleteOrder,
   SuccessOrder };
