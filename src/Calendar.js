@@ -179,7 +179,7 @@ const handleInputChange = (e) => {
             
               <Col sm={8}>
                 <div
-                  className="fillter"
+                  className="filltercalen"
                   style={{
                     backgroundColor: "white",
                     borderRadius: "10px",
@@ -211,7 +211,7 @@ const handleInputChange = (e) => {
                  
                 </div>
                 <div
-                  className="fillter"
+                  className="filltercalen"
                   style={{
                     backgroundColor: "white",
                     borderRadius: "10px",
@@ -244,7 +244,7 @@ const handleInputChange = (e) => {
               </Col>
               <Col sm={4}>
                 <div
-                  className="fillter book"
+                  className="filltercalen1 book"
                 //   style={{
                 //     float: "left",
                 //     boxShadow: '0px 0px 5px 2px rgba(0, 0, 0, 0.25)', 
