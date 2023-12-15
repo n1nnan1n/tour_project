@@ -16,7 +16,11 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Profile from "./Profile";
+import { MDBBtn } from 'mdb-react-ui-kit';
 function NavbarComponent() {
 
   const [userID, setUserID] = useState('');
@@ -177,11 +181,12 @@ function NavbarComponent() {
                 <NavDropdown.Item eventKey="4.2">Deutsch 🇩🇪</NavDropdown.Item>
                 
                 <NavDropdown.Divider />
-            
-              </NavDropdown>
               
-          
-          
+              </NavDropdown>
+            <MDBBtn outline href="Profile" color='secondary' style={{width:'120px',height:'45px',marginTop:'5px',textAlign:'left',marginLeft:'60px',color:'white'}}>
+       Profile  <AccountCircleIcon style={{color:'white',fontSize:'35px',marginLeft:'5px'}} />
+      </MDBBtn>
+        
           </Nav>
          
         </Navbar.Collapse>
