@@ -92,7 +92,7 @@ const handleInputChange = (e) => {
   }, [userID,tourID,date,numberValue, price]);
   
   const handleSubmit = async () => {
-      navigate('/Checkout', {
+      navigate('/checkout', {
         state: {
           order_title,
           order_userID,

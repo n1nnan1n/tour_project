@@ -96,13 +96,15 @@ const handleComplete = async () => {
     };
 
     // Wait for the axios.post to complete before proceeding
-    const response = await axios.post('http://localhost:3001/successorder', orderdata);
+    const response = await axios.post('https://tourapi-hazf.onrender.com/successorder', orderdata);
+    // const response = await axios.post('http://localhost:3001/successorder', orderdata);
     const responseData = response.data;
     // Any code here will run after the axios.post is complete
     console.log(responseData.order_id);
     setorder_id(responseData.order_id);
-
-    const orderdetail = await axios.get('http://localhost:3001/getuserorder/'+responseData.order_id);
+    
+    const orderdetail = await axios.get('https://tourapi-hazf.onrender.com/getuserorder/'+responseData.order_id);
+    // const orderdetail = await axios.get('http://localhost:3001/getuserorder/'+responseData.order_id);
     const orderdetailData = orderdetail.data;
     
     setOrderedDetail({
