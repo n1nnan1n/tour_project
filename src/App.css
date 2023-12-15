@@ -8,6 +8,33 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:ital,wght@1,500&family=Prompt&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&family=Roboto+Slab&display=swap");
+
+
+/* --------cheack--------- */
+@media (max-width: 1980px) {
+
+  .detailcheack{
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+   }
+  .detailcheack1{
+    text-align: left;
+    font-size: 18px;
+
+   }
+.filltercheack {
+  background: #fffaec;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color:#FFFAEC;
+  width:500px;
+  height:500px;
+  margin-top: 100px;
+  margin-left: 30%;
+  padding: 40px;
+}}
 /* ------home-------- */
 @media (max-width: 1980px) {
   .marginh1{

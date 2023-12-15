@@ -18,6 +18,7 @@ import CheckoutForm from './Checkout';
 import Review1 from './Review1';
 import Re from './re'
 import Profile from './Profile';
+import Cheack from './cheack';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
                 <Route path="Review1" element={<Review1 />} />
                 <Route path="Re" element={<Re />} />
                 <Route path="Profile" element={<Profile />} />
+                <Route path="Cheack" element={<Cheack />} />
               
             </Routes>
           </BrowserRouter>
