@@ -46,7 +46,7 @@ function App() {
                 <Route path="/return" element={<Return />} />
                 <Route path="Review1" element={<Review1 />} />
                 <Route path="Re" element={<Re />} />
-                {/* <Route path="Profile" element={<Profile />} /> */}
+                <Route path="Profile" element={<Profile />} />
               
             </Routes>
           </BrowserRouter>
