@@ -52,8 +52,8 @@ function Tour1() {
     useEffect(() => {
       const fetchTourData = async () => {
         try {
-          // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
-          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name;
+          const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name; // Assuming fetching a specific tour
+          // const URL = 'https://tourapi-hazf.onrender.com/tourinfo/'+tour_name;
           // console.log(URL);
           const response = await axios.get(URL);
           const data = response.data;

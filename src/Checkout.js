@@ -71,7 +71,8 @@ const CheckoutForm = () => {
   });
 
   useEffect(() => {
-    axios.post("http://localhost:3001/create-checkout-session", prepareData)
+    axios.post("https://tourapi-hazf.onrender.com/create-checkout-session", prepareData)
+    // axios.post("http://localhost:3001/create-checkout-session", prepareData)
     .then((response) => {
         setClientSecret(response.data.clientSecret);
         // console.log({"checkout data":response.data.orderdata});

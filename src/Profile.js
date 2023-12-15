@@ -3,6 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCar
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 export default function Profile() {
+  
   return (
     <div className="gradient-custom-2" style={{ backgroundColor: '#9de2ff' }}>
 

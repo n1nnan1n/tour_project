@@ -72,8 +72,8 @@ const handleInputChange = (e) => {
       tour_date:date
     }
     axios
-    .post("http://localhost:3001/ordercalculate", orderData)
-    // .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
+    // .post("http://localhost:3001/ordercalculate", orderData)
+    .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
     .then((response) => {
       setorder_title(response.data.title);
       setorder_userID(response.data.user_id);
