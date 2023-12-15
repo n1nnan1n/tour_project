@@ -65,7 +65,7 @@ app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 // app.get('/home', SesController);
 app.get('/getuserorder/:orderID',OrderController.GetUserOrder);
 
-app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
+app.post({YOUR_DOMAIN}+'create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)
 
 // app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
