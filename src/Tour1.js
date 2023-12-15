@@ -119,7 +119,7 @@ return (
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
           >
-            {/* <ImageGallery
+            <ImageGallery
              sx={{ width: '500px',height:'100px' }}
               items={images}
               showPlayButton={true}
@@ -130,10 +130,10 @@ return (
               onPlay={() => {
                 alert("slideshow is now playing!");
               }}
-            /> */}
+            />
          
 
-        <div style={{
+        {/* <div style={{
           padding: "0 20px"
         }}>
           <Carousel
@@ -161,7 +161,7 @@ return (
               margin: "40px auto",
             }}
           />
-        </div>
+        </div> */}
 
           </div>
 
