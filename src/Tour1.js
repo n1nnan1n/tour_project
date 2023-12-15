@@ -23,8 +23,6 @@ import Calendar from './Calendar'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import { Carousel } from 'react-carousel-minimal';
 function Tour1() {
     const navigate = useNavigate();
