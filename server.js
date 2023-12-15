@@ -23,8 +23,8 @@ mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net
 
 global.loggedIn = null
 
-const YOUR_DOMAIN = 'http://localhost:3000';
-// const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app';
+// const YOUR_DOMAIN = 'http://localhost:3000';
+const YOUR_DOMAIN = 'https://tour-project-h0lt44cbl-n1nnan1ns-projects.vercel.app';
 
 
 const RegisterController = require('./controllers/RegisterController');
@@ -37,9 +37,11 @@ const OrderController = require('./controllers/OrderController');
 const CreateCheckout = require('./controllers/CreateCheckout');
 const SessionStatus = require('./controllers/SessionStatus');
 const logoutController = require('./controllers/LogoutController');
-
+const userController =require('./controllers/UserController');
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
+// const redirectIfAuth = require('./middleware/redirectIfAuth')
+// const authMiddleware = require('./middleware/authMiddleware')
 
 
 app.use("*", (req, res, next) => {
@@ -56,6 +58,7 @@ app.post('/ordercalculate',OrderController.orderCalculate);
 app.post('/successorder',OrderController.SuccessOrder);
 
 app.get('/logout', logoutController.logout);
+app.get('/profile/:userID', userController.userProfile);
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
