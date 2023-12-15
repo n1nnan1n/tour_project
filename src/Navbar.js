@@ -72,7 +72,8 @@ function NavbarComponent() {
       setIsLoggedIn(false);
   
       // Call the server-side logout endpoint
-      const response = await axios.get('http://localhost:3001/logout');
+      const response = await axios.get('https://tourapi-hazf.onrender.com/logout');
+      // const response = await axios.get('http://localhost:3001/logout');
       
       // Handle response if needed (e.g., redirect to login page)
       console.log(response.data);  // Log the response data
