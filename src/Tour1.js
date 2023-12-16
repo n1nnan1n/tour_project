@@ -99,11 +99,16 @@ function Tour1() {
       fetchTourData();
     }, []);
 
-    const images = (tourData.tour_image || []).map((base64String, index) => ({
-      image: base64String,
+    const images = (tourData.tour_image || []).map((imageUrl, index) => ({
+      image: imageUrl,
       // thumbnail: base64String,
       caption: `Image ${index + 1}`,
     }));
+    // const images = (tourData.tour_image || []).map((imageUrl, index) => ({
+    //   original: imageUrl,
+    //   thumbnail: imageUrl,
+    //   description: `Image ${index + 1}`,
+    // }));
     const captionStyle = {
       fontSize: '2em',
       fontWeight: 'bold',
@@ -151,31 +156,33 @@ return (
         <div style={{
           padding: "0 20px"
         }}>
-          <Carousel
-            data={images}
-            // time={2000}
-            width="850px"
-            height="500px"
-            captionStyle={captionStyle}
-            radius="10px"
-            slideNumber={true}
-            slideNumberStyle={slideNumberStyle}
-            captionPosition="bottom"
-            automatic={true}
-            dots={true}
-            pauseIconColor="white"
-            pauseIconSize="40px"
-            slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
-            thumbnails={true}
-            thumbnailWidth="100px"
-            style={{
-              textAlign: "center",
-              maxWidth: "850px",
-              maxHeight: "500px",
-              margin: "40px auto",
-            }}
-          />
+          {images.length > 0 && (
+              <Carousel
+                data={images}
+                time={2000}
+                width="850px"
+                height="500px"
+                captionStyle={captionStyle}
+                radius="10px"
+                slideNumber={true}
+                slideNumberStyle={slideNumberStyle}
+                captionPosition="bottom"
+                automatic={true}
+                dots={true}
+                pauseIconColor="white"
+                pauseIconSize="40px"
+                slideBackgroundColor="darkgrey"
+                slideImageFit="cover"
+                thumbnails={true}
+                thumbnailWidth="100px"
+                style={{
+                  textAlign: "center",
+                  maxWidth: "850px",
+                  maxHeight: "500px",
+                  margin: "40px auto",
+                }}
+                />
+                )}
         </div>
 
           </div>
