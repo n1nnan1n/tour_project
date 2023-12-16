@@ -99,10 +99,10 @@ function Tour1() {
       fetchTourData();
     }, []);
 
-    const images = (tourData.tour_image || []).map((imageUrl, index) => ({
-      original: imageUrl,
-      thumbnail: imageUrl,
-      description: `Image ${index + 1}`,
+    const images = (tourData.tour_image || []).map((base64String, index) => ({
+      image: base64String,
+      // thumbnail: base64String,
+      caption: `Image ${index + 1}`,
     }));
     const captionStyle = {
       fontSize: '2em',
@@ -112,6 +112,21 @@ function Tour1() {
       fontSize: '20px',
       fontWeight: 'bold',
     }
+    // const data = [
+    //   {
+    //     image: "1.jpg",
+    //     caption: "Image Alt 1"
+    //   },
+    //   {
+    //     image: "2.jpg",
+    //     caption: "Image Alt 2"
+    //   },
+    //   {
+    //     image: "3.jpg",
+    //     caption: "Image Alt 3"
+    //   },
+    // ];
+   
 return (
     <>
     <div  className='bg'>
@@ -119,7 +134,7 @@ return (
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
           >
-            <ImageGallery
+            {/* <ImageGallery
              sx={{ width: '500px',height:'100px' }}
               items={images}
               showPlayButton={true}
@@ -130,15 +145,15 @@ return (
               onPlay={() => {
                 alert("slideshow is now playing!");
               }}
-            />
+            /> */}
          
 
-        {/* <div style={{
+        <div style={{
           padding: "0 20px"
         }}>
           <Carousel
-            items={images}
-            time={2000}
+            data={images}
+            // time={2000}
             width="850px"
             height="500px"
             captionStyle={captionStyle}
@@ -161,7 +176,7 @@ return (
               margin: "40px auto",
             }}
           />
-        </div> */}
+        </div>
 
           </div>
 
