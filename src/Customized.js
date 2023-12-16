@@ -12,7 +12,7 @@ export default function Customized() {
 These tours will be designed to create a unique itinerary and offer a more intimate and authentic travel experience for you. You can let us know what your interests are and we will make it possible for you. 
 </p><p style={{fontWeight:'bold',color:'#1460EF',fontSize:'20px',}}>
 If you’d like us to customize the tour program for you, please send us your request through our email :</p>
-<a href='Beyondthetrail2023@gmail.com'><p style={{fontWeight:'bold',color:'#1460EF',fontSize:'20px',}}>Beyondthetrail2023@gmail.com</p></a>
+<a href='Beyondthetrail2023@gmail.com'><p style={{fontWeight:'bold',color:'#1460EF',fontSize:'18px',}}>Beyondthetrail2023@gmail.com</p></a>
 <img
                 style={{ width: "100%", height: "100%" }}
                 src={pic}
