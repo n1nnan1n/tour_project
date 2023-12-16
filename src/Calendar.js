@@ -73,7 +73,7 @@ const handleInputChange = (e) => {
     }
     axios
     // .post("http://localhost:3001/ordercalculate", orderData)
-    .post("https://tourapi-hazf.onrender.com/create-checkout-session", orderData)
+    .post("https://tourapi-hazf.onrender.com/ordercalculate", orderData)
     .then((response) => {
       setorder_title(response.data.title);
       setorder_userID(response.data.user_id);
