@@ -19,6 +19,7 @@ import Review1 from './Review1';
 import Re from './re'
 import Profile from './Profile';
 import Cheack from './cheack';
+import Editpro from './Editpro';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                 <Route path="Re" element={<Re />} />
                 <Route path="Profile" element={<Profile />} />
                 <Route path="Cheack" element={<Cheack />} />
+                <Route path="Editpro" element={<Editpro />} />
               
             </Routes>
           </BrowserRouter>
