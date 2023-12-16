@@ -99,9 +99,9 @@ function Tour1() {
       fetchTourData();
     }, []);
 
-    const images = (tourData.tour_image || []).map((base64String, index) => ({
-      original: base64String,
-      thumbnail: base64String,
+    const images = (tourData.tour_image || []).map((imageUrl, index) => ({
+      original: imageUrl,
+      thumbnail: imageUrl,
       description: `Image ${index + 1}`,
     }));
     const captionStyle = {
