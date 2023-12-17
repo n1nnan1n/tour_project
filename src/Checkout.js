@@ -20,6 +20,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useNavigate,useLocation} from 'react-router-dom';
+import  correct from './Pic/correct.png'
+import { MDBBtn } from 'mdb-react-ui-kit';
   
 const CheckoutForm = () => {
   const token = localStorage.getItem('token');
@@ -213,10 +215,24 @@ return (
 
     {isComplete && (
       <div>
-        <h2>Payment successfully completed!</h2>
-        <h2>Order ID : {order_id}<br></br>Name : {orderedDetail.ordered_title} {orderedDetail.ordered_user_firstname} {orderedDetail.ordered_user_lastname}<br></br>Email : {orderedDetail.ordered_user_email}<br></br>Tour name : {orderedDetail.ordered_tour_name}<br></br>Person(s) : {orderedDetail.ordered_quantity}<br></br>Total price : {orderedDetail.ordered_total_price}</h2>
+        <div class="text-center filltercheack" >  
+        <img className='logo' src={correct} style={{width:'20%',height:'20%',marginBottom:'20px'}}/>
+          
+            <p class="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
+            <p class="text-gray-600 my-2"> Have a great day!  </p>
+            <p className='detailcheack'>Order ID :</p><p className='detailcheack1'>{order_id}</p>
+            <p className='detailcheack'>Tour name:</p><p className='detailcheack1'>{orderedDetail.ordered_tour_name}</p>
+            <p className='detailcheack'>Tour date :</p><p className='detailcheack1'>{formattedTourDate}</p>
+            <p className='detailcheack'>Name :</p><p className='detailcheack1'>{orderedDetail.ordered_title} {orderedDetail.ordered_user_firstname} {orderedDetail.ordered_user_lastname}</p>
+            <p className='detailcheack'>Person :</p><p className='detailcheack1'>{orderedDetail.ordered_quantity}</p>
+            <p className='detailcheack'>Total price :</p><p className='detailcheack1'>{orderedDetail.ordered_total_price}</p>
+           <MDBBtn href='/' style={{width:'300px'}}>Back To Home</MDBBtn>
+       
 
+        </div>
+        {/* <h2>Order ID : {order_id}<br></br>Name : {orderedDetail.ordered_title} {orderedDetail.ordered_user_firstname} {orderedDetail.ordered_user_lastname}<br></br>Email : {orderedDetail.ordered_user_email}<br></br>Tour name : {orderedDetail.ordered_tour_name}<br></br>Person(s) : {orderedDetail.ordered_quantity}<br></br>Total price : {orderedDetail.ordered_total_price}</h2> */}
       </div>
+
     )}
   </div>
 );

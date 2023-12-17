@@ -101,14 +101,9 @@ function Tour1() {
 
     const images = (tourData.tour_image || []).map((imageUrl, index) => ({
       image: imageUrl,
-      // thumbnail: base64String,
       caption: `Image ${index + 1}`,
     }));
-    // const images = (tourData.tour_image || []).map((imageUrl, index) => ({
-    //   original: imageUrl,
-    //   thumbnail: imageUrl,
-    //   description: `Image ${index + 1}`,
-    // }));
+
     const captionStyle = {
       fontSize: '2em',
       fontWeight: 'bold',
@@ -117,21 +112,7 @@ function Tour1() {
       fontSize: '20px',
       fontWeight: 'bold',
     }
-    // const data = [
-    //   {
-    //     image: "1.jpg",
-    //     caption: "Image Alt 1"
-    //   },
-    //   {
-    //     image: "2.jpg",
-    //     caption: "Image Alt 2"
-    //   },
-    //   {
-    //     image: "3.jpg",
-    //     caption: "Image Alt 3"
-    //   },
-    // ];
-   
+  
 return (
     <>
     <div  className='bg'>
@@ -139,27 +120,13 @@ return (
           <div
             style={{ maxWidth: "770px", marginBottom: "30px",marginLeft: "20%" , paddingTop: "30px"}}
           >
-            {/* <ImageGallery
-             sx={{ width: '500px',height:'100px' }}
-              items={images}
-              showPlayButton={true}
-              showFullscreenButton={true}
-              slideInterval={1000}
-              slideOnThumbnailOver={true}
-              showIndex={false}
-              onPlay={() => {
-                alert("slideshow is now playing!");
-              }}
-            /> */}
-         
-
         <div style={{
           padding: "0 20px"
         }}>
           {images.length > 0 && (
               <Carousel
                 data={images}
-                time={2000}
+                time={false}
                 width="850px"
                 height="500px"
                 captionStyle={captionStyle}
@@ -167,7 +134,7 @@ return (
                 slideNumber={true}
                 slideNumberStyle={slideNumberStyle}
                 captionPosition="bottom"
-                automatic={true}
+                automatic={false}
                 dots={true}
                 pauseIconColor="white"
                 pauseIconSize="40px"
@@ -180,9 +147,10 @@ return (
                   maxWidth: "850px",
                   maxHeight: "500px",
                   margin: "40px auto",
+                  overflow:"hidden"
                 }}
                 />
-                )}
+          )}
         </div>
 
           </div>
