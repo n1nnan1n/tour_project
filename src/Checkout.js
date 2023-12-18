@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef,useState, useEffect } from "react";
 import {loadStripe} from '@stripe/stripe-js';
 import {
     EmbeddedCheckoutProvider,
@@ -22,6 +22,7 @@ import Col from 'react-bootstrap/Col';
 import { useNavigate,useLocation} from 'react-router-dom';
 import  correct from './Pic/correct.png'
 import { MDBBtn } from 'mdb-react-ui-kit';
+import emailjs from '@emailjs/browser';
   
 const CheckoutForm = () => {
   const token = localStorage.getItem('token');
@@ -57,6 +58,7 @@ const CheckoutForm = () => {
   };
 
   const [orderedDetail, setOrderedDetail] = useState({
+    ordered_id: '',
     ordered_status: '',
     ordered_title: '',
     ordered_user_id: '',
@@ -69,7 +71,9 @@ const CheckoutForm = () => {
     ordered_tour_date: '',
     ordered_quantity: '',
     ordered_total_price: '',
-    ordered_createdAt: ''
+    ordered_createdAt: '',
+    ordered_format_tour_date:'',
+    ordered_format_createdAt:''
   });
 
   useEffect(() => {
@@ -86,6 +90,14 @@ const CheckoutForm = () => {
     })
     .catch((error) => console.error("Error fetching data:", error));
 }, []);
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+const receieveTourDate = new Date(prepareData.order_tour_date);
+ 
+
+const formattedreceieveTourDate = receieveTourDate.toLocaleDateString('en-US', options);
+
 
 const handleComplete = async () => {
   try {
@@ -108,8 +120,14 @@ const handleComplete = async () => {
     const orderdetail = await axios.get('https://tourapi-hazf.onrender.com/getuserorder/'+responseData.order_id);
     // const orderdetail = await axios.get('http://localhost:3001/getuserorder/'+responseData.order_id);
     const orderdetailData = orderdetail.data;
-    
+
+    const originalTourDate = new Date(orderdetailData.tour_date);
+    const originalCreatedAt = new Date(orderdetailData.createdAt);
+    const formattedTourDate = originalTourDate.toLocaleDateString('en-US', options);
+    const formattedCreatedAt = originalCreatedAt.toLocaleDateString('en-US', options);   
+
     setOrderedDetail({
+      ordered_id: orderdetailData._id,
       ordered_status: orderdetailData.order_status,
       ordered_title: orderdetailData.title,
       ordered_user_id: orderdetailData.user_id,
@@ -122,7 +140,9 @@ const handleComplete = async () => {
       ordered_tour_date: orderdetailData.tour_date,
       ordered_quantity: orderdetailData.quantity,
       ordered_total_price: orderdetailData.total_price,
-      ordered_createdAt: orderdetailData.createdAt
+      ordered_createdAt: orderdetailData.createdAt,
+      ordered_format_tour_date: formattedTourDate,
+      ordered_format_createdAt: formattedCreatedAt
     });
 
     setIsComplete(true);
@@ -130,16 +150,18 @@ const handleComplete = async () => {
     console.error('Error posting order data:', error);
   }
 };
-const receieveTourDate = new Date(prepareData.order_tour_date);
-const originalTourDate = new Date(orderedDetail.ordered_tour_date);
-const originalCreatedAt = new Date(orderedDetail.ordered_createdAt);
 
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-const formattedreceieveTourDate = receieveTourDate.toLocaleDateString('en-US', options);
-const formattedTourDate = originalTourDate.toLocaleDateString('en-US', options);
-const formattedCreatedAt = originalCreatedAt.toLocaleDateString('en-US', options);
-
+if(isComplete){
+  console.log(orderedDetail);
+  emailjs.send("service_wc7353k","template_9r6q2em", orderedDetail,"9qYgXuWtGMM-T39vH")
+  .then(function(response) {
+     console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+     console.log('FAILED...', error);
+  });
+}else{
+  console.log('cant send email');
+}
 return (
   <div id="checkout">
     {clientSecret && !isComplete && (
@@ -195,15 +217,6 @@ return (
         </CardContent>
        
        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          {/* <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton> */}
         </Box>
       </Box>
      
@@ -222,7 +235,7 @@ return (
             <p class="text-gray-600 my-2"> Have a great day!  </p>
             <p className='detailcheack'>Order ID :</p><p className='detailcheack1'>{order_id}</p>
             <p className='detailcheack'>Tour name:</p><p className='detailcheack1'>{orderedDetail.ordered_tour_name}</p>
-            <p className='detailcheack'>Tour date :</p><p className='detailcheack1'>{formattedTourDate}</p>
+            <p className='detailcheack'>Tour date :</p><p className='detailcheack1'>{orderedDetail.ordered_format_tour_date}</p>
             <p className='detailcheack'>Name :</p><p className='detailcheack1'>{orderedDetail.ordered_title} {orderedDetail.ordered_user_firstname} {orderedDetail.ordered_user_lastname}</p>
             <p className='detailcheack'>Person :</p><p className='detailcheack1'>{orderedDetail.ordered_quantity}</p>
             <p className='detailcheack'>Total price :</p><p className='detailcheack1'>{orderedDetail.ordered_total_price}</p>
