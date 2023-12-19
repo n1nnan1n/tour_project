@@ -37,6 +37,9 @@
 }}
 /* ------home-------- */
 @media (max-width: 1980px) {
+  #uncontrolled-tab-example-tabpane-description{
+    background-color: white;
+  }
   .marginh1{
     margin-Bottom:50px;
   }
