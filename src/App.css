@@ -30,9 +30,9 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color:#FFFAEC;
   width:500px;
-  height:500px;
+  height:auto;
   margin-top: 100px;
-  margin-left: 30%;
+  margin-left: 37%;
   padding: 40px;
 }}
 /* ------home-------- */
@@ -368,12 +368,18 @@ padding-left: 21%;
   /* background-color: #5383c7; */
   float: left;
 }
+.logout{
+  width: 90px;
+  height: 40px;
+  color:#fcfcfe
+}
 .login{
+  margin-top: 5px;
   float: left;
  margin-right: 15px;
-     font-Size:'20px';
-     font-weight:bold;
-     font-family: "rpboto";
+    font-Size:'20px';
+    font-weight:bold;
+    font-family: "rpboto";
 }
 
 #fontnav {
@@ -381,7 +387,7 @@ padding-left: 21%;
   font-size: 25px;
   font-weight: "bold";
   color: white;
-  margin-left: 15px;
+  /* margin-left: 0px; */
 }
 .fontnav {
   font-family: "Agbalumo";
@@ -392,18 +398,21 @@ padding-left: 21%;
   margin-left: 15px;
 }
 .regis{
-  margin-right:  5px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 100px;
   background-color: #063d8c;
   font-size: 18px;
   font-weight:bold;font-family:' rpboto';
-height: 40px;
-float: left;
+  height: 40px;
+  float: left;
 }
 .beyorn{
   font-size:28px;
   font-weight:bold;
   font-family: "Playfair Display";
-text-align: center;}
+  text-align: center;
+}
 }
 
   
@@ -934,7 +943,7 @@ clear: left;
         }
         .buttonlog{
           width:27%;
-          margin-left:260px;
+          margin-left:310px;
           margin-top:30px;
           font-family: "Roboto Slab";
           font-weight:bold;

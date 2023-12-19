@@ -228,10 +228,12 @@ return (
 
     {isComplete && (
       <div>
-        <div class="text-center filltercheack" >  
+        <div class="text-center filltercheack">  
         <img className='logo' src={correct} style={{width:'20%',height:'20%',marginBottom:'20px'}}/>
           
             <p class="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
+            <p class="text-gray-600 my-2">We sent you a booking confirmation via your email.</p>
+            <p class="text-gray-600 my-2">({orderedDetail.ordered_user_email})</p>
             <p class="text-gray-600 my-2"> Have a great day!  </p>
             <p className='detailcheack'>Order ID :</p><p className='detailcheack1'>{order_id}</p>
             <p className='detailcheack'>Tour name:</p><p className='detailcheack1'>{orderedDetail.ordered_tour_name}</p>
@@ -240,12 +242,8 @@ return (
             <p className='detailcheack'>Person :</p><p className='detailcheack1'>{orderedDetail.ordered_quantity}</p>
             <p className='detailcheack'>Total price :</p><p className='detailcheack1'>{orderedDetail.ordered_total_price}</p>
            <MDBBtn href='/' style={{width:'300px'}}>Back To Home</MDBBtn>
-       
-
         </div>
-        {/* <h2>Order ID : {order_id}<br></br>Name : {orderedDetail.ordered_title} {orderedDetail.ordered_user_firstname} {orderedDetail.ordered_user_lastname}<br></br>Email : {orderedDetail.ordered_user_email}<br></br>Tour name : {orderedDetail.ordered_tour_name}<br></br>Person(s) : {orderedDetail.ordered_quantity}<br></br>Total price : {orderedDetail.ordered_total_price}</h2> */}
       </div>
-
     )}
   </div>
 );

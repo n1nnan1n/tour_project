@@ -117,10 +117,6 @@ export const Login = () => {
     <Button href="/Register" className='button2' variant="secondary" size="sm" style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold'}}>
     Register
     </Button>
-    {/* <Button onClick={signInWithGoogle} className='button2' variant="secondary" size="lg">
-    <FontAwesomeIcon icon={faGooglePlus} style={{color: "#ff4013",fontSize:'30px',marginTop:'5px',marginRight:'15px'}} />
-    SignIn With Google
-     </Button> */}
   </div></div>
           </Col>
 

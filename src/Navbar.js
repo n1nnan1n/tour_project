@@ -21,6 +21,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Profile from "./Profile";
 import { MDBBtn } from 'mdb-react-ui-kit';
+import { Margin } from "@mui/icons-material";
 function NavbarComponent() {
 
   const [userID, setUserID] = useState('');
@@ -79,7 +80,7 @@ function NavbarComponent() {
       console.log(response.data);  // Log the response data
   
       // Redirect to the homepage or another route
-      // window.location.href = '/';
+      window.location.href = '/';
     } catch (error) {
       console.error('Error during logout:', error);
       // Handle errors as needed
@@ -92,16 +93,6 @@ function NavbarComponent() {
 
  <header class="border-bottom lh-1 py-3">
           <div class="row justify-content-between align-items-center">
-            {/* <div class="col-4 pt-1"></div>
-            <div class="col-3 text-center" >
-              <a
-                class="blog-header-logo text-body-emphasis text-decoration-none"
-                href="#"
-              >
-              <h1 className="beyorn">BEYOND THE TRAILS</h1>  
-              </a>
-            </div> */}
-     
        <div className="namebeyornd">
        <a
                 class="blog-header-logo text-body-emphasis text-decoration-none"
@@ -110,41 +101,12 @@ function NavbarComponent() {
               <h1 className="beyorn">BEYOND THE TRAILS</h1>  
               </a>
               </div>
-   <div className="signin"> 
-       {isLoggedIn ? (
-              <>
-                <span class="text-black me-2 name" >Welcome, {userFname}</span>
-                <Button
-                  variant="dark"
-                  className="login"
-                  // style={{ marginRight: '15px', fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
-                  onClick={handleLogout}
-                >
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link to="/register" class="btn btn-dark regis" >
-                  Register
-                </Link>
-                <Link to="/login" class="btn btn-outline-dark login" >
-                  Login
-                </Link>
-              </>
-            )}</div>
-   
-            
-         
             </div>
-     
         </header>
           <Navbar expand="lg" class="row flex-nowrap justify-content-between align-items-center" collapseOnSelect style={{backgroundColor:"#063d8c"}}>
     
           <div class="col-3 "></div>
           <Container fluid>
-        {/* <Navbar.Brand href="#" className="fontnav">Navbar scroll</Navbar.Brand> */}
-        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto margin" >
@@ -184,10 +146,34 @@ function NavbarComponent() {
                 <NavDropdown.Divider />
               
               </NavDropdown>
-            <MDBBtn outline href="Profile" color='secondary' style={{width:'120px',height:'45px',marginTop:'5px',textAlign:'left',marginLeft:'60px',color:'white'}}>
-       Profile  <AccountCircleIcon style={{color:'white',fontSize:'35px',marginLeft:'5px'}} />
-      </MDBBtn>
-        
+              
+              {isLoggedIn ? (
+              <><Nav.Item id="profilebtn">
+                <MDBBtn outline href="Profile" color='secondary' style={{width:'120px',height:'45px',textAlign:'left',color:'white'}}>
+                  <AccountCircleIcon style={{color:'white',fontSize:'20px'}}/>My Profile
+                </MDBBtn>
+                </Nav.Item>
+                <Nav.Item>
+                <Button
+                  variant="danger"
+                  className="logout"
+                  style={{fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  onClick={handleLogout}
+                >Logout</Button>
+                </Nav.Item>
+              </>
+            ) : (
+              <><Nav.Item>
+                <Link to="/register" class="btn btn-dark regis" >
+                  Register
+                </Link>
+                <Link to="/login" class="btn btn-outline-dark login" >
+                  Login
+                </Link>
+                </Nav.Item>
+              </>
+            )}
+            
           </Nav>
          
         </Navbar.Collapse>
