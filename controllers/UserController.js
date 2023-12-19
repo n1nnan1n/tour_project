@@ -27,6 +27,29 @@ const userProfile = async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     };
     }
+
+    const edituserProfile = async (req, res) => {
+      try {
+          if (loggedIn) {
+            res.send('You loggedIn');
+            return;
+          }
+        const { userID } = req.params;
+        const editedProfile = req.body;
+      
+        // Validate the input
+        if (!userID) {
+          return res.status(400).json({ error: 'Invalid input data' });
+        }
+      
+        const user = await User.findByIdAndUpdate(userID, editedProfile, { new: true });
+        
+        res.json(user);
+  } catch (error) {
+    console.error('Error updating user profile:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
   
-  module.exports = { userProfile };
+  module.exports = { userProfile,edituserProfile };
   

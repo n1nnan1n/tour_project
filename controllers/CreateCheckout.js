@@ -7,9 +7,6 @@ const createCheckoutSession = async (req, res) => {
       return;
     }
 
-    const YOUR_DOMAIN = 'http://localhost:3000';
-    // const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app';
-
     const {
       order_user_id, 
       order_user_email,

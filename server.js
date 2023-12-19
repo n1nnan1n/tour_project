@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://thanincwtnk:n1nnan1n@tourapp.kd7ljws.mongodb.net
 global.loggedIn = null
 
 // const YOUR_DOMAIN = 'http://localhost:3000';
-const YOUR_DOMAIN = 'https://tour-project-git-toon-n1nnan1ns-projects.vercel.app/';
+// const YOUR_DOMAIN = 'https://tourapi-hazf.onrender.com';
 
 
 const RegisterController = require('./controllers/RegisterController');
@@ -57,15 +57,17 @@ app.post('/ordercalculate',OrderController.orderCalculate);
 // app.post('/placeorder',OrderController.placeOrder);
 app.post('/successorder',OrderController.SuccessOrder);
 
+
 app.get('/logout', logoutController.logout);
 app.get('/profile/:userID', userController.userProfile);
+app.put('/editUserProfile/:userID',userController.edituserProfile)
 app.get('/tourinfo',TourinfoController.getAllTourInfo);
 app.get('/tourinfo/:tourName',TourinfoController.getTourByName);
 app.get('/tourinfoid/:tourId',TourinfoController.getTourById);
 // app.get('/home', SesController);
 app.get('/getuserorder/:orderID',OrderController.GetUserOrder);
 
-app.post({YOUR_DOMAIN}+'create-checkout-session',CreateCheckout.createCheckoutSession);
+app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)
 
 // app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
