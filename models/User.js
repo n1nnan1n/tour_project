@@ -9,7 +9,7 @@ const userSchema = new Schema({
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     passport_no: { type: String, required: true },
-    passport_exp: { type: String, required: true },
+    passport_exp: { type: Date, required: true },
     birthdate: { type: Date, required: true },
     nationality: { type: String, required: true },
     phone: { type: String, required: true },
