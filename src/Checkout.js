@@ -151,6 +151,7 @@ const handleComplete = async () => {
   }
 };
 
+useEffect(() => {
 if(isComplete){
   console.log(orderedDetail);
   emailjs.send("service_wc7353k","template_9r6q2em", orderedDetail,"9qYgXuWtGMM-T39vH")
@@ -162,6 +163,8 @@ if(isComplete){
 }else{
   console.log('cant send email');
 }
+}, [isComplete,orderedDetail]);
+
 return (
   <div id="checkout">
     {clientSecret && !isComplete && (

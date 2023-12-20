@@ -52,6 +52,7 @@ export default function Editpro() {
 
         const fetchUserProfile = async () => {
           try {
+            // const response = await axios.get(`https://tourapi-hazf.onrender.com/profile/${_id}`);
             const response = await axios.get(`https://tourapi-hazf.onrender.com/profile/${_id}`);
             const userProfile = response.data;
             setEditedProfile(userProfile);
@@ -87,6 +88,7 @@ export default function Editpro() {
 
         // const response = await axios.put(`https://tourapi-hazf.onrender.com/editUserProfile/${_id}`, editedProfile);
         const response = await axios.put(`https://tourapi-hazf.onrender.com/editUserProfile/${_id}`, editedProfile);
+        // const response = await axios.put(`http://localhost:3001/editUserProfile/${_id}`, editedProfile);
 
         console.log('User profile updated:', response.data);
         window.location.href = '/Profile';
@@ -99,7 +101,7 @@ export default function Editpro() {
   };
 
   return (
-    <section style={{ backgroundColor: '#eee' }}>
+    <section style={{ backgroundColor: '#eee'}}>
       <form onSubmit={handleFormSubmit}>
         <MDBContainer className="py-5">
           <MDBRow>
@@ -116,6 +118,7 @@ export default function Editpro() {
                         id="formControlLg"
                         type="text"
                         size="lg"
+                        style={{color:'black'}}
                         name="email"  // Add the correct name attribute
                         value={editedProfile.email}
                         onChange={handleInputChange}
@@ -192,7 +195,7 @@ export default function Editpro() {
                     <MDBCol sm="9">
                       <MDBInput
                         id="formControlLg"
-                        type="text"
+                        type="date"
                         size="lg"
                         name="passport_exp"  // Add the correct name attribute
                         value={editedProfile.passport_exp}

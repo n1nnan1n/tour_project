@@ -61,7 +61,9 @@ export default function Profile() {
           const data = response.data;
           const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
           const BirthDate = new Date(data.birthdate);
+          const PassportExpDate = new Date(data.passport_exp);
           const formattedBirthDate = BirthDate.toLocaleDateString('en-US', options);
+          const formattedPassportExpDate = PassportExpDate.toLocaleDateString('en-US', options);
   
           setprofileDetail({
             p_id:data._id,
@@ -73,7 +75,7 @@ export default function Profile() {
             p_nation: data.nationality,
             p_birth: formattedBirthDate,
             p_passport: data.passport_no,
-            p_passport_exp: data.passport_exp,
+            p_passport_exp: formattedPassportExpDate,
             p_food_allergy: data.food_allergy,
             p_special: data.special_req
           })
@@ -84,18 +86,32 @@ export default function Profile() {
 
           const fetchOrder = async () => {
             try {
-              // ... (your existing code to fetch user profile details)
-      
-              // Fetch user orders
               const ordersResponse = await axios.get(`https://tourapi-hazf.onrender.com/getalluserorder/${_id}`);
-              const ordersData = ordersResponse.data;
+              const ordersData = ordersResponse.data.map(order => {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          
+                // Format tour_date
+                const tourDate = new Date(order.tour_date);
+                const formattedTourDate = tourDate.toLocaleDateString('en-US', options);
+          
+                // Format createdAt
+                const createdAtDate = new Date(order.createdAt);
+                const formattedCreatedAt = createdAtDate.toLocaleDateString('en-US', options);
+          
+                return {
+                  ...order,
+                  formattedTourDate,
+                  formattedCreatedAt
+                };
+              });
+          
               setOrders(ordersData);
-              console.log(orders)
+              console.log(ordersData);
             } catch (error) {
               console.error('Error fetching data:', error);
             }
           };
-      
+          
           fetchOrder();
       } catch (error) {
         console.error('Error parsing token:', error);
@@ -145,11 +161,11 @@ export default function Profile() {
                       {Array.isArray(orders) && orders.length > 0 ? (
                         orders.map((order) => (
 
-                            <div key={order._id} className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
+                            <div key={order._id} className="p-4" style={{ backgroundColor: 'lightgray',marginBottom:'20px'}}>
                               <MDBCardText className="font-italic mb-1">Order id: {order._id}</MDBCardText>
-                              <MDBCardText className="font-italic mb-1">Order date: {order.createdAt}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Order date: {order.formattedCreatedAt}</MDBCardText>
                               <MDBCardText className="font-italic mb-1">Tour name: {order.tour_name}</MDBCardText>
-                              <MDBCardText className="font-italic mb-1">Tour date: {order.tour_date}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Tour date: {order.formattedTourDate}</MDBCardText>
                               <MDBCardText className="font-italic mb-1">Tour price: {order.tour_price}</MDBCardText>
                               <MDBCardText className="font-italic mb-1">Person: {order.quantity}</MDBCardText>
                               <MDBCardText className="font-italic mb-1">Total price: {order.total_price}</MDBCardText>

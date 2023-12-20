@@ -153,6 +153,9 @@ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
 .carouselitem{ 
   width: 25rem;
   height:225px; }
+#formControlLg{
+  background-color: white;
+}
 }
 @media (max-width: 1000px) {
   .marginh1{

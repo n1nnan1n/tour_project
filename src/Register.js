@@ -185,7 +185,7 @@ function Register() {
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="passport_exp">
-              <Form.Label>Passport Expire</Form.Label>
+            <Form.Label>Passport Expire</Form.Label>
               <Form.Control type="date" placeholder="Passport Expire" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid Passport Expire.
@@ -232,14 +232,14 @@ function Register() {
           <Row className="mb-4">
             <Form.Group as={Col} md="6" controlId="foodAllergy">
               <Form.Label>food allergy</Form.Label>
-              <Form.Control type="text" placeholder="food allergy" required />
+              <Form.Control type="text" placeholder="food allergy"/>
               <Form.Control.Feedback type="invalid">
                 Please provide a valid food allergy.
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="specialRequirement">
               <Form.Label>special requirement</Form.Label>
-              <Form.Control type="text" placeholder="special requirement" required />
+              <Form.Control type="text" placeholder="special requirement"/>
               <Form.Control.Feedback type="invalid">
                 Please provide a valid special_requirement.
               </Form.Control.Feedback>
