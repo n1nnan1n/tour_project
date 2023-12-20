@@ -383,6 +383,8 @@ padding-left: 21%;
     font-Size:'20px';
     font-weight:bold;
     font-family: "rpboto";
+    background-color:green;
+    color: white;
 }
 
 #fontnav {
@@ -404,7 +406,7 @@ padding-left: 21%;
   margin-top: 5px;
   margin-right: 10px;
   margin-left: 100px;
-  background-color: #063d8c;
+  background-color: black;
   font-size: 18px;
   font-weight:bold;font-family:' rpboto';
   height: 40px;
@@ -453,6 +455,7 @@ margin-left: 105px;
      font-Size:'18px';
      font-weight:bold;
      font-family: "rpboto";
+     
 }
 
 .regis{

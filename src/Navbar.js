@@ -149,7 +149,7 @@ function NavbarComponent() {
               
               {isLoggedIn ? (
               <><Nav.Item id="profilebtn">
-                <MDBBtn outline href="Profile" color='secondary' style={{width:'120px',height:'45px',textAlign:'left',color:'white'}}>
+                <MDBBtn outline href="Profile" color='secondary' style={{width:'120px',height:'40px',textAlign:'left',color:'white',backgroundColor:'black',textAlign:'center',marginRight:'15px',marginLeft:'15px',marginTop:'6px'}}>
                   <AccountCircleIcon style={{color:'white',fontSize:'20px'}}/>My Profile
                 </MDBBtn>
                 </Nav.Item>
@@ -157,7 +157,7 @@ function NavbarComponent() {
                 <Button
                   variant="danger"
                   className="logout"
-                  style={{fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto" }}
+                  style={{fontSize:'20px',fontWeight:'bold',fontFamily: "rpboto",marginTop:'5px' }}
                   onClick={handleLogout}
                 >Logout</Button>
                 </Nav.Item>

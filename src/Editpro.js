@@ -86,9 +86,10 @@ export default function Editpro() {
         const { _id } = JSON.parse(decodedPayload);
 
         // const response = await axios.put(`https://tourapi-hazf.onrender.com/editUserProfile/${_id}`, editedProfile);
-        const response = await axios.put(`http://localhost:3001/editUserProfile/${_id}`, editedProfile);
+        const response = await axios.put(`https://tourapi-hazf.onrender.com/editUserProfile/${_id}`, editedProfile);
 
         console.log('User profile updated:', response.data);
+        window.location.href = '/Profile';
         // You can handle success, e.g., show a success message or redirect the user
       } catch (error) {
         console.error('Error updating user profile:', error);

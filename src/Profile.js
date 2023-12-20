@@ -20,6 +20,10 @@ export default function Profile() {
     p_food_allergy: '',
     p_special: ''
   });
+  const [orders, setOrders] = useState({});
+
+  const [formatorderdate, setformatorderdate] = useState('');
+  const [formattourdate, setformattourdate] = useState('');
 
   const token = localStorage.getItem('token');
   if (!token) {
@@ -61,6 +65,7 @@ export default function Profile() {
   
           setprofileDetail({
             p_id:data._id,
+            p_email:data.email,
             p_title:data.title,
             p_firstname:data.fname.charAt(0).toUpperCase() + data.fname.slice(1),
             p_lastname: data.lname.charAt(0).toUpperCase() + data.lname.slice(1),
@@ -76,6 +81,22 @@ export default function Profile() {
         .catch(error => {
           console.error('Error fetching data:', error);
         });
+
+          const fetchOrder = async () => {
+            try {
+              // ... (your existing code to fetch user profile details)
+      
+              // Fetch user orders
+              const ordersResponse = await axios.get(`https://tourapi-hazf.onrender.com/getalluserorder/${_id}`);
+              const ordersData = ordersResponse.data;
+              setOrders(ordersData);
+              console.log(orders)
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          };
+      
+          fetchOrder();
       } catch (error) {
         console.error('Error parsing token:', error);
       }
@@ -106,13 +127,41 @@ export default function Profile() {
               <div className="mb-5">
                   <p className="lead fw-normal mb-1">Details</p>
                   <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
+                    <MDBCardText className="font-italic mb-1">Email : {profileDetail.p_email}</MDBCardText>
                     <MDBCardText className="font-italic mb-1">Phone : {profileDetail.p_phone}</MDBCardText>
+                    <MDBCardText className="font-italic mb-1">Birthdate : {profileDetail.p_birth}</MDBCardText>
                     <MDBCardText className="font-italic mb-1">National : {profileDetail.p_nation}</MDBCardText>
                     <MDBCardText className="font-italic mb-1">Passport Number : {profileDetail.p_passport}</MDBCardText>
                     <MDBCardText className="font-italic mb-1">Passport Expire : {profileDetail.p_passport_exp}</MDBCardText>
                     <MDBCardText className="font-italic mb-0">Food Allergy : {profileDetail.p_food_allergy}</MDBCardText>
                     <MDBCardText className="font-italic mb-0">Special Requirement : {profileDetail.p_special}</MDBCardText>
                   </div>
+                </div>
+
+                <div className="mb-5">
+                  <p className="lead fw-normal mb-1">Order history</p>
+                  <div className="p-4" style={{ backgroundColor: '#f8f9fa', overflow: 'auto', maxHeight: '300px' }}>
+                    <>
+                      {Array.isArray(orders) && orders.length > 0 ? (
+                        orders.map((order) => (
+
+                            <div key={order._id} className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
+                              <MDBCardText className="font-italic mb-1">Order id: {order._id}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Order date: {order.createdAt}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Tour name: {order.tour_name}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Tour date: {order.tour_date}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Tour price: {order.tour_price}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Person: {order.quantity}</MDBCardText>
+                              <MDBCardText className="font-italic mb-1">Total price: {order.total_price}</MDBCardText>
+                            </div>
+
+                        ))
+                      ) : (
+                        <MDBCardText className="font-italic mb-0">{orders.message}</MDBCardText>
+                      )}
+                      </>
+        
+        </div>
                 </div>
 
               </MDBCardBody>
