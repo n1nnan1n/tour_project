@@ -82,7 +82,7 @@ export default function About() {
         <div className='fillter'>
         <Row>
         <Col >
-        <div >
+        <div className='box1' >
             <h1 ><div className='detailabout'>
                    Let Beyond the Trails be your first choice for unique private tours in and around Bangkok. For example, Thaka floating market, where you can immerse yourself in the local culture as the neighbourhood vendors ply their wares from their floating stalls, or Ayutthaya, the ancient capital city of Siam, filled with temples and palaces dating back to the 15th and 16th centuries. If you already have some ideas for your trip, let us help you to customize your tour to meet your needs and make sure that you have a fantastic time while in Thailand.
                    </div></h1>
@@ -105,7 +105,7 @@ export default function About() {
         <Col 
   
         //  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px'}}
-        className={about2}
+        className='box4'
         >
          <div style={{float:'clear'}}>
           <img

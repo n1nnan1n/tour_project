@@ -126,21 +126,21 @@ return (
           {images.length > 0 && (
               <Carousel
                 data={images}
-                time={false}
+                time={0}
                 width="850px"
                 height="500px"
                 captionStyle={captionStyle}
                 radius="10px"
-                slideNumber={true}
+                slideNumber={false}
                 slideNumberStyle={slideNumberStyle}
                 captionPosition="bottom"
                 automatic={false}
                 dots={true}
                 pauseIconColor="white"
                 pauseIconSize="40px"
-                slideBackgroundColor="darkgrey"
+                // slideBackgroundColor="darkgrey"
                 slideImageFit="cover"
-                thumbnails={true}
+                thumbnails={false}
                 thumbnailWidth="100px"
                 style={{
                   textAlign: "center",
