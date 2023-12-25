@@ -16,7 +16,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import 'react-calendar/dist/Calendar.css';
-
+import { Grid } from '@mui/material';
 const drawerWidth = 240;
 function Booking() {
   const [meetings, setMeetings] = useState([]);
@@ -34,16 +34,17 @@ function Booking() {
               </Typography>
             </Toolbar>
           </AppBar>
-        
-    <div>
-      <h1>Meetings</h1>
+ 
+    <div>    
+       
+      <div className="margin"> <h1 style={{marginLeft:'5%'}}>Meetings</h1>
       <Calendar
       className="custom-calendar"
         onChange={(date) => {
           setMeetings([...meetings, date]);
         }}
       />
-      
+     </div>
       {/* <ul>
         {meetings.map((meeting, index) => (
   <li key={index}>{meeting.toLocaleDateString('en-US')}</li>
@@ -85,9 +86,10 @@ function Booking() {
         </TableBody> 
       </Table>
     </TableContainer>
+
     </div>
  
-
+ 
 
     </>
   )
