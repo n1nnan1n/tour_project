@@ -698,7 +698,9 @@ float: left;
        
   /* ----------about-------------- */ 
   @media (max-width: 1980px) {
-  
+  .detailabout3{
+    display: none;
+  }
     .box2{
       width:50%;
       height: 500px;
@@ -759,25 +761,49 @@ margin-top: -300px;
     .imgabout{
       width: 100%;
       height: 100%; 
-      overflow: hidden;
+     
     }
     .box2{
       width:50%;
-      height: 600px;
+      height: 400px;
    
     }
+    .box4{
+    width: 800px;
+      /* background-position: bottom; */
+      height: 650px;
+      overflow: hidden;
+    }
+    .detailabout{
+      text-align:left;
+      display:flex;
+      align-items: center;
+      text-align:justify;
+      font-size:20px
+      }
+      .detailabout2{
+    
+        display:inherit;
+        text-align:left;
+        /* display:contents; */
+        align-items: center;
+        text-align:justify;
+        font-size:20px
+        }
+        .about2{
+          width: 100%;
+         height: 100%;
+         background-position: bottom;
+     margin-top: -400px;
+
+       }
     } 
   @media (max-width: 1400px) {
     /* ----------about-------------- */
-    .about2{
-      width: 100%;
-     height: 100%;
-     background-position: bottom;
- margin-top: -300px;
-   }
+   
     .fillter{
       padding: 15px;
-      height: 1260px;
+      height: 100%;
     }
      .box1{
       
@@ -793,23 +819,15 @@ height: 500px;
       /* background-color: #94a4b1; */
       overflow: hidden;
     }
+    .about2{
+      width: 100%;
+     height: 100%;
+  
+ margin-top: -200px;
+
+
+   }
    
-    .box3{
-       width: 300px;
-       margin-top: 20px;
-       margin-right: 20px;
-    clear: left;
-    float: left;
-      /* margin-top:-310px; */
-      height: 100px;
-     /* display: none; */
-    }
-    .box4{
-     width: 100%;
-      height: 100%;
-      /* float:inline-start; */
-    }
-    
     .detailabout{
     text-align:left;
     display:flex;
@@ -818,7 +836,6 @@ height: 500px;
     font-size:17px
     }
     .detailabout2{
-      width: 630px;
       display:inherit;
       text-align:left;
       /* display:contents; */
@@ -832,67 +849,77 @@ height: 500px;
        overflow: hidden;
     }
    }
-    @media (max-width: 450px) {
+
+   
+    @media (max-width: 800px) {
       /* ----------about-------------- */
       .fillter{
-        height: 1700px;
+        height: 100%;
       }
        .box1{
-        
         width: 100%;
-        height: 360px;
-        padding-bottom: -20px;
+        /* height: 360px; */
+        padding-bottom: 0px;
         /* margin-left: 10px; */
-      float: none;
-      
+      /* float: none; */
+
+      }
+      .imgabout{
+        width: 100%;
+         height: 100%;
+         margin-top: 0%;
       }
       .box2{
-        background-color: #0579d8;
+        /* background-color: #0579d8; */
         width: 100%;
-        height: auto;
-        float: none;
+        height: 100%;
+
+        /* float: none; */
   
       padding-bottom: -20px;
         /* background-color: #94a4b1; */
-        margin-top: 190px;
+        /* margin-top: 190px; */
       }
-      .box3{
-         width: 100%;
-      clear: left;
-      float: none;
-        /* margin-top:-310px; */
-        height: 300px;
-       display: none;
-      }
-      .box4{
+      .box4{display: none;}
+      .box5{
        width: 100%;
-     
-        margin-top:10px;
-        float: none;
+     height: 800px;
+        /* margin-top:0px; */
+        display: flexbox;
+        margin-bottom: 10px;
+        /* float: none; */
         /* float:inline-start; */
       }
-      .about2{
+      .none{
+        display: none;
+      }
+      .about3{
         width: 100%;
-       height: 50px;
+       height: 100%;
    
      }
-      .detailabout2{
-        text-align:left;
-        display:flex;
-        width: 280px;
-        text-align:justify;
-        font-size:17px
-        }
-      .imgabout{
-        width: 100%;
-         height: 150px;
-      }
-      
-      .about2{
-         width: 100%;
-        height: 850px;
     
-      }}
+     .detailabout3{
+      display:inherit;
+      text-align:justify;
+       margin-top: -15px;
+      /* background-color: #282c34; */
+      font-size:17px
+      }
+      .detailabout2{
+       display: none;
+        }
+      
+       .detailabout4{
+          display:inherit;
+          text-align:justify;
+           margin-top: -15px;
+          /* background-color: #282c34; */
+          font-size:17px
+          }
+      
+      }
+    
       @media (max-width: 1980px) {
         /* ------------regis------------- */
         .submit{
