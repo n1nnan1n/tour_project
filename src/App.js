@@ -86,7 +86,7 @@ import Adlogin from './Adlogin';
 import AdHome from './AdHome';
 import Sidebar from './Sidebar';
 import Booking from './Booking';
-import Orders from './pages/Orders/index';
+import Order from './Order';
 import sidebar_menu from './constants/sidebar-menu';
 
 import './App.css';
@@ -102,8 +102,8 @@ function App() {
               <Route path="/" element={<Adlogin />} />
               <Route path="/AdHome" element={<AdHome />} />
               <Route path="Booking" element={<Booking />} />
-              <Route path="Orders" element={<Orders />} />
-              <Route path="/" element={<div></div>} />
+              <Route path="Order" element={<Order />} />
+              {/* <Route path="/" element={<div></div>} /> */}
               {/* Add other routes as needed */}
             </Routes>
           </div>

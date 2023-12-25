@@ -52,13 +52,14 @@ function Booking() {
 
       </ul> */}
       <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 550,marginLeft:'250px' }} className="custom-table" aria-label="simple table">
+      <Table sx={{ minWidth: 70,marginLeft:'250px' }} className="custom-table" aria-label="simple table">
      
  
 
         <TableHead>
           <TableRow>
             <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Status</TableCell>
             <TableCell align="center">Name</TableCell>
             <TableCell align="center">Email</TableCell>
             <TableCell align="center">Tour</TableCell>
