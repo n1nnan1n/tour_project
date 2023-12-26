@@ -30,7 +30,7 @@ function Booking() {
           >
             <Toolbar>
               <Typography variant="h6" noWrap component="div">
-              Booking
+             Calendar
               </Typography>
             </Toolbar>
           </AppBar>

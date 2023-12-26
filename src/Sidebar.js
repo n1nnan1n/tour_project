@@ -49,8 +49,8 @@ export default function Sidebar() {
         <List>
           {[
             { text: 'Home', icon: <HomeIcon />, path: '/AdHome' },
-            { text: 'Booking', icon: <EditCalendarIcon />, path: '/booking' },
-            { text: 'Order', icon: <EditCalendarIcon />, path: '/Order' },
+            { text: 'Calendar', icon: <EditCalendarIcon />, path: '/booking' },
+            { text: 'Review', icon: <EditCalendarIcon />, path: '/Review' },
             // เพิ่มรายการเมนูอื่น ๆ ตามต้องการ
           ].map((item, index) => (
             <ListItem key={index} disablePadding>
