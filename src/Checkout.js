@@ -174,63 +174,66 @@ return (
       >
     <div className='cardre'>
     <Card sx={{ display: 'flex',backgroundColor:'#FFFAEC'}}>
+      <Row>
+            <Col >
+             {/* <div className="imgckeck"> */}
+     
     <CardMedia
         component="img"
-        sx={{ width: '50%',height:'400px' }}
-        // className='sizeimage'
+        // sx={{ width: '50%',height:'150%' }}
+        className='sizeimage'
         image={location.state.tour_img}
         alt="Live from space album cover"
       />
+      {/* </div> */}
+      
+      </Col>
+      <Col>
       <Box 
       sx={{ display: 'flex', flexDirection: 'column' }}
       >
-        <CardContent 
-        sx={{ flex: '1 0 auto' }}
-        >
-<div className="detail">
-               <h1 className='headre'>{location.state.order_tour_name}</h1>
-              <Row> <Col>   <h1 className='detailre'>Firstname :</h1></Col>
-              <Col><h1 className='detailre1'>{location.state.order_title} {location.state.order_user_firstname}</h1></Col>
-</Row>
-<Row><Col>
-          <h1 className='detailre'>Lastname :</h1></Col>
-          <Col>
+        
 
-          <h1 className='detailre1'>{location.state.order_user_lastname}</h1></Col>
-</Row><Row>
-        <Col> <h1 className='detailre'>Tour Date :</h1></Col> 
+        <h1 className='headre'>{location.state.order_tour_name}</h1>
+      
+               
 
-        <Col>   <h1 className='detailre1'>{formattedreceieveTourDate}</h1></Col> 
-       </Row>
-       <Row>
-       <Col>  <h1 className='detailre'>Person(s) :</h1></Col> 
 
-          <Col>  <h1 className='detailre1'>{location.state.order_quantity}</h1></Col> 
-          </Row>
-          <Row>
-       <Col>  <h1 className='detailre'>Tour price :</h1></Col> 
+              <Row xs="auto"> 
+                <Col >  
+                 <h1 className='detailre'>Firstname :</h1>
 
-       <Col> <h1 className='detailre1'>{location.state.order_tourprice}</h1></Col> 
-         </Row><Row>
-        <Col> <h1 className='detailre'>Total price :</h1></Col> 
+          <h1 className='detailre'>Lastname :</h1>
+ <h1 className='detailre'>Tour Date :</h1>
+ <h1 className='detailre'>Person(s) :</h1>
+ <h1 className='detailre'>Tour price :</h1>
+ </Col> 
 
-        <Col>  <h1 className='detailre1'>{location.state.order_totalprice}</h1>
-          </Col> </Row></div>
-         
-        </CardContent>
+        <Col ><h1 className='detailre1'>{location.state.order_title} {location.state.order_user_firstname}</h1><br></br>
+          <h1 className='detailre1'>{location.state.order_user_lastname}</h1><br></br>
+            <h1 className='detailre1'>{formattedreceieveTourDate}</h1><br></br>
+   <h1 className='detailre1'>{location.state.order_quantity}</h1><br></br>
+<h1 className='detailre1'>{location.state.order_tourprice}</h1><br></br>
+</Col>
+        </Row>
+      
        
        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
         </Box>
       </Box>
-     
+      
+      
+      </Col> 
+      
+       </Row> 
     </Card>
     </div>
-        <EmbeddedCheckout />
+     <EmbeddedCheckout />
       </EmbeddedCheckoutProvider>
     )}
 
     {isComplete && (
-      <div>
+      <div >
         <div class="text-center filltercheack">  
         <img className='logo' src={correct} style={{width:'20%',height:'20%',marginBottom:'20px'}}/>
           

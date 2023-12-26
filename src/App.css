@@ -10,31 +10,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&family=Roboto+Slab&display=swap");
 
 
-/* --------cheack--------- */
-@media (max-width: 1980px) {
-
-  .detailcheack{
-    float: left;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 10px;
-   }
-  .detailcheack1{
-    text-align: left;
-    font-size: 18px;
-
-   }
-.filltercheack {
-  background: #fffaec;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color:#FFFAEC;
-  width:500px;
-  height:auto;
-  margin-top: 100px;
-  margin-left: 37%;
-  padding: 40px;
-}}
 /* ------home-------- */
 @media (max-width: 1980px) {
   #uncontrolled-tab-example-tabpane-description{
@@ -624,41 +599,73 @@ float: left;
 }
 }/* ----------return-------------- */
 @media (max-width: 1980px) {
-  
-      .detail{
-        margin-left: 15%;
-      }
+  .sizeimage{
+    width: 100%;
+    height: 100%;
+  }
+  .imgckeck{
+    width: 50%;
+    height: 100%;
+    background-color: #68748b;
+    overflow: hidden;
+  }
+     
       .cardre{
         width: 73%;
-        padding-left: 27%;
+        /* padding-left: 27%; */
         padding-top: 50px;
         margin-bottom: -5%;
         height: 600px;
+        margin-bottom: 30px;
        }
        .headre{
-        text-align: center;
+margin-left: -40px;
+margin-bottom: 60px;
+float: left;
         font-size: 30px;
         font-weight: bold;
+        display: inline;
        }
        .detailre{
-        float: left;
+       
         text-align: left;
         font-size: 18px;
         font-weight: bold;
-        display: inline-block;
-        margin-bottom: 25px;
+        margin-bottom: 33px;
+      
        }
        .detailre1{
-        float: left;
+    
         text-align: left;
         font-size: 18px;
-        margin-left: -40px;
-        display: inline-block;
-        margin-bottom: 25px;
+      
+   
        }
        .space {
         margin-right: 8px; 
-      }}
+      }
+      .detailcheack{
+        float: left;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 10px;
+       }
+      .detailcheack1{
+        text-align: left;
+        font-size: 18px;
+    
+       }
+    .filltercheack {
+      background: #fffaec;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background-color:#FFFAEC;
+      width:500px;
+      height:auto;
+      margin-top: 100px;
+      margin-left: 37%;
+      padding: 40px;
+    }}
 @media (max-width: 1600px) {
         
        .cardre{
@@ -672,18 +679,7 @@ float: left;
         margin-left: 100px;
         font-weight: bold;
        }
-       .detailre{
-        font-size: 18px;
-    margin-left: 60px;
-    margin-top: 20px;
-    font-weight: bold;
-       }
-       .detailre1{
-        font-size: 18px;
-    margin-left: 50px;
-    
-    
-       }
+      
         .margin{
           margin-left: -30px;
         }
