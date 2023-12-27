@@ -17,6 +17,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import moment from 'moment-timezone';
 
 function Calendar() {
 
@@ -46,13 +47,39 @@ function Calendar() {
   const price = location.state.tourPrice;
   const tour_img = location.state.tourImage1;
 
-  //must axios closed date
-  function disableWeekends(date) {
-    // วันที่ 6 คือวันเสาร์ และ วันที่ 0 คือวันอาทิตย์
-    return date.day() === 0 || date.day() === 6;
-  }
+  const [disabledDates, setDisabledDates] = useState([]);
+  const [date, setDate] = useState(new Date());
 
-  const [date, setDate] = React.useState(dayjs());
+  useEffect(() => {
+    const fetchClosedDates = async () => {
+      try {
+        // Fetch closed dates from the server
+        const response = await axios.get('http://localhost:3001/getclosedates');
+        const closedDates = response.data.map((item) => dayjs(item.closed_date).format('YYYY-MM-DD'));
+
+        // Set the array of disabled dates
+        setDisabledDates(closedDates);
+      } catch (error) {
+        console.error('Error fetching closed dates:', error);
+        // Handle error, e.g., set disabledDates to an empty array
+        setDisabledDates([]);
+      }
+    };
+
+    fetchClosedDates();
+  }, []);
+
+  const disableSpecificDates = (day) => {
+    // Format the date to 'YYYY-MM-DD' string
+    const formattedDate = dayjs(day).format('YYYY-MM-DD');
+
+    // Get the current date
+    const currentDate = dayjs().format('YYYY-MM-DD');
+  
+    // Check if the formatted date is before or equal to the current date
+    return dayjs(day).isBefore(currentDate, 'day') || disabledDates.includes(formattedDate);
+  };
+
   const [numberValue, setNumberValue] = useState(1);
 
   const [total, setTotal] = useState(0);
@@ -257,13 +284,13 @@ const handleInputChange = (e) => {
                 //   }}
                 >
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker
-                      label="Select Tour Date"
-                      value={date}
-                      shouldDisableDate={disableWeekends}
-                      onChange={(newValue) => setDate(newValue)}
-                      renderInput={(params) => <TextField {...params} />}
-                    />
+                  <DatePicker
+                    label="Select Tour Date"
+                    value={null}
+                    shouldDisableDate={disableSpecificDates}
+                    onChange={(newValue) => setDate(newValue)}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
                   </LocalizationProvider>
                   <p  style={{ marginTop: '20px',fontWeight:'bold',textAlign:"left"}}>GUESTS<br></br>
         <input  type="number"
