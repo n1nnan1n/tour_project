@@ -21,6 +21,7 @@ export const Adlogin = () => {
     try {
       // const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
       const response = await axios.post('http://localhost:3001/adminlogin', { email, password });
+      console.log(email, password)
       const token = response.data.token;
 
       localStorage.setItem('token', token);
@@ -28,7 +29,7 @@ export const Adlogin = () => {
       console.log(token)
 
       // Redirect to the homepage or another route
-      window.location.href = '/';
+      window.location.href = '/AdHome';
     } catch (error) {
       console.error('Error during login:', error.response.error);
       // Handle login error, e.g., display an error message to the user

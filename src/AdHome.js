@@ -68,63 +68,76 @@ import { AppBar, Typography, Grid } from '@mui/material';
 import MainCard from './components/MainCard';
 import OrdersTable from './pages/dashboard/OrdersTable';
 import Toolbar from '@mui/material/Toolbar';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import dayjs from 'dayjs';
+
+export default function AdHome() {
+
 const drawerWidth = 240;
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
   { id: 'nametour', label: 'Nametour', minWidth: 170 },
   { id: 'person', label: 'Person', minWidth: 170 },
-  { id: 'date', label: 'Date', minWidth: 170 },
+  { id: 'tourdate', label: 'tourdate', minWidth: 170 },
   { id: 'price', label: 'price', minWidth: 170 },
-  { id: 'status', label: 'status', minWidth: 170 },
-  // { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-  // {
-  //   id: 'population',
-  //   label: 'Population',
-  //   minWidth: 170,
-  //   align: 'right',
-  //   format: (value) => value.toLocaleString('en-US'),
-  // },
-  // {
-  //   id: 'size',
-  //   label: 'Size\u00a0(km\u00b2)',
-  //   minWidth: 170,
-  //   align: 'right',
-  //   format: (value) => value.toLocaleString('en-US'),
-  // },
-  // {
-  //   id: 'density',
-  //   label: 'Density',
-  //   minWidth: 170,
-  //   align: 'right',
-  //   format: (value) => value.toFixed(2),
-  // },
+  { id: 'order_date', label: 'order_date', minWidth: 170 },
 ];
 
-function createData(name, nametour,person,date,price,status) {
+const [rows, setRows] = useState([]);
+
+useEffect(() => {
+  const admin_id = '65700e79b8c88291793fbf9c';
+
+  // axios.post('http://localhost:3001/allorder',{admin_id})
+  axios.post('https://tourapi-hazf.onrender.com/allorder',{admin_id})
+    .then((response) => {
+      console.log(response.data); // Log the entire response object
+      const orders = response.data.orders; // Update this line based on the actual structure
+      console.log(orders);
+
+      // Map the orders to the format expected by createData and set it in the state
+      const formattedRows = orders.map(order => createData(
+        order.user_firstname,
+        order.tour_name,
+        order.quantity,
+        dayjs(order.tour_date).format('DD / MM / YYYY'),
+        order.total_price,
+        dayjs(order.createdAt).format('DD / MM / YYYY')
+      ));
+
+      setRows(formattedRows);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+}, []);
+
+function createData(name, nametour,person,tourdate,price,order_date) {
   // const density = population / size;
-  return { name, nametour, person, date, price, status };
+  return { name, nametour, person,tourdate, price, order_date };
 }
 
-const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
-];
+// const rows = [
+//   createData('India', 'IN', 1324171354, 3287263),
+//   // createData('China', 'CN', 1403500365, 9596961),
+//   // createData('Italy', 'IT', 60483973, 301340),
+//   // createData('United States', 'US', 327167434, 9833520),
+//   // createData('Canada', 'CA', 37602103, 9984670),
+//   // createData('Australia', 'AU', 25475400, 7692024),
+//   // createData('Germany', 'DE', 83019200, 357578),
+//   // createData('Ireland', 'IE', 4857000, 70273),
+//   // createData('Mexico', 'MX', 126577691, 1972550),
+//   // createData('Japan', 'JP', 126317000, 377973),
+//   // createData('France', 'FR', 67022000, 640679),
+//   // createData('United Kingdom', 'GB', 67545757, 242495),
+//   // createData('Russia', 'RU', 146793744, 17098246),
+//   // createData('Nigeria', 'NG', 200962417, 923768),
+//   // createData('Brazil', 'BR', 210147125, 8515767),
+// ];
 
 
-export default function AdHome() {
+
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
