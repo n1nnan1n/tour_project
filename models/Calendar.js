@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const calendarSchema = new mongoose.Schema({
-    tour_id:{ type: String, required: false },
+const calendarSchema = new Schema({
     closed_date:{ type: String, required: false },
-    tour_quantity:{ type: String, required: false }
+    date_status:{ type: String, required: false }
 },{ timestamps: true, versionKey: false });
 
 const Calendar = mongoose.model('Calendar', calendarSchema);

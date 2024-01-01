@@ -159,7 +159,7 @@ const GetAllUserOrder = async (req, res) => {
     }
 
     // Find orders by user_id
-    const selectedOrders = await Order.find({ user_id: userID });
+    const selectedOrders = await Order.find({ user_id: userID }).sort({ createdAt: -1 });
 
     if (selectedOrders.length > 0) {
       res.json(selectedOrders);

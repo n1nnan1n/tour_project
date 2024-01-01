@@ -40,6 +40,8 @@ const logoutController = require('./controllers/LogoutController');
 const userController =require('./controllers/UserController');
 const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
+const vieworder = require('./controllers/AdminViewOrder')
+const dateController = require('./controllers/dateController')
 // const redirectIfAuth = require('./middleware/redirectIfAuth')
 // const authMiddleware = require('./middleware/authMiddleware')
 
@@ -70,6 +72,16 @@ app.get('/getalluserorder/:userID',OrderController.GetAllUserOrder);
 
 app.post('/create-checkout-session',CreateCheckout.createCheckoutSession);
 app.get('/session-status',SessionStatus.SessionStatus)
+
+app.post('/allorder',vieworder.AllOrder)
+app.get('/selectorder',vieworder.AdminSelectOrder)
+
+app.post('/disabledate',dateController.disableDate)
+app.delete('/deletedate',dateController.deleteDate)
+app.get('/getclosedates',dateController.getCloseDates)
+
+
+
 
 // app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
 
