@@ -49,12 +49,19 @@ function Calendar() {
 
   const [disabledDates, setDisabledDates] = useState([]);
   const [date, setDate] = useState(new Date());
+  const [formattedorderdate, setformattedorderdate] = useState([]);
+
+  useEffect(() => {
+    const formattedSelectDate = dayjs(date).format('YYYY-MM-DD');
+    setformattedorderdate(formattedSelectDate);
+  }, [date]);
 
   useEffect(() => {
     const fetchClosedDates = async () => {
       try {
         // Fetch closed dates from the server
-        const response = await axios.get('http://localhost:3001/getclosedates');
+        // const response = await axios.get('http://localhost:3001/getclosedates');
+        const response = await axios.get('https://tourapi-hazf.onrender.com/getclosedates');
         const closedDates = response.data.map((item) => dayjs(item.closed_date).format('YYYY-MM-DD'));
 
         // Set the array of disabled dates
@@ -96,7 +103,7 @@ const handleInputChange = (e) => {
       user_id:userID,
       tour_id:tourID,
       quantity:Number(numberValue),
-      tour_date:date
+      tour_date:formattedorderdate
     }
     axios
     // .post("http://localhost:3001/ordercalculate", orderData)
@@ -116,7 +123,7 @@ const handleInputChange = (e) => {
     })
     .catch((error) => console.error("Error fetching data:", error));
     console.log(orderData);
-  }, [userID,tourID,date,numberValue, price]);
+  }, [userID,tourID,formattedorderdate,numberValue, price]);
   
   const handleSubmit = async () => {
       navigate('/checkout', {
