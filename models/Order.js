@@ -11,7 +11,7 @@ const orderSchema = new Schema({
     tour_id:{ type: String, required: false },
     tour_name: { type: String, required: false },
     tour_price: { type: Number, required: false },
-    tour_date:{ type: Date, required: false },
+    tour_date:{ type: String, required: false },
     quantity: { type: Number, required: false },
     total_price: { type: Number, required: false }
 },{ timestamps: true, versionKey: false });
