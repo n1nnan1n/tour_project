@@ -140,25 +140,26 @@ export default function Review() {
          
         </Select>
       </FormControl>
-      {/* <Stack spacing={1} style={{float:'right'}}>
-      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+      <Stack spacing={1} style={{float:'left',margin:'15px'}}>
+      <Rating name="half-rating" 
+      precision={0.5} />
       
-    </Stack> */}
+    </Stack>
     
-    <StyledRating
+    {/* <StyledRating
       name="highlight-selected-only"
-    //   defaultValue={0}
+  
       IconContainerComponent={IconContainer}
       getLabelText={(value) => customIcons[value].label}
       highlightSelectedOnly
       style={{marginTop:'15px',marginLeft:'20px',height:'42px'}}
-    />
+    /> */}
      <TextField
           id="outlined-multiline-static"
-          label="Multiline"
+          label="Review Detail"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          defaultValue="Review Detail"
           style={{float:'left',marginTop:'10px',width:'100%'}}
         />
         {/* <Paper elevation={3} style={{width:'49%',float:'right',marginTop:"10px",height:'100%',padding:'4%'}}>
