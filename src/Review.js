@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useEffect, useState } from "react";
+import axios from 'axios';
 
 import Stack from '@mui/material/Stack';
 import PropTypes from 'prop-types';
@@ -35,10 +36,59 @@ const VisuallyHiddenInput = styled('input')({
   });
   
 export default function Review() {
-    
+
   const [tour, settour] = useState('');  
-    const handleChange = (event) => {
-      settour(event.target.value);
+  const [reviewDetail, setReviewDetail] = useState({
+    reviewtitle: '',
+    user_name: '',
+    tour_name: '',
+    rating: '',
+    comment: ''
+  });
+
+  console.log(reviewDetail)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    // settour(value);
+    setReviewDetail((prevReviewDetail) => ({
+      ...prevReviewDetail,
+      [name]: value,
+    }));
+  };
+
+  const handleTourChange = (event) => {
+    const { name, value } = event.target;
+    settour(value);
+    setReviewDetail((prevReviewDetail) => ({
+      ...prevReviewDetail,
+      [name]: value,
+    }));
+  };
+  
+
+
+    const handleReviewSubmit = async () => {
+      if (
+        reviewDetail.reviewtitle.trim() === '' ||
+        reviewDetail.user_name.trim() === '' ||
+        reviewDetail.tour_name.trim() === '' ||
+        reviewDetail.comment.trim() === ''
+      ) {
+        // Display an error message or handle the validation as needed
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      
+      try {
+        // Assuming you have a server running at http://localhost:3001
+        // const response = await axios.post('http://localhost:3001/postreview', reviewDetail);
+        const response = await axios.post('https://tourapi-hazf.onrender.com/postreview', reviewDetail);
+        console.log(response.data); // Handle the server response as needed
+      } catch (error) {
+        console.error('Error submitting review:', error);
+      }
     };
     const drawerWidth = 240;
     const StyledRating = styled(Rating)(({ theme }) => ({
@@ -79,105 +129,91 @@ export default function Review() {
         value: PropTypes.number.isRequired,
       };
       
-    return (
+      return (
         <>
-        <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }} >
-           <Toolbar>
-           <Typography variant="h6" noWrap component="div">
-              Editor Review
-                   </Typography>
-                 </Toolbar>
-              </AppBar>
-              <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginLeft:'20%',
-        '& > :not(style)': {
-          m: 1,
-          width: '90%',
-          height: 128,
-        },
-      }}
-    >
+          <AppBar position="fixed" sx={{ width: `calc(100% - 240px)`, ml: '240px' }}>
+            <Toolbar>
+              <Typography variant="h6" noWrap component="div">
+                Editor Review
+              </Typography>
+            </Toolbar>
+          </AppBar>
     
-      <Paper elevation={3} style={{padding:'10px',height:'100%'}} >
-      <TextField
-          id="outlined-multiline-flexible"
-          label="Review title"
-          multiline
-          maxRows={4}
-          style={{float:'left',width:'49%',marginBottom:'10px'}}
-        />
-        <TextField
-          id="outlined-multiline-flexible"
-          label="User Name"
-          multiline
-          maxRows={4}
-          style={{float:'right',width:'49%',marginBottom:'10px'}}
-        />
-
-   
-      <FormControl fullWidth style={{width:'49%',float:'left'}}>
-        <InputLabel id="demo-simple-select-label">Tour</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={tour}
-          label="Tour"
-          onChange={handleChange}
-        //   style={{marginBottom:'10px'}}
-        >
-              <MenuItem value={'Bangkok grand tour'}>Bangkok grand tour</MenuItem>
-                <MenuItem value={'bangkok unseen tour'}>bangkok unseen tour</MenuItem>
-                <MenuItem value={'bkk Instargram/Tiktok'}>bkk Instargram/Tiktok</MenuItem>
-                <MenuItem value={'The ultimate of the floating market'}>The ultimate of the floating market</MenuItem>
-                <MenuItem value={'Half day floating market'}>Half day floating market</MenuItem>
-                <MenuItem value={'The sacred tattoo tour'}>The sacred tattoo tour</MenuItem>
-                <MenuItem value={'Ayutthaya highlight tour'}>Ayutthaya highlight tour</MenuItem>
-                <MenuItem value={'The scenic farm tour'}>The scenic farm tour</MenuItem>
-                <MenuItem value={'Cooking class'}>Cooking class</MenuItem>
-         
-        </Select>
-      </FormControl>
-      <Stack spacing={1} style={{float:'left',margin:'15px'}}>
-      <Rating name="half-rating" 
-      precision={0.5} />
-      
-    </Stack>
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              marginLeft: '20%',
+              '& > :not(style)': {
+                m: 1,
+                width: '90%',
+                height: 128,
+              },
+            }}
+          >
+            <Paper elevation={3} style={{ padding: '10px', height: '100%' }}>
+              <TextField
+                name="reviewtitle"
+                label="Review title"
+                multiline
+                maxRows={4}
+                style={{ float: 'left', width: '49%', marginBottom: '10px' }}
+                onChange={handleChange}
+                required
+              />
+              <TextField
+                name="user_name"
+                label="User Name"
+                multiline
+                maxRows={4}
+                style={{ float: 'right', width: '49%', marginBottom: '10px' }}
+                onChange={handleChange}
+                required
+              />
     
-    {/* <StyledRating
-      name="highlight-selected-only"
-  
-      IconContainerComponent={IconContainer}
-      getLabelText={(value) => customIcons[value].label}
-      highlightSelectedOnly
-      style={{marginTop:'15px',marginLeft:'20px',height:'42px'}}
-    /> */}
-     <TextField
-          id="outlined-multiline-static"
-          label="Review Detail"
-          multiline
-          rows={4}
-          defaultValue="Review Detail"
-          style={{float:'left',marginTop:'10px',width:'100%'}}
-        />
-        {/* <Paper elevation={3} style={{width:'49%',float:'right',marginTop:"10px",height:'100%',padding:'4%'}}>
-        <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
-      Upload file
-      <VisuallyHiddenInput type="file" />
-    </Button>
-    </Paper> */}
+              <FormControl fullWidth style={{ width: '49%', float: 'left' }}>
+                  <InputLabel id="demo-simple-select-label">Tour</InputLabel>
+                  <Select
+                    name="tour_name"
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={tour}
+                    label="Tour"
+                    onChange={handleTourChange}
+                    required
+                  >
+                    <MenuItem value={'Bangkok grand tour'}>Bangkok grand tour</MenuItem>
+                    <MenuItem value={'bangkok unseen tour'}>Bangkok unseen tour</MenuItem>
+                    <MenuItem value={'bkk Instargram/Tiktok'}>BKK Instagram/TikTok</MenuItem>
+                    <MenuItem value={'The ultimate of the floating market'}>The ultimate of the floating market</MenuItem>
+                    <MenuItem value={'Half day floating market'}>Half day floating market</MenuItem>
+                    <MenuItem value={'The sacred tattoo tour'}>The sacred tattoo tour</MenuItem>
+                    <MenuItem value={'Ayutthaya highlight tour'}>Ayutthaya highlight tour</MenuItem>
+                    <MenuItem value={'The scenic farm tour'}>The scenic farm tour</MenuItem>
+                    <MenuItem value={'Cooking class'}>Cooking class</MenuItem>
+                  </Select>
+                </FormControl>
+              <Stack spacing={1} style={{ float: 'left', margin: '15px' }}>
+                <Rating name="rating" precision={0.5} onChange={(event, value) => handleChange({ target: { name: 'rating', value } })} />
+              </Stack>
+              <TextField
+                name="comment"
+                label="Review Detail"
+                multiline
+                rows={4}
+                style={{ float: 'left', marginTop: '10px', width: '100%' }}
+                onChange={handleChange}
+                required
+              />
     
-<Button variant="outlined" color="error" style={{marginTop:'10px',marginRight:"10px",float:'left'}}>
- Cancle
-</Button>
-    <Button variant="contained" color="success" style={{marginTop:'10px',float:'right'}}>
- Done
-</Button>
-        </Paper>
-    </Box>
-     
-      </>
-    )
-  }
+              <Button variant="outlined" color="error" style={{ marginTop: '10px', marginRight: '10px', float: 'left' }}>
+                Cancel
+              </Button>
+              <Button variant="contained" color="success" style={{ marginTop: '10px', float: 'right' }} onClick={handleReviewSubmit}>
+                Done
+              </Button>
+            </Paper>
+          </Box>
+        </>
+      );
+    };
