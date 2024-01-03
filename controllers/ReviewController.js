@@ -4,7 +4,7 @@ const Admin = require('../models/admin');
 
 const postReview = async (req, res) => { 
     const admin_id = "65700e79b8c88291793fbf9c";      
-    const { user_name, tour_name, rating, comment} = req.body;
+    const { user_name, tour_id, rating, comment} = req.body;
 
     if (loggedIn) {
       res.redirect('/');
@@ -16,7 +16,7 @@ const postReview = async (req, res) => {
             return res.status(401).json({ error: 'Invalid admin' });
           }
     
-        const newReview = new Review({user_name, tour_name, rating, comment});
+        const newReview = new Review({user_name, tour_id, rating, comment});
         await newReview.save();
     
         res.status(201).json({ message: 'User registered successfully' });
@@ -35,11 +35,11 @@ const getAllTourReviewCover = async (req, res) => {
     }
   };
   
-  const getTourReviewByName = async (req, res) => {
-    const { tourName } = req.params;
+  const getTourReviewById = async (req, res) => {
+    const { tour_id } = req.params;
   
     try {
-      const tour = await Review.findOne({ tour_name: tourName });
+      const tour = await Review.findOne({ _id: tour_id });
   
       if (!tour) {
         return res.status(404).json({ error: 'Tour not found' });
@@ -51,4 +51,4 @@ const getAllTourReviewCover = async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   };
-module.exports = { postReview,getAllTourReviewCover,getTourReviewByName};
+module.exports = { postReview,getAllTourReviewCover,getTourReviewById};
