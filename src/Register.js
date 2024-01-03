@@ -104,9 +104,9 @@ function Register() {
           <Row> 
             <Col> 
             
-              <div className="bgblur" >
+              <div className="bgblur1" >
               <div
-                    class=" text-center"
+                    class=" text-center "
                     
                   >
                     <p className="fontregis">Register</p>
@@ -257,7 +257,7 @@ function Register() {
                  </div>  
                
       <Button 
-       style={{fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold',marginTop:'10px',borderColor:"black"}} 
+       style={{width:'25%',fontSize:'20px', fontFamily: 'Roboto Slab',fontWeight:'bold',marginTop:'10px',borderColor:"black"}} 
       variant="secondary" href='Login' >
        LOGIN
       </Button>

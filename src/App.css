@@ -11,7 +11,7 @@
 
 
 /* ------home-------- */
-@media (max-width: 1980px) {
+/* @media (max-width: 2980px) { */
   #uncontrolled-tab-example-tabpane-description{
     background-color: white;
   }
@@ -79,8 +79,16 @@ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
     text-shadow: "2px 2px 10px rgba(0, 0, 100, 0.5)";
 
 }
+.our{
+  font-size: 28px;
+  text-align: center;
+                    font-weight: bold;
+                    color: white;
+                    margin-bottom:30px;
+                    font-family:'Roboto Slab';
+}
 .why{
-
+text-align: center;
     font-size: 28px;
     font-weight: bold;
     margin-top: 50px;
@@ -124,14 +132,16 @@ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 100, .6)';
 .carouselsize{
  width: 25rem; 
  height:210px;
+ overflow: hidden;
 }
 .carouselitem{ 
   width: 25rem;
   height:225px; }
+ 
 #formControlLg{
   background-color: white;
 }
-}
+/* } */
 @media (max-width: 1000px) {
   .marginh1{
     margin-Bottom:250px;
@@ -329,7 +339,7 @@ margin-Top:-230px;
 
 }
 /* --------nav--------- */
-@media (max-width: 1980px) {
+/* @media (max-width: 1980px) { */
 
 .name{
   font-size:20px;
@@ -396,10 +406,33 @@ padding-left: 21%;
   font-family: "Playfair Display";
   text-align: center;
 }
+@media (max-width: 1600px) {
+  .fontnav {
+
+    font-size: 20px;
+  
+  }
+  #fontnav {
+    
+    font-size: 20px;
+   
+  }
 }
 
+@media (max-width: 1400px) {
+  .fontnav {
+
+    font-size: 19px;
   
-@media (max-width: 1000px) {
+  }
+  #fontnav {
+    
+    font-size: 19px;
+   
+  }
+
+  
+/* @media (max-width: 1100px) { */
 
   
   /* .signin{
@@ -693,7 +726,14 @@ float: left;
         }}
        
   /* ----------about-------------- */ 
-  @media (max-width: 1980px) {
+  /* @media (max-width: 1980px) { */
+    .first-letter {
+      font-size: 35px;
+      /* line-height: 70px; */
+      white-space: nowrap;
+      initial-letter: 2;
+      initial-letter: normal;
+    }
   .detailabout3{
     display: none;
   }
@@ -751,8 +791,8 @@ float: right;
      width: 100%;
     height: 100%;
     background-position: bottom;
-margin-top: -300px;
-  }}
+margin-top: -400px;
+  }
   @media (max-width: 1600px) {
     .imgabout{
       width: 100%;
@@ -916,7 +956,7 @@ height: 500px;
       
       }
     
-      @media (max-width: 1980px) {
+ 
         /* ------------regis------------- */
         .submit{
           font-size:20px;
@@ -944,13 +984,25 @@ height: 500px;
         .bgregis{
           background-color: #fcfcfe;
           width:100%;
-          height:1000px;
+          height:1500px;
           background-repeat:no-repeat;
           background-size:cover;
-          padding-Left:25%;
+          padding-Left:20%;
           padding-bottom: 40px;
           background-position:bottom;
+          padding-top: 200px;
 
+        }
+        .bgblur1{
+          background: rgba(217, 217, 217, 0.1);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(15px);
+          /* Note: backdrop-filter has minimal browser support */
+          border-radius: 50px;
+          padding:30px;
+          padding-top: 100px;
+           width:70%;
+           height:100%;
         }
         .bgblur {
           background: rgba(217, 217, 217, 0.1);
@@ -959,7 +1011,7 @@ height: 500px;
           /* Note: backdrop-filter has minimal browser support */
           border-radius: 50px;
           padding:30px;
-           margin-top: 100px;
+          padding-top: 100px;
            width:70%;
            height:90%;
         }
@@ -969,7 +1021,7 @@ height: 500px;
         color: white;
         text-align: center;
       }
-      }
+      
         @media (max-width: 1000px) {
           
           .bgregis{
@@ -1015,7 +1067,7 @@ height: 500px;
          
         }
 /* -------login------------ */
-@media (max-width: 1980px) {
+/* @media (max-width: 1980px) { */
   .button {
   background-color: #0579d8;
   font-family: "Roboto Slab", sans-serif;
@@ -1027,18 +1079,41 @@ height: 500px;
   font-family: "Roboto Slab", sans-serif;
   font-size: 20px;
   font-weight: bold;
-  margin-left: -30px;
-  width:220px;
-  margin-left:-40px;
+  margin-left: -35px;
+  width:130%;
+  /* margin-left:-30px; */
 
 
   font-weight:bold;
   border-color:black;
-}}
+}
+@media (max-width: 1600px) {
+  
+  
+  .button2 {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -42px;
+    width:130%;
+    /* margin-left:-30px; */
 
+  }}
+  @media (max-width: 1400px) {
+  
+  
+    .button2 {
+
+      margin-left: -85px;
+      width:130%;
+      /* margin-left:-30px; */
+  
+    }}
+    
+  
          /* ---------------------------------------------- */
-    @media (max-width: 1980px) {
- 
+    /* @media (max-width: 1980px) {
+  */
   .counter {
   text-align: center;
   margin-top: 20px;
@@ -1245,7 +1320,7 @@ h5 {
   /* text-shadow: 2px 3px 2px rgb(213, 209, 213); */
   box-shadow: 2px 3px 2px rgb(213, 209, 213);
 }
-}}
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

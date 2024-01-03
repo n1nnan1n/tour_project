@@ -126,13 +126,7 @@ function Home() {
             <Row>
               <Col>
                 <h1
-                  style={{
-                    fontSize: "28px",
-                    fontWeight: "bold",
-                    color: "white",
-                    marginBottom:"30px",
-                    fontFamily:'Roboto Slab'
-                  }}
+                  className="our"
                 >
                   Our Tours
                 </h1>
@@ -206,7 +200,7 @@ function Home() {
                 <Carousel.Item className="carouselitem">
                   <img
                    style={{backgroundposition: 'bottom'}}
-                    className="d-block w-100"
+                    className="d-block w-100 dayimg"
                     src={outside2}
                     alt="First slide"
                   />
@@ -222,7 +216,7 @@ function Home() {
                 <Carousel.Item className="carouselitem">
                   <img
                    style={{backgroundposition: 'bottom'}}
-                    className="d-block w-100"
+                    className="d-block w-100 "
                     src={outside1}
                     alt="First slide"
                   />

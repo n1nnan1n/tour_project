@@ -55,9 +55,7 @@ export const Login = () => {
     <div class="bgregis" style={{backgroundImage:`url(${bg})`}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
-        <Row>
-          
-          <Col>
+        
             <div className="bgblur" >
        
               <div class="row flex-nowrap justify-content-between align-items-center">
@@ -76,8 +74,7 @@ export const Login = () => {
                 </div>
               </div>
 
-              <Row style={{paddingLeft:'10%'}}>
-  
+       
        
     
                 <Form >
@@ -86,12 +83,12 @@ export const Login = () => {
                     className="mb-3"
                     controlId="email"
                   >
-                    <Col sm="10">
+                   
                       <Form.Label  style={{float:'left',color:'black'}}>
                       <p style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>Email</p>
                       </Form.Label>
                       <Form.Control type="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)}/>
-                    </Col>
+                    
                   </Form.Group>
 
                   <Form.Group
@@ -99,16 +96,16 @@ export const Login = () => {
                     className="mb-3"
                     controlId="password"
                   >
-                    <Col sm="10">
+    
                       <Form.Label style={{float:'left',color:'black'}}>
                         <p  style={{color:'white',fontWeight:'bold',fontSize:'20px'}}>password</p>
                       </Form.Label>
                       <Form.Control type="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)}/>
-                    </Col>
+                  
                   </Form.Group>
-                  <Button onClick={handleLogin} className='button'  size="sm" style={{width:'35%',marginRight:'20%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
+                  <Button onClick={handleLogin} className='button'  size="sm" style={{width:'35%',marginTop:'30px',fontSize:'20px',marginTop:'30px' ,fontFamily: 'Roboto Slab',fontWeight:'bold',backgroundColor:'#FDB000',borderColor:"black"}}>Sign In</Button>
                 </Form>
-              </Row>
+        
 
             
   <div className="d-grid gap-2 buttonlog" >
@@ -118,10 +115,7 @@ export const Login = () => {
     Register
     </Button>
   </div></div>
-          </Col>
-
-
-        </Row>
+          
       </Container>
 
       {/* </Container> */}

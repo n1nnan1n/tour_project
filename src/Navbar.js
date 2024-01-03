@@ -163,7 +163,8 @@ function NavbarComponent() {
                 </Nav.Item>
               </>
             ) : (
-              <><Nav.Item>
+              <>
+              <Nav.Item >
                 <Link to="/register" class="btn btn-dark regis" >
                   Register
                 </Link>
