@@ -42,6 +42,7 @@ const redirectIfAuth = require('./middleware/redirectIfAuth')
 const authMiddleware = require('./middleware/authMiddleware')
 const vieworder = require('./controllers/AdminViewOrder')
 const dateController = require('./controllers/dateController')
+const reviewController = require('./controllers/ReviewController')
 // const redirectIfAuth = require('./middleware/redirectIfAuth')
 // const authMiddleware = require('./middleware/authMiddleware')
 
@@ -80,8 +81,9 @@ app.post('/disabledate',dateController.disableDate)
 app.delete('/deletedate',dateController.deleteDate)
 app.get('/getclosedates',dateController.getCloseDates)
 
-
-
+app.post('/postreview',reviewController.postReview)
+app.get('/getReviewCover',reviewController.getAllTourReviewCover)
+app.get('/getTourReviewByName/:tourName',reviewController.getTourReviewByName)
 
 // app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
 
