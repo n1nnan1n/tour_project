@@ -41,7 +41,7 @@ export default function Review() {
   const [reviewDetail, setReviewDetail] = useState({
     reviewtitle: '',
     user_name: '',
-    tour_id: '',
+    tour_name: '',
     rating: '',
     comment: ''
   });
@@ -72,7 +72,7 @@ export default function Review() {
       if (
         reviewDetail.reviewtitle.trim() === '' ||
         reviewDetail.user_name.trim() === '' ||
-        reviewDetail.tour_id.trim() === '' ||
+        reviewDetail.tour_name.trim() === '' ||
         reviewDetail.comment.trim() === ''
       ) {
         // Display an error message or handle the validation as needed
@@ -174,7 +174,7 @@ export default function Review() {
               <FormControl fullWidth style={{ width: '49%', float: 'left' }}>
                   <InputLabel id="demo-simple-select-label">Tour</InputLabel>
                   <Select
-                    name="tour_id"
+                    name="tour_name"
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={tour}
@@ -182,15 +182,15 @@ export default function Review() {
                     onChange={handleTourChange}
                     required
                   >
-                    <MenuItem value={'655a2fae9b4c465647c4609a'}>Bangkok grand tour</MenuItem>
-                    <MenuItem value={'655e1317a5dd819be5edeb6d'}>Bangkok unseen tour</MenuItem>
-                    <MenuItem value={'655e1533a5dd819be5edeb6e'}>BKK Instagram/TikTok</MenuItem>
-                    <MenuItem value={'655ee85bdc69725f99120b84'}>The ultimate of the floating market</MenuItem>
-                    <MenuItem value={'655ee996dc69725f99120b85'}>Half day floating market</MenuItem>
-                    <MenuItem value={'655eee2fdc69725f99120b86'}>The sacred tattoo tour</MenuItem>
-                    <MenuItem value={'655eef3adc69725f99120b87'}>Ayutthaya highlight tour</MenuItem>
-                    <MenuItem value={'655ef143dc69725f99120b88'}>The scenic farm tour</MenuItem>
-                    <MenuItem value={'655ef329dc69725f99120b89'}>Cooking class</MenuItem>
+                    <MenuItem value={'Bangkok Grand Tour'}>Bangkok grand tour</MenuItem>
+                    <MenuItem value={'Bangkok unseen Tour'}>Bangkok unseen tour</MenuItem>
+                    <MenuItem value={'Bkk Instagram TikTok Tour (For whose who love photos)'}>BKK Instagram/TikTok</MenuItem>
+                    <MenuItem value={'The ultimate of the floating market tour'}>The ultimate of the floating market</MenuItem>
+                    <MenuItem value={'Half day floating market tour'}>Half day floating market</MenuItem>
+                    <MenuItem value={'The sacred tattoo tour (Sakyant)'}>The sacred tattoo tour</MenuItem>
+                    <MenuItem value={'Ayutthaya highlight tour'}>Ayutthaya highlight tour</MenuItem>
+                    <MenuItem value={'The Scenic farm tour'}>The scenic farm tour</MenuItem>
+                    <MenuItem value={'Cooking class'}>Cooking class</MenuItem>
                   </Select>
                 </FormControl>
               <Stack spacing={1} style={{ float: 'left', margin: '15px' }}>
