@@ -10,6 +10,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Edu+TAS+Beginner:wght@500&family=Inria+Sans:wght@700&family=Kanit:wght@200;400;500&family=Nunito+Sans:opsz,wght@6..12,300&family=Playfair+Display:wght@500&family=Prompt&family=Roboto+Slab&display=swap");
 
 /* profile */
+.imgorder{
+ width: 100%;
+ height: 100%;
+}
+.boximgor{
+
+float: left;
+  overflow: hidden;
+   
+}
 .prodetail{
 font-weight:bold;
 float:left;
