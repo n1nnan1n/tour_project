@@ -196,15 +196,6 @@ data-bs-theme="dark"
     </Card.Body>
 </Tab>
 
-<Tab eventKey="review" title="review">
-<Card.Body className="cardgrand"  style={{backgroundColor:'#FFFAEC',boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
-      <Card.Title><h1>Review</h1></Card.Title>
-      <Card.Text>
-      {/* <p style={{wordWrap:'break-word',whiteSpace:'break-spaces',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'18px',margin:'30px'}}>{tourData.tour_description}</p> */}
-      </Card.Text>
-      
-    </Card.Body>
-</Tab>
 </Tabs>
 {isLoggedIn ? (
               <>
