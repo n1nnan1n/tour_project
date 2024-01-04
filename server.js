@@ -83,7 +83,7 @@ app.get('/getclosedates',dateController.getCloseDates)
 
 app.post('/postreview',reviewController.postReview)
 app.get('/getReviewCover',reviewController.getAllTourReviewCover)
-app.get('/getTourReviewById/:tour_id',reviewController.getTourReviewById)
+app.get('/getTourReviewByName/:tourName',reviewController.getTourReviewByName)
 
 // app.delete('/delete-order/:orderID',OrderController.DeleteOrder)
 
