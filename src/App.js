@@ -46,7 +46,7 @@ function App() {
                 {/* <Route path="Pay" element={<Pay/>} /> */}
                 <Route path="/checkout" element={<CheckoutForm />} />
                 <Route path="/return" element={<Return />} />
-                <Route path="Review1" element={<Review1 />} />
+                <Route path="Review1/:tour_name" element={<Review1 />} />
                 <Route path="Re" element={<Re />} />
                 <Route path="Profile" element={<Profile />} />
                 <Route path="Cheack" element={<Cheack />} />

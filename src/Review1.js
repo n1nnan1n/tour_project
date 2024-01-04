@@ -4,79 +4,120 @@ import Col from 'react-bootstrap/Col';
 import about1 from './Pic/ayutthaya/LIaolqBL.jpeg'
 import about2 from './Pic/about/pic1.jpg'
 import Footer from './Footer';
-import { Rating } from "primereact/rating";
+// import { Rating } from "primereact/rating";
+import { useParams } from 'react-router-dom';
+import { useEffect,useState } from 'react';
+import axios from 'axios';
+
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+
 function Review1() {
+  let { tour_name } = useParams();
+  const [reviewDetail, setReviewDetail] = useState([]);
+  const [tour_img, settour_img] = useState([]);
+
+
+  useEffect(() => {
+    const fetchReview = async () => {
+      try {
+        const response = await axios.get(`https://tourapi-hazf.onrender.com/getTourReviewByName/${tour_name}`);
+        // const response = await axios.get(`http://localhost:3001/getTourReviewByName/${tour_name}`);
+        
+        const { reviews, tourImage } = response.data;
+        setReviewDetail(reviews);
+        settour_img(tourImage);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchReview();
+  }, [tour_name]);
+
   return (
     <>
-    <div className="wrapper" style={{paddingLeft:'10%',paddingRight:'10%'}}>
+      <div className="wrapper" style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+        <h1 style={{ padding: '20px' }}>Review </h1>
 
-     
-        <h1 style={{padding:'20px'}}>Review </h1>
-        <div className='fillter'style={{backgroundColor:'#FFFAEC',width:"100%",height:'100%',borderRadius:'20px',padding:'20px',marginBottom:'40px'}}>
-       
-      <Row >
-        <Col 
-        //  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px',borderRadius:'60px'}}
-        >
-            <img
-                style={{ width: "100%",borderRadius:'10px' , height: "600px" }}
-                src={about2}
-                alt="First slide"
-              /></Col>
-        <Col xs={6}>
-        <h1 className='fontheder' style={{float:'left'}}>Nametour </h1>
+        {Array.isArray(reviewDetail) && reviewDetail.length > 0 ? (
+          <>
 
+            {reviewDetail.map((review) => (
+              <div
+                key={review._id}
+                className="fillter"
+                style={{
+                  backgroundColor: '#FFFAEC',
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '20px',
+                  padding: '20px',
+                  marginBottom: '40px',
+                }}
+              >
+<Row>
+    <Col xs={6}>
+      {tour_img && (
+        <img
+          src={tour_img}
+          alt="Tour Image"
+          style={{ float: 'left', width: '100%', height: 'auto', borderRadius: '10px',margin:'-20px'}}
+        />
+      )}
+    </Col>
 
-        <div style={{float:'left',marginTop:'25px',marginLeft:'20px'}}>
-         {/* <h2 style={{float:'left'}}>Rating : </h2>   */}
-          <Rating value={5} readOnly cancel={false} />
-        </div>
-  
-<h1 style={{float:'left',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'20px'}}>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat tellus eu turpis laoreet mattis. Vivamus ac nunc vitae tellus hendrerit posuere. Vivamus ex lectus, venenatis et est eget, consectetur viverra nisl. In hac habitasse platea dictumst. Integer vitae quam tortor. Maecenas in euismod lacus, nec pretium augue. Phasellus non fringilla nisi, id egestas massa. Vivamus nec sem sed tortor porttitor viverra. Donec vel urna leo. Suspendisse pharetra aliquam mi, ut elementum ligula congue eu. Proin vitae dolor finibus, varius erat vel, tempus ipsum. Suspendisse accumsan mattis commodo. Praesent semper, velit non venenatis laoreet, tortor nunc congue orci, sit amet aliquet libero tellus sed leo.
+    <Col xs={6}>
+  <h1 className="fontheder" style={{ float: 'left', marginBottom: '20px' }}>
+    {review.tour_name}
+  </h1>
+  <div style={{ float: 'left', marginTop: '15px', marginLeft: '20px' }}>
+    <Stack spacing={1}>
+      <Rating name="half-rating-read" defaultValue={review.rating} precision={0.5} readOnly />
+    </Stack>
+  </div>
 
-
-</h1>
-
-        </Col>
-        
-      </Row>
-        </div> 
-        <div className='fillter'style={{backgroundColor:'#FFFAEC',width:"100%",height:'100%',borderRadius:'20px',padding:'20px',marginBottom:'40px'}}>
-       
-       <Row >
-         <Col 
-         //  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px',borderRadius:'60px'}}
-         >
-             <img
-                 style={{ width: "100%",borderRadius:'10px' , height: "600px" }}
-                 src={about2}
-                 alt="First slide"
-               /></Col>
-         <Col xs={6}>
-         <h1 className='fontheder' style={{float:'left'}}>Nametour </h1>
- 
- 
-         <div style={{float:'left',marginTop:'25px',marginLeft:'20px'}}>
-          {/* <h2 style={{float:'left'}}>Rating : </h2>   */}
-           <Rating value={5} readOnly cancel={false} />
-         </div>
-   
- <h1 style={{float:'left',textAlign:'left',display: 'flex',alignitems: "center",textAlign:' justify',fontSize:'20px'}}>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat tellus eu turpis laoreet mattis. Vivamus ac nunc vitae tellus hendrerit posuere. Vivamus ex lectus, venenatis et est eget, consectetur viverra nisl. In hac habitasse platea dictumst. Integer vitae quam tortor. Maecenas in euismod lacus, nec pretium augue. Phasellus non fringilla nisi, id egestas massa. Vivamus nec sem sed tortor porttitor viverra. Donec vel urna leo. Suspendisse pharetra aliquam mi, ut elementum ligula congue eu. Proin vitae dolor finibus, varius erat vel, tempus ipsum. Suspendisse accumsan mattis commodo. Praesent semper, velit non venenatis laoreet, tortor nunc congue orci, sit amet aliquet libero tellus sed leo.
- 
- 
- </h1>
- 
-         </Col>
-         
-       </Row>
-         </div> 
-        </div>
-        <Footer/>
-       </>
-    
-  )
+  <div style={{ float: 'left',width:'100%'}}>
+  <h1
+    style={{
+      float: 'left',
+      textAlign: 'left',
+      display: 'flex',
+      alignItems: 'left',
+      fontSize: '25px',
+      marginTop: '15px',
+    }}
+  >
+    Writer: {review.user_name}
+  </h1>
+  </div>
+  <div style={{ float: 'left',width:'100%'}}>
+  <h1
+    style={{
+      float: 'left',
+      textAlign: 'left',
+      display: 'flex',
+      alignItems: 'left',
+      fontSize: '20px',
+      marginTop: '15px',
+      whiteSpace: 'pre-line', // Add this style to allow line breaks
+    }}
+  >
+    {review.comment}
+  </h1>
+  </div>
+</Col>
+  </Row>
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No reviews available.</p>
+        )}
+      </div>
+      <Footer />
+    </>
+  );
 }
 
-export default Review1
+export default Review1;

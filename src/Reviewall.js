@@ -27,7 +27,7 @@ function Reviewall() {
 
     useEffect(() => {
         // Fetch data from your API endpoint
-        axios.get('http://localhost:3001/getReviewCover')
+        axios.get('https://tourapi-hazf.onrender.com/getReviewCover')
             .then((response) => {
                 // Assuming the response.data is an array of tours
                 const fetchedTours = response.data;

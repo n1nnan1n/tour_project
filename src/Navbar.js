@@ -114,7 +114,7 @@ function NavbarComponent() {
                 <Nav.Link id="fontnav" className='link' href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link id="fontnav" className='link' href="About">About Us</Nav.Link>
+                <Nav.Link id="fontnav" className='link' href="/About">About Us</Nav.Link>
               </Nav.Item>
       
    
@@ -131,10 +131,10 @@ function NavbarComponent() {
               </NavDropdown>
 
               <Nav.Item>
-                <Nav.Link id="fontnav" className='link'  href="Customized">Customized tour</Nav.Link>
+                <Nav.Link id="fontnav" className='link' href="/Customized">Customized tour</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link  id="fontnav" className='link' eventKey="#" href="Reviewall">
+                <Nav.Link  id="fontnav" className='link'href="/Reviewall">
                   Review
                 </Nav.Link>
               </Nav.Item>
