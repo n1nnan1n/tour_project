@@ -37,16 +37,24 @@ const getAllTourReviewCover = async (req, res) => {
   
   const getTourReviewByName = async (req, res) => {
     const { tourName } = req.params;
-    console.log(tourName)
-  
+
     try {
-      const review = await Review.findOne({ tour_name: tourName });
+      const reviews = await Review.find({ tour_name: tourName });
+      const tour = await Tour.findOne({ tour_name: tourName });
   
-      if (!review) {
+      if (!reviews || reviews.length === 0) {
+        return res.status(404).json({ error: 'Reviews not found' });
+      }
+  
+      if (!tour) {
         return res.status(404).json({ error: 'Tour not found' });
       }
   
-      res.json(review);
+      // Assuming tour_image is a field in your Tour model
+      const tourImage = tour.tour_image[0];
+  
+      // Sending both reviews and tour_image in the response
+      res.json({ reviews, tourImage });
     } catch (error) {
       console.error('Error fetching tour:', error);
       res.status(500).json({ error: 'Internal Server Error' });
