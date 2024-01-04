@@ -802,7 +802,7 @@ float: right;
  }
   .fillter {
     /* background: #fffaec; */
-    box-shadow: 4px 4px 4px 4px rgba(0.20, 0.20, 0.20, 0.10);
+    /* box-shadow: 4px 4px 4px 4px rgba(0.20, 0.20, 0.20, 0.10); */
     /* background-color:#FFFAEC; */
     width:100%;
     height:100%;
@@ -824,7 +824,8 @@ float: right;
    /* display: flex; */
    align-items: center;
    text-align:justify;
-   font-size:25px
+   font-size:22px;
+   margin-top: 25px;
    
   }
   .imgabout{
