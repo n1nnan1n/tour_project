@@ -48,6 +48,17 @@ const VisuallyHiddenInput = styled('input')({
   });
   
 export default function Review() {
+  
+   const [tour, settour] = useState('');  
+   const [reviewDetail, setReviewDetail] = useState({
+     reviewtitle: '',
+     user_name: '',
+     tour_name: '',
+     rating: '',
+     comment: ''
+   });
+ 
+   console.log(reviewDetail)
     const fileInputRef = React.useRef(null);
   const [selectedImage, setSelectedImage] = React.useState(null);
 
@@ -62,19 +73,10 @@ export default function Review() {
     console.log('Selected file:', selectedFile);
     // Handle the selected file if needed
   };
-  const [tour, settour] = useState('');  
-    const handleChange = (event) => {
-      settour(event.target.value);
-      const [tour, settour] = useState('');  
-      const [reviewDetail, setReviewDetail] = useState({
-        reviewtitle: '',
-        user_name: '',
-        tour_name: '',
-        rating: '',
-        comment: ''
-      });
-    
-      console.log(reviewDetail)
+  
+    // const handleChange = (event) => {
+    //   settour(event.target.value);
+     
     
       const handleChange = (event) => {
         const { name, value } = event.target;
@@ -380,4 +382,4 @@ export default function Review() {
      
       </>
     )
-  }}
+  }
