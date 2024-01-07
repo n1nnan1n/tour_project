@@ -10,28 +10,36 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Image } from "react-bootstrap";
 import button from "react-bootstrap";
+import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import bg from './pic/bg.jpg'
 import axios from "axios";
 
-export const Adlogin = () => {
+export const Adlogin = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleLogin = async () => {
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      // const response = await axios.post('https://tourapi-hazf.onrender.com/login', { email, password });
-      const response = await axios.post('http://localhost:3001/adminlogin', { email, password });
+      // const response = await axios.post('http://localhost:3001/adminlogin', { email, password });
+      const response = await axios.post('https://tourapi-hazf.onrender.com/adminlogin', { email, password });
       console.log(email, password)
       const token = response.data.token;
 
       localStorage.setItem('token', token);
 
-      console.log(token)
+      onLogin(true);
+
+      navigate('/dashboard/AdHome');
 
       // Redirect to the homepage or another route
-      window.location.href = '/AdHome';
+      // window.location.href = '/dashboard/AdHome';
     } catch (error) {
       console.error('Error during login:', error.response.error);
+      setError('Invalid username or password');
       // Handle login error, e.g., display an error message to the user
     }
   };

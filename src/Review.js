@@ -227,7 +227,7 @@ export default function Review() {
                  
         </Select>
       </FormControl>
-      <div style={{width:'50%',float:'right',marginBottom:'10px'}}>
+      <div style={{width:'13%',float:'left',marginBottom:'10px'}}>
               <Stack spacing={1} style={{ margin: '15px' }}>
                 <Rating name="rating" precision={0.5} onChange={(event, value) => handleChange({ target: { name: 'rating', value } })} />
               </Stack>
@@ -259,19 +259,15 @@ export default function Review() {
       )}
      
       </Sheet>
-     
-      
-      <TextField
-       name="comment"
-          id="outlined-multiline-static"
-          label="Review Detail"
-          multiline
-          rows={4}
-          defaultValue="Review Detail"
-          style={{float:'left',marginTop:'10px',width:'49%'}}
-          onChange={handleChange}
+<TextField
+                name="comment"
+                label="Review Detail"
+                multiline
+                rows={4}
+                style={{float:'left',marginTop:'10px',width:'49%'}}
+                onChange={handleChange}
                 required
-        />
+              />
         
         {/* <Paper elevation={3} style={{width:'49%',float:'right',marginTop:"10px",height:'100%',padding:'4%'}}>
         <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
