@@ -20,9 +20,21 @@ import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import AspectRatio from '@mui/joy/AspectRatio';
+import IconButton from '@mui/joy/IconButton';
+import Sheet from '@mui/joy/Sheet';
 
+import Close from '@mui/icons-material/Close';
+import Delete from '@mui/icons-material/Delete';
+import Download from '@mui/icons-material/Download';
+import InsertLink from '@mui/icons-material/InsertLink';
+import Crop from '@mui/icons-material/Crop';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+// import Button from '@mui/joy/Button';
+import SvgIcon from '@mui/joy/SvgIcon';
+
+import Card from '@mui/joy/Card';
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -36,60 +48,76 @@ const VisuallyHiddenInput = styled('input')({
   });
   
 export default function Review() {
+    const fileInputRef = React.useRef(null);
+  const [selectedImage, setSelectedImage] = React.useState(null);
 
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    const imageUrl = URL.createObjectURL(selectedFile);
+    setSelectedImage(imageUrl);
+    console.log('Selected file:', selectedFile);
+    // Handle the selected file if needed
+  };
   const [tour, settour] = useState('');  
-  const [reviewDetail, setReviewDetail] = useState({
-    reviewtitle: '',
-    user_name: '',
-    tour_name: '',
-    rating: '',
-    comment: ''
-  });
-
-  console.log(reviewDetail)
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    // settour(value);
-    setReviewDetail((prevReviewDetail) => ({
-      ...prevReviewDetail,
-      [name]: value,
-    }));
-  };
-
-  const handleTourChange = (event) => {
-    const { name, value } = event.target;
-    settour(value);
-    setReviewDetail((prevReviewDetail) => ({
-      ...prevReviewDetail,
-      [name]: value,
-    }));
-  };
-  
-
-
-    const handleReviewSubmit = async () => {
-      if (
-        reviewDetail.reviewtitle.trim() === '' ||
-        reviewDetail.user_name.trim() === '' ||
-        reviewDetail.tour_name.trim() === '' ||
-        reviewDetail.comment.trim() === ''
-      ) {
-        // Display an error message or handle the validation as needed
-        alert('Please fill in all required fields.');
-        return;
-      }
-
+    const handleChange = (event) => {
+      settour(event.target.value);
+      const [tour, settour] = useState('');  
+      const [reviewDetail, setReviewDetail] = useState({
+        reviewtitle: '',
+        user_name: '',
+        tour_name: '',
+        rating: '',
+        comment: ''
+      });
+    
+      console.log(reviewDetail)
+    
+      const handleChange = (event) => {
+        const { name, value } = event.target;
+        // settour(value);
+        setReviewDetail((prevReviewDetail) => ({
+          ...prevReviewDetail,
+          [name]: value,
+        }));
+      };
+    
+      const handleTourChange = (event) => {
+        const { name, value } = event.target;
+        settour(value);
+        setReviewDetail((prevReviewDetail) => ({
+          ...prevReviewDetail,
+          [name]: value,
+        }));
+      };
       
-      try {
-        // Assuming you have a server running at http://localhost:3001
-        // const response = await axios.post('http://localhost:3001/postreview', reviewDetail);
-        const response = await axios.post('https://tourapi-hazf.onrender.com/postreview', reviewDetail);
-        console.log(response.data); // Handle the server response as needed
-      } catch (error) {
-        console.error('Error submitting review:', error);
-      }
-    };
+    
+    
+        const handleReviewSubmit = async () => {
+          if (
+            reviewDetail.reviewtitle.trim() === '' ||
+            reviewDetail.user_name.trim() === '' ||
+            reviewDetail.tour_name.trim() === '' ||
+            reviewDetail.comment.trim() === ''
+          ) {
+            // Display an error message or handle the validation as needed
+            alert('Please fill in all required fields.');
+            return;
+          }
+    
+          
+          try {
+            // Assuming you have a server running at http://localhost:3001
+            // const response = await axios.post('http://localhost:3001/postreview', reviewDetail);
+            const response = await axios.post('https://tourapi-hazf.onrender.com/postreview', reviewDetail);
+            console.log(response.data); // Handle the server response as needed
+          } catch (error) {
+            console.error('Error submitting review:', error);
+          }
+        };
     const drawerWidth = 240;
     const StyledRating = styled(Rating)(({ theme }) => ({
         '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
@@ -129,60 +157,63 @@ export default function Review() {
         value: PropTypes.number.isRequired,
       };
       
-      return (
+    return (
         <>
-          <AppBar position="fixed" sx={{ width: `calc(100% - 240px)`, ml: '240px' }}>
-            <Toolbar>
-              <Typography variant="h6" noWrap component="div">
-                Editor Review
-              </Typography>
-            </Toolbar>
-          </AppBar>
+        <AppBar position="fixed" sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }} >
+           <Toolbar>
+           <Typography variant="h6" noWrap component="div">
+              Editor Review
+                   </Typography>
+                 </Toolbar>
+              </AppBar>
+              <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginLeft:'20%',
+        '& > :not(style)': {
+          m: 1,
+          width: '90%',
+          height: 128,
+        },
+      }}
+    >
     
-          <Box
-            sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              marginLeft: '20%',
-              '& > :not(style)': {
-                m: 1,
-                width: '90%',
-                height: 128,
-              },
-            }}
-          >
-            <Paper elevation={3} style={{ padding: '10px', height: '100%' }}>
-              <TextField
-                name="reviewtitle"
-                label="Review title"
-                multiline
-                maxRows={4}
-                style={{ float: 'left', width: '49%', marginBottom: '10px' }}
-                onChange={handleChange}
-                required
-              />
-              <TextField
-                name="user_name"
-                label="User Name"
-                multiline
-                maxRows={4}
-                style={{ float: 'right', width: '49%', marginBottom: '10px' }}
-                onChange={handleChange}
-                required
-              />
-    
-              <FormControl fullWidth style={{ width: '49%', float: 'left' }}>
-                  <InputLabel id="demo-simple-select-label">Tour</InputLabel>
-                  <Select
-                    name="tour_name"
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={tour}
-                    label="Tour"
-                    onChange={handleTourChange}
-                    required
-                  >
-                    <MenuItem value={'Bangkok Grand Tour'}>Bangkok grand tour</MenuItem>
+      <Paper elevation={3} style={{padding:'10px',height:'100%'}} >
+      <TextField
+          id="outlined-multiline-flexible"
+          label="Review title"
+          multiline
+          maxRows={4}
+          style={{float:'left',width:'49%',marginBottom:'10px'}}
+          name="reviewtitle"       
+          onChange={handleChange}
+          required/>
+        <TextField
+          id="outlined-multiline-flexible"
+          label="User Name"
+          multiline
+          maxRows={4}
+          style={{float:'right',width:'49%',marginBottom:'10px'}}
+          name="user_name" 
+           onChange={handleChange}
+          required/>
+
+   
+      <FormControl fullWidth style={{width:'49%',float:'left'}}>
+        <InputLabel id="demo-simple-select-label">Tour</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={tour}
+          label="Tour"
+        
+          name="tour_name"
+          onChange={handleTourChange}
+          required
+        
+        >
+                                <MenuItem value={'Bangkok Grand Tour'}>Bangkok grand tour</MenuItem>
                     <MenuItem value={'Bangkok unseen Tour'}>Bangkok unseen tour</MenuItem>
                     <MenuItem value={'Bkk Instagram TikTok Tour (For whose who love photos)'}>BKK Instagram/TikTok</MenuItem>
                     <MenuItem value={'The ultimate of the floating market tour'}>The ultimate of the floating market</MenuItem>
@@ -191,29 +222,162 @@ export default function Review() {
                     <MenuItem value={'Ayutthaya highlight tour'}>Ayutthaya highlight tour</MenuItem>
                     <MenuItem value={'The Scenic farm tour'}>The scenic farm tour</MenuItem>
                     <MenuItem value={'Cooking class'}>Cooking class</MenuItem>
-                  </Select>
-                </FormControl>
-              <Stack spacing={1} style={{ float: 'left', margin: '15px' }}>
+                 
+        </Select>
+      </FormControl>
+      <div style={{width:'50%',float:'right',marginBottom:'10px'}}>
+              <Stack spacing={1} style={{ margin: '15px' }}>
                 <Rating name="rating" precision={0.5} onChange={(event, value) => handleChange({ target: { name: 'rating', value } })} />
               </Stack>
-              <TextField
-                name="comment"
-                label="Review Detail"
-                multiline
-                rows={4}
-                style={{ float: 'left', marginTop: '10px', width: '100%' }}
-                onChange={handleChange}
-                required
-              />
+              </div>
     
-              <Button variant="outlined" color="error" style={{ marginTop: '10px', marginRight: '10px', float: 'left' }}>
-                Cancel
-              </Button>
-              <Button variant="contained" color="success" style={{ marginTop: '10px', float: 'right' }} onClick={handleReviewSubmit}>
-                Done
-              </Button>
-            </Paper>
-          </Box>
-        </>
-      );
-    };
+    
+  
+      <Sheet  variant="outlined" color="neutral" sx={{ p: 5 }} style={{width:'49%',float:'left',marginRight:'10px',marginTop:'20px',}}>
+   
+<Button
+        variant="outlined"
+        color="primary"
+        startIcon={<CloudUploadIcon />}
+        onClick={handleButtonClick}
+      >
+        Upload a file
+      </Button>
+      <VisuallyHiddenInput
+        ref={fileInputRef}
+        type="file"
+        onChange={handleFileChange}
+        aria-label="Upload file"
+      />
+      {selectedImage && (
+        <div>
+          <h2>Preview Image:</h2>
+          <img src={selectedImage} alt="Selected" style={{ maxWidth: '100%', maxHeight: '400px' }} />
+        </div>
+      )}
+     
+      </Sheet>
+     
+      
+      <TextField
+       name="comment"
+          id="outlined-multiline-static"
+          label="Review Detail"
+          multiline
+          rows={4}
+          defaultValue="Review Detail"
+          style={{float:'left',marginTop:'10px',width:'49%'}}
+          onChange={handleChange}
+                required
+        />
+        
+        {/* <Paper elevation={3} style={{width:'49%',float:'right',marginTop:"10px",height:'100%',padding:'4%'}}>
+        <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
+      Upload file
+      <VisuallyHiddenInput type="file" />
+    </Button>
+    </Paper> */}
+     {/* ___________________________________________ */}
+    
+    {/* ___________________________________________ */}
+    {/* <Box
+        sx={{
+          border: '1px solid',
+          borderColor: 'var(--joy-palette-neutral-outlinedBorder)',
+          alignSelf: 'center',
+          maxWidth: '100%',
+          minWidth: { xs: 220, sm: 360 },
+          mx: 'auto',
+          boxShadow: 'sm',
+          borderRadius: 'md',
+          overflow: 'auto',
+        }}
+      >
+        <Sheet
+          sx={{
+            borderWidth: '0 0 1px 0',
+            display: 'flex',
+            alignItems: 'center',
+            p: 2,
+            borderBottom: '1px solid',
+            borderColor: 'var(--joy-palette-neutral-outlinedBorder)',
+          }}
+        >
+          <Typography level="h2" fontSize="md">
+            Photo upload
+          </Typography>
+          <IconButton size="sm" variant="plain" color="neutral" sx={{ ml: 'auto' }}>
+            <Close />
+          </IconButton>
+        </Sheet>
+
+
+        <Sheet sx={{ p: 2 }}>
+          <Sheet
+            variant="outlined"
+            sx={{
+              borderRadius: 'md',
+              overflow: 'auto',
+              borderColor: 'var(--joy-palette-neutral-outlinedBorder)',
+              bgcolor: 'background.level1',
+            }}
+          >
+            <AspectRatio>
+              <img alt="" src="/static/images/cards/yosemite.jpeg" />
+            </AspectRatio>
+            <Box
+              sx={{
+                display: 'flex',
+                p: 1.5,
+                gap: 1.5,
+                '& > button': { bgcolor: 'background.surface' },
+              }}
+            >
+              <IconButton
+                color="danger"
+                variant="plain"
+                size="sm"
+                sx={{ mr: 'auto' }}
+              >
+                <Delete />
+              </IconButton>
+              <IconButton color="neutral" variant="outlined" size="sm">
+                <Download />
+              </IconButton>
+              <IconButton color="neutral" variant="outlined" size="sm">
+                <InsertLink />
+              </IconButton>
+              <IconButton color="neutral" variant="outlined" size="sm">
+                <Crop />
+              </IconButton>
+            </Box>
+          </Sheet>
+        </Sheet>
+        <Sheet
+          sx={{
+            display: 'flex',
+            p: 2,
+            borderTop: '1px solid',
+            borderColor: 'var(--joy-palette-neutral-outlinedBorder)',
+            gap: 1,
+          }}
+        >
+          <Button size="md" variant="plain" sx={{ ml: 'auto' }}>
+            Replace photo
+          </Button>
+          <Button size="md">Upload</Button>
+        </Sheet>
+      </Box> */}
+  
+<Button variant="outlined" color="error" style={{marginTop:'10px',marginRight:"10px",float:'left'}}>
+ Cancle
+</Button>
+    <Button variant="contained" color="success" style={{marginTop:'10px',float:'right'}} onClick={handleReviewSubmit}>
+ Done
+</Button>
+        </Paper>
+    </Box>
+     
+      </>
+    )
+  }}
