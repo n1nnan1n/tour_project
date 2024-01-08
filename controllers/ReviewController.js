@@ -1,22 +1,27 @@
 const Review = require('../models/review');
 const Tour = require('../models/tour');
 const Admin = require('../models/admin');
+const upload = require('../middleware/upload');
 
 const postReview = async (req, res) => { 
-    const admin_id = "65700e79b8c88291793fbf9c";      
-    const { user_name, tour_name, rating, comment} = req.body;
+    const admin_id = "65700e79b8c88291793fbf9c";
 
-    if (loggedIn) {
-      res.redirect('/');
-    }
-  
       try {
+        const { reviewtitle, user_name, tour_name, rating, comment } = JSON.parse(req.body.reviewDetail);
+        const image = req.file;
         const admin = await Admin.findById(admin_id);
         if (!admin) {
             return res.status(401).json({ error: 'Invalid admin' });
           }
     
-        const newReview = new Review({user_name, tour_name, rating, comment});
+          const newReview = new Review({
+            reviewtitle,
+            user_name,
+            tour_name,
+            rating,
+            comment,
+            image: { data: image.buffer, contentType: image.mimetype },
+          });
         await newReview.save();
     
         res.status(201).json({ message: 'User registered successfully' });

@@ -1,6 +1,7 @@
 const Tour = require('../models/tour');
 const Order = require('../models/order');
 var User = require('../models/user');
+const Admin = require('../models/admin');
 
 const orderCalculate = async (req, res) =>{  
 try {
@@ -174,4 +175,29 @@ const GetAllUserOrder = async (req, res) => {
   }
 };
 
-module.exports = { orderCalculate,GetUserOrder,SuccessOrder,GetAllUserOrder};
+const UserOrderFromDate = async (req, res) => {
+  const admin_id = "65700e79b8c88291793fbf9c";
+  const { select_date } = req.body;
+  try {
+    const admin = await Admin.findById(admin_id);
+
+    // Validate the input
+    if (!admin) {
+      return res.status(401).json({ error: 'Invalid admin' });
+    }
+
+    // Find orders by user_id
+    const selectedOrders = await Order.find({ tour_date: select_date }).sort({ createdAt: -1 });
+
+    if (selectedOrders.length > 0) {
+      res.json(selectedOrders);
+    } else {
+      res.json({ message: 'No orders found' });
+    }
+  } catch (error) {
+    console.error('Error fetching order data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
+module.exports = { orderCalculate,GetUserOrder,SuccessOrder,GetAllUserOrder,UserOrderFromDate};

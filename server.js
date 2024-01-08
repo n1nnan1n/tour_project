@@ -1,5 +1,6 @@
 const stripe = require('stripe')('sk_test_51OGNrcDiyx2jx89Ts9UoCQ87JXPWOvDSjTpkyV4uYitzwHhIPXI4HBBYt8ltEVwlF3sItOtR9y1jcmembbJRqbOD00putV2ZDT');
 const express = require('express');
+const multer = require('multer');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -26,6 +27,11 @@ global.loggedIn = null
 // const YOUR_DOMAIN = 'http://localhost:3000';
 // const YOUR_DOMAIN = 'https://tourapi-hazf.onrender.com';
 
+const storage = multer.memoryStorage();
+const upload = multer({
+  storage: storage,
+  limits: { fieldSize: 25 * 1024 * 1024 }, // Increase the field size limit as needed
+});
 
 const RegisterController = require('./controllers/RegisterController');
 const LoginController = require('./controllers/LoginController');
@@ -45,7 +51,7 @@ const dateController = require('./controllers/dateController')
 const reviewController = require('./controllers/ReviewController')
 // const redirectIfAuth = require('./middleware/redirectIfAuth')
 // const authMiddleware = require('./middleware/authMiddleware')
-
+const uploadimg = require('./middleware/upload.js')
 
 app.use("*", (req, res, next) => {
   loggedIn = req.session.userId
@@ -81,7 +87,7 @@ app.post('/disabledate',dateController.disableDate)
 app.delete('/deletedate',dateController.deleteDate)
 app.get('/getclosedates',dateController.getCloseDates)
 
-app.post('/postreview',reviewController.postReview)
+app.post('/postreview',uploadimg.single('image'),reviewController.postReview)
 app.get('/getReviewCover',reviewController.getAllTourReviewCover)
 app.get('/getTourReviewByName/:tourName',reviewController.getTourReviewByName)
 
