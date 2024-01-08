@@ -57,39 +57,48 @@ export default function Review() {
      rating: '',
      comment: ''
    });
- 
-   console.log(reviewDetail)
-    const fileInputRef = React.useRef(null);
   const [selectedImage, setSelectedImage] = React.useState(null);
+  const [image, setImage] = React.useState(null);
+
+  console.log(reviewDetail)
+  console.log(selectedImage)
+  const fileInputRef = React.useRef(null);
+  
 
   const handleButtonClick = () => {
     fileInputRef.current.click();
   };
 
-  const handleFileChange = (event) => {
+const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     const imageUrl = URL.createObjectURL(selectedFile);
     setSelectedImage(imageUrl);
-    console.log('Selected file:', selectedFile);
-    // Handle the selected file if needed
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const imageData = {
+        data: new Uint8Array(reader.result),
+        contentType: selectedFile.type,
+      };
+
+      setImage(imageData);
   };
-  
-    // const handleChange = (event) => {
-    //   settour(event.target.value);
-     
-    
+  if (selectedFile) {
+    reader.readAsArrayBuffer(selectedFile);
+  }
+}
+
+  const handleTourChange = (event) => {
+    const { name, value } = event.target;
+    settour(value);
+    setReviewDetail((prevReviewDetail) => ({
+      ...prevReviewDetail,
+      [name]: value,
+    }));
+  };
       const handleChange = (event) => {
         const { name, value } = event.target;
-        // settour(value);
-        setReviewDetail((prevReviewDetail) => ({
-          ...prevReviewDetail,
-          [name]: value,
-        }));
-      };
-    
-      const handleTourChange = (event) => {
-        const { name, value } = event.target;
-        settour(value);
         setReviewDetail((prevReviewDetail) => ({
           ...prevReviewDetail,
           [name]: value,
@@ -103,18 +112,24 @@ export default function Review() {
             reviewDetail.reviewtitle.trim() === '' ||
             reviewDetail.user_name.trim() === '' ||
             reviewDetail.tour_name.trim() === '' ||
-            reviewDetail.comment.trim() === ''
+            reviewDetail.comment.trim() === '' ||
+            !selectedImage
           ) {
             // Display an error message or handle the validation as needed
             alert('Please fill in all required fields.');
             return;
           }
     
-          
+          const formData = new FormData();
+          formData.append('image', new Blob([image.data], { type: image.contentType }));
+          formData.append('reviewDetail', JSON.stringify(reviewDetail));
+
+          console.log(formData)
+
           try {
             // Assuming you have a server running at http://localhost:3001
-            // const response = await axios.post('http://localhost:3001/postreview', reviewDetail);
-            const response = await axios.post('https://tourapi-hazf.onrender.com/postreview', reviewDetail);
+            const response = await axios.post('http://localhost:3001/postreview', formData);
+            // const response = await axios.post('https://tourapi-hazf.onrender.com/postreview', reviewDetail);
             console.log(response.data); // Handle the server response as needed
           } catch (error) {
             console.error('Error submitting review:', error);
@@ -237,20 +252,27 @@ export default function Review() {
   
       <Sheet  variant="outlined" color="neutral" sx={{ p: 5 }} style={{width:'49%',float:'left',marginRight:'10px',marginTop:'20px',}}>
    
-<Button
+      <Button
         variant="outlined"
         color="primary"
         startIcon={<CloudUploadIcon />}
-        onClick={handleButtonClick}
+        onClick={() => document.getElementById('fileInput').click()}
       >
         Upload a file
       </Button>
-      <VisuallyHiddenInput
+      <input
+        id="fileInput"
+        type="file"
+        ref={(input) => (fileInputRef.current = input)}
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
+      {/* <VisuallyHiddenInput
         ref={fileInputRef}
         type="file"
         onChange={handleFileChange}
         aria-label="Upload file"
-      />
+      /> */}
       {selectedImage && (
         <div>
           <h2>Preview Image:</h2>
