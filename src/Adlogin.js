@@ -46,7 +46,7 @@ export const Adlogin = ({ onLogin }) => {
   return (
    
     <div className="wrapper">
-    <div class="bg" style={{backgroundImage:`url(${bg})`,width:'100%',height:'900px',backgroundRepeat:'no-repeat',backgroundSize:'cover',}}>
+    <div class="bg" style={{backgroundImage:`url(${bg})`}}>
       {/* <Container style={{ marginBottom: "20px" }}> */}
       <Container>
         <Row>
