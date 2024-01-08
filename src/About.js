@@ -37,7 +37,6 @@ export default function About() {
       <Row style={{marginTop:'30px'}}>
         <Col 
   
-        //  style={{width: "700px", height: "600px" ,overflow:'hidden',marginTop:'10px'}}
         className='box4'
         >
          <div style={{float:'clear'}}>
@@ -58,9 +57,9 @@ export default function About() {
 </h1> */}
 <br></br>
 {/* <div className='box5'> */}
-<h1 className='detailabout2' style={{color:'#535252'}}>
+<h1 className='detailabout2' style={{color:'#535252'}}><div className='letter'>
 Beyond the Trails is a tour operator registered in Thailand and run by experienced locals. Our goal is to connect our clients with the genuine local culture of Bangkok. We want you to witness both the highlights and hidden gems that make up our home city of Bangkok and its surrounding areas and also further afield in Thailand. Thailand has many beautiful and exotic spots for you to see and every tour is guaranteed private and organized exclusively for you. Alternatively, you can design your own trip and let us help you to bring it to life by organizing accommodation and transfers for you. On your tour, you will come across the ´must see´ highlights of Bangkok and also, the rarely visited, but equally fascinating places in Bangkok that only the locals know about. Join us and let us introduce you to the authentic Bangkok!
-
+</div>
 </h1></div>
 {/* </div> */}
 </Col>
